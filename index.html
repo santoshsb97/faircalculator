@@ -1,0 +1,346 @@
+﻿<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Free Online Calculator Tools. Access fast, accurate, and simple calculators for finance, math, health, and daily life on the Fair Calculator platform.">
+
+    <link rel="canonical" href="https://www.faircalculator.com/">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.faircalculator.com/">
+    <meta property="og:title" content="FairCalculator - Simple Online Tools">
+    <meta property="og:description"
+        content="Free Online Calculator Tools. Access fast, accurate, and simple calculators for finance, math, health, and daily life on the premium Fair Calculator platform.">
+    <meta property="og:image" content="https://www.faircalculator.com/assets/images/social-share.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://www.faircalculator.com/">
+    <meta property="twitter:title" conten="FairCalculator - Simple Online Tools">
+    <meta property="twitter:description"
+        content="Free Online Calculator Tools. Access fast, accurate, and simple calculators for finance, math, health, and daily life on the premium Fair Calculator platform.">
+    <meta property="twitter:image" content="https://www.faircalculator.com/assets/images/social-share.jpg">
+
+    <title>FairCalculator - Simple Online Tools</title>
+
+    <!-- Preload Critical Assets -->
+    <link rel="preload" href="assets/css/style.css" as="style">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        as="style">
+
+    <!-- Preconnect to CDNs -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.png">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome (Non-blocking) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        media="print" onload="this.media='all'">
+    <noscript>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    </noscript>
+
+    <!-- Linked CSS File -->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- Schema -->
+    <script type="application/ld+json">
+    { "@context": "https://schema.org", "@type": "WebSite", "name": "FairCalculator", "url": "https://faircalculator.com/" }
+    </script>
+
+
+</head>
+
+<body>
+
+    <!-- Header containing Logo and Search Bar -->
+    <header class="header">
+        <div class="container header-inner">
+            <h1 class="logo">
+                <a href="index.html">
+                    <i class="fas fa-calculator"></i>
+                    <span>Fair<span class="logo-highlight">Calculator</span></span>
+                </a>
+            </h1>
+
+            <div class="header-search">
+                <input type="text" id="searchInput" class="search-input"
+                    placeholder="Search tools (e.g. Mortgage, BMI)..." aria-label="Search calculators">
+            </div>
+
+            <button class="menu-btn" id="menuToggle" aria-label="Open Menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Sticky Category Filter -->
+    <nav class="category-bar">
+        <div class="container">
+            <ul id="category-list">
+                <!-- JS Populates this -->
+                <li><a href="#" class="active">All</a></li>
+                <!-- Fallback content if JS fails -->
+                <li><a href="categories/finance-calculators.html">Financial Tools</a></li>
+                <li><a href="categories/math-calculators.html">Math Calculators</a></li>
+                <li><a href="categories/health-calculators.html">Health & Fitness</a></li>
+                <li><a href="categories/date-time-calculators.html">Date & Time</a></li>
+                <li><a href="categories/unit-converters.html">Unit Converters</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="mobile-close" id="closeMenu">&times;</button>
+        <div style="margin-top: 40px;">
+            <ul class="sidebar-list">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#calculators">All Calculators</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+
+            <!-- Search Results -->
+            <div id="searchResults" style="display:none; margin-bottom: 40px;">
+                <h2 class="section-header">Search Results</h2>
+                <div class="grid" id="searchResultsContent"></div>
+            </div>
+
+            <!-- All Calculators List -->
+            <h2 class="section-header" id="calculators">All Tools</h2>
+            <div class="grid" id="calculators-grid-container">
+                <!-- JS fills this -->
+                <div style="grid-column: 1/-1; text-align: center;">Loading tools...</div>
+            </div>
+
+            <!-- SEO Content Section -->
+            <section class="info-section homepage-info">
+                <h2 style="font-size: 2.2rem; margin-bottom: 25px; color: var(--text-main); text-align: center;">Fair
+                    Calculator: Your
+                    Ultimate Resource for Online Calculators</h2>
+
+                <div class="info-content-card">
+
+                    <div class="info-grid">
+                        <div>
+                            <h3 style="color: var(--primary); margin-bottom: 15px; font-size: 1.4rem;"><i
+                                    class="fas fa-chart-line" style="margin-right: 10px;"></i>Empowering Smart Decisions
+                            </h3>
+                            <p style="color: var(--text-muted);">
+                                At <strong>FairCalculator</strong>, we believe that complex problems deserve simple
+                                solutions. Whether you're navigating the complexities of <strong>mortgage
+                                    payments</strong>, calculating your <strong>ideal weight</strong>, or solving
+                                intricate <strong>math equations</strong>, our tools are designed to provide instant,
+                                accurate, and easy-to-understand results.
+                            </p>
+                        </div>
+                        <div>
+                            <h3 style="color: var(--primary); margin-bottom: 15px; font-size: 1.4rem;"><i
+                                    class="fas fa-shield-alt" style="margin-right: 10px;"></i>Privacy & Precision</h3>
+                            <p style="color: var(--text-muted);">
+                                Your data stays with you. All our calculations are performed locally in your browser,
+                                ensuring the highest level of <strong>privacy</strong>. We combine clean code with
+                                rigorous mathematical formulas to deliver a premium user experience without the clutter
+                                or cost associated with professional financial software.
+                            </p>
+                        </div>
+                    </div>
+
+                    <h3
+                        style="color: var(--text-main); margin-bottom: 20px; font-size: 1.6rem; border-bottom: 2px solid #f1f5f9; padding-bottom: 10px;">
+                        Explore Our Specialized Toolkits</h3>
+
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px;">
+                        <div style="background: #f8fafc; padding: 20px; border-radius: 12px;">
+                            <h4 style="margin-bottom: 10px; color: #1d4ed8;"><i class="fas fa-coins"
+                                    style="margin-right: 10px;"></i> Finance</h4>
+                            <p style="font-size: 0.9rem; color: var(--text-muted);">Master your personal economy with
+                                tools for <strong>Compound Interest</strong>, <strong>Loan Amortization</strong>, and
+                                <strong>Income Tax</strong> estimates.
+                            </p>
+                        </div>
+                        <div style="background: #f8fafc; padding: 20px; border-radius: 12px;">
+                            <h4 style="margin-bottom: 10px; color: #047857;"><i class="fas fa-square-root-variable"
+                                    style="margin-right: 10px;"></i> Mathematics</h4>
+                            <p style="font-size: 0.9rem; color: var(--text-muted);">From <strong>Square Roots</strong>
+                                to
+                                <strong>System of Equations</strong>, we make high-level math accessible to students and
+                                professionals alike.
+                            </p>
+                        </div>
+                        <div style="background: #f8fafc; padding: 20px; border-radius: 12px;">
+                            <h4 style="margin-bottom: 10px; color: #b91c1c;"><i class="fas fa-heart-pulse"
+                                    style="margin-right: 10px;"></i> Health & Fitness</h4>
+                            <p style="font-size: 0.9rem; color: var(--text-muted);">Track your wellness journey using
+                                our <strong>BMI</strong>, <strong>Calorie</strong>, and <strong>Age</strong> calculators
+                                based on global health standards.</p>
+                        </div>
+                        <div style="background: #f8fafc; padding: 20px; border-radius: 12px;">
+                            <h4 style="margin-bottom: 10px; color: #92400e;"><i class="fas fa-history"
+                                    style="margin-right: 10px;"></i> Efficiency</h4>
+                            <p style="font-size: 0.9rem; color: var(--text-muted);">Save time with our <strong>Date
+                                    Differencing</strong> tools, <strong>Time Conversion</strong> modules, and
+                                <strong>Business Day</strong> trackers.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div
+                        style="margin-top: 40px; padding: 30px; background: linear-gradient(135deg, #eff6ff 0%, #ffffff 100%); border-radius: 12px; border-left: 5px solid #3b82f6;">
+                        <h4 style="margin-bottom: 10px; color: var(--text-main); font-weight: 700;">Why "Fair"
+                            Calculator?</h4>
+                        <p style="margin: 0; color: var(--text-muted); font-size: 0.95rem;">
+                            The Internet is full of cluttered, advertisement-heavy tools that harvest user data. We
+                            aimed to build something <strong>Fair</strong>: ad-free, data-minimalist, and beautifully
+                            fast. Every calculator on this platform is rigorously tested and optimized for speed and
+                            accessibility across all devices.
+                        </p>
+                    </div>
+
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+
+                <div>
+                    <span
+                        style="font-weight: 800; font-size: 1.2rem; display:block; margin-bottom:10px; color:var(--text-main);">FairCalculator</span>
+                    <p>
+                        Simple, fast, and accurate online calculators for finance, math, health, and daily life
+                        problems.
+                    </p>
+                </div>
+
+                <div>
+                    <h4>Menu</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="legal/privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="legal/terms-of-service.html">Terms of Service</a></li>
+                        <li><a href="legal/cookie-policy.html">Cookie Policy</a></li>
+                        <li><a href="legal/disclaimer.html">Disclaimer</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="copyright">
+                &copy; 2026 FairCalculator. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <!-- Define Root path as empty for the homepage -->
+    <script>var ROOT_PATH = '';</script>
+
+    <!-- Load Data and Logic Modules -->
+    <script src="assets/js/data.js" defer></script>
+    <script src="assets/js/search.js" defer></script>
+    <script src="assets/js/mobile-menu.js" defer></script>
+
+    <!-- Homepage Specific Rendering -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // 1. Render Categories (To match style of sub-pages)
+            const categoriesData = [
+                { name: 'Financial Tools', url: 'categories/finance-calculators.html' },
+                { name: 'Math Calculators', url: 'categories/math-calculators.html' },
+                { name: 'Physics Calculators', url: 'categories/physics-calculators.html' },
+                { name: 'Health & Fitness', url: 'categories/health-calculators.html' },
+                { name: 'Date & Time', url: 'categories/date-time-calculators.html' },
+                { name: 'Unit Converters', url: 'categories/unit-converters.html' }
+            ];
+
+            const categoryList = document.getElementById('category-list');
+            if (categoryList) {
+                categoryList.innerHTML = '';
+                // "All" Button (Active)
+                categoryList.innerHTML += `<li><a href="index.html" style="background: var(--primary); color: white; border-color: var(--primary);">All</a></li>`;
+
+                categoriesData.forEach(cat => {
+                    categoryList.innerHTML += `<li><a href="${cat.url}">${cat.name}</a></li>`;
+                });
+            }
+
+            // 2. Render All Calculators Grid
+            const gridContainer = document.getElementById('calculators-grid-container');
+            if (gridContainer && typeof calculatorsData !== 'undefined') {
+                gridContainer.innerHTML = '';
+
+                calculatorsData.forEach(tool => {
+                    const card = document.createElement('a');
+                    card.href = tool.url;
+                    card.className = 'card';
+                    card.innerHTML = `
+                        <h3>
+                            <i class="fas ${tool.icon || 'fa-calculator'}" style="margin-right:8px; color:var(--primary);"></i>
+                            ${tool.name}
+                        </h3>
+                        <p>${tool.desc}</p>
+                    `;
+                    gridContainer.appendChild(card);
+                });
+            }
+        });
+    </script>
+
+    <!-- Performance Optimized: Analytics scripts at end of body -->
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BVENYYJ869"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-BVENYYJ869');
+    </script>
+    <script>
+        window.addEventListener("DOMContentLoaded", function () {
+            document.querySelectorAll("script[src*='widgets']").forEach(function (script) {
+                script.setAttribute("defer", "defer");
+            });
+        });
+    </script>
+    <script type="text/javascript">
+        (function (c, l, a, r, i, t, y) {
+            c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+            t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+            y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+        })(window, document, "clarity", "script", "udqk27trde");
+    </script>
+
+</body>
+
+</html>
