@@ -1,0 +1,424 @@
+﻿<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Calculate your exact age in years, months, days, weeks, and total days from your date of birth. Free age calculator for any date.">
+    <link rel="canonical" href="https://www.faircalculator.com/calculators/age-calculator/">
+    <title>Age Calculator – Calculate Exact Age in Years, Months & Days</title>
+
+    <!-- Preload Critical Assets -->
+    <link rel="preload" href="../../assets/css/style.css" as="style">
+    <link rel="preload" href="../../assets/css/calculators/age-calculator.css" as="style">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        as="style">
+
+    <!-- Preconnect to CDNs -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+
+    <!-- GLOBAL ASSETS -->
+    <link rel="icon" type="image/x-icon" href="../../assets/images/favicon.png">
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/calculators/age-calculator.css">
+
+    <!-- Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome (Non-blocking) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        media="print" onload="this.media='all'">
+    <noscript>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    </noscript>
+
+    <!-- Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Age Calculator",
+      "description": "A precise tool to calculate age from date of birth, including total days lived and next birthday countdown.",
+      "applicationCategory": "UtilityApplication",
+      "operatingSystem": "Any",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "featureList": [
+        "Age in Years/Months/Days",
+        "Next Birthday Countdown",
+        "Total Days Lived",
+        "Leap Year Support"
+      ]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How do I calculate my age?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Enter your date of birth and the target date. The age calculator shows your exact age in years, months, and days."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How many days old am I?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The calculator shows the total number of days you have lived since your birth date."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is chronological age?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Chronological age is the amount of time that has passed since your birth, measured in years, months, and days."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I calculate age on a future date?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. You can select any target date to calculate your age at a future or past time."
+          }
+        }
+      ]
+    }
+    </script>
+
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BVENYYJ869"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-BVENYYJ869');
+    </script>
+    <script type="text/javascript">
+        (function (c, l, a, r, i, t, y) {
+            c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+            t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+            y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+        })(window, document, "clarity", "script", "udqk27trde");
+    </script>
+</head>
+
+<body>
+    <!-- HEADER -->
+    <header class="header">
+        <div class="container header-inner">
+            <a href="../../index.html" class="logo">FairCalculator</a>
+            <div class="header-search"><input type="text" id="searchInput" class="search-input"
+                    placeholder="Search tools..."></div>
+            <button class="menu-btn" id="menuToggle" aria-label="Toggle Menu"><i class="fas fa-bars"></i></button>
+        </div>
+    </header>
+
+    <!-- NAVIGATION -->
+    <nav class="category-bar" aria-label="Main Categories">
+        <div class="container">
+            <ul id="category-list">
+                <li><a href="../../index.html">All</a></li>
+                <li><a href="../../categories/finance-calculators.html">Finance</a></li>
+                <li><a href="../../categories/math-calculators.html">Math</a></li>
+                <li><a href="../../categories/health-calculators.html">Health</a></li>
+                <li><a href="../../categories/date-time-calculators.html"
+                        style="background:#eff6ff; color:#2563eb; border-color:#bfdbfe;" aria-current="page">Date</a>
+                </li>
+                <li><a href="../../categories/unit-converters.html">Converters</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- MAIN APP -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Breadcrumbs -->
+            <div style="margin-bottom: 20px; font-size: 0.9rem; color: #64748b;">
+                <a href="../../index.html" style="text-decoration: underline;">Home</a> /
+                <a href="../../categories/date-time-calculators.html" style="text-decoration: underline;">Date</a> /
+                <span style="font-weight: 600; color: #0f172a;">Age Calculator</span>
+            </div>
+
+            <div class="age-calculator-wrapper">
+
+                <header class="section-header-custom">
+                    <h1><i class="fas fa-birthday-cake" aria-hidden="true"></i> Age Calculator</h1>
+                    <p style="font-size: 1rem; color: #64748b; font-weight: 400; margin-top: 0.5rem;">The most accurate
+                        tool to <strong>find my age</strong> and <strong>calculate exact age</strong> in years, months,
+                        and days.</p>
+                </header>
+
+                <div class="calc-card">
+                    <!-- Error Container -->
+                    <div id="errorBox" class="error-message" role="alert" aria-live="polite">
+                        <i class="fas fa-exclamation-circle"></i> <span id="errorText"></span>
+                    </div>
+
+                    <form id="ageForm" onsubmit="return false;" novalidate>
+                        <div class="date-grid">
+
+                            <!-- Date of Birth -->
+                            <div class="input-group">
+                                <label for="dobMonth">Date of Birth</label>
+                                <div class="select-row">
+                                    <select id="dobMonth" aria-label="Birth Month" required></select>
+                                    <select id="dobDay" aria-label="Birth Day" required></select>
+                                    <select id="dobYear" aria-label="Birth Year" required></select>
+                                </div>
+                            </div>
+
+                            <!-- Target Date -->
+                            <div class="input-group">
+                                <label for="targetMonth">Age at Date (Default: Today)</label>
+                                <div class="select-row">
+                                    <select id="targetMonth" aria-label="Target Month" required></select>
+                                    <select id="targetDay" aria-label="Target Day" required></select>
+                                    <select id="targetYear" aria-label="Target Year" required></select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button type="button" id="calculateBtn" class="calculate-btn">
+                            Calculate Age <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </form>
+
+                    <!-- Results -->
+                    <div id="resultsArea" class="results-wrapper" aria-live="polite">
+
+                        <div class="main-result">
+                            <span class="main-age-value" id="resYears">--</span>
+                            <div class="main-age-label" id="resDetailed">--</div>
+                        </div>
+
+                        <div class="stats-grid">
+                            <div class="stat-box">
+                                <span class="stat-value" id="valMonths">0</span>
+                                <span class="stat-label">Total Months</span>
+                            </div>
+                            <div class="stat-box">
+                                <span class="stat-value" id="valWeeks">0</span>
+                                <span class="stat-label">Total Weeks</span>
+                            </div>
+                            <div class="stat-box">
+                                <span class="stat-value" id="valDays">0</span>
+                                <span class="stat-label">Total Days</span>
+                            </div>
+                            <div class="stat-box">
+                                <span class="stat-value" id="valHours">0</span>
+                                <span class="stat-label">Total Hours</span>
+                            </div>
+                        </div>
+
+                        <div class="next-bday-box">
+                            <div class="next-bday-title"><i class="fas fa-calendar-alt"></i> Next Birthday</div>
+                            <div class="next-bday-val" id="nextBdayText">--</div>
+                            <div style="font-size:0.9rem; color:#64748b; margin-top:5px;" id="nextBdaySub">--</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Strong H2 Near Top -->
+                <section class="info-content">
+                    <h2>Calculate Exact Age from Date of Birth</h2>
+                    <p>Use this age calculator to find your exact age in years, months, days, weeks, and total days.</p>
+                </section>
+
+                <!-- Info Section -->
+                <section class="info-content">
+                    <h2>How to Use the Chronological Age Calculator</h2>
+                    <p>
+                        Using a <strong>chronological age calculator</strong> is the best way to <strong>calculate
+                            chronological age</strong> and find the <strong>age between two dates</strong> precisely.
+                        Calculating age precisely requires more than simply subtracting the birth year from the current
+                        year.
+                        Our <strong>exact age calculator</strong> accounts for:
+                    </p>
+                    <ul style="margin-left: 20px; margin-bottom: 20px; color: #475569; line-height: 1.6;">
+                        <li><strong>Varying Month Lengths:</strong> Our <strong>actual age calculator</strong> handles
+                            28, 29, 30, and 31-day months accurately.
+                        </li>
+                        <li><strong>Leap Years:</strong> Correctly adjusts for February 29th birthdays like a pro
+                            <strong>birthday calculator</strong>.
+                        </li>
+                        <li><strong>Time Units:</strong> Converts your age into total weeks, days, and even
+                            hours—acting as a <strong>days old calculator</strong>.</li>
+                    </ul>
+                    <p>Use this tool to <strong>find current age</strong>, find out exactly how many days you've been
+                        alive, or to count down to your next
+                        big milestone with our <strong>next birthday calculator</strong>.</p>
+                </section>
+
+                <section class="info-content">
+                    <h2>Biological Age vs. Chronological Age</h2>
+                    <p>While your birthday determines your <strong>chronological age</strong>, some people explore
+                        biological age concepts using separate health-based tools. Biological age estimates how your
+                        body is aging internally based on lifestyle factors. This calculator focuses on calculating your
+                        exact legal age based on your date of birth.</p>
+                    <p>For longevity planning, you can use your precise age data with other health metrics to better
+                        understand your wellness goals.</p>
+                </section>
+
+                <section class="info-content">
+                    <h2>Gestational Age and Corrected Age for Babies</h2>
+                    <p>For parents and medical professionals, a <strong>gestational age calculator</strong> is
+                        essential. Whether you need to <strong>calculate gestational age based on lmp</strong> (Last
+                        Menstrual Period) or use a <strong>gestational age calculator from edd</strong> (Estimated Due
+                        Date), accuracy is key. Our platform also supports specialized needs like an <strong>adjusted
+                            age for prematurity calculator</strong>.</p>
+                    <p>If your child was born early, a <strong>preemie age calculator</strong> or <strong>corrected age
+                            calculator</strong> helps track development accurately. Use our <strong>ega
+                            calculator</strong> (Estimated Gestational Age) to ensure your milestones are on track.</p>
+                </section>
+
+                <section class="info-content">
+                    <h2>Retirement and Social Security Planning</h2>
+                    <p>Planning for the future? A <strong>retirement age calculator</strong> helps you <strong>calculate
+                            my retirement date</strong> so you can plan your finances. Knowing your <strong>full
+                            retirement date calculator</strong> results is vital for maximizing benefits. You might also
+                        need a <strong>social security benefits calculator by age</strong> to see the impact of retiring
+                        early vs. waiting until age 70.</p>
+                    <p>Whether you need a <strong>retirement date calculator</strong> for a government job or a private
+                        401k, knowing your <strong>age as per date of birth</strong> is the first step in secure
+                        financial planning.</p>
+                </section>
+
+                <section class="info-content">
+                    <h2>❓ Frequently Asked Questions (FAQ)</h2>
+                    <div style="margin-bottom: 1.5rem;">
+                        <h3 style="font-size: 1.1rem; color: #1e293b; margin-bottom: 0.5rem;">1. How old am I today?
+                        </h3>
+                        <p>Simply enter your <strong>date of birth</strong> into our <strong>age finder</strong>, and we
+                            will <strong>calculate my current age</strong> instantly in years, months, and days.</p>
+                    </div>
+                    <div style="margin-bottom: 1.5rem;">
+                        <h3 style="font-size: 1.1rem; color: #1e293b; margin-bottom: 0.5rem;">2. What is my age in days?
+                        </h3>
+                        <p>Our <strong>age calculator in days</strong> functionality shows you the total number of days
+                            you've lived since your <strong>birth date</strong>.</p>
+                    </div>
+                    <div style="margin-bottom: 1.5rem;">
+                        <h3 style="font-size: 1.1rem; color: #1e293b; margin-bottom: 0.5rem;">3. Can I find someone's
+                            age by their birthday?</h3>
+                        <p>Yes! This tool works as a <strong>date of birth calculator</strong>
+                            to help you <strong>find out how old someone is</strong> without manual math.</p>
+                    </div>
+                    <div style="margin-bottom: 1.5rem;">
+                        <h3 style="font-size: 1.1rem; color: #1e293b; margin-bottom: 0.5rem;">4. How do you calculate
+                            chronological age?</h3>
+                        <p>To <strong>calculate chronological age</strong>, you simply subtract the <strong>birth
+                                date</strong> from the current date. Our <strong>chronological age calculator</strong>
+                            does this with day-level precision, accounting for leap years and different month lengths.
+                        </p>
+                    </div>
+                    <div style="margin-bottom: 1.5rem;">
+                        <h3 style="font-size: 1.1rem; color: #1e293b; margin-bottom: 0.5rem;">5. What is the difference
+                            between biological and chronological age?</h3>
+                        <p>While <strong>chronological age</strong> is the amount of time since you were born,
+                            <strong>biological age</strong> refers to how old your cells and tissues are. You can use
+                            specialized health tools to see if
+                            your body is aging faster or slower than your calendar age.
+                        </p>
+                    </div>
+                    <div style="margin-bottom: 1.5rem;">
+                        <h3 style="font-size: 1.1rem; color: #1e293b; margin-bottom: 0.5rem;">6. How is gestational age
+                            calculated?</h3>
+                        <p>A <strong>gestational age calculator by lmp</strong> (last menstrual period) starts the clock
+                            from the first day of your last cycle. Alternatively, a <strong>gestational age calculator
+                                by edd</strong> (estimated due date) works backward from your predicted delivery date to
+                            <strong>estimate gestational age</strong>.
+                        </p>
+                    </div>
+                    <div style="margin-bottom: 1.5rem;">
+                        <h3 style="font-size: 1.1rem; color: #1e293b; margin-bottom: 0.5rem;">7. What is corrected age
+                            for premature babies?</h3>
+                        <p><strong>Corrected age</strong> (or <strong>adjusted age for prematurity calculator</strong>)
+                            is used for babies born before 37 weeks. It is calculated by subtracting the number of weeks
+                            they were born early from their <strong>chronological age</strong>. You can use our
+                            <strong>preemie adjusted age calculator</strong> to ensure your child is hitting their
+                            developmental milestones correctly.
+                        </p>
+                    </div>
+                    <div style="margin-bottom: 1.5rem;">
+                        <h3 style="font-size: 1.1rem; color: #1e293b; margin-bottom: 0.5rem;">8. When is my full
+                            retirement age?</h3>
+                        <p>Your <strong>full retirement age</strong> depends on your <strong>birth year
+                                calculator</strong> results. For most people born after 1960, it is 67. You can use a
+                            <strong>retirement age calculator by date of birth</strong> or <strong>social security
+                                benefits calculator by age</strong> to find the exact date you become eligible for full
+                            benefits.
+                        </p>
+                    </div>
+                    <div style="margin-bottom: 1.5rem;">
+                        <h3 style="font-size: 1.1rem; color: #1e293b; margin-bottom: 0.5rem;">9. How does a life
+                            expectancy calculator work?</h3>
+                        <p>A <strong>life expectancy calculator</strong> uses actuarial data and health metrics to
+                            <strong>estimate life expectancy</strong>. These tools consider your <strong>current
+                                age</strong>, gender, and
+                            lifestyle to predict how many more years you might live.
+                        </p>
+                    </div>
+                </section>
+
+            </div>
+        </div>
+        <div id="related-calculators"></div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <span
+                        style="font-weight: 800; font-size: 1.2rem; display:block; margin-bottom:10px; color:var(--text-main);">FairCalculator</span>
+                    <p>Simple, fast, and accurate online calculators.</p>
+                </div>
+                <div>
+                    <h4>Menu</h4>
+                    <ul>
+                        <li><a href="../../index.html">Home</a></li>
+                        <li><a href="../../about.html">About Us</a></li>
+                        <li><a href="../../contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="../../legal/privacy-policy.html">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">&copy; 2025 FairCalculator. All rights reserved.</div>
+        </div>
+    </footer>
+
+    <!-- SCRIPTS -->
+    <script>var ROOT_PATH = '../../';</script>
+    <script src="../../assets/js/data.js"></script>
+    <script src="../../assets/js/search.js"></script>
+    <script src="../../assets/js/mobile-menu.js"></script>
+
+
+    <script src="../../assets/js/calculators/age-calculator.js" defer></script>
+    <script src="../../assets/js/related-calculators.js" defer></script>
+</body>
+
+</html>

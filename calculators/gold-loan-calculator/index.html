@@ -1,0 +1,335 @@
+﻿<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Free Gold Loan Solver. Use our fast, accurate tool for finance and loan calculations. Get precise results and expert guidance on Fair Calculator.">
+    <link rel="canonical" href="https://www.faircalculator.com/calculators/gold-loan-calculator/">
+
+    <!-- Preload Critical Assets -->
+    <link rel="preload" href="../../assets/css/style.css" as="style">
+    <link rel="preload" href="../../assets/css/calculators/gold-loan-calculator.css" as="style">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        as="style">
+    <title>Gold Loan EMI Calculator - US Gold Loan Estimator</title>
+
+    <!-- 1. GLOBAL ASSETS -->
+    <link rel="icon" type="image/x-icon" href="../../assets/images/favicon.png">
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/calculators/gold-loan-calculator.css">
+
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Gold Loan EMI Calculator",
+      "description": "Calculate estimated gold loan amount and monthly EMI payments.",
+      "applicationCategory": "FinanceCalculator",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    }
+    </script>
+
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BVENYYJ869"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-BVENYYJ869');
+    </script>
+    <script type="text/javascript">
+        (function (c, l, a, r, i, t, y) {
+            c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+            t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+            y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+        })(window, document, "clarity", "script", "udqk27trde");
+    </script>
+</head>
+
+<body>
+    <!-- 3. HEADER -->
+    <header class="header">
+        <div class="container header-inner">
+            <a href="../../index.html" class="logo">FairCalculator</a>
+            <div class="header-search"><input type="text" id="searchInput" class="search-input"
+                    placeholder="Search tools..."></div>
+            <button class="menu-btn" id="menuToggle"><i class="fas fa-bars"></i></button>
+        </div>
+    </header>
+
+    <!-- 4. CATEGORY BAR -->
+    <nav class="category-bar">
+        <div class="container">
+            <ul id="category-list">
+                <li><a href="../../index.html">All</a></li>
+                <li><a href="../../categories/finance-calculators.html"
+                        style="background:#eff6ff; color:#2563eb; border-color:#bfdbfe;">Finance</a></li>
+                <li><a href="../../categories/math-calculators.html">Math</a></li>
+                <li><a href="../../categories/health-calculators.html">Health</a></li>
+                <li><a href="../../categories/date-time-calculators.html">Date</a></li>
+                <li><a href="../../categories/unit-converters.html">Converters</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="mobile-close" id="closeMenu">&times;</button>
+        <div style="margin-top: 40px;">
+            <ul class="sidebar-list">
+                <li><a href="../../index.html">Home</a></li>
+                <li><a href="../../index.html#calculators">All Calculators</a></li>
+                <li><a href="../../about.html">About</a></li>
+                <li><a href="../../contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- 5. MAIN CONTENT -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Breadcrumbs -->
+            <div style="margin-bottom: 20px; font-size: 0.9rem; color: #64748b;">
+                <a href="../../index.html" style="text-decoration: underline;">Home</a> /
+                <a href="../../categories/finance-calculators.html" style="text-decoration: underline;">Finance</a> /
+                <span style="font-weight: 600; color: #0f172a;">Gold Loan Estimator</span>
+            </div>
+
+            <div id="searchResults" style="display:none; margin-bottom: 40px;">
+                <div class="section-header">Search Results</div>
+                <div class="grid" id="searchResultsContent"></div>
+            </div>
+
+            <div class="gold-widget-container" id="tool-container">
+                <h1 class="section-header" style="justify-content:center; font-size: 2rem; margin-bottom: 30px;">
+                    <i class="fas fa-coins" style="color: #D4AF37; margin-right: 15px;"></i> Gold Loan EMI Estimator
+                </h1>
+
+                <div class="calculator-form">
+                    <div class="gold-calc-form-grid">
+                        <div class="input-wrapper">
+                            <label class="input-label" for="goldWeight">Gold Weight (grams)</label>
+                            <input type="number" id="goldWeight" class="input-field" value="50" min="0" />
+                        </div>
+                        <div class="input-wrapper">
+                            <label class="input-label" for="goldPurity">Gold Purity (Karat)</label>
+                            <select id="goldPurity" class="input-field">
+                                <option value="10">10K</option>
+                                <option value="14">14K</option>
+                                <option value="18" selected>18K</option>
+                                <option value="22">22K</option>
+                                <option value="24">24K (Pure)</option>
+                            </select>
+                        </div>
+                        <div class="input-wrapper">
+                            <label class="input-label" for="goldPrice">Gold Price ($/troy oz)</label>
+                            <input type="number" id="goldPrice" class="input-field" value="2600" min="0" />
+                            <div class="gold-price-note">Update with current market price.</div>
+                        </div>
+                        <div class="input-wrapper">
+                            <label class="input-label" for="interestRate">Annual Interest Rate (%)</label>
+                            <input type="number" id="interestRate" class="input-field" value="12" min="0" step="0.1" />
+                        </div>
+                        <div class="input-wrapper slider-group">
+                            <label class="input-label" for="ltvRatio">Loan-to-Value (LTV) Ratio</label>
+                            <div class="slider-container">
+                                <input type="range" id="ltvRatio" min="50" max="75" value="70" step="1" />
+                                <span class="slider-value" id="ltvValue">70%</span>
+                            </div>
+                        </div>
+                        <div class="input-wrapper">
+                            <label class="input-label" for="loanTerm">Loan Term (Months)</label>
+                            <input type="number" id="loanTerm" class="input-field" value="12" min="1" />
+                        </div>
+                    </div>
+
+                    <div class="results-section">
+                        <div class="result-item">
+                            <span class="label">Estimated Gold Value</span>
+                            <span class="value" id="goldValueResult">$0.00</span>
+                        </div>
+                        <div class="result-item highlight">
+                            <span class="label">Estimated Loan Amount</span>
+                            <span class="value" id="loanAmountResult">$0.00</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="label">Monthly Payment (EMI)</span>
+                            <span class="value" id="emiResult">$0.00</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="label">Total Interest Paid</span>
+                            <span class="value" id="totalInterestResult">$0.00</span>
+                        </div>
+                    </div>
+
+                    <div class="action-btns">
+                        <button id="toggleAmortizationButton" class="btn btn-primary">Show Amortization
+                            Schedule</button>
+                        <button id="exportCsvButton" class="btn btn-success"><i class="fas fa-file-csv"></i> Export
+                            CSV</button>
+                    </div>
+
+                    <div class="amortization-section" id="amortizationSection">
+                        <div class="table-wrapper">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Month</th>
+                                        <th>Principal</th>
+                                        <th>Interest</th>
+                                        <th>Payment</th>
+                                        <th>Balance</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="amortizationTableBody"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SEO Content -->
+                <div class="info-section">
+                    <h2><i class="fas fa-gem" style="color: #D4AF37; margin-right: 15px;"></i>Understanding Gold
+                        Valuation</h2>
+                    <p>Calculating the value of a gold loan isn't as simple as checking the daily ticker. Lenders look
+                        at
+                        the "melt value" of your items—the intrinsic value of the gold if it were to be melted down and
+                        purified. Our <strong>Gold Loan Estimator</strong> helps you approximate this by accounting for
+                        weight, purity, and the current market spread.</p>
+
+                    <div
+                        style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin: 30px 0;">
+                        <div
+                            style="background: #fffbeb; padding: 25px; border-radius: 12px; border: 1px solid #fde68a;">
+                            <h3 style="color: #b45309; margin-bottom: 15px; font-size: 1.2rem;">Key Valuation Factors
+                            </h3>
+                            <ul style="padding-left: 20px; color: #78350f; font-size: 0.95rem; line-height: 1.8;">
+                                <li><strong>Purity (Karat):</strong> 24K is 99.9% pure, while 18K is 75% pure gold mixed
+                                    with alloys for strength.</li>
+                                <li><strong>Troy Ounces vs Grams:</strong> The global market trades in Troy Ounces
+                                    (approx
+                                    31.1g), while jewelry is measured in grams.</li>
+                                <li><strong>Market Spread:</strong> Lenders usually lend against the 'Bid' price, which
+                                    is slightly lower than the 'Ask' price you see on news sites.</li>
+                                <li><strong>Stones & Filigree:</strong> Lenders subtract the weight of gemstones and
+                                    non-gold elements before valuing the metal.</li>
+                            </ul>
+                        </div>
+                        <div
+                            style="background: #fdf2f8; padding: 25px; border-radius: 12px; border: 1px solid #fbcfe8;">
+                            <h3 style="color: #9d174d; margin-bottom: 15px; font-size: 1.2rem;">Why Borrow Against Gold?
+                            </h3>
+                            <ul style="padding-left: 20px; color: #831843; font-size: 0.95rem; line-height: 1.8;">
+                                <li><strong>Speed:</strong> Often approved in minutes compared to days for personal
+                                    loans.</li>
+                                <li><strong>No Credit Friction:</strong> Your asset is the security; your credit score
+                                    is rarely the deciding factor.</li>
+                                <li><strong>Lower Interest:</strong> Generally cheaper than credit cards because it is a
+                                    secured loan.</li>
+                                <li><strong>Retain Ownership:</strong> You get your property back once the debt is
+                                    settled.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <h3 style="color: var(--text-main); margin-bottom: 15px;">A Historical Perspective</h3>
+                    <p>Gold has served as the ultimate store of value for millennia. From the <strong>Gold
+                            Standard</strong> that once backed global currencies to modern <strong>pawn
+                            lending</strong>, the stability of gold makes it the preferred collateral during times of
+                        market volatility. By leveraging your gold, you're tapping into a source of liquidity that
+                        doesn't require selling your long-term hedge against inflation.</p>
+
+                    <h2 style="margin-top: 40px; border-top: 2px solid #f1f5f9; padding-top: 30px;"><i
+                            class="fas fa-question-circle" style="color: #3b82f6; margin-right: 15px;"></i>Frequently
+                        Asked Questions</h2>
+
+                    <div style="margin-top: 20px;">
+                        <div style="margin-bottom: 25px; border-bottom: 1px solid #f1f5f9; padding-bottom: 15px;">
+                            <h4 style="color: var(--text-main); margin-bottom: 8px;">What is the Loan-to-Value (LTV)
+                                ratio?</h4>
+                            <p style="color: var(--text-muted); font-size: 0.95rem;">LTV represents the percentage of
+                                your gold's value that the lender is willing to lend. If your gold is worth $1,000 and
+                                the LTV is 70%, you can borrow $700. Regulators often set caps on LTV to protect both
+                                lenders and borrowers from price drops.</p>
+                        </div>
+                        <div style="margin-bottom: 25px; border-bottom: 1px solid #f1f5f9; padding-bottom: 15px;">
+                            <h4 style="color: var(--text-main); margin-bottom: 8px;">Do I lose my gold if I miss a
+                                payment?</h4>
+                            <p style="color: var(--text-muted); font-size: 0.95rem;">Missing a payment usually triggers
+                                late fees. However, if you default entirely, the lender has the legal right to auction
+                                your gold to recover the principal and interest. Always borrow only what you can
+                                comfortably repay.</p>
+                        </div>
+                        <div style="margin-bottom: 25px;">
+                            <h4 style="color: var(--text-main); margin-bottom: 8px;">Does it affect my credit score?
+                            </h4>
+                            <p style="color: var(--text-muted); font-size: 0.95rem;">Standard gold loans from local
+                                shops usually don't involve credit reporting. However, loans from formal banks may
+                                report your repayment history to credit bureaus, helping you build credit if paid on
+                                time.</p>
+                        </div>
+                    </div>
+
+                    <div class="disclaimer">
+                        <strong>Disclaimer:</strong> This calculator provides estimates based on market norms. Actual
+                        loan terms, interest rates, and valuation depend on individual lenders and the physical purity
+                        check of your gold. Always consult with a financial advisor before committing to a loan.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="related-calculators"></div>
+    </main>
+
+    <!-- 6. FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <span
+                        style="font-weight: 800; font-size: 1.2rem; display:block; margin-bottom:10px; color:var(--text-main);">FairCalculator</span>
+                    <p>Simple, fast, and accurate online calculators.</p>
+                </div>
+                <div>
+                    <h4>Menu</h4>
+                    <ul>
+                        <li><a href="../../index.html">Home</a></li>
+                        <li><a href="../../about.html">About Us</a></li>
+                        <li><a href="../../contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="../../legal/privacy-policy.html">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">&copy; 2025 FairCalculator. All rights reserved.</div>
+        </div>
+    </footer>
+
+    <!-- 7. SCRIPTS -->
+    <script>var ROOT_PATH = '../../';</script>
+    <script src="../../assets/js/data.js"></script>
+    <script src="../../assets/js/search.js"></script>
+    <script src="../../assets/js/mobile-menu.js"></script>
+
+
+    <script src="../../assets/js/calculators/gold-loan-calculator.js" defer></script>
+    <script src="../../assets/js/related-calculators.js" defer></script>
+</body>
+
+</html>

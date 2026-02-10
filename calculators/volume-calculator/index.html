@@ -1,0 +1,234 @@
+﻿<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Free Volume Calculator. Use our fast, accurate tool to simplify math and geometry calculations. Get precise results and guidance on Fair Calculator.">
+    <link rel="canonical" href="https://www.faircalculator.com/calculators/volume-calculator/">
+
+    <!-- Preload Critical Assets -->
+    <link rel="preload" href="../../assets/css/style.css" as="style">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        as="style">
+    <title>Volume Calculator - 3D Shapes</title>
+
+    <!-- 1. GLOBAL ASSETS (Go up 2 folders) -->
+    <link rel="icon" type="image/x-icon" href="../../assets/images/favicon.png">
+    <link rel="stylesheet" href="../../assets/css/style.css">
+
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Volume Calculator",
+      "description": "Calculate volume of 3D geometric shapes.",
+      "applicationCategory": "MathCalculator",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    }
+    </script>
+
+    <!-- 2. WIDGET SPECIFIC CSS -->
+    <link rel="preload" href="../../assets/css/calculators/volume-calculator.css" as="style">
+    <link rel="stylesheet" href="../../assets/css/calculators/volume-calculator.css">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BVENYYJ869"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-BVENYYJ869');
+    </script>
+    <script type="text/javascript">
+        (function (c, l, a, r, i, t, y) {
+            c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+            t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+            y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+        })(window, document, "clarity", "script", "udqk27trde");
+    </script>
+</head>
+
+<body>
+
+    <!-- 3. HEADER -->
+    <header class="header">
+        <div class="container header-inner">
+            <a href="../../index.html" class="logo">FairCalculator</a>
+            <div class="header-search">
+                <input type="text" id="searchInput" class="search-input" placeholder="Search tools..."
+                    aria-label="Search">
+            </div>
+            <button class="menu-btn" id="menuToggle"><i class="fas fa-bars"></i></button>
+        </div>
+    </header>
+
+    <!-- 4. CATEGORY BAR -->
+    <nav class="category-bar">
+        <div class="container">
+            <ul id="category-list">
+                <li><a href="../../index.html">All</a></li>
+                <li><a href="../../categories/finance-calculators.html">Finance</a></li>
+                <li><a href="../../categories/math-calculators.html"
+                        style="background:#eff6ff; color:#2563eb; border-color:#bfdbfe;">Math</a></li>
+                <li><a href="../../categories/health-calculators.html">Health</a></li>
+                <li><a href="../../categories/date-time-calculators.html">Date</a></li>
+                <li><a href="../../categories/unit-converters.html">Converters</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="mobile-close" id="closeMenu">&times;</button>
+        <div style="margin-top: 40px;">
+            <ul class="sidebar-list">
+                <li><a href="../../index.html">Home</a></li>
+                <li><a href="../../index.html#calculators">All Calculators</a></li>
+                <li><a href="../../about.html">About</a></li>
+                <li><a href="../../contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- 5. MAIN CONTENT -->
+    <main class="main-content">
+        <div class="container">
+
+            <!-- Breadcrumbs -->
+            <div style="margin-bottom: 20px; font-size: 0.9rem; color: #64748b;">
+                <a href="../../index.html" style="text-decoration: underline;">Home</a> /
+                <a href="../../categories/math-calculators.html" style="text-decoration: underline;">Math</a> /
+                <span style="font-weight: 600; color: #0f172a;">Volume Calculator</span>
+            </div>
+
+            <!-- Search Results Placeholder -->
+            <div id="searchResults" style="display:none; margin-bottom: 40px;">
+                <div class="section-header">Search Results</div>
+                <div class="grid" id="searchResultsContent"></div>
+            </div>
+
+            <!-- TOOL CONTAINER -->
+            <div class="vol-widget-container" id="tool-container">
+
+                <h1 class="section-header" style="justify-content:center; font-size: 2rem; margin-bottom: 30px;">
+                    <i class="fas fa-cube" style="color: #4f46e5; margin-right: 15px;"></i> Volume Calculator
+                </h1>
+
+                <div class="calculator-form">
+
+                    <div class="input-wrapper">
+                        <label class="input-label" for="shapeType">Select 3D Shape</label>
+                        <select id="shapeType" class="input-field">
+                            <option value="cube">Cube</option>
+                            <option value="box">Rectangular Tank (Box)</option>
+                            <option value="sphere">Sphere</option>
+                            <option value="cylinder">Cylinder</option>
+                            <option value="cone">Cone</option>
+                        </select>
+                    </div>
+
+                    <!-- Dynamic Inputs will appear here -->
+                    <div id="inputFields"></div>
+
+                    <button id="calculateBtn" class="calc-action-btn">Calculate Volume</button>
+                </div>
+
+                <!-- Result Container -->
+                <div id="resultContainer" class="result-container" style="display: none;">
+                    <h3 style="color:#166534; margin-bottom:10px;">Calculated Volume</h3>
+                    <div class="hero-value">
+                        <span id="result">--</span>
+                    </div>
+
+                    <div class="formula-box">
+                        <strong>Step-by-Step:</strong><br>
+                        <span id="formula">--</span>
+                    </div>
+                </div>
+
+
+                <!-- Engaging SEO Guide -->
+                <div class="info-section">
+                    <h2>Counting Cubes: Understanding Volume</h2>
+                    <article>
+                        <h3>What Actually Fits Inside?</h3>
+                        <p>Volume measures the 3-dimensional space an object occupies. Think of it as counting how many
+                            1x1x1 cubes fit inside a shape.</p>
+
+                        <h3>Real-World Applications</h3>
+                        <ul>
+                            <li><strong>Shipping & Logistics:</strong> Carriers charge based on "Dimensional Weight". A
+                                large, light box costs more to ship because it takes up valuable volume in the truck.
+                            </li>
+                            <li><strong>Swimming Pools:</strong> You need to calculate volume to know how many gallons
+                                of water to fill it with (and how many chemicals to treat it with).</li>
+                            <li><strong>Cooking:</strong> Recipes use volume (cups, teaspoons) for liquids and powders,
+                                unlike professional baking which prefers weight.</li>
+                        </ul>
+
+                        <h3>Volume vs. Capacity</h3>
+                        <p>Although used interchangeably, <strong>Volume</strong> is the space an object takes up (like
+                            a brick), while <strong>Capacity</strong> is how much an object can hold (like a cup). For
+                            hollow objects, they are similar, but the thickness of the walls matters!</p>
+                    </article>
+                </div>
+
+            </div>
+        </div>
+        <div id="related-calculators"></div>
+    </main>
+
+    <!-- 6. FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <span
+                        style="font-weight: 800; font-size: 1.2rem; display:block; margin-bottom:10px; color:var(--text-main);">FairCalculator</span>
+                    <p>Simple, fast, and accurate online calculators.</p>
+                </div>
+                <div>
+                    <h4>Menu</h4>
+                    <ul>
+                        <li><a href="../../index.html">Home</a></li>
+                        <li><a href="../../about.html">About Us</a></li>
+                        <li><a href="../../contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="../../legal/privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="../../legal/terms-of-service.html">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2025 FairCalculator. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- 7. SCRIPTS -->
+    <script>var ROOT_PATH = '../../';</script>
+    <script src="../../assets/js/data.js"></script>
+    <script src="../../assets/js/search.js"></script>
+    <script src="../../assets/js/mobile-menu.js"></script>
+
+    <!-- WIDGET JS LOGIC -->
+    <script src="../../assets/js/calculators/volume-calculator.js" defer></script>
+
+    <script src="../../assets/js/related-calculators.js" defer></script>
+</body>
+
+</html>

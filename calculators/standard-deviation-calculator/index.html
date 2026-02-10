@@ -1,0 +1,621 @@
+﻿<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Free Standard Deviation Solver. Use our fast, accurate tool to simplify your math and statistics calculations. Get precise results on Fair Calculator.">
+    <link rel="canonical" href="https://www.faircalculator.com/calculators/standard-deviation-calculator/">
+    <title>Standard Deviation Calculator | Population & Sample Variance</title>
+
+    <!-- Preload Critical Assets -->
+    <link rel="preload" href="../../assets/css/style.css" as="style">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        as="style">
+
+    <!-- Preconnect to CDNs -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+
+    <!-- GLOBAL ASSETS -->
+    <link rel="icon" type="image/x-icon" href="../../assets/images/favicon.png">
+    <link rel="stylesheet" href="../../assets/css/style.css">
+
+    <!-- Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome (Non-blocking) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        media="print" onload="this.media='all'">
+    <noscript>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    </noscript>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BVENYYJ869"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-BVENYYJ869');
+    </script>
+    <script type="text/javascript">
+        (function (c, l, a, r, i, t, y) {
+            c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+            t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+            y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+        })(window, document, "clarity", "script", "udqk27trde");
+    </script>
+
+    <link rel="preload" href="../../assets/css/calculators/standard-deviation-calculator.css" as="style">
+    <link rel="stylesheet" href="../../assets/css/calculators/standard-deviation-calculator.css">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BVENYYJ869"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-BVENYYJ869');
+    </script>
+    <script type="text/javascript">
+        (function (c, l, a, r, i, t, y) {
+            c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+            t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+            y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+        })(window, document, "clarity", "script", "udqk27trde");
+    </script>
+</head>
+
+<body>
+    <!-- HEADER -->
+    <header class="header">
+        <div class="container header-inner">
+            <a href="../../index.html" class="logo">FairCalculator</a>
+            <div class="header-search">
+                <input type="text" id="searchInput" class="search-input" placeholder="Search tools...">
+            </div>
+            <button class="menu-btn" id="menuToggle" aria-label="Toggle Menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- NAVIGATION -->
+    <nav class="category-bar" aria-label="Main Categories">
+        <div class="container">
+            <ul id="category-list">
+                <li><a href="../../index.html">All</a></li>
+                <li><a href="../../categories/finance-calculators.html">Finance</a></li>
+                <li><a href="../../categories/math-calculators.html"
+                        style="background:#eff6ff; color:#2563eb; border-color:#bfdbfe;" aria-current="page">Math</a>
+                </li>
+                <li><a href="../../categories/health-calculators.html">Health</a></li>
+                <li><a href="../../categories/date-time-calculators.html">Date</a></li>
+                <li><a href="../../categories/unit-converters.html">Converters</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- MAIN APP -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Breadcrumbs -->
+            <div style="margin-bottom: 20px; font-size: 0.9rem; color: #64748b;">
+                <a href="../../index.html" style="text-decoration: underline;">Home</a> /
+                <a href="../../categories/math-calculators.html" style="text-decoration: underline;">Math</a> /
+                <span style="font-weight: 600; color: #0f172a;">Standard Deviation Calculator</span>
+            </div>
+
+            <div class="calculator-wrapper">
+                <header class="section-header-custom">
+                    <h1><i class="fas fa-chart-bar" aria-hidden="true"></i> Standard Deviation Calculator</h1>
+                    <p style="font-size: 1rem; color: #64748b; font-weight: 400; margin-top: 0.5rem;">
+                        Detailed stats with variance, plots, and confidence intervals.
+                    </p>
+                </header>
+
+                <div class="calc-card">
+                    <div class="sd-error-msg" id="sdError" role="alert" aria-live="assertive"></div>
+
+                    <div class="sd-input-section">
+                        <label class="sd-input-label" for="sdDataInput">Enter Your Data Set:</label>
+                        <textarea id="sdDataInput" class="sd-data-input" aria-describedby="sdInputHelp"
+                            placeholder="Numbers separated by commas, spaces, or new lines (e.g., 2, 4, 6, 8, 10)"></textarea>
+                        <div class="sd-input-help" id="sdInputHelp">Works with copy-pasted data from Excel or Sheets.
+                        </div>
+                    </div>
+
+                    <div class="sd-sample-buttons">
+                        <button class="sd-sample-btn" onclick="loadSampleData('grades')"
+                            aria-label="Load test scores sample data">📚 Test Scores</button>
+                        <button class="sd-sample-btn" onclick="loadSampleData('heights')"
+                            aria-label="Load heights sample data">📏 Heights</button>
+                        <button class="sd-sample-btn" onclick="loadSampleData('temps')"
+                            aria-label="Load temperatures sample data">🌡️ Temps</button>
+                        <button class="sd-sample-btn" onclick="loadSampleData('sales')"
+                            aria-label="Load sales sample data">💰 Sales</button>
+                    </div>
+
+                    <div class="sd-type-section">
+                        <div class="sd-radio-group">
+                            <input type="radio" id="sdPopulation" name="sdType" value="population" checked>
+                            <label for="sdPopulation">Population (σ)</label>
+                        </div>
+                        <div class="sd-radio-group">
+                            <input type="radio" id="sdSample" name="sdType" value="sample">
+                            <label for="sdSample">Sample (s)</label>
+                        </div>
+                    </div>
+
+                    <div class="sd-button-section">
+                        <button class="sd-btn sd-btn-calculate" onclick="calculateSD()">Calculate Stats</button>
+                        <button class="sd-btn sd-btn-clear" onclick="clearCalculator()">Clear</button>
+                    </div>
+
+                    <!-- RESULTS AREA -->
+                    <div class="sd-results-section" id="sdResults">
+                        <div class="sd-results-grid">
+                            <div class="sd-result-card sd-result-primary">
+                                <div class="sd-result-label">Standard Deviation</div>
+                                <div class="sd-result-value" id="sdValue">0</div>
+                            </div>
+                            <div class="sd-result-card">
+                                <div class="sd-result-label">Mean (μ/x̄)</div>
+                                <div class="sd-result-value" id="sdMean">0</div>
+                            </div>
+                            <div class="sd-result-card">
+                                <div class="sd-result-label">Variance (σ²/s²)</div>
+                                <div class="sd-result-value" id="sdVariance">0</div>
+                            </div>
+                            <div class="sd-result-card">
+                                <div class="sd-result-label">Standard Error</div>
+                                <div class="sd-result-value" id="sdStandardError">0</div>
+                            </div>
+                            <div class="sd-result-card">
+                                <div class="sd-result-label">Count (n)</div>
+                                <div class="sd-result-value" id="sdCount">0</div>
+                            </div>
+                        </div>
+
+                        <div class="sd-results-grid secondary">
+                            <div class="sd-result-card">
+                                <div class="sd-result-label">Sum (Σx)</div>
+                                <div class="sd-result-value" id="sdSum">0</div>
+                            </div>
+                            <div class="sd-result-card">
+                                <div class="sd-result-label">Range</div>
+                                <div class="sd-result-value" id="sdRange">0</div>
+                            </div>
+                            <div class="sd-result-card">
+                                <div class="sd-result-label">Median</div>
+                                <div class="sd-result-value" id="sdMedian">0</div>
+                            </div>
+                        </div>
+
+                        <div class="sd-confidence-section">
+                            <div class="sd-confidence-title"><i class="fas fa-chart-line"></i> Confidence Intervals &
+                                Margin of Error</div>
+                            <p style="font-size: 0.8rem; color: #64748b; margin-bottom: 15px; font-style: italic;">
+                                Note: Confidence intervals assume normality and large sample sizes (n ≥ 30).
+                            </p>
+                            <div style="overflow-x: auto;">
+                                <table class="sd-confidence-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Level</th>
+                                            <th>Z-Score</th>
+                                            <th>Margin of Error</th>
+                                            <th>CI Range</th>
+                                            <th>Error Bar</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="confidenceTableBody"></tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <div class="sd-formula-section">
+                            <div class="sd-formula-title"><i class="fas fa-square-root-alt"></i> Step-by-Step Breakdown
+                            </div>
+                            <div id="sdFormulas"></div>
+                        </div>
+
+                        <div class="sd-chart-section">
+                            <div class="sd-chart-title">Visual Distribution Plot</div>
+                            <div class="sd-chart" id="sdChart" role="img"
+                                aria-label="Histogram showing the distribution of your data points"></div>
+                            <p class="sr-only" id="sdChartSummary">Histogram showing the distribution of your entered
+                                data points.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ARTICLE CONTENT -->
+                <article style="margin-top: 4rem;">
+                    <h2>Understanding Standard Deviation</h2>
+                    <h3>What is Standard Deviation?</h3>
+                    <p>Standard deviation is a statistical measure that quantifies the amount of variation or dispersion
+                        in a dataset. In simple terms, it tells you how spread out the numbers are from their average
+                        (mean) value. A low standard deviation means data points tend to be close to the mean, while a
+                        high standard deviation indicates that data points are spread out over a wider range of values.
+                    </p>
+                    <p>Think of it this way: If you're measuring the heights of students in a classroom, a small
+                        standard deviation would mean most students are of similar height, while a large standard
+                        deviation would indicate a mix of very tall and very short students.</p>
+
+                    <h3>Why is Standard Deviation Important?</h3>
+                    <p>Standard deviation is crucial in many fields:</p>
+                    <ul>
+                        <li><strong>Finance:</strong> Measures investment risk and portfolio volatility</li>
+                        <li><strong>Quality Control:</strong> Ensures products meet specifications</li>
+                        <li><strong>Research:</strong> Determines if results are statistically significant</li>
+                        <li><strong>Weather:</strong> Predicts temperature variations</li>
+                        <li><strong>Education:</strong> Analyzes test score distributions</li>
+                    </ul>
+
+                    <h3>Types of Standard Deviation</h3>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 2rem;">
+                        <div
+                            style="background: #f1f5f9; padding: 20px; border-radius: 12px; border: 1px solid #e2e8f0;">
+                            <h4 style="color: var(--primary); margin-bottom: 10px;">Population Standard Deviation (σ)
+                            </h4>
+                            <p style="font-size: 0.9rem; margin: 0;">Used when you have data for an entire population.
+                                Divides by N (total number of values). Best for complete datasets where you have all
+                                possible observations.</p>
+                        </div>
+                        <div
+                            style="background: #f1f5f9; padding: 20px; border-radius: 12px; border: 1px solid #e2e8f0;">
+                            <h4 style="color: var(--primary); margin-bottom: 10px;">Sample Standard Deviation (s)</h4>
+                            <p style="font-size: 0.9rem; margin: 0;">Used when working with a sample from a larger
+                                population. Divides by (N-1) to correct for bias. Most common in research and
+                                experiments.</p>
+                        </div>
+                    </div>
+                    <p><strong>Pooled Standard Deviation:</strong> Combines standard deviations from multiple groups.
+                        Used in t-tests when comparing two groups with similar variances.</p>
+                    <p><strong>Weighted Standard Deviation:</strong> Assigns different weights to data points based on
+                        their importance or frequency. Used in finance and weighted averages.</p>
+
+                    <h3>Key Formulas</h3>
+                    <div class="fc-formula-box"
+                        style="background: #f8fafc; padding: 25px; border-radius: 12px; border: 1px solid #e2e8f0; border-left: 5px solid var(--primary); margin: 2rem 0;">
+                        <p style="margin-bottom: 10px;"><strong>Population Standard Deviation:</strong></p>
+                        <div
+                            style="background: white; padding: 10px; border-radius: 6px; border: 1px solid #f1f5f9; margin-bottom: 15px;">
+                            <code>σ = √(Σ(xi - μ)² / N)</code>
+                        </div>
+                        <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 20px;">Where: σ =
+                            population SD, xi = each value, μ = population mean, N = population size</p>
+
+                        <p style="margin-bottom: 10px;"><strong>Sample Standard Deviation:</strong></p>
+                        <div
+                            style="background: white; padding: 10px; border-radius: 6px; border: 1px solid #f1f5f9; margin-bottom: 15px;">
+                            <code>s = √(Σ(xi - x̄)² / (n-1))</code>
+                        </div>
+                        <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 20px;">Where: s = sample
+                            SD, xi = each value, x̄ = sample mean, n = sample size</p>
+
+                        <p style="margin-bottom: 10px;"><strong>Standard Error of the Mean:</strong></p>
+                        <div
+                            style="background: white; padding: 10px; border-radius: 6px; border: 1px solid #f1f5f9; margin-bottom: 15px;">
+                            <code>SE = σ / √n</code>
+                        </div>
+                        <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 20px;">Where: SE =
+                            standard error, σ = standard deviation, n = sample size</p>
+
+                        <p style="margin-bottom: 10px;"><strong>Margin of Error:</strong></p>
+                        <div
+                            style="background: white; padding: 10px; border-radius: 6px; border: 1px solid #f1f5f9; margin-bottom: 5px;">
+                            <code>ME = z * (σ / √n)</code>
+                        </div>
+                        <p style="font-size: 0.85rem; color: var(--text-muted);">Where: ME = margin of error, z =
+                            z-score for confidence level, σ = SD, n = sample size</p>
+                    </div>
+
+                    <h3>The 68-95-99.7 Rule (Empirical Rule)</h3>
+                    <p>For normally distributed data:</p>
+                    <ul>
+                        <li><strong>68%</strong> of data falls within 1 standard deviation of the mean</li>
+                        <li><strong>95%</strong> of data falls within 2 standard deviations of the mean</li>
+                        <li><strong>99.7%</strong> of data falls within 3 standard deviations of the mean</li>
+                    </ul>
+                    <p>This rule helps you quickly understand how your data is distributed and identify outliers.</p>
+
+                    <h2>Frequently Asked Questions</h2>
+                    <div class="faq-item">
+                        <div class="faq-question">When should I use population vs sample standard deviation?</div>
+                        <div class="faq-answer">Use population SD when you have data for every member of the group
+                            you're studying (like all employees in a small company). Use sample SD when you have data
+                            from only a portion of the population (like surveying 100 customers out of thousands).</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">What's the difference between standard deviation and variance?</div>
+                        <div class="faq-answer">Variance is the square of the standard deviation. While variance gives
+                            you a mathematical measure of spread, standard deviation is more interpretable because it's
+                            in the same units as your original data. If you're measuring heights in inches, SD is also
+                            in inches, while variance would be in square inches.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">What does a standard deviation of 0 mean?</div>
+                        <div class="faq-answer">A standard deviation of 0 means all values in your dataset are exactly
+                            the same. There's no variation at all. This is rare in real-world data but might occur in
+                            controlled situations.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">How do I interpret standard deviation values?</div>
+                        <div class="faq-answer">There's no universal "good" or "bad" SD value - it depends on context.
+                            Compare the SD to the mean: if SD is small relative to the mean (like SD=2 with mean=100),
+                            data is tightly clustered. If SD is large relative to the mean (like SD=50 with mean=100),
+                            data is widely spread.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">What's the relationship between standard deviation and normal
+                            distribution?</div>
+                        <div class="faq-answer">In a normal (bell curve) distribution, standard deviation determines the
+                            width of the curve. About 68% of values fall within ±1 SD from the mean, 95% within ±2 SD,
+                            and 99.7% within ±3 SD. This relationship only holds for normally distributed data.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Can standard deviation be negative?</div>
+                        <div class="faq-answer">No, standard deviation can never be negative. It's calculated as the
+                            square root of variance, and since we're squaring the differences from the mean, the result
+                            is always positive or zero.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Why do we square the differences when calculating SD?</div>
+                        <div class="faq-answer">Squaring serves two purposes: 1) It makes all differences positive
+                            (preventing negative and positive differences from canceling out), and 2) It gives more
+                            weight to outliers, making SD sensitive to extreme values.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">What's the difference between standard deviation and standard error?
+                        </div>
+                        <div class="faq-answer">Standard deviation measures the spread of individual data points, while
+                            standard error measures the precision of the sample mean as an estimate of the population
+                            mean. Standard error = SD / √n, so it gets smaller with larger sample sizes.</div>
+                    </div>
+
+                    <div class="highlight-card"
+                        style="background: #eff6ff; border-left: 5px solid var(--primary); padding: 25px; border-radius: 12px; margin-top: 3rem; border: 1px solid #bfdbfe;">
+                        <h4 style="color: var(--primary); margin-bottom: 15px; font-size: 1.1rem;">💡 Pro Tips for Using
+                            This Calculator:</h4>
+                        <ul style="font-size: 1rem; list-style: disc; margin-left: 20px; color: #1e293b;">
+                            <li style="margin-bottom: 8px;"><strong>Data Entry:</strong> You can paste data directly
+                                from Excel or Google Sheets</li>
+                            <li style="margin-bottom: 8px;"><strong>Sample Size:</strong> For reliable results, aim for
+                                at least 30 data points when using sample SD</li>
+                            <li style="margin-bottom: 8px;"><strong>Outliers:</strong> Extreme values can significantly
+                                affect SD - consider removing obvious errors</li>
+                            <li style="margin-bottom: 8px;"><strong>Confidence Intervals:</strong> Use 95% for most
+                                research, 99% for critical decisions</li>
+                            <li><strong>Interpretation:</strong> Always consider SD in context with the mean and your
+                                specific field</li>
+                        </ul>
+                    </div>
+                </article>
+            </div>
+        </div>
+        <div id="related-calculators"></div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div>
+                <span class="logo" style="display:block; margin-bottom:10px;">FairCalculator</span>
+                <p>Simple, fast, and accurate online tools for math, finance, and daily life.</p>
+            </div>
+            <div>
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="../../index.html">Home</a></li>
+                    <li><a href="../../about.html">About Us</a></li>
+                    <li><a href="../../contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="../../legal/privacy-policy.html">Privacy</a></li>
+                    <li><a href="../../legal/terms-of-service.html">Terms</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">&copy; 2025 FairCalculator. All rights reserved.</div>
+    </footer>
+
+    <!-- SCRIPTS -->
+    <script>var ROOT_PATH = '../../';</script>
+    <script src="../../assets/js/data.js"></script>
+    <script src="../../assets/js/search.js"></script>
+    <script src="../../assets/js/mobile-menu.js"></script>
+
+    <script>
+        const CONFIDENCE_LEVELS = Object.freeze([
+            { label: '90%', z: 1.645 },
+            { label: '95%', z: 1.96 },
+            { label: '99%', z: 2.576 },
+            { label: '99.9%', z: 3.291 }
+        ]);
+
+        function parseData(input) {
+            const parts = input.trim().split(/[\s,]+/);
+            return parts
+                .map(p => Number(p))
+                .filter(n => Number.isFinite(n));
+        }
+
+        function calculateSD() {
+            const errorDiv = document.getElementById('sdError');
+            const resultsDiv = document.getElementById('sdResults');
+            errorDiv.style.display = 'none';
+
+            const data = parseData(document.getElementById('sdDataInput').value);
+
+            if (data.length < 2) {
+                errorDiv.textContent = 'Please enter at least 2 valid numbers to calculate standard deviation.';
+                errorDiv.style.display = 'block';
+                return;
+            }
+
+            const isPopulation = document.getElementById('sdPopulation').checked;
+            const n = data.length;
+            const sum = data.reduce((a, b) => a + b, 0);
+            const mean = sum / n;
+
+            const squaredDiffs = data.reduce((acc, x) => acc + Math.pow(x - mean, 2), 0);
+            const divisor = isPopulation ? n : (n - 1);
+            const variance = squaredDiffs / divisor;
+            const stdDev = Math.sqrt(variance);
+            const standardError = stdDev / Math.sqrt(n);
+            const range = Math.max(...data) - Math.min(...data);
+
+            // UI Display
+            document.getElementById('sdValue').textContent = stdDev.toFixed(4);
+            document.getElementById('sdMean').textContent = mean.toFixed(4);
+            document.getElementById('sdVariance').textContent = variance.toFixed(4);
+            document.getElementById('sdStandardError').textContent = standardError.toFixed(4);
+            document.getElementById('sdCount').textContent = n;
+            document.getElementById('sdSum').textContent = sum.toFixed(2);
+            document.getElementById('sdRange').textContent = range.toFixed(2);
+
+            // Median Calculation
+            const sortedData = [...data].sort((a, b) => a - b);
+            const median = n % 2 === 0 ? (sortedData[n / 2 - 1] + sortedData[n / 2]) / 2 : sortedData[Math.floor(n / 2)];
+            document.getElementById('sdMedian').textContent = median.toFixed(4);
+
+            displayConfidenceTable(mean, standardError);
+            displayFormulas(data, mean, variance, stdDev, isPopulation, standardError);
+            createChart(data);
+
+            resultsDiv.style.display = 'block';
+            resultsDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+
+        function displayConfidenceTable(mean, se) {
+            const html = CONFIDENCE_LEVELS.map((c, i) => {
+                const moe = c.z * se;
+                const barWidth = 30 + (i * 10);
+                return `<tr>
+                    <td class="confidence-level">${c.label}</td>
+                    <td>${c.z.toFixed(3)}</td>
+                    <td>± ${moe.toFixed(4)}</td>
+                    <td>[${(mean - moe).toFixed(4)}, ${(mean + moe).toFixed(4)}]</td>
+                    <td><span class="sd-error-bar" style="width:${barWidth}px"></span></td>
+                </tr>`;
+            }).join('');
+            document.getElementById('confidenceTableBody').innerHTML = html;
+        }
+
+        function displayFormulas(data, mean, variance, stdDev, isPop, standardError) {
+            const n = data.length;
+            const symbol = isPop ? 'σ' : 's';
+            const mSymbol = isPop ? 'μ' : 'x̄';
+            const sum = data.reduce((a, b) => a + b, 0);
+
+            // Performance: Cap formula expansion data display
+            const dataPreview = data.length > 20 ? data.slice(0, 20).join(' + ') + ' + ...' : data.join(' + ');
+
+            let html = `<div class="sd-formula">
+                <div class="sd-formula-step">Step 1: Calculate the Mean</div>
+                <div class="sd-formula-math">
+                    ${isPop ? 'μ' : 'x̄'} = Σx / n = (${dataPreview}) / ${n}<br>
+                    ${isPop ? 'μ' : 'x̄'} = ${sum.toFixed(2)} / ${n}
+                </div>
+                <div class="sd-formula-result">Mean = ${mean.toFixed(4)}</div>
+            </div>`;
+
+            html += `<div class="sd-formula">
+                <div class="sd-formula-step">Step 2: Calculate Squared Differences</div>
+                <div class="sd-formula-math">
+                    For each value: (xi - ${isPop ? 'μ' : 'x̄'})²<br><br>
+                    ${data.slice(0, 10).map(x => `(${x.toFixed(2)} - ${mean.toFixed(2)})² = (${(x - mean).toFixed(2)})² = ${Math.pow(x - mean, 2).toFixed(4)}`).join('<br>')}
+                    ${n > 10 ? '<br>... (continue for all values)' : ''}<br><br>
+                    Sum of squared differences = ${(variance * (isPop ? n : n - 1)).toFixed(4)}
+                </div>
+            </div>`;
+
+            html += `<div class="sd-formula">
+                <div class="sd-formula-step">Step 3: Calculate Variance</div>
+                <div class="sd-formula-math">
+                    ${isPop ? 'Population Variance Formula:' : 'Sample Variance Formula:'}<br>
+                    ${isPop ? 'σ² = Σ(xi - μ)² / n' : 's² = Σ(xi - x̄)² / (n - 1)'}<br>
+                    ${symbol}² = ${(variance * (isPop ? n : n - 1)).toFixed(4)} / ${isPop ? n : n - 1}
+                </div>
+                <div class="sd-formula-result">Variance = ${variance.toFixed(4)}</div>
+            </div>`;
+
+            html += `<div class="sd-formula">
+                <div class="sd-formula-step">Step 4: Calculate Standard Deviation</div>
+                <div class="sd-formula-math">
+                    ${symbol} = √(${symbol}²)<br>
+                    ${symbol} = √${variance.toFixed(4)}
+                </div>
+                <div class="sd-formula-result">${isPop ? 'Population' : 'Sample'} Standard Deviation = ${stdDev.toFixed(4)}</div>
+            </div>`;
+
+            html += `<div class="sd-formula">
+                <div class="sd-formula-step">Step 5: Calculate Standard Error</div>
+                <div class="sd-formula-math">
+                    SE = ${symbol} / √n<br>
+                    SE = ${stdDev.toFixed(4)} / √${n}<br>
+                    SE = ${stdDev.toFixed(4)} / ${Math.sqrt(n).toFixed(4)}
+                </div>
+                <div class="sd-formula-result">Standard Error = ${standardError.toFixed(4)}</div>
+            </div>`;
+
+            const moe95 = 1.96 * standardError;
+            html += `<div class="sd-formula">
+                <div class="sd-formula-step">Step 6: Calculate Margin of Error (95%)</div>
+                <div class="sd-formula-math">
+                    ME = Z × SE<br>
+                    ME = 1.96 × ${standardError.toFixed(4)}
+                </div>
+                <div class="sd-formula-result">Margin of Error (95%) = ± ${moe95.toFixed(4)}</div>
+            </div>`;
+
+            document.getElementById('sdFormulas').innerHTML = html;
+        }
+
+        function createChart(data) {
+            const chartDiv = document.getElementById('sdChart');
+            chartDiv.innerHTML = '';
+            const displayData = data.slice(0, 60); // Performance limit
+            const min = Math.min(...displayData);
+            const max = Math.max(...displayData);
+            const range = max - min || 1;
+
+            displayData.forEach(val => {
+                const bar = document.createElement('div');
+                bar.className = 'sd-bar';
+                bar.style.height = `${((val - min) / range) * 90 + 5}%`;
+                bar.innerHTML = `<div class="sd-bar-tooltip">Value: ${val}</div>`;
+                chartDiv.appendChild(bar);
+            });
+        }
+
+        function loadSampleData(type) {
+            const samples = {
+                'grades': '88, 92, 75, 81, 95, 68, 84, 90, 77, 85',
+                'heights': '170, 165, 180, 172, 168, 175, 171, 169',
+                'temps': '22.5, 23.8, 21.2, 24.5, 22.1, 23.0',
+                'sales': '1200, 1500, 1100, 1300, 1600, 1400'
+            };
+            document.getElementById('sdDataInput').value = samples[type];
+            calculateSD();
+        }
+
+        function clearCalculator() {
+            document.getElementById('sdDataInput').value = '';
+            document.getElementById('sdResults').style.display = 'none';
+        }
+    </script>
+    <script src="../../assets/js/related-calculators.js" defer></script>
+</body>
+
+</html>

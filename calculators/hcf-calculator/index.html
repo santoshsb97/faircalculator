@@ -1,0 +1,796 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HCF Calculator | Highest Common Factor (GCD) Solver | FairCalculator</title>
+    <meta name="description"
+        content="Free GCF Solver. Use our fast, accurate tool to simplify math and algebra calculations. Get precise results and expert guidance on Fair Calculator.">
+    <link rel="canonical" href="https://www.faircalculator.com/calculators/hcf-calculator/">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BVENYYJ869"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-BVENYYJ869');
+    </script>
+    <script type="text/javascript">
+        (function (c, l, a, r, i, t, y) {
+            c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+            t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+            y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+        })(window, document, "clarity", "script", "udqk27trde");
+    </script>
+
+    <link rel="stylesheet" href="../../assets/css/calculators/hcf-calculator.css">
+</head>
+
+<body>
+    <!-- HEADER -->
+    <header class="header">
+        <div class="container header-inner">
+            <a href="../../index.html" class="logo">FairCalculator</a>
+            <div class="header-search">
+                <input type="text" id="searchInput" class="search-input" placeholder="Search tools...">
+            </div>
+            <button class="menu-btn" id="menuToggle" aria-label="Toggle Menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- NAVIGATION -->
+    <nav class="category-bar" aria-label="Main Categories">
+        <div class="container">
+            <ul id="category-list">
+                <li><a href="../../index.html">All</a></li>
+                <li><a href="../../categories/finance-calculators.html">Finance</a></li>
+                <li><a href="../../categories/math-calculators.html"
+                        style="background:#eff6ff; color:#2563eb; border-color:#bfdbfe;">Math</a></li>
+                <li><a href="../../categories/health-calculators.html">Health</a></li>
+                <li><a href="../../categories/date-time-calculators.html">Date</a></li>
+                <li><a href="../../categories/unit-converters.html">Converters</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- MOBILE MENU OVERLAY -->
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="mobile-close" id="closeMenu">&times;</button>
+        <div style="margin-top: 40px;">
+            <ul class="sidebar-list">
+                <li><a href="../../index.html">Home</a></li>
+                <li><a href="../../index.html#calculators">All Calculators</a></li>
+                <li><a href="../../about.html">About Us</a></li>
+                <li><a href="../../contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- MAIN APP -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Breadcrumbs -->
+            <div style="margin-bottom: 20px; font-size: 0.9rem; color: #64748b;">
+                <a href="../../index.html" style="text-decoration: underline;">Home</a> /
+                <a href="../../categories/math-calculators.html" style="text-decoration: underline;">Math</a> /
+                <span style="font-weight: 600; color: #0f172a;">HCF Calculator</span>
+            </div>
+
+            <div class="calculator-wrapper">
+                <header style="text-align: center; margin-bottom: 2rem;">
+                    <h1 style="font-size: 2.2rem; font-weight: 800; color: var(--text-main);"><i class="fas fa-divide"
+                            style="color: #2563eb;"></i> HCF Calculator (GCD)</h1>
+                    <p style="color: #64748b; margin-top: 0.5rem;">Find the Highest Common Factor (or Greatest Common
+                        Divisor) using multiple methods with step-by-step solutions.</p>
+                </header>
+
+                <div class="calc-card">
+                    <div class="hcf-error" id="hcfError" role="alert" aria-live="assertive"></div>
+
+                    <div class="hcf-input-section">
+                        <label class="hcf-label" for="hcfNumbers">Enter Numbers (separated by space or comma):</label>
+                        <input type="text" id="hcfNumbers" class="hcf-input" placeholder="Example: 24, 36, 60"
+                            value="24 36 60">
+
+                        <label class="hcf-label" for="hcfMethod" style="margin-top: 20px;">Select Calculation
+                            Method:</label>
+                        <select id="hcfMethod" class="hcf-select">
+                            <option value="euclidean">Euclidean Algorithm - Fastest for pairs</option>
+                            <option value="prime" selected>Prime Factorization - Best for understanding</option>
+                            <option value="listing">Listing Factors - Simplest for small numbers</option>
+                            <option value="cake">Cake/Ladder Method - Systematic approach</option>
+                            <option value="division">Long Division - Traditional school method</option>
+                        </select>
+                    </div>
+
+                    <div class="hcf-button-section">
+                        <button class="hcf-btn hcf-btn-calculate" onclick="calculateHCF()"
+                            aria-label="Calculate Highest Common Factor"><i class="fas fa-bolt"></i> Calculate
+                            HCF</button>
+                        <button class="hcf-btn hcf-btn-clear" onclick="clearCalculator()"
+                            aria-label="Clear all inputs and results"><i class="fas fa-undo"></i> Clear</button>
+                    </div>
+
+                    <div class="hcf-result-section" id="hcfResult">
+                        <div class="hcf-result-label">The HCF (GCD) is:</div>
+                        <div class="hcf-result-value" id="hcfValue">—€”</div>
+                    </div>
+
+                    <div class="hcf-steps-section" id="hcfSteps">
+                        <div style="margin-bottom: 20px; padding-bottom: 10px; border-bottom: 1px solid #eee;">
+                            <h2 style="font-size: 1.25rem; font-weight: 700; color: #1e293b;"><i
+                                    class="fas fa-book-open"></i> Step-by-Step Solution</h2>
+                        </div>
+                        <div id="stepsContent"></div>
+                    </div>
+                </div>
+
+                <!-- ARTICLE CONTENT -->
+                <article style="margin-top: 4rem;">
+                    <h2>Understanding Highest Common Factor (HCF)</h2>
+                    <p>The Highest Common Factor (HCF), also known as the Greatest Common Divisor (GCD), of two or more
+                        integers is the largest positive integer that divides each of the numbers without leaving a
+                        remainder. Our <strong>HCF calculator</strong> is a powerful <strong>HCF finder</strong> that
+                        helps you <strong>calculate HCF</strong> of any number set instantly.</p>
+                    <p><strong>Example:</strong> HCF(12, 18) = 6 because 6 is the largest number that divides both 12
+                        and 18. This <strong>GCD calculator</strong> is optimized to <strong>find the HCF</strong> for
+                        both small and large inputs.</p>
+
+                    <h3>Comparison of HCF Methods</h3>
+                    <ul>
+                        <li><strong>Listing Factors:</strong> Best for beginners and small numbers. A simple
+                            <strong>common factor finder</strong> approach.
+                        </li>
+                        <li><strong>Prime Factorization:</strong> <strong>Finding HCF using prime factorization</strong>
+                            is highly reliable for any set of numbers. It breaks numbers into building blocks.</li>
+                        <li><strong>Euclidean Algorithm:</strong> The most efficient mathematical way to
+                            <strong>calculate HCF</strong> for two large numbers.
+                        </li>
+                        <li><strong>Cake Method:</strong> A popular visual <strong>hcf calculator with steps</strong>
+                            for finding factors of multiple numbers simultaneously.</li>
+                    </ul>
+
+                    <h2 style="margin-top: 3rem;">HCF Methods Explained</h2>
+                    <div class="info-grid">
+                        <div class="info-card">
+                            <h3>Euclidean Algorithm</h3>
+                            <p>Uses a repeated division process where the remainder replaces one of the numbers. Our
+                                <strong>hcf solver</strong> shows every step of this efficient process.
+                            </p>
+                            <p style="font-size: 0.85rem; color: #64748b;"><strong>Best for:</strong> Large pairs of
+                                numbers.</p>
+                        </div>
+                        <div class="info-card">
+                            <h3>Factorization Method</h3>
+                            <p>Whether you're <strong>finding hcf using prime factorization</strong> or listing, this
+                                <strong>hcf calculator online</strong> provides the prime breakdown for every input.
+                            </p>
+                            <p style="font-size: 0.85rem; color: #64748b;"><strong>Best for:</strong> Understanding
+                                number properties.</p>
+                        </div>
+                        <div class="info-card">
+                            <h3>Highest Common Factor Calculator</h3>
+                            <p>As a comprehensive <strong>online hcf calculator</strong>, this tool functions as a
+                                <strong>calculator for hcf</strong> that supports up to 50 numbers at once.
+                            </p>
+                            <p style="font-size: 0.85rem; color: #64748b;"><strong>Best for:</strong> Quick, accurate
+                                calculations.</p>
+                        </div>
+                        <div class="info-card">
+                            <h3>HCF Calculator With Steps</h3>
+                            <p>This <strong>hcf calculator step by step</strong> allows you to see the logic behind the
+                                results, making it an excellent <strong>hcf cal</strong> tool for students.</p>
+                            <p style="font-size: 0.85rem; color: #64748b;"><strong>Best for:</strong> Learning and
+                                homework.</p>
+                        </div>
+                    </div>
+
+                    <h2 style="margin-top: 3rem;">Find HCF & GCF: Step-by-Step Examples</h2>
+                    <p>To help you understand how to <strong>calculate HCF</strong> using different methods, here are
+                        some common problems solved step-by-step:</p>
+
+                    <div style="display: flex; flex-direction: column; gap: 1.5rem; margin-top: 1.5rem;">
+                        <div
+                            style="background: #f8fafc; padding: 20px; border-radius: 12px; border: 1px solid #e2e8f0;">
+                            <h4 style="color: #2563eb; margin-bottom: 10px;">Listing Method</h4>
+                            <p style="font-size: 0.95rem;"><strong>GCF of 12 and 18:</strong></p>
+                            <ul style="font-size: 0.85rem; padding-left: 20px;">
+                                <li>Factors of 12: 1, 2, 3, 4, 6, 12</li>
+                                <li>Factors of 18: 1, 2, 3, 6, 9, 18</li>
+                                <li>The highest common factor is <strong>6</strong>.</li>
+                            </ul>
+                        </div>
+                        <div
+                            style="background: #f8fafc; padding: 20px; border-radius: 12px; border: 1px solid #e2e8f0;">
+                            <h4 style="color: #2563eb; margin-bottom: 10px;">Prime Factorization</h4>
+                            <p style="font-size: 0.95rem;"><strong>GCF of 16 and 24:</strong></p>
+                            <ul style="font-size: 0.85rem; padding-left: 20px;">
+                                <li>16 = 2 × 2 × 2 × 2 (2⁴)</li>
+                                <li>24 = 2 × 2 × 2 × 3 (2³ × 3)</li>
+                                <li>Common: 2³ = <strong>8</strong>.</li>
+                            </ul>
+                        </div>
+                        <div
+                            style="background: #f8fafc; padding: 20px; border-radius: 12px; border: 1px solid #e2e8f0;">
+                            <h4 style="color: #2563eb; margin-bottom: 10px;">Euclidean Algorithm</h4>
+                            <p style="font-size: 0.95rem;"><strong>GCF of 40 and 48:</strong></p>
+                            <ul style="font-size: 0.85rem; padding-left: 20px;">
+                                <li>48 = 40 × 1 + 8</li>
+                                <li>40 = 8 × 5 + 0</li>
+                                <li>The last non-zero remainder is <strong>8</strong>.</li>
+                            </ul>
+                        </div>
+                        <div
+                            style="background: #f8fafc; padding: 20px; border-radius: 12px; border: 1px solid #e2e8f0;">
+                            <h4 style="color: #2563eb; margin-bottom: 10px;">Cake/Ladder Method</h4>
+                            <p style="font-size: 0.95rem;"><strong>GCF of 8 and 12:</strong></p>
+                            <p style="font-size: 0.85rem;">Divide both by 2 to get 4 and 6. Divide again by 2 to get 2
+                                and 3. Multiply the divisors: 2 × 2 = <strong>4</strong>.</p>
+                        </div>
+                        <div
+                            style="background: #f8fafc; padding: 20px; border-radius: 12px; border: 1px solid #e2e8f0;">
+                            <h4 style="color: #2563eb; margin-bottom: 10px;">Common Query</h4>
+                            <p style="font-size: 0.95rem;"><strong>GCF of 18 and 24:</strong></p>
+                            <p style="font-size: 0.85rem;">Both 18 and 24 are divisible by 6 (their largest common
+                                divisor). Therefore, HCF(18, 24) = <strong>6</strong>.</p>
+                        </div>
+                    </div>
+
+                    <div
+                        style="background: #f0fdf4; padding: 25px; border-radius: 12px; border: 1px solid #bbf7d0; margin-top: 2rem;">
+                        <h3 style="color: #166534; margin-bottom: 15px;">HCF & LCM Relationship</h3>
+                        <p style="font-size: 0.95rem;">The <strong>formula of hcf and lcm</strong> for two numbers
+                            <em>a</em> and <em>b</em> is: <code>a × b = HCF(a,b) × LCM(a,b)</code>.
+                        </p>
+                        <p style="font-size: 0.95rem; margin-top: 10px;">This <strong>lcm hcf formula</strong> is useful
+                            for <strong>hcf and lcm calculator</strong> logic. If you know the LCM, you can find the HCF
+                            using: <code>HCF = (Product of Numbers) / LCM</code>.</p>
+                    </div>
+
+                    <h2 style="margin-top: 3rem;">HCF in Algebra</h2>
+                    <p>In algebra, we often need an <strong>algebra hcf calculator</strong> to find the highest common
+                        factor of algebraic expressions or polynomials.</p>
+                    <div
+                        style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 1.5rem;">
+                        <div
+                            style="background: #fefce8; padding: 20px; border-radius: 12px; border: 1px solid #fef08a;">
+                            <h4 style="color: #a16207; margin-bottom: 10px;">Algebraic Expressions</h4>
+                            <p style="font-size: 0.95rem;">An <strong>hcf of algebraic expressions calculator</strong>
+                                looks for the <strong>common factor calculator algebra</strong> style result by
+                                identifying variables and numbers common to all terms.</p>
+                        </div>
+                        <div
+                            style="background: #fefce8; padding: 20px; border-radius: 12px; border: 1px solid #fef08a;">
+                            <h4 style="color: #a16207; margin-bottom: 10px;">Polynomials & Monomials</h4>
+                            <p style="font-size: 0.95rem;">To <strong>factor out the greatest common monomial factor
+                                    calculator</strong>, you determine the highest power of each variable and the HCF of
+                                the coefficients. This is the <strong>hcf of polynomials calculator</strong> approach.
+                            </p>
+                        </div>
+                    </div>
+                    <p style="margin-top: 1.5rem;">While our current tool focuses on integers, these concepts remain the
+                        same: whether you use a <strong>highest common multiple calculator</strong> (LCM) or an HCF
+                        tool, the goal is to find shared building blocks.</p>
+
+                    <h2 style="margin-top: 3rem;">Most Asked HCF & GCF Questions</h2>
+                    <p>Below are some of the most common queries regarding how to <strong>find the greatest common
+                            factor</strong> for various number sets and algebraic expressions.</p>
+
+                    <div class="faq-item">
+                        <div class="faq-question">How to find the common factor of 4, 8, and 12?</div>
+                        <div class="faq-answer">To <strong>find the common factor of 4 8 and 12</strong>, list their
+                            factors: 4 (1, 2, 4), 8 (1, 2, 4, 8), 12 (1, 2, 3, 4, 6, 12). The common factors are 1, 2,
+                            and 4. The GCF is <strong>4</strong>.</div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">Find the common factor of 56 and 120?</div>
+                        <div class="faq-answer">For <strong>56 and 120</strong>: Prime factors of 56 are 2³ × 7. Prime
+                            factors of 120 are 2³ × 3 × 5. The common part is 2³, so the GCF is <strong>8</strong>.
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">How to find the factors and identify the GCF?</div>
+                        <div class="faq-answer">To <strong>find the factors and identify the gcf</strong>, first list
+                            all numbers that divide each value perfectly. For example, to <strong>find the factors and
+                                identify the gcf 15 and 45</strong>: Factors of 15 (1, 3, 5, 15), Factors of 45 (1, 3,
+                            5, 9, 15, 45). The highest common factor is <strong>15</strong>.</div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">What is "find the gcf math"?</div>
+                        <div class="faq-answer">In mathematics, <strong>find the gcf math</strong> refers to finding the
+                            largest number that divides a set of integers without a remainder. It is the fundamental
+                            process for simplifying fractions and solving ratio problems.</div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">How to find the GCF of 12 and 15?</div>
+                        <div class="faq-answer">To <strong>find the gcf of 12 and 15</strong> or <strong>find the
+                                greatest common factor of 12 and 15</strong>: 12 (1, 2, 3, 4, 6, 12), 15 (1, 3, 5, 15).
+                            The common factor is 3. GCF = <strong>3</strong>.</div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">What is the GCF of 18 and 35?</div>
+                        <div class="faq-answer">To <strong>find the greatest common factor of 18 and 35</strong>: 18 = 2
+                            × 3², 35 = 5 × 7. They share no prime factors other than 1. Thus, the GCF is
+                            <strong>1</strong>. These numbers are called "coprime."
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">How to find the GCF of 22 and 48?</div>
+                        <div class="faq-answer">To <strong>find the greatest common factor of 22 and 48</strong>: 22 = 2
+                            × 11, 48 = 2⁴ × 3. The only common factor is <strong>2</strong>.</div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">How to find the GCF of 28 and 48?</div>
+                        <div class="faq-answer">To <strong>find the greatest common factor of 28 and 48</strong>: 28 =
+                            2² × 7, 48 = 2⁴ × 3. The common factor is 2², so the GCF is <strong>4</strong>.</div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">How to find the GCF of 7, 15, and 21?</div>
+                        <div class="faq-answer">To <strong>find the greatest common factor of 7 15 and 21</strong>: 7 is
+                            prime. 15 = 3 × 5. 21 = 3 × 7. Since no common factor exists for all three other than 1,
+                            the
+                            GCF is <strong>1</strong>.</div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">How to find the GCF with variables and exponents?</div>
+                        <div class="faq-answer">To <strong>find the gcf with variables and exponents</strong>, take the
+                            lowest power of each common variable. For example:
+                            <ul>
+                                <li><strong>Find the gcf of 10y and 12xy</strong>: HCF of 10, 12 is 2. Common variable
+                                    is y. GCF = <strong>2y</strong>.</li>
+                                <li><strong>Find the gcf of x4 x7</strong>: The lowest power of x is 4. GCF =
+                                    <strong>x⁴</strong>.
+                                </li>
+                                <li><strong>Find the gcf of 4y and 12y</strong>: GCF is <strong>4y</strong>.</li>
+                                <li><strong>Find the gcf of 15y6 and 9z</strong>: Coefficients (15, 9) have HCF 3. No
+                                    common variables. GCF = <strong>3</strong>.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">How to find the GCF of polynomials?</div>
+                        <div class="faq-answer">To <strong>find the greatest common factor of polynomials</strong> or
+                            <strong>find the gcf of the terms of each polynomial</strong>, you identify the greatest
+                            factor that divides every term. For example, in <code>28d³ + 32d³ + 20d⁴</code>, the
+                            coefficients (28, 32, 20) have an HCF of 4, and the lowest power of d is d³. So,
+                            <strong>find the gcf of 28d3 32d3 and 20d4</strong> result is <strong>4d³</strong>.
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">How to find the greatest common factor for each set of numbers?</div>
+                        <div class="faq-answer">To <strong>find the greatest common factor for each number pair</strong>
+                            or <strong>find the gcf of each set of number</strong>, use our <strong>gcf
+                                calculator</strong>. Simply input your list (e.g., <strong>find the greatest common
+                                factor of 35 and 20</strong> or <strong>find the gcf of 9 and 12</strong>) and select
+                            "Prime Factorization" for the best result.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">What is the difference between HCF and GCD?</div>
+                        <div class="faq-answer">There is no mathematical difference. HCF (Highest Common Factor) is the
+                            term commonly used in the UK and India, while GCD (Greatest Common Divisor) is more common
+                            in the US. They both refer to the same value in this <strong>hcf and lcm
+                                calculator</strong>.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Is this an HCF rebate calculator?</div>
+                        <div class="faq-answer">No. If you are searching for the <strong>HCF rebate calculator</strong>,
+                            you are likely looking for the HCF Australian Health Insurance fund. This is a mathematical
+                            <strong>hcf finder</strong> tool.
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Can I find HCF with a Venn Diagram?</div>
+                        <div class="faq-answer">Yes, an <strong>hcf and lcm venn diagram calculator</strong> visualizes
+                            common factors in the overlap of two circles. Factors in the intersection are multiplied to
+                            find the HCF.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">How do I find the HCF of three numbers?</div>
+                        <div class="faq-answer">You can use this <strong>hcf calculator online</strong> to input 12, 15,
+                            and 21 (or any set) to see the step-by-step <strong>lcm and hcf calculator with
+                                steps</strong> result. Our <strong>hcf calculator with steps</strong> makes it easy to
+                            follow.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">What's the hcf how to calculate formula?</div>
+                        <div class="faq-answer">To <strong>calculate hcf</strong>, you can use prime factorization,
+                            Euclidean division, or listing. For any two numbers, the product divided by the LCM gives
+                            the HCF.</div>
+                    </div>
+                </article>
+            </div>
+        </div>
+        <div id="related-calculators"></div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div>
+                <span class="logo" style="display:block; margin-bottom:10px;">FairCalculator</span>
+                <p>Simple, fast, and accurate online tools for math, finance, and daily life.</p>
+            </div>
+            <div>
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="../../index.html">Home</a></li>
+                    <li><a href="../../about.html">About Us</a></li>
+                    <li><a href="../../contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="../../legal/privacy-policy.html">Privacy</a></li>
+                    <li><a href="../../legal/terms-of-service.html">Terms</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">&copy; 2026 FairCalculator. All rights reserved.</div>
+    </footer>
+
+    <!-- SCRIPTS -->
+    <script>var ROOT_PATH = '../../';</script>
+    <script src="../../assets/js/data.js"></script>
+    <script src="../../assets/js/search.js"></script>
+    <script src="../../assets/js/mobile-menu.js"></script>
+
+    <script>
+        // --- HCF Logic ---
+        function parseNumbers(input) {
+            if (!input.trim()) return [];
+            const parts = input.trim().split(/[\s,;]+/);
+            const numbers = [];
+            for (let p of parts) {
+                const n = Number(p);
+                if (isNaN(n) || !Number.isInteger(n) || n <= 0) return null;
+                numbers.push(n);
+            }
+            return numbers;
+        }
+
+        function gcd(a, b) {
+            a = Math.abs(a); b = Math.abs(b);
+            while (b) { let t = b; b = a % b; a = t; }
+            return a || 0;
+        }
+
+        function getFactors(n) {
+            const factors = [];
+            for (let i = 1; i <= n; i++) if (n % i === 0) factors.push(i);
+            return factors;
+        }
+
+        function getPrimeFactors(n) {
+            const factors = [];
+            let d = 2;
+            let temp = n;
+            while (temp % d === 0) { factors.push(d); temp /= d; }
+            d = 3;
+            while (d * d <= temp) {
+                while (temp % d === 0) { factors.push(d); temp /= d; }
+                d += 2;
+            }
+            if (temp > 1) factors.push(temp);
+            return factors;
+        }
+
+        function isPrime(n) {
+            if (n < 2) return false;
+            for (let i = 2; i * i <= n; i++) if (n % i === 0) return false;
+            return true;
+        }
+
+        function getNextPrime(p) {
+            let next = p + 1;
+            while (!isPrime(next)) next++;
+            return next;
+        }
+
+        function escapeHTML(str) {
+            return String(str).replace(/[&<>"']/g, m => ({
+                '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+            }[m]));
+        }
+
+        function createTable(headers, rows) {
+            let html = '<table class="hcf-table"><thead><tr>';
+            headers.forEach(h => html += `<th>${escapeHTML(h)}</th>`);
+            html += '</tr></thead><tbody>';
+            rows.forEach(r => {
+                html += '<tr>';
+                r.forEach(c => {
+                    if (typeof c === 'string' && c.includes('<span')) {
+                        html += `<td>${c}</td>`;
+                    } else {
+                        html += `<td>${escapeHTML(c)}</td>`;
+                    }
+                });
+                html += '</tr>';
+            });
+            html += '</tbody></table>';
+            return html;
+        }
+
+        // --- Methods ---
+        function euclideanMethod(numbers) {
+            if (numbers.length === 2) {
+                const steps = [];
+                let a = Math.max(numbers[0], numbers[1]);
+                let b = Math.min(numbers[0], numbers[1]);
+                while (b) {
+                    let r = a % b;
+                    let q = Math.floor(a / b);
+                    steps.push(`${a} = ${b} × ${q} + ${r}`);
+                    a = b;
+                    b = r;
+                }
+                return { hcf: a, steps, isPair: true };
+            } else {
+                let res = numbers[0];
+                const steps = [];
+                for (let i = 1; i < numbers.length; i++) {
+                    const prevRes = res;
+                    const nextNum = numbers[i];
+                    res = gcd(res, nextNum);
+                    steps.push(`GCD(${prevRes}, ${nextNum}) = ${res}`);
+                }
+                return { hcf: res, steps, isPair: false };
+            }
+        }
+
+        function primeFactorization(numbers) {
+            const map = {};
+            const factorsList = numbers.map(n => {
+                const f = getPrimeFactors(n);
+                const counts = {};
+                f.forEach(p => counts[p] = (counts[p] || 0) + 1);
+                return { n, counts, factors: f };
+            });
+
+            // Find common primes
+            const firstCounts = factorsList[0].counts;
+            const commonPrimes = {};
+            for (let p in firstCounts) {
+                let minPower = firstCounts[p];
+                let isCommon = true;
+                for (let i = 1; i < factorsList.length; i++) {
+                    if (!factorsList[i].counts[p]) {
+                        isCommon = false;
+                        break;
+                    }
+                    minPower = Math.min(minPower, factorsList[i].counts[p]);
+                }
+                if (isCommon) commonPrimes[p] = minPower;
+            }
+
+            let hcf = 1;
+            const parts = [];
+            for (let p in commonPrimes) {
+                hcf *= Math.pow(parseInt(p), commonPrimes[p]);
+                parts.push(commonPrimes[p] > 1 ? `${p}<sup>${commonPrimes[p]}</sup>` : p);
+            }
+            return { hcf, factorsList, commonPrimes, parts };
+        }
+
+        function listingMethod(numbers) {
+            const allFactors = numbers.map(n => ({ n, list: getFactors(n) }));
+            const firstList = allFactors[0].list;
+            const common = firstList.filter(f => allFactors.every(item => item.list.includes(f)));
+            return { hcf: Math.max(...common), allFactors, common };
+        }
+
+        function cakeMethod(numbers) {
+            let working = [...numbers];
+            const primes = [];
+            const steps = [];
+            let p = 2;
+            const MAX_ITERATIONS = 2000;
+            let iterations = 0;
+
+            while (iterations < MAX_ITERATIONS) {
+                iterations++;
+                const allDivisible = working.every(n => n % p === 0);
+                if (allDivisible) {
+                    const before = [...working];
+                    working = working.map(n => n / p);
+                    if (steps.length < 50) {
+                        steps.push({ p, before, after: [...working] });
+                    }
+                    primes.push(p);
+                } else {
+                    p = getNextPrime(p);
+                    // For HCF, if any number becomes 1 or smaller than p, no more common factors exist
+                    if (working.some(n => n <= 1 || p > n)) break;
+                }
+            }
+            const hcf = primes.reduce((a, b) => a * b, 1);
+            return { hcf, steps, final: working, primes, isStepCapped: (steps.length >= 50) };
+        }
+
+        // --- Controller ---
+        function calculateHCF() {
+            const error = document.getElementById('hcfError');
+            const resultDiv = document.getElementById('hcfResult');
+            const stepsDiv = document.getElementById('hcfSteps');
+            const stepsContent = document.getElementById('stepsContent');
+
+            error.style.display = 'none';
+            const inputVal = document.getElementById('hcfNumbers').value;
+            const numbers = parseNumbers(inputVal);
+            const method = document.getElementById('hcfMethod').value;
+
+            if (numbers === null) {
+                error.textContent = 'Only positive integers are allowed. Please check your input.';
+                error.style.display = 'block';
+                return;
+            }
+            if (numbers.length < 2) {
+                error.textContent = 'Please enter at least two positive integers.';
+                error.style.display = 'block';
+                return;
+            }
+            // Performance limits
+            if (numbers.length > 50) {
+                error.textContent = 'Too many numbers. Limit to 50.';
+                error.style.display = 'block';
+                return;
+            }
+            if (numbers.some(n => n > 10000000)) {
+                error.textContent = 'Numbers too large. Limit to 10,000,000.';
+                error.style.display = 'block';
+                return;
+            }
+
+            let res;
+            let html = '';
+
+            try {
+                switch (method) {
+                    case 'euclidean':
+                        res = euclideanMethod(numbers);
+                        html = `<div class="hcf-step"><h3><i class="fas fa-microchip"></i> Euclidean Algorithm</h3>`;
+                        if (res.isPair) {
+                            html += `<p>Repeated division until remainder is zero:</p><ul style="line-height:1.8;">`;
+                            res.steps.forEach(s => html += `<li>${s}</li>`);
+                            html += `</ul><p>The last non-zero remainder is <span class="highlight">${res.hcf}</span>.</p>`;
+                        } else {
+                            html += `<p>Applying GCD iteratively across the set:</p><ul>`;
+                            res.steps.forEach(s => html += `<li>${s}</li>`);
+                            html += `</ul><p>Final HCF is <span class="highlight">${res.hcf}</span>.</p>`;
+                        }
+                        html += `</div>`;
+                        break;
+                    case 'prime':
+                        res = primeFactorization(numbers);
+                        html = `<div class="hcf-step"><h3><i class="fas fa-atom"></i> Prime Factorization</h3>`;
+                        const tableRows = res.factorsList.map(item => {
+                            return [item.n, item.factors.join(' × ')];
+                        });
+                        html += createTable(['Number', 'Prime Factors'], tableRows);
+                        html += `<p><strong>Common Primes with lowest powers:</strong> `;
+                        if (res.parts.length) {
+                            html += `${res.parts.join(' × ')} = ${res.hcf}</p>`;
+                        } else {
+                            html += `None. HCF = 1</p>`;
+                        }
+                        html += `</div>`;
+                        break;
+                    case 'listing':
+                        if (numbers.some(n => n > 100000)) {
+                            html = `<div class="hcf-error" style="display:block;">Listing method is slow for numbers > 100,000. Using Prime Factorization instead.</div>`;
+                            res = primeFactorization(numbers);
+                            // Fallback rendering similar to prime case or just show warning
+                        }
+                        res = listingMethod(numbers);
+                        html += `<div class="hcf-step"><h3><i class="fas fa-list-ol"></i> Listing Factors</h3>`;
+                        res.allFactors.forEach(item => {
+                            html += `<p>Factors of ${item.n}: ${item.list.slice(0, 15).join(', ')}${item.list.length > 15 ? '...' : ''}</p>`;
+                        });
+                        html += `<p>Common Factors: ${res.common.join(', ')}</p>`;
+                        html += `<p>Highest Common Factor: <span class="highlight">${res.hcf}</span></p></div>`;
+                        break;
+                    case 'cake':
+                        res = cakeMethod(numbers);
+                        html = `<div class="hcf-step"><h3><i class="fas fa-layer-group"></i> Cake Method</h3>
+                                <p>Divide by factors common to ALL numbers.</p>`;
+                        if (res.steps.length) {
+                            html += createTable(['Step', 'Divisor', 'Remaining numbers'],
+                                res.steps.map((s, i) => [i + 1, `<span class="highlight">${s.p}</span>`, s.after.join(', ')]));
+                            html += `<p><strong>HCF = ${res.primes.join(' × ')} = ${res.hcf}</strong></p>`;
+                        } else {
+                            html += `<p>No common divisors found (other than 1). HCF = 1</p>`;
+                        }
+                        html += `</div>`;
+                        break;
+                    default:
+                        const simpleGcd = numbers.reduce((a, b) => gcd(a, b));
+                        res = { hcf: simpleGcd };
+                        html = `<p>Calculation complete using standard formula.</p>`;
+                }
+
+                document.getElementById('hcfValue').textContent = res.hcf;
+                stepsContent.innerHTML = html;
+                resultDiv.style.display = 'block';
+                stepsDiv.style.display = 'block';
+                resultDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            } catch (e) {
+                error.textContent = 'Computation error: ' + e.message;
+                error.style.display = 'block';
+            }
+        }
+
+        function clearCalculator() {
+            document.getElementById('hcfNumbers').value = '';
+            document.getElementById('hcfError').style.display = 'none';
+            document.getElementById('hcfResult').style.display = 'none';
+            document.getElementById('hcfSteps').style.display = 'none';
+        }
+    </script>
+
+    </div><!-- .calculator-wrapper -->
+    </div><!-- .container -->
+    <div id="related-calculators"></div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <span
+                        style="font-weight: 800; font-size: 1.2rem; display:block; margin-bottom:10px; color:var(--text-main);">FairCalculator</span>
+                    <p>Simple, fast, and accurate online calculators.</p>
+                </div>
+                <div>
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="../../index.html">Home</a></li>
+                        <li><a href="../../about.html">About Us</a></li>
+                        <li><a href="../../contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="../../legal/privacy-policy.html">Privacy</a></li>
+                        <li><a href="../../legal/terms-of-service.html">Terms</a></li>
+                        <li><a href="../../legal/disclaimer.html">Disclaimer</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2026 FairCalculator. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- SCRIPTS -->
+    <script src="../../assets/js/data.js"></script>
+    <script src="../../assets/js/search.js"></script>
+    <script src="../../assets/js/mobile-menu.js"></script>
+    <script src="../../assets/js/related-calculators.js" defer></script>
+</body>
+
+</html>

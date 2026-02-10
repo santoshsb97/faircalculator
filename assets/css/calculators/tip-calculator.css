@@ -1,0 +1,339 @@
+:root {
+    --primary: #4f46e5;
+    --primary-hover: #4338ca;
+    --bg-light: #f8fafc;
+    --card-bg: #ffffff;
+    --text-main: #0f172a;
+    --text-muted: #64748b;
+    --border-color: #e2e8f0;
+    --input-bg: #f8fafc;
+    --success: #10b981;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background-color: var(--bg-light);
+    color: var(--text-main);
+    line-height: 1.6;
+    padding: 20px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.calculator-card {
+    background: var(--card-bg);
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--border-color);
+    margin-bottom: 2rem;
+}
+
+.header-section {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.header-section h1 {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--text-main);
+    margin-bottom: 0.5rem;
+}
+
+.header-section p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+/* Form Styling */
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.input-with-icon {
+    position: relative;
+}
+
+.input-with-icon i {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-muted);
+}
+
+.input-field {
+    width: 100%;
+    padding: 0.8rem 1rem 0.8rem 2.5rem;
+    border: 1.5px solid var(--border-color);
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    background: var(--input-bg);
+    transition: all 0.2s;
+}
+
+.input-field:focus {
+    outline: none;
+    border-color: var(--primary);
+    background: #fff;
+    box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.1);
+}
+
+/* Tip Buttons Grid */
+.tip-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-bottom: 1rem;
+}
+
+.tip-btn {
+    background: #f1f5f9;
+    border: 1.5px solid var(--border-color);
+    padding: 0.75rem;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    color: var(--text-muted);
+}
+
+.tip-btn:hover {
+    background: #e2e8f0;
+}
+
+.tip-btn.active {
+    background: var(--primary);
+    color: white;
+    border-color: var(--primary);
+}
+
+.custom-tip-container {
+    margin-top: 10px;
+}
+
+/* Calculate Button */
+.calc-btn {
+    width: 100%;
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 1.1rem;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 1rem;
+}
+
+.calc-btn:hover {
+    background: var(--primary-hover);
+    transform: translateY(-1px);
+}
+
+.calc-btn:active {
+    transform: translateY(0);
+}
+
+/* Results Styling (Refined Breakdown) */
+.results-section {
+    display: none;
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 2px dashed #e2e8f0;
+    animation: slideUp 0.4s ease-out;
+}
+
+.result-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background: #f8fafc;
+    border-radius: 12px;
+    margin-bottom: 0.75rem;
+    border: 1px solid #e2e8f0;
+}
+
+.result-label {
+    font-weight: 500;
+    color: #64748b;
+}
+
+.result-value {
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: #0f172a;
+}
+
+.result-row.tip-row .result-value {
+    color: #10b981;
+}
+
+.total-row {
+    background: #fffafa;
+    border: 1px solid #fee2e2;
+    margin-bottom: 1.5rem;
+}
+
+.total-row .result-label {
+    color: #ef4444;
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+.total-row .result-value {
+    color: #ef4444;
+    font-size: 1.8rem;
+    font-weight: 800;
+}
+
+.split-header {
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #64748b;
+    margin: 1.5rem 0 0.75rem;
+    display: block;
+}
+
+.per-person-row {
+    background: #eff6ff;
+    border: 1px solid #dbeafe;
+}
+
+.per-person-row .result-label {
+    color: #2563eb;
+    font-weight: 700;
+}
+
+.per-person-row .result-value {
+    color: #2563eb;
+}
+
+/* SEO Content */
+.content-section {
+    margin-top: 3rem;
+    color: var(--text-main);
+}
+
+.content-section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.content-section h3 {
+    font-size: 1.2rem;
+    margin: 1.5rem 0 0.75rem;
+    font-weight: 600;
+}
+
+.content-section p {
+    margin-bottom: 1rem;
+    color: #475569;
+}
+
+/* FAQ Section */
+.faq-section {
+    margin-top: 3rem;
+}
+
+.faq-item {
+    background: white;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 1.25rem;
+    margin-bottom: 1rem;
+}
+
+.faq-question {
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: var(--text-main);
+}
+
+.faq-answer {
+    color: #475569;
+    font-size: 0.95rem;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 480px) {
+    .tip-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .calculator-card {
+        padding: 1.5rem;
+    }
+
+    .header-section h1 {
+        font-size: 1.5rem;
+    }
+}
+
+/* Tables */
+.tip-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+}
+
+.tip-table th {
+    background: var(--bg-light);
+    text-align: left;
+    padding: 12px 15px;
+    font-weight: 700;
+    color: var(--text-main);
+    border-bottom: 2px solid var(--border-color);
+}
+
+.tip-table td {
+    padding: 12px 15px;
+    border-bottom: 1px solid var(--border-color);
+    color: #475569;
+}
+
+.tip-table tr:hover {
+    background: #f8fafc;
+}

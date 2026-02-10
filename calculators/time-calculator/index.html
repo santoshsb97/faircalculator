@@ -1,0 +1,300 @@
+﻿<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Free Time Calculator. Use our fast, accurate tool to simplify date & time calculations. Get precise results and expert guidance on Fair Calculator.">
+    <link rel="canonical" href="https://www.faircalculator.com/calculators/time-calculator/">
+
+    <!-- Preload Critical Assets -->
+    <link rel="preload" href="../../assets/css/style.css" as="style">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        as="style">
+
+    <!-- Preconnect to CDNs -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <title>Time Calculator - Add or Subtract Time</title>
+
+    <!-- GLOBAL ASSETS -->
+    <link rel="icon" type="image/x-icon" href="../../assets/images/favicon.png">
+    <link rel="stylesheet" href="../../assets/css/style.css">
+
+    <!-- Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome (Non-blocking) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        media="print" onload="this.media='all'">
+    <noscript>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    </noscript>
+
+    <!-- Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Time Calculator",
+      "description": "Add or subtract duration from a time.",
+      "applicationCategory": "mDateCalculator",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    }
+    </script>
+
+    <!-- WIDGET SPECIFIC CSS -->
+    <link rel="preload" href="../../assets/css/calculators/time-calculator.css" as="style">
+    <link rel="stylesheet" href="../../assets/css/calculators/time-calculator.css">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BVENYYJ869"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-BVENYYJ869');
+    </script>
+    <script type="text/javascript">
+        (function (c, l, a, r, i, t, y) {
+            c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+            t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+            y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+        })(window, document, "clarity", "script", "udqk27trde");
+    </script>
+</head>
+
+<body>
+    <!-- HEADER -->
+    <header class="header">
+        <div class="container header-inner">
+            <a href="../../index.html" class="logo">FairCalculator</a>
+            <div class="header-search"><input type="text" id="searchInput" class="search-input"
+                    placeholder="Search tools..."></div>
+            <button class="menu-btn" id="menuToggle"><i class="fas fa-bars"></i></button>
+        </div>
+    </header>
+
+    <!-- CATEGORY BAR -->
+    <nav class="category-bar">
+        <div class="container">
+            <ul id="category-list">
+                <li><a href="../../index.html">All</a></li>
+                <li><a href="../../categories/finance-calculators.html">Finance</a></li>
+                <li><a href="../../categories/math-calculators.html">Math</a></li>
+                <li><a href="../../categories/health-calculators.html">Health</a></li>
+                <li><a href="../../categories/date-time-calculators.html"
+                        style="background:#eff6ff; color:#2563eb; border-color:#bfdbfe;">Date</a></li>
+                <li><a href="../../categories/unit-converters.html">Converters</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="mobile-close" id="closeMenu">&times;</button>
+        <div style="margin-top: 40px;">
+            <ul class="sidebar-list">
+                <li><a href="../../index.html">Home</a></li>
+                <li><a href="../../index.html#calculators">All Calculators</a></li>
+                <li><a href="../../about.html">About</a></li>
+                <li><a href="../../contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+        <div class="container">
+            <div style="margin-bottom: 20px; font-size: 0.9rem; color: #64748b;">
+                <a href="../../index.html" style="text-decoration: underline;">Home</a> /
+                <a href="../../categories/date-time-calculators.html" style="text-decoration: underline;">Date</a> /
+                <span style="font-weight: 600; color: #0f172a;">Time Calculator</span>
+            </div>
+
+            <div id="searchResults" style="display:none; margin-bottom: 40px;">
+                <div class="section-header">Search Results</div>
+                <div class="grid" id="searchResultsContent"></div>
+            </div>
+
+            <div class="calculator-wrapper" id="tool-container">
+                <header class="section-header-custom">
+                    <h1><i class="fas fa-clock" aria-hidden="true"></i> Time Calculator</h1>
+                    <p style="font-size: 1rem; color: #64748b; font-weight: 400; margin-top: 0.5rem;">
+                        Add or subtract hours, minutes, and seconds perfectly.
+                    </p>
+                </header>
+
+                <div class="calc-card">
+                    <form id="timeForm" onsubmit="return false;">
+                        <div class="form-grid">
+                            <div class="input-group">
+                                <label>Start Date</label>
+                                <div class="select-row">
+                                    <select id="startMonth" aria-label="Start Month"></select>
+                                    <select id="startDay" aria-label="Start Day"></select>
+                                    <select id="startYear" aria-label="Start Year"></select>
+                                </div>
+                            </div>
+
+                            <div class="input-group">
+                                <label for="startTime">Start Time</label>
+                                <input type="time" id="startTime" class="input-field">
+                            </div>
+
+                            <div class="input-group">
+                                <label for="operation">Operation</label>
+                                <select id="operation" class="input-field">
+                                    <option value="add">Add (+)</option>
+                                    <option value="sub">Subtract (-)</option>
+                                </select>
+                            </div>
+
+                            <div class="input-group">
+                                <label>Duration to Add/Subtract</label>
+                                <div class="time-grid">
+                                    <input type="number" id="durHours" class="input-field" placeholder="Hours" min="0">
+                                    <input type="number" id="durMinutes" class="input-field" placeholder="Minutes"
+                                        min="0">
+                                    <input type="number" id="durSeconds" class="input-field" placeholder="Seconds"
+                                        min="0">
+                                </div>
+                            </div>
+                        </div>
+
+                        <button id="calculateBtn" class="calculate-btn">
+                            Calculate New Time <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </form>
+
+                    <!-- Results Wrapper -->
+                    <div id="resultContainer" class="results-wrapper">
+                        <div class="main-result">
+                            <div class="hero-value" id="resultTime">--</div>
+                            <div class="sub-value" id="resultDate">--</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SEO Content -->
+                <div class="info-section">
+                    <h2><i class="fas fa-book-open" style="color: #f97316; margin-right: 15px;"></i>The Ultimate Guide
+                        to
+                        Time Calculation</h2>
+                    <p>Time is one of the most fundamental dimensions we measure daily, yet adding and subtracting
+                        durations can be surprisingly tricky due to our base-60 (sexagesimal) system for minutes and
+                        seconds. Our <strong>Time Calculator</strong> simplifies these calculations, allowing you to
+                        accurately bridge time gaps for projects, travel, or personal planning.</p>
+
+                    <div
+                        style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin: 30px 0;">
+                        <div
+                            style="background: #fff8f1; padding: 25px; border-radius: 12px; border: 1px solid #fed7aa;">
+                            <h3 style="color: #ea580c; margin-bottom: 15px; font-size: 1.2rem;">How to Use This Tool
+                            </h3>
+                            <ul style="padding-left: 20px; color: #475569; font-size: 0.95rem; line-height: 1.8;">
+                                <li><strong>Set Start:</strong> Pick your base date and time.</li>
+                                <li><strong>Pick Operation:</strong> Choose to add or subtract duration.</li>
+                                <li><strong>Enter Duration:</strong> Input hours, minutes, and seconds.</li>
+                                <li><strong>Instant Result:</strong> Get the precise new timestamp automatically.</li>
+                            </ul>
+                        </div>
+                        <div
+                            style="background: #f0fdf4; padding: 25px; border-radius: 12px; border: 1px solid #bbf7d0;">
+                            <h3 style="color: #166534; margin-bottom: 15px; font-size: 1.2rem;">Common Use Cases</h3>
+                            <ul style="padding-left: 20px; color: #1e3a1d; font-size: 0.95rem; line-height: 1.8;">
+                                <li><strong>Project Deadlines:</strong> Calculate exactly when a 48-hour sprint ends.
+                                </li>
+                                <li><strong>Shift Planning:</strong> Determine end times for non-traditional working
+                                    hours.</li>
+                                <li><strong>Cooking/Baking:</strong> Add multi-hour resting periods to current time.
+                                </li>
+                                <li><strong>Travel Arrivals:</strong> Add flight or drive durations to departure times.
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <h3 style="color: var(--text-main); margin-bottom: 15px;">Understanding the Math of Time</h3>
+                    <p>Calculations involving time aren't as straightforward as traditional decimal math. For example,
+                        adding 45 minutes to 1:30 doesn't result in 1:75, but rather 2:15. This is because every 60
+                        units of a smaller denomination (seconds/minutes) "carries over" to the next larger unit.</p>
+                    <p>Our tool handles these carry-overs automatically, ensuring that leap years, varying month
+                        lengths, and midnight crossovers are handled with mathematical precision.</p>
+
+                    <h2 style="margin-top: 40px; border-top: 2px solid #f1f5f9; padding-top: 30px;"><i
+                            class="fas fa-question-circle" style="color: #3b82f6; margin-right: 15px;"></i>Frequently
+                        Asked Questions</h2>
+
+                    <div style="margin-top: 20px;">
+                        <div style="margin-bottom: 25px; border-bottom: 1px solid #f1f5f9; padding-bottom: 15px;">
+                            <h4 style="color: var(--text-main); margin-bottom: 8px;">Does this handle AM/PM and 24-hour
+                                formats?</h4>
+                            <p style="color: var(--text-muted); font-size: 0.95rem;">Yes! The input uses your browser's
+                                native time picker, and the result is displayed in a clear, localized format that adapts
+                                to your system's preferences.</p>
+                        </div>
+                        <div style="margin-bottom: 25px; border-bottom: 1px solid #f1f5f9; padding-bottom: 15px;">
+                            <h4 style="color: var(--text-main); margin-bottom: 8px;">Can I subtract time from the past?
+                            </h4>
+                            <p style="color: var(--text-muted); font-size: 0.95rem;">Absolutely. By selecting the
+                                "Subtract" operation, you can calculate historic timestamps by removing a specific
+                                duration from any given starting point.</p>
+                        </div>
+                        <div style="margin-bottom: 25px;">
+                            <h4 style="color: var(--text-main); margin-bottom: 8px;">Is Daylight Savings Time (DST)
+                                taken into account?</h4>
+                            <p style="color: var(--text-muted); font-size: 0.95rem;">Our calculator uses standard UTC
+                                offsets to perform addition and subtraction. For mission-critical scheduling across DST
+                                transitions, always double-check local local laws as these change by region.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="related-calculators"></div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <span
+                        style="font-weight: 800; font-size: 1.2rem; display:block; margin-bottom:10px; color:var(--text-main);">FairCalculator</span>
+                    <p>Simple, fast, and accurate online calculators.</p>
+                </div>
+                <div>
+                    <h4>Menu</h4>
+                    <ul>
+                        <li><a href="../../index.html">Home</a></li>
+                        <li><a href="../../about.html">About Us</a></li>
+                        <li><a href="../../contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="../../legal/privacy-policy.html">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">&copy; 2025 FairCalculator. All rights reserved.</div>
+        </div>
+    </footer>
+
+    <!-- SCRIPTS -->
+    <script>var ROOT_PATH = '../../';</script>
+    <script src="../../assets/js/data.js"></script>
+    <script src="../../assets/js/search.js"></script>
+    <script src="../../assets/js/mobile-menu.js"></script>
+
+
+    <script src="../../assets/js/calculators/time-calculator.js" defer></script>
+    <script src="../../assets/js/related-calculators.js" defer></script>
+</body>
+
+</html>

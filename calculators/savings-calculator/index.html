@@ -1,0 +1,396 @@
+﻿<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Savings Calculator | See Your After-Tax Compound Growth</title>
+    <meta name="description"
+        content="Free Savings Calculator. Use our fast, accurate tool to simplify finance calculations. Get precise results and expert guidance on Fair Calculator.">
+    <link rel="canonical" href="https://www.faircalculator.com/calculators/savings-calculator/">
+
+    <!-- Preload Critical Assets -->
+    <link rel="preload" href="../../assets/css/style.css" as="style">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        as="style">
+
+    <!-- Preconnect to CDNs -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+
+    <!-- GLOBAL ASSETS -->
+    <link rel="icon" type="image/x-icon" href="../../assets/images/favicon.png">
+    <link rel="stylesheet" href="../../assets/css/style.css">
+
+    <!-- Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome (Non-blocking) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        media="print" onload="this.media='all'">
+    <noscript>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    </noscript>
+
+    <!-- SEO: SCHEMA MARKUP -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Tax-Adjusted Savings Calculator",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "Any",
+        "description": "Calculate future savings value factoring in compound interest and tax. View detailed accumulation schedule.",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+        "featureList": ["After-tax calculation", "Monthly/Yearly Schedule", "CSV Export", "Inflation Insights"]
+    }
+    </script>
+
+    <!-- 2. WIDGET SPECIFIC CSS -->
+    <link rel="preload" href="../../assets/css/calculators/savings-calculator.css" as="style">
+    <link rel="stylesheet" href="../../assets/css/calculators/savings-calculator.css">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BVENYYJ869"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-BVENYYJ869');
+    </script>
+    <script type="text/javascript">
+        (function (c, l, a, r, i, t, y) {
+            c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+            t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+            y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+        })(window, document, "clarity", "script", "udqk27trde");
+    </script>
+</head>
+
+<body>
+
+    <!-- 3. HEADER -->
+    <header class="header">
+        <div class="container header-inner">
+            <a href="../../index.html" class="logo">FairCalculator</a>
+            <div class="header-search">
+                <input type="text" id="searchInput" class="search-input" placeholder="Search tools..."
+                    aria-label="Search">
+            </div>
+            <button class="menu-btn" id="menuToggle"><i class="fas fa-bars"></i></button>
+        </div>
+    </header>
+
+    <!-- 4. CATEGORY BAR -->
+    <nav class="category-bar">
+        <div class="container">
+            <ul id="category-list">
+                <li><a href="../../index.html">All</a></li>
+                <li><a href="../../categories/finance-calculators.html"
+                        style="background:#eff6ff; color:#2563eb; border-color:#bfdbfe;">Finance</a></li>
+                <li><a href="../../categories/math-calculators.html">Math</a></li>
+                <li><a href="../../categories/health-calculators.html">Health</a></li>
+                <li><a href="../../categories/date-time-calculators.html">Date</a></li>
+                <li><a href="../../categories/unit-converters.html">Converters</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="mobile-close" id="closeMenu">&times;</button>
+        <div style="margin-top: 40px;">
+            <ul class="sidebar-list">
+                <li><a href="../../index.html">Home</a></li>
+                <li><a href="../../index.html#calculators">All Calculators</a></li>
+                <li><a href="../../about.html">About</a></li>
+                <li><a href="../../contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- 5. MAIN CONTENT -->
+    <main class="main-content">
+        <div class="container">
+
+            <!-- Breadcrumbs -->
+            <div style="margin-bottom: 20px; font-size: 0.9rem; color: #64748b;">
+                <a href="../../index.html" style="text-decoration: underline;">Home</a> /
+                <a href="../../categories/finance-calculators.html" style="text-decoration: underline;">Finance</a> /
+                <span style="font-weight: 600; color: #0f172a;">Savings</span>
+            </div>
+
+            <!-- Search Results Placeholder -->
+            <div id="searchResults" style="display:none; margin-bottom: 40px;">
+                <div class="section-header">Search Results</div>
+                <div class="grid" id="searchResultsContent"></div>
+            </div>
+
+            <!-- TOOL CONTAINER -->
+            <div class="savings-app-wrapper" id="tool-container">
+
+                <h1 class="section-header"
+                    style="justify-content:center; font-size: 2rem; margin-bottom: 30px; border-bottom: none;">
+                    <i class="fas fa-piggy-bank" style="color: #10b981; margin-right: 15px;"></i> Tax-Adjusted Savings
+                    Calculator
+                </h1>
+
+                <div class="calculator-section">
+                    <!-- Input Panel -->
+                    <div class="input-panel">
+                        <h2><i class="fas fa-sliders-h"></i> Input Details</h2>
+
+                        <div class="input-grid-row">
+                            <div class="input-group">
+                                <label for="initial">Initial Deposit ($)</label>
+                                <input type="number" id="initial" placeholder="e.g., 5000" value="5000" min="0"
+                                    step="100">
+                                <div class="input-helper">Starting amount</div>
+                            </div>
+
+                            <div class="input-group">
+                                <label for="monthly">Monthly Deposit ($)</label>
+                                <input type="number" id="monthly" placeholder="e.g., 200" value="200" min="0" step="10">
+                                <div class="input-helper">Saved per month</div>
+                            </div>
+                        </div>
+
+                        <div class="input-grid-row">
+                            <div class="input-group">
+                                <label for="yearly">Annual Deposit ($)</label>
+                                <input type="number" id="yearly" placeholder="e.g., 1000" value="0" min="0" step="100">
+                                <div class="input-helper">Extra yearly savings</div>
+                            </div>
+
+                            <div class="input-group">
+                                <label for="years">Time Period (Years)</label>
+                                <input type="number" id="years" placeholder="e.g., 10" value="10" min="1" max="50">
+                                <div class="input-helper">Duration</div>
+                            </div>
+                        </div>
+
+                        <div class="input-grid-row">
+                            <div class="input-group">
+                                <label for="rate">Annual Interest (%)</label>
+                                <input type="number" id="rate" placeholder="e.g., 5" value="5" min="0" step="0.1">
+                                <div class="input-helper">Expected return</div>
+                            </div>
+
+                            <div class="input-group">
+                                <label for="tax-rate">Tax Rate on Interest (%)</label>
+                                <input type="number" id="tax-rate" placeholder="e.g., 25" value="25" min="0" max="99"
+                                    step="0.1">
+                                <div class="input-helper">Reduces earnings</div>
+                            </div>
+                        </div>
+
+                        <div class="input-group">
+                            <label for="compound">Compounding Frequency</label>
+                            <select id="compound">
+                                <option value="365">Daily</option>
+                                <option value="52">Weekly</option>
+                                <option value="26">Bi-Weekly</option>
+                                <option value="24">Semi-Monthly</option>
+                                <option value="12" selected>Monthly</option>
+                                <option value="4">Quarterly</option>
+                                <option value="2">Semi-Annually</option>
+                                <option value="1">Annually</option>
+                            </select>
+                        </div>
+
+                        <button class="calc-btn" onclick="calculateSavings()">
+                            <i class="fas fa-calculator"></i> Calculate Growth
+                        </button>
+                    </div>
+
+                    <!-- Results Panel (Sticky on Desktop) -->
+                    <div class="results-panel-wrapper">
+                        <div class="results-panel" id="results">
+                            <h2><i class="fas fa-chart-line"></i> Projections</h2>
+
+                            <div class="result-card">
+                                <div class="result-label">Total Savings (After Tax)</div>
+                                <div class="result-value" id="total-value">$0.00</div>
+                                <div class="result-detail" id="total-detail">After <span id="result-years">10</span>
+                                    years</div>
+                            </div>
+
+                            <div class="result-card">
+                                <div class="result-label">Net Interest Earned</div>
+                                <div class="result-value" id="interest-value">$0.00</div>
+                                <div class="result-detail" id="interest-detail">Compound interest after tax</div>
+                            </div>
+
+                            <div class="result-card">
+                                <div class="result-label">Total Contributions</div>
+                                <div class="result-value" id="contributions-value">$0.00</div>
+                                <div class="result-detail" id="contributions-detail">Your total deposits</div>
+                            </div>
+
+                            <div class="breakdown-chart">
+                                <h3 style="margin-bottom: 15px; font-size: 1em; color:white; opacity:0.9;">Breakdown
+                                </h3>
+
+                                <div class="chart-bar">
+                                    <div class="chart-label">
+                                        <span>Principal</span>
+                                        <span id="chart-contributions-percent">0%</span>
+                                    </div>
+                                    <div class="chart-progress">
+                                        <div class="chart-fill" id="chart-contributions" style="width: 0%"></div>
+                                    </div>
+                                </div>
+
+                                <div class="chart-bar">
+                                    <div class="chart-label">
+                                        <span>Interest (After Tax)</span>
+                                        <span id="chart-interest-percent">0%</span>
+                                    </div>
+                                    <div class="chart-progress">
+                                        <div class="chart-fill interest" id="chart-interest" style="width: 0%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Schedule Section -->
+                <div class="info-section" id="schedule-section">
+                    <h2><i class="fas fa-calendar-alt"></i> Accumulation Schedule</h2>
+                    <div class="schedule-header">
+                        <p style="margin:0; color:var(--text-gray);">Detailed growth over time.</p>
+                        <div class="schedule-controls">
+                            <button id="view-monthly" class="active"
+                                onclick="displaySchedule('monthly', this)">Monthly</button>
+                            <button id="view-yearly" onclick="displaySchedule('yearly', this)">Yearly</button>
+                            <button id="download-csv" onclick="downloadCSV()"><i class="fas fa-download"></i>
+                                CSV</button>
+                        </div>
+                    </div>
+                    <div class="schedule-table-container">
+                        <table class="schedule-table">
+                            <thead>
+                                <tr id="schedule-header-row"></tr>
+                            </thead>
+                            <tbody id="schedule-table-body"></tbody>
+                        </table>
+                    </div>
+                </div>
+
+
+                <!-- Engaging SEO Guide -->
+                <div class="info-section">
+                    <h2>Master Your Savings Goals</h2>
+                    <article>
+                        <h3>The Secret to Growing Your Money</h3>
+                        <p>We all know we <em>should</em> save, but seeing the numbers makes it real. Whether you are
+                            saving for a dream vacation, a down payment on a house, or just a rainy day, the key isn't
+                            just how much you save—it's how long you let it grow.</p>
+                        <p>This calculator does more than just add up your deposits. It shows you the powerful effect of
+                            <strong>compound interest</strong>—earning interest on your interest. It also factors in
+                            taxes, so you don't get a surprise bill from the taxman when you withdraw your money.
+                        </p>
+
+                        <h3>How to Maximize Your Results</h3>
+                        <ol>
+                            <li><strong>Start Early:</strong> Time is your best friend. A small amount saved today is
+                                worth more than a large amount saved ten years from now on.</li>
+                            <li><strong>Be Consistent:</strong> Setting up an automatic monthly transfer (even $50!)
+                                removes the willpower battle. It just happens.</li>
+                            <li><strong>Watch the Tax Rate:</strong> Many people forget this. If you're in a high-yield
+                                savings account, you likely owe income tax on that interest. Our calculator helps you
+                                see your <em>real</em> take-home profit.</li>
+                        </ol>
+
+                        <h3>Real-Life Example</h3>
+                        <div class="highlight-box">
+                            <p>Imagine you save <strong>$200 a month</strong> for <strong>30 years</strong> with a
+                                <strong>7%</strong> return:
+                            </p>
+                            <ul>
+                                <li><strong>What you put in:</strong> $72,000</li>
+                                <li><strong>What you get out:</strong> ~$242,000</li>
+                                <li><strong>The Difference:</strong> ~$170,000 of "free money" from interest!</li>
+                            </ul>
+                        </div>
+
+                        <h3>Frequently Asked Questions (FAQ)</h3>
+                        <div class="faq-item">
+                            <button class="faq-question" onclick="toggleFAQ(this)">What is the difference between APR
+                                and APY?</button>
+                            <div class="faq-answer">
+                                <p>APR (Annual Percentage Rate) is the simple interest rate. APY (Annual Percentage
+                                    Yield) includes the effect of compounding. APY is always slightly higher and gives a
+                                    truer picture of your earnings.</p>
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <button class="faq-question" onclick="toggleFAQ(this)">How much should I save each
+                                month?</button>
+                            <div class="faq-answer">
+                                <p>A common rule of thumb is the 50/30/20 rule: 50% of income for needs, 30% for wants,
+                                    and <strong>20% for savings and debt repayment</strong>. Start where you can, and
+                                    try to increase it by 1% every couple of months.</p>
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <button class="faq-question" onclick="toggleFAQ(this)">Why do I need to enter a tax
+                                rate?</button>
+                            <div class="faq-answer">
+                                <p>Because Uncle Sam usually wants a cut! Interest earned in standard savings accounts
+                                    is taxable income. By entering your tax bracket (e.g., 22% or 24%), you see what
+                                    ends up in your pocket, not just on the bank statement.</p>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+            </div>
+        </div>
+        <div id="related-calculators"></div>
+    </main>
+
+    <!-- 6. FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <span
+                        style="font-weight: 800; font-size: 1.2rem; display:block; margin-bottom:10px; color:var(--text-main);">FairCalculator</span>
+                    <p>Simple, fast, and accurate online calculators.</p>
+                </div>
+                <div>
+                    <h4>Menu</h4>
+                    <ul>
+                        <li><a href="../../index.html">Home</a></li>
+                        <li><a href="../../about.html">About</a></li>
+                        <li><a href="../../contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="../../legal/privacy-policy.html">Privacy</a></li>
+                        <li><a href="../../legal/terms-of-service.html">Terms</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2025 FairCalculator. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- 7. SCRIPTS -->
+    <script>var ROOT_PATH = '../../';</script>
+    <script src="../../assets/js/data.js"></script>
+    <script src="../../assets/js/search.js"></script>
+    <script src="../../assets/js/mobile-menu.js"></script>
+
+    <!-- WIDGET JS LOGIC -->
+    <script src="../../assets/js/calculators/savings-calculator.js" defer></script>
+
+
+</html>

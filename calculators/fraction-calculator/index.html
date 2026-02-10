@@ -1,0 +1,317 @@
+﻿<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Free Fraction Calculator. Use our fast, accurate tool to simplify math and science calculations. Get precise results on Fair Calculator.">
+    <link rel="canonical" href="https://www.faircalculator.com/calculators/fraction-calculator/">
+
+    <link rel="preload" href="../../assets/css/style.css" as="style">
+    <link rel="preload" href="../../assets/css/calculators/fraction-calculator.css" as="style">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        as="style">
+    <title>Fraction Calculator - Step-by-Step Solver</title>
+
+    <!-- 1. GLOBAL ASSETS (Go up 2 folders) -->
+    <link rel="icon" type="image/x-icon" href="../../assets/images/favicon.png">
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/calculators/fraction-calculator.css">
+
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Fraction Calculator",
+      "description": "Add, subtract, multiply, and divide fractions with step-by-step solutions.",
+      "applicationCategory": "CalculatorApplication",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    }
+    </script>
+
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BVENYYJ869"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-BVENYYJ869');
+    </script>
+    <script type="text/javascript">
+        (function (c, l, a, r, i, t, y) {
+            c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+            t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+            y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+        })(window, document, "clarity", "script", "udqk27trde");
+    </script>
+</head>
+
+<body>
+
+    <!-- 3. HEADER -->
+    <header class="header">
+        <div class="container header-inner">
+            <a href="../../index.html" class="logo">FairCalculator</a>
+            <div class="header-search">
+                <input type="text" id="searchInput" class="search-input" placeholder="Search tools..."
+                    aria-label="Search">
+            </div>
+            <button class="menu-btn" id="menuToggle"><i class="fas fa-bars"></i></button>
+        </div>
+    </header>
+
+    <!-- 4. CATEGORY BAR -->
+    <nav class="category-bar">
+        <div class="container">
+            <ul id="category-list">
+                <li><a href="../../index.html">All</a></li>
+                <li><a href="../../categories/finance-calculators.html">Finance</a></li>
+                <li><a href="../../categories/math-calculators.html"
+                        style="background:#eff6ff; color:#2563eb; border-color:#bfdbfe;">Math</a></li>
+                <li><a href="../../categories/health-calculators.html">Health</a></li>
+                <li><a href="../../categories/date-time-calculators.html">Date</a></li>
+                <li><a href="../../categories/unit-converters.html">Converters</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="mobile-close" id="closeMenu">&times;</button>
+        <div style="margin-top: 40px;">
+            <ul class="sidebar-list">
+                <li><a href="../../index.html">Home</a></li>
+                <li><a href="../../index.html#calculators">All Calculators</a></li>
+                <li><a href="../../about.html">About</a></li>
+                <li><a href="../../contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- 5. MAIN CONTENT -->
+    <main class="main-content">
+        <div class="container">
+
+            <!-- Breadcrumbs -->
+            <div style="margin-bottom: 20px; font-size: 0.9rem; color: #64748b;">
+                <a href="../../index.html" style="text-decoration: underline;">Home</a> /
+                <a href="../../categories/math-calculators.html" style="text-decoration: underline;">Math</a> /
+                <span style="font-weight: 600; color: #0f172a;">Fraction Calculator</span>
+            </div>
+
+            <!-- Search Results Placeholder -->
+            <div id="searchResults" style="display:none; margin-bottom: 40px;">
+                <div class="section-header">Search Results</div>
+                <div class="grid" id="searchResultsContent"></div>
+            </div>
+
+            <!-- TOOL CONTAINER -->
+            <div class="fc-widget-container" id="tool-container">
+
+                <h1 class="section-header" style="justify-content:center; font-size: 2rem; margin-bottom: 30px;">
+                    <i class="fas fa-divide" style="color: #4f46e5; margin-right: 15px;"></i> Multiple Fraction
+                    Calculator
+                </h1>
+
+                <!-- Calculator Card -->
+                <div class="fc-card">
+
+                    <div class="fc-body">
+
+                        <!-- Operation Tabs -->
+                        <div class="fc-tabs">
+                            <button class="fc-tab active" onclick="fcSetOp('add', this)">+ Add</button>
+                            <button class="fc-tab" onclick="fcSetOp('sub', this)">− Subtract</button>
+                            <button class="fc-tab" onclick="fcSetOp('mul', this)">× Multiply</button>
+                            <button class="fc-tab" onclick="fcSetOp('div', this)">÷ Divide</button>
+                        </div>
+
+                        <!-- Input Area -->
+                        <div class="fc-input-group">
+
+                            <!-- Fraction 1 -->
+                            <div class="fc-fraction-stack">
+                                <input type="number" id="fcN1" placeholder="1" aria-label="Numerator 1">
+                                <div class="fc-line"></div>
+                                <input type="number" id="fcD1" placeholder="2" aria-label="Denominator 1">
+                            </div>
+
+                            <!-- Operator Sign -->
+                            <div class="fc-operator" id="fcOpSign">+</div>
+
+                            <!-- Fraction 2 -->
+                            <div class="fc-fraction-stack">
+                                <input type="number" id="fcN2" placeholder="1" aria-label="Numerator 2">
+                                <div class="fc-line"></div>
+                                <input type="number" id="fcD2" placeholder="4" aria-label="Denominator 2">
+                            </div>
+
+                        </div>
+
+                        <button class="fc-btn" onclick="fcCalculate()">Calculate Result</button>
+
+                        <!-- Result Section -->
+                        <div id="fcResult" class="fc-result">
+
+                            <div class="fc-result-grid">
+                                <!-- Standard Fraction -->
+                                <div class="fc-res-box">
+                                    <span class="fc-res-label">Result</span>
+                                    <div class="fc-big-fraction">
+                                        <span id="fcResNum">3</span>
+                                        <span class="fc-bar"></span>
+                                        <span id="fcResDen">4</span>
+                                    </div>
+                                </div>
+
+                                <!-- Mixed Number (Hidden by default) -->
+                                <div class="fc-res-box" id="fcMixedBox" style="display:none;">
+                                    <span class="fc-res-label">Mixed Number</span>
+                                    <div class="fc-mixed-wrapper">
+                                        <span id="fcMixedWhole">0</span>
+                                        <div class="fc-big-fraction fc-small">
+                                            <span id="fcMixedNum">0</span>
+                                            <span class="fc-bar"></span>
+                                            <span id="fcMixedDen">0</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Steps -->
+                            <div class="fc-steps-box">
+                                <strong>ðŸ–” Step-by-Step Solution:</strong>
+                                <p id="fcStepsText">Loading...</p>
+                            </div>
+
+                            <div class="fc-meta">
+                                <div class="fc-meta-item">
+                                    <span>Decimal</span>
+                                    <b id="fcMetaDecimal">0.75</b>
+                                </div>
+                                <div class="fc-meta-item">
+                                    <span>Percent</span>
+                                    <b id="fcMetaPercent">75%</b>
+                                </div>
+                            </div>
+
+                            <div class="fc-actions">
+                                <button class="fc-copy" onclick="fcCopy()">Copy Result</button>
+                                <button class="fc-reset" onclick="fcReset()">Reset</button>
+                            </div>
+                        </div>
+
+                        <!-- Error Message -->
+                        <div id="fcError" class="fc-error">Please check your inputs (denominator cannot be 0).</div>
+                    </div>
+                </div>
+
+
+                <!-- Engaging SEO Guide -->
+                <div class="info-section">
+                    <h2>Fractions in the Real World</h2>
+                    <article>
+                        <h3>Why Do We Need Fractions?</h3>
+                        <p>Fractions aren't just a headache from 4th-grade math class—they are the language of
+                            precision. Unlike decimals which often have to be rounded (like 0.333...), a
+                            <strong>Multiple Fraction Calculator</strong> is
+                            <strong>exact</strong>. This makes it indispensable in fields where precision matters,
+                            especially when using a <strong>fraction calculator for multiple fractions</strong>.
+                        </p>
+
+                        <h3>Common Uses</h3>
+                        <ul>
+                            <li><strong>Cooking & Baking:</strong> Recipes often call for "3/4 cup of sugar" or "1/2
+                                teaspoon of salt". Our calculator helps you double or halve recipes instantly.</li>
+                            <li><strong>Construction & DIY:</strong> Tape measures in the US use inches divided into
+                                1/16ths. Adding "3 5/8 inches" to "4 1/2 inches" is a daily task for carpenters.</li>
+                            <li><strong>Music:</strong> Time signatures (4/4 time) and note lengths (quarter notes,
+                                eighth notes) are purely fractional math!</li>
+                        </ul>
+
+                        <div class="fc-formula-box">
+                            <h3>The "Pizza" Analogy</h3>
+                            <p>Think of the <strong>Denominator</strong> (bottom number) as <em>how many slices</em> the
+                                pizza is cut into. <br>Think of the <strong>Numerator</strong> (top number) as <em>how
+                                    many slices</em> you actually have.</p>
+                            <p><em>Example:</em> 1/2 is bigger than 1/4 because a pizza cut into 2 slices has much
+                                bigger pieces than one cut into 4 slices!</p>
+                        </div>
+
+                        <h3>Frequently Asked Questions</h3>
+                        <div class="faq-item">
+                            <div class="faq-question">Why do we "flip" when dividing?</div>
+                            <p class="faq-answer">Dividing by a fraction is the same as multiplying by its reciprocal.
+                                Asking "how many 1/2s fit into 10?" is the same math as "10 times 2". It's a
+                                mathematical shortcut that always works.</p>
+                        </div>
+                        <div class="faq-item">
+                            <div class="faq-question">What is a proper vs. improper fraction?</div>
+                            <p class="faq-answer">A <strong>Proper Fraction</strong> has a top number smaller than the
+                                bottom (e.g., 2/3). An <strong>Improper Fraction</strong> is top-heavy (e.g., 5/3). Our
+                                calculator can convert improper fractions into Mixed Numbers (like 1 2/3) automatically!
+                            </p>
+                        </div>
+                    </article>
+                </div>
+
+            </div>
+        </div>
+        <div id="related-calculators"></div>
+    </main>
+
+    <!-- 6. FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <span
+                        style="font-weight: 800; font-size: 1.2rem; display:block; margin-bottom:10px; color:var(--text-main);">FairCalculator</span>
+                    <p>Simple, fast, and accurate online calculators.</p>
+                </div>
+                <div>
+                    <h4>Menu</h4>
+                    <ul>
+                        <li><a href="../../index.html">Home</a></li>
+                        <li><a href="../../about.html">About Us</a></li>
+                        <li><a href="../../contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="../../legal/privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="../../legal/terms-of-service.html">Terms</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2025 FairCalculator. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- 7. SCRIPTS -->
+    <script>var ROOT_PATH = '../../';</script>
+    <script src="../../assets/js/data.js"></script>
+    <script src="../../assets/js/search.js"></script>
+    <script src="../../assets/js/mobile-menu.js"></script>
+
+    <!-- WIDGET JS LOGIC -->
+    <script src="../../assets/js/calculators/fraction-calculator.js" defer></script>
+
+    <script src="../../assets/js/related-calculators.js" defer></script>
+</body>
+
+</html>

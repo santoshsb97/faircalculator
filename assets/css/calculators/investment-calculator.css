@@ -1,0 +1,223 @@
+/* Widget Container */
+.inv-widget-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Calculator Form */
+.calculator-form {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e2e8f0;
+    margin-bottom: 2rem;
+}
+
+.input-wrapper {
+    margin-bottom: 1.5rem;
+}
+
+.input-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.input-header label {
+    font-weight: 600;
+    color: var(--text-main);
+}
+
+/* Inputs */
+.input-field,
+select.input-field {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.2s;
+    background: #f8fafc;
+}
+
+.input-field:focus {
+    outline: none;
+    border-color: var(--primary);
+    background: #fff;
+}
+
+/* Currency Select */
+.currency-select {
+    padding: 4px 8px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    background-color: #f1f5f9;
+    cursor: pointer;
+    color: #334151;
+}
+
+/* Action Button */
+.calc-action-btn {
+    width: 100%;
+    padding: 1.2rem;
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.2s, background 0.2s;
+    margin-top: 10px;
+}
+
+.calc-action-btn:hover {
+    background: var(--primary-hover);
+    transform: translateY(-2px);
+}
+
+/* --- RESULT SECTION --- */
+.result-container {
+    margin-top: 2rem;
+    display: none;
+    animation: fadeIn 0.4s ease-out;
+}
+
+.result-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.result-card {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.result-card.final {
+    border-top: 5px solid #10b981;
+}
+
+/* Green */
+.result-card.invested {
+    border-top: 5px solid var(--primary);
+}
+
+/* Blue */
+.result-card.profit {
+    border-top: 5px solid #f59e0b;
+}
+
+/* Orange */
+
+.result-card h4 {
+    color: #64748b;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    letter-spacing: 0.5px;
+}
+
+.result-value {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--text-main);
+}
+
+/* --- CHART & TABLE --- */
+.breakdown-section {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 1.5rem;
+    overflow: hidden;
+}
+
+.breakdown-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--text-main);
+    margin-bottom: 1rem;
+}
+
+/* CSS Bar Chart */
+.chart-container {
+    display: flex;
+    align-items: flex-end;
+    gap: 4px;
+    height: 200px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #e2e8f0;
+    margin-bottom: 2rem;
+}
+
+.chart-bar {
+    flex: 1;
+    background: var(--primary);
+    border-radius: 4px 4px 0 0;
+    position: relative;
+    transition: height 1s ease;
+}
+
+.chart-bar:hover {
+    opacity: 0.9;
+}
+
+.bar-interest {
+    background: #10b981;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 4px 4px 0 0;
+}
+
+/* Data Table */
+.data-table-wrapper {
+    overflow-x: auto;
+}
+
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+    min-width: 500px;
+}
+
+.data-table th {
+    text-align: left;
+    padding: 12px;
+    background: #f8fafc;
+    color: #64748b;
+    font-weight: 600;
+}
+
+.data-table td {
+    padding: 12px;
+    border-bottom: 1px solid #f1f5f9;
+    color: #334151;
+}
+
+.data-table tr:hover {
+    background: #f8fafc;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

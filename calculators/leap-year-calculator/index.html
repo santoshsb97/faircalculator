@@ -1,0 +1,381 @@
+﻿<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Free Leap Year Solver. Use our fast, accurate tool to simplify your date and time calculations. Get precise results and expert guidance on Fair Calculator.">
+    <link rel="canonical" href="https://www.faircalculator.com/calculators/leap-year-calculator/">
+
+    <!-- Preload Critical Assets -->
+    <link rel="preload" href="../../assets/css/style.css" as="style">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        as="style">
+
+    <!-- Preconnect to CDNs -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+
+    <title>Leap Year Calculator 2025 - Check If a Year Is a Leap Year</title>
+
+    <!-- GLOBAL ASSETS -->
+    <link rel="icon" type="image/x-icon" href="../../assets/images/favicon.png">
+    <link rel="stylesheet" href="../../assets/css/style.css">
+
+    <!-- Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome (Non-blocking) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        media="print" onload="this.media='all'">
+    <noscript>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    </noscript>
+
+    <!-- Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Leap Year Calculator",
+      "description": "Check if a year is a leap year.",
+      "applicationCategory": "mDateCalculator",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    }
+    </script>
+
+    <!-- WIDGET SPECIFIC CSS -->
+    <link rel="stylesheet" href="../../assets/css/calculators/leap-year-calculator.css">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BVENYYJ869"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-BVENYYJ869');
+    </script>
+    <script type="text/javascript">
+        (function (c, l, a, r, i, t, y) {
+            c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+            t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+            y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+        })(window, document, "clarity", "script", "udqk27trde");
+    </script>
+</head>
+
+<body>
+    <!-- HEADER -->
+    <header class="header">
+        <div class="container header-inner">
+            <a href="../../index.html" class="logo">FairCalculator</a>
+            <div class="header-search"><input type="text" id="searchInput" class="search-input"
+                    placeholder="Search tools..."></div>
+            <button class="menu-btn" id="menuToggle"><i class="fas fa-bars"></i></button>
+        </div>
+    </header>
+
+    <!-- CATEGORY BAR -->
+    <nav class="category-bar">
+        <div class="container">
+            <ul id="category-list">
+                <li><a href="../../index.html">All</a></li>
+                <li><a href="../../categories/finance-calculators.html">Finance</a></li>
+                <li><a href="../../categories/math-calculators.html">Math</a></li>
+                <li><a href="../../categories/health-calculators.html">Health</a></li>
+                <li><a href="../../categories/date-time-calculators.html"
+                        style="background:#eff6ff; color:#2563eb; border-color:#bfdbfe;">Date</a></li>
+                <li><a href="../../categories/unit-converters.html">Converters</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="mobile-close" id="closeMenu">&times;</button>
+        <div style="margin-top: 40px;">
+            <ul class="sidebar-list">
+                <li><a href="../../index.html">Home</a></li>
+                <li><a href="../../index.html#calculators">All Calculators</a></li>
+                <li><a href="../../about.html">About</a></li>
+                <li><a href="../../contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+        <div class="container">
+            <div style="margin-bottom: 20px; font-size: 0.9rem; color: #64748b;">
+                <a href="../../index.html" style="text-decoration: underline;">Home</a> /
+                <a href="../../categories/date-time-calculators.html" style="text-decoration: underline;">Date</a> /
+                <span style="font-weight: 600; color: #0f172a;">Leap Year</span>
+            </div>
+
+            <div id="searchResults" style="display:none; margin-bottom: 40px;">
+                <div class="section-header">Search Results</div>
+                <div class="grid" id="searchResultsContent"></div>
+            </div>
+
+            <div class="calculator-wrapper" id="tool-container">
+                <header class="section-header-custom">
+                    <h1><i class="fas fa-calendar-check" aria-hidden="true"></i> Leap Year</h1>
+                    <p style="font-size: 1rem; color: #64748b; font-weight: 400; margin-top: 0.5rem;">
+                        Identify leap years and plan your February 29ths.
+                    </p>
+                </header>
+
+                <div class="calc-card">
+                    <div class="tab-nav">
+                        <button class="tab-btn active" id="tabCheck">Check Year</button>
+                        <button class="tab-btn" id="tabList">List Range</button>
+                    </div>
+
+                    <form id="leapForm" onsubmit="return false;">
+                        <div class="form-grid">
+                            <!-- Single Check Mode -->
+                            <div id="checkMode">
+                                <div class="input-group">
+                                    <label for="txtYear">Enter Year</label>
+                                    <input type="number" id="txtYear" class="input-field" placeholder="e.g. 2024">
+                                </div>
+                            </div>
+
+                            <!-- Range Mode -->
+                            <div id="rangeMode" style="display:none;">
+                                <div style="display:grid; grid-template-columns: 1fr 1fr; gap:1.5rem;">
+                                    <div class="input-group">
+                                        <label for="startYear">Start Year</label>
+                                        <input type="number" id="startYear" class="input-field" placeholder="e.g. 2000">
+                                    </div>
+                                    <div class="input-group">
+                                        <label for="endYear">End Year</label>
+                                        <input type="number" id="endYear" class="input-field" placeholder="e.g. 2050">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button id="calculateBtn" class="calculate-btn">
+                            Check Leap Year <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </form>
+
+                    <!-- Results Wrapper -->
+                    <div id="resultContainer" class="results-wrapper">
+                        <div class="main-result">
+                            <div class="hero-value" id="mainResult">--</div>
+                            <div class="sub-value" id="subResult">--</div>
+                            <div id="leapList" class="list-results" style="display:none;"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SEO Content -->
+                <div class="info-section">
+                    <h2>Leap Year Calculator: Check If a Year Is a Leap Year</h2>
+
+                    <p>A Leap Year Calculator helps you quickly determine whether a specific year is a leap year or not.
+                        Leap years play an important role in keeping our calendar aligned with the Earth’s movement
+                        around the Sun. By adding an extra day—February 29—every few years, the calendar stays accurate
+                        over long periods of time.</p>
+
+                    <p>Using the leap year calculator above, you can instantly check a single year or list leap years
+                        within a range, without having to remember complex rules or perform manual calculations.</p>
+
+                    <h3>What Is a Leap Year?</h3>
+                    <p>A leap year is a calendar year that contains 366 days instead of the usual 365 days. The extra
+                        day is added to the month of February, which becomes 29 days long instead of 28.</p>
+                    <p>This adjustment is necessary because the Earth does not orbit the Sun in exactly 365 days. One
+                        full orbit takes approximately 365.2422 days. Without leap years, our calendar would slowly
+                        drift out of sync with the seasons.</p>
+
+                    <h3>Why Do Leap Years Exist?</h3>
+                    <p>Leap years exist to correct the small difference between the calendar year and the astronomical
+                        year. If we ignored this difference:</p>
+                    <ul class="fc-list">
+                        <li>Seasons would slowly shift over time</li>
+                        <li>Calendars would become inaccurate</li>
+                        <li>Important dates tied to seasons would drift</li>
+                    </ul>
+                    <p>By adding one extra day every few years, leap years ensure long-term accuracy.</p>
+
+                    <h3>Leap Year Rules (Simple Explanation)</h3>
+                    <p>A year is a leap year if it follows these rules:</p>
+                    <ul class="fc-list">
+                        <li>The year must be divisible by 4</li>
+                        <li>If the year is divisible by 100, it is NOT a leap year</li>
+                        <li>Unless the year is also divisible by 400</li>
+                    </ul>
+                    <div style="background: #f8fafc; padding: 20px; border-radius: 12px; margin: 20px 0;">
+                        <h4 style="margin-bottom: 10px;">Examples:</h4>
+                        <ul class="fc-list">
+                            <li><strong>2024 →</strong> Leap year ✅ (divisible by 4)</li>
+                            <li><strong>1900 →</strong> Not a leap year ❌ (divisible by 100, not by 400)</li>
+                            <li><strong>2000 →</strong> Leap year ✅ (divisible by 400)</li>
+                        </ul>
+                    </div>
+                    <p>These rules ensure precise long-term calendar alignment.</p>
+
+                    <h3>How to Use the Leap Year Calculator</h3>
+                    <p>Using the calculator is fast and simple.</p>
+                    <h4>Check a Single Year</h4>
+                    <ul class="fc-list">
+                        <li>Enter a year (e.g., 2024)</li>
+                        <li>Click Check Leap Year</li>
+                        <li>Instantly see whether the year is a leap year</li>
+                    </ul>
+                    <h4>List Leap Years in a Range</h4>
+                    <ul class="fc-list">
+                        <li>Switch to the List Range tab</li>
+                        <li>Enter a start year and end year</li>
+                        <li>Click calculate to view all leap years within that range</li>
+                    </ul>
+                    <p>This is especially useful for planning, research, or education.</p>
+
+                    <h3>Common Uses of a Leap Year Calculator</h3>
+                    <p>A leap year calculator is helpful in many situations:</p>
+                    <ul class="fc-list">
+                        <li><strong>Date Calculations:</strong> Leap years affect date difference calculations, age
+                            calculations, and timelines.</li>
+                        <li><strong>Academic & Educational Use:</strong> Students and teachers often use leap year tools
+                            to understand calendar systems and time calculations.</li>
+                        <li><strong>Event Planning:</strong> For birthdays on February 29, leap year planning is
+                            essential.</li>
+                        <li><strong>Software & Programming:</strong> Developers rely on leap year logic when building
+                            calendars, scheduling systems, and time-based applications.</li>
+                        <li><strong>Financial & Legal Calculations:</strong> Some contracts and financial calculations
+                            depend on accurate day counts.</li>
+                    </ul>
+
+                    <h3>Why February 29 Matters</h3>
+                    <p>February 29 only exists in leap years. People born on this date are often called “leap day
+                        babies” or “leaplings.”</p>
+                    <p>In non-leap years, some celebrate on February 28, while others celebrate on March 1. The leap
+                        year calculator helps determine when February 29 will occur next.</p>
+
+                    <h3>How Often Do Leap Years Occur?</h3>
+                    <p>Most leap years occur every 4 years, but the century rule slightly adjusts this pattern. Over a
+                        400-year cycle, there are 97 leap years. This keeps the calendar extremely accurate.</p>
+
+                    <h3>Is the Leap Year Calculator Accurate?</h3>
+                    <p>Yes. This calculator uses the standard leap year rules accepted worldwide and automatically
+                        handles century years, 400-year exceptions, and large year ranges. It provides reliable results
+                        suitable for personal, academic, and professional use.</p>
+
+                    <h3>Manual Leap Year Calculation (Why It’s Not Ideal)</h3>
+                    <p>Manually determining leap years requires remembering multiple rules and checking divisibility
+                        conditions. This can easily lead to mistakes, especially with century years like 1800 or 1900.
+                        Using an automated leap year calculator saves time, avoids errors, and ensures consistent
+                        results.</p>
+
+                    <h3>Leap Years and Date Difference Calculations</h3>
+                    <p>Leap years directly affect the number of days between two dates. A date range that includes
+                        February 29 will have one extra day compared to a non-leap year range. This is why leap year
+                        detection is essential for date difference calculators, age calculators, project timelines, and
+                        subscription periods.</p>
+
+                    <h3>Advantages of Using an Online Leap Year Calculator</h3>
+                    <ul class="fc-list">
+                        <li>No manual calculations required</li>
+                        <li>Works instantly</li>
+                        <li>Handles all edge cases</li>
+                        <li>Free and easy to use</li>
+                        <li>Works on all devices</li>
+                    </ul>
+
+                    <div class="faq-section" style="margin-top: 40px;">
+                        <h3>Frequently Asked Questions (FAQs)</h3>
+                        <div class="faq-item">
+                            <h4>What years are leap years?</h4>
+                            <p>Leap years are years divisible by 4, except for century years unless they are divisible
+                                by 400.</p>
+                        </div>
+                        <div class="faq-item">
+                            <h4>Is 2025 a leap year?</h4>
+                            <p>No. 2025 is not divisible by 4, so it is not a leap year.</p>
+                        </div>
+                        <div class="faq-item">
+                            <h4>Is 2100 a leap year?</h4>
+                            <p>No. Although divisible by 100, it is not divisible by 400.</p>
+                        </div>
+                        <div class="faq-item">
+                            <h4>How many days are in a leap year?</h4>
+                            <p>A leap year has 366 days.</p>
+                        </div>
+                        <div class="faq-item">
+                            <h4>Does every country follow the same leap year rules?</h4>
+                            <p>Yes. Leap year rules are standardized under the Gregorian calendar.</p>
+                        </div>
+                    </div>
+
+                    <h3>Who Can Benefit From This Leap Year Calculator?</h3>
+                    <p>Students, teachers, developers, event planners, and financial professionals—anyone working with
+                        dates and calendars can benefit from this tool.</p>
+
+                    <h3>Tips for Accurate Date Planning</h3>
+                    <ul class="fc-list">
+                        <li>Always account for leap years in long-term planning</li>
+                        <li>Use automated tools instead of manual counting</li>
+                        <li>Double-check century years</li>
+                        <li>Combine leap year checks with date difference calculations</li>
+                    </ul>
+
+                    <div
+                        style="margin-top: 30px; padding: 25px; background: #fff7ed; border-radius: 12px; border-left: 5px solid #f97316;">
+                        <h4 style="margin-bottom: 10px; color: #9a3412;">Conclusion</h4>
+                        <p style="margin-bottom: 0;">The Leap Year Calculator is a fast, reliable, and accurate tool for
+                            identifying leap years and planning around February 29. Whether you are checking a single
+                            year or listing leap years across a range, this calculator removes complexity and ensures
+                            precision. Bookmark this page and use the leap year calculator whenever you need accurate
+                            calendar information.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="related-calculators"></div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <span
+                        style="font-weight: 800; font-size: 1.2rem; display:block; margin-bottom:10px; color:var(--text-main);">FairCalculator</span>
+                    <p>Simple, fast, and accurate online calculators.</p>
+                </div>
+                <div>
+                    <h4>Menu</h4>
+                    <ul>
+                        <li><a href="../../index.html">Home</a></li>
+                        <li><a href="../../about.html">About Us</a></li>
+                        <li><a href="../../contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="../../legal/privacy-policy.html">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">&copy; 2025 FairCalculator. All rights reserved.</div>
+        </div>
+    </footer>
+
+    <!-- SCRIPTS -->
+    <script>var ROOT_PATH = '../../';</script>
+    <script src="../../assets/js/data.js"></script>
+    <script src="../../assets/js/search.js"></script>
+    <script src="../../assets/js/mobile-menu.js"></script>
+
+
+    <script src="../../assets/js/calculators/leap-year-calculator.js" defer></script>
+    <script src="../../assets/js/related-calculators.js" defer></script>
+</body>
+
+</html>

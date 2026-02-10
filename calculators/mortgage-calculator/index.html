@@ -1,0 +1,322 @@
+﻿<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Free Mortgage Solver. Use our fast, accurate tool to simplify finance and loan calculations. Get precise results and guidance on Fair Calculator.">
+    <link rel="canonical" href="https://www.faircalculator.com/calculators/mortgage-calculator/">
+
+    <!-- Preload Critical Assets -->
+    <link rel="preload" href="../../assets/css/style.css" as="style">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        as="style">
+
+    <!-- Preconnect to CDNs -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+
+    <title>Mortgage Calculator - Schedule & Export</title>
+
+    <!-- GLOBAL ASSETS -->
+    <link rel="icon" type="image/x-icon" href="../../assets/images/favicon.png">
+    <link rel="stylesheet" href="../../assets/css/style.css">
+
+    <!-- Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome (Non-blocking) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        media="print" onload="this.media='all'">
+    <noscript>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    </noscript>
+
+    <!-- Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FinancialProduct",
+      "name": "Mortgage Calculator",
+      "description": "Calculate monthly mortgage payments with taxes and insurance.",
+      "provider": { "@type": "Organization", "name": "FairCalculator" }
+    }
+    </script>
+
+    <!-- 2. WIDGET SPECIFIC CSS -->
+    <link rel="stylesheet" href="../../assets/css/calculators/mortgage-calculator.css">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BVENYYJ869"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-BVENYYJ869');
+    </script>
+    <script type="text/javascript">
+        (function (c, l, a, r, i, t, y) {
+            c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+            t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+            y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+        })(window, document, "clarity", "script", "udqk27trde");
+    </script>
+</head>
+
+<body>
+
+    <!-- 3. HEADER -->
+    <header class="header">
+        <div class="container header-inner">
+            <a href="../../index.html" class="logo">FairCalculator</a>
+            <div class="header-search">
+                <input type="text" id="searchInput" class="search-input" placeholder="Search tools..."
+                    aria-label="Search">
+            </div>
+            <button class="menu-btn" id="menuToggle"><i class="fas fa-bars"></i></button>
+        </div>
+    </header>
+
+    <!-- 4. CATEGORY BAR -->
+    <nav class="category-bar">
+        <div class="container">
+            <ul id="category-list">
+                <li><a href="../../index.html">All</a></li>
+                <li><a href="../../categories/finance-calculators.html"
+                        style="background:#eff6ff; color:#2563eb; border-color:#bfdbfe;">Finance</a></li>
+                <li><a href="../../categories/math-calculators.html">Math</a></li>
+                <li><a href="../../categories/health-calculators.html">Health</a></li>
+                <li><a href="../../categories/date-time-calculators.html">Date</a></li>
+                <li><a href="../../categories/unit-converters.html">Converters</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="mobile-close" id="closeMenu">&times;</button>
+        <div style="margin-top: 40px;">
+            <ul class="sidebar-list">
+                <li><a href="../../index.html">Home</a></li>
+                <li><a href="../../index.html#calculators">All Calculators</a></li>
+                <li><a href="../../about.html">About</a></li>
+                <li><a href="../../contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- 5. MAIN CONTENT -->
+    <main class="main-content">
+        <div class="container">
+
+            <!-- Breadcrumbs -->
+            <div style="margin-bottom: 20px; font-size: 0.9rem; color: #64748b;">
+                <a href="../../index.html" style="text-decoration: underline;">Home</a> /
+                <a href="../../categories/finance-calculators.html" style="text-decoration: underline;">Finance</a> /
+                <span style="font-weight: 600; color: #0f172a;">Mortgage Calculator</span>
+            </div>
+
+            <!-- Search Results Placeholder -->
+            <div id="searchResults" style="display:none; margin-bottom: 40px;">
+                <div class="section-header">Search Results</div>
+                <div class="grid" id="searchResultsContent"></div>
+            </div>
+
+            <!-- TOOL CONTAINER -->
+            <div class="mortgage-widget-container" id="tool-container">
+
+                <h1 class="section-header" style="justify-content:center; font-size: 2rem; margin-bottom: 30px;">
+                    <i class="fas fa-home" style="color: #3b82f6; margin-right: 15px;"></i> Mortgage Calculator
+                </h1>
+
+                <!-- Calculator Form -->
+                <div class="calculator-form">
+
+                    <!-- Home Price -->
+                    <div class="input-wrapper">
+                        <div class="input-header">
+                            <label>Home Price</label>
+                            <select id="currency" class="currency-select">
+                                <option value="USD">USD ($)</option>
+                                <option value="EUR">EUR (€)</option>
+                                <option value="GBP">GBP (£)</option>
+                                <option value="INR">INR (₹)</option>
+                            </select>
+                        </div>
+                        <input type="number" id="homePrice" class="input-field" placeholder="e.g., 300000" step="1000">
+                    </div>
+
+                    <!-- Down Payment -->
+                    <div class="input-wrapper">
+                        <label class="input-header">Down Payment</label>
+                        <input type="number" id="downPayment" class="input-field" placeholder="e.g., 60000" step="1000">
+                    </div>
+
+                    <!-- Interest & Term -->
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 1.5rem;">
+                        <div>
+                            <label style="display:block; margin-bottom:0.5rem; font-weight:600;">Interest Rate
+                                (%)</label>
+                            <input type="number" id="interestRate" class="input-field" placeholder="e.g., 6.5"
+                                step="0.1">
+                        </div>
+                        <div>
+                            <label style="display:block; margin-bottom:0.5rem; font-weight:600;">Loan Term</label>
+                            <select id="loanTerm" class="input-field">
+                                <option value="15">15 Years</option>
+                                <option value="20">20 Years</option>
+                                <option value="30" selected>30 Years</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Taxes & Insurance -->
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 1.5rem;">
+                        <div>
+                            <label style="display:block; margin-bottom:0.5rem; font-weight:600;">Annual Property
+                                Tax</label>
+                            <input type="number" id="propertyTax" class="input-field" placeholder="e.g., 3000"
+                                step="100" value="0">
+                        </div>
+                        <div>
+                            <label style="display:block; margin-bottom:0.5rem; font-weight:600;">Annual
+                                Insurance</label>
+                            <input type="number" id="homeInsurance" class="input-field" placeholder="e.g., 1200"
+                                step="100" value="0">
+                        </div>
+                    </div>
+
+                    <button id="calculateBtn" class="calc-action-btn">Calculate Mortgage</button>
+                </div>
+
+                <!-- RESULTS -->
+                <div id="resultContainer" class="result-container">
+
+                    <!-- Hero Card -->
+                    <div class="hero-card">
+                        <div class="hero-label">Total Monthly Payment</div>
+                        <div class="hero-value" id="monthlyPayment">--</div>
+                    </div>
+
+                    <!-- Details Grid -->
+                    <div class="result-grid">
+                        <div class="result-card loan">
+                            <h4>Loan Amount</h4>
+                            <div class="result-value" id="loanAmount">--</div>
+                        </div>
+                        <div class="result-card interest">
+                            <h4>Total Interest</h4>
+                            <div class="result-value" id="totalInterest">--</div>
+                        </div>
+                        <div class="result-card total">
+                            <h4>Total Cost of Loan</h4>
+                            <div class="result-value" id="totalPaid">--</div>
+                        </div>
+                    </div>
+
+                    <!-- Chart & Table -->
+                    <div class="breakdown-section">
+                        <div class="breakdown-title">Monthly Payment Breakdown</div>
+
+                        <!-- Donut Chart -->
+                        <div class="chart-wrapper">
+                            <div id="donutChart" class="donut-chart" style="--pi: 0%; --tax: 0%;">
+                                <div class="donut-hole" id="donutPercent">Breakdown</div>
+                            </div>
+                        </div>
+                        <div class="chart-legend">
+                            <div class="legend-item"><span class="dot blue"></span> P & I</div>
+                            <div class="legend-item"><span class="dot orange"></span> Tax</div>
+                            <div class="legend-item"><span class="dot red"></span> Insurance</div>
+                        </div>
+
+                        <!-- Table Controls -->
+                        <div class="table-controls">
+                            <h3 style="font-size: 1.1rem; color: var(--text-main); margin:0;">Amortization Schedule</h3>
+                            <div style="display:flex; gap: 10px;">
+                                <select id="scheduleView" class="view-select">
+                                    <option value="yearly">Yearly View</option>
+                                    <option value="monthly">Monthly View</option>
+                                </select>
+                                <button id="exportBtn" class="export-btn">
+                                    <i class="fas fa-file-csv"></i> Export CSV
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="data-table-wrapper">
+                            <table class="data-table">
+                                <thead>
+                                    <tr>
+                                        <th>Period</th>
+                                        <th>Principal</th>
+                                        <th>Interest</th>
+                                        <th>Tax+Ins</th>
+                                        <th>Total Payment</th>
+                                        <th>Balance</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="breakdownTable"></tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- SEO Content -->
+                <div class="calculator-form" style="margin-top: 30px;">
+                    <h2><i class="fas fa-info-circle"></i> Understanding Your Mortgage</h2>
+                    <p>Your monthly payment consists of Principal and Interest (P&I), which pays off the loan, plus
+                        Property Taxes and Homeowner's Insurance which are often held in escrow.</p>
+                </div>
+            </div>
+        </div>
+        <div id="related-calculators"></div>
+    </main>
+
+    <!-- 6. FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <span
+                        style="font-weight: 800; font-size: 1.2rem; display:block; margin-bottom:10px; color:var(--text-main);">FairCalculator</span>
+                    <p>Simple, fast, and accurate online calculators.</p>
+                </div>
+                <div>
+                    <h4>Menu</h4>
+                    <ul>
+                        <li><a href="../../index.html">Home</a></li>
+                        <li><a href="../../about.html">About Us</a></li>
+                        <li><a href="../../contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="../../legal/privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="../../legal/terms-of-service.html">Terms</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2025 FairCalculator. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- 7. SCRIPTS -->
+    <script>var ROOT_PATH = '../../';</script>
+    <script src="../../assets/js/data.js"></script>
+    <script src="../../assets/js/search.js"></script>
+    <script src="../../assets/js/mobile-menu.js"></script>
+
+    <!-- WIDGET JS LOGIC -->
+    <script src="../../assets/js/calculators/mortgage-calculator.js" defer></script>
+
+    <script src="../../assets/js/related-calculators.js" defer></script>
+</body>
+
+</html>

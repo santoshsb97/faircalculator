@@ -1,0 +1,670 @@
+﻿<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wavelength Calculator | Calculate Wavelength, Frequency & Speed</title>
+    <meta name="description"
+        content="Free Wavelength Calculator. Instantly find wavelength given frequency and speed. Accurate results for physics using the wavelength formula.">
+    <meta name="theme-color" content="#10b981">
+    <link rel="canonical" href="https://www.faircalculator.com/calculators/wavelength-calculator/">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.faircalculator.com/calculators/wavelength-calculator/">
+    <meta property="og:title" content="Wavelength Calculator - Calculate Lambda (λ)">
+    <meta property="og:description"
+        content="Calculate wavelength, frequency, or wave speed instantly. Perfect for physics students and audio engineers. Supports multiple units.">
+    <meta property="og:image" content="https://www.faircalculator.com/assets/images/social-share.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://www.faircalculator.com/calculators/wavelength-calculator/">
+    <meta property="twitter:title" content="Wavelength Calculator - Calculate Lambda (λ)">
+    <meta property="twitter:description"
+        content="Calculate wavelength, frequency, or wave speed instantly. Perfect for physics students and audio engineers. Supports multiple units.">
+    <meta property="twitter:image" content="https://www.faircalculator.com/assets/images/social-share.jpg">
+
+    <!-- Preload Critical Assets -->
+    <link rel="preload" href="/assets/css/style.css" as="style">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        as="style">
+
+    <!-- Global Assets -->
+    <link rel="icon" type="image/x-icon" href="../../assets/images/favicon.png">
+    <link rel="stylesheet" href="../../assets/css/style.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="preload" href="../../assets/css/calculators/wavelength-calculator.css" as="style">
+    <link rel="stylesheet" href="../../assets/css/calculators/wavelength-calculator.css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BVENYYJ869"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-BVENYYJ869');
+    </script>
+    <script type="text/javascript">
+        (function (c, l, a, r, i, t, y) {
+            c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+            t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+            y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+        })(window, document, "clarity", "script", "udqk27trde");
+    </script>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+        <div class="container header-inner">
+            <a href="../../index.html" class="logo">FairCalculator</a>
+            <div class="header-search">
+                <input type="text" id="searchInput" class="search-input" placeholder="Search tools..."
+                    aria-label="Search">
+            </div>
+            <button class="menu-btn" id="menuToggle" aria-label="Menu">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M4 6H20M4 12H20M4 18H20" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <!-- CATEGORY BAR -->
+    <nav class="category-bar">
+        <div class="container">
+            <ul id="category-list">
+                <li><a href="../../index.html">All</a></li>
+                <li><a href="../../categories/finance-calculators.html">Finance</a></li>
+                <li><a href="../../categories/math-calculators.html">Math</a></li>
+                <li><a href="../../categories/health-calculators.html">Health</a></li>
+                <li><a href="../../categories/date-time-calculators.html">Date</a></li>
+                <li><a href="../../categories/unit-converters.html">Converters</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="mobile-close" id="closeMenu">&times;</button>
+        <div style="margin-top: 40px;">
+            <ul class="sidebar-list">
+                <li><a href="../../index.html">Home</a></li>
+                <li><a href="../../index.html#calculators">All Calculators</a></li>
+                <li><a href="../../about.html">About</a></li>
+                <li><a href="../../contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <main class="main-content">
+        <div class="container">
+
+            <!-- Breadcrumbs -->
+            <div style="margin-bottom: 20px; font-size: 0.9rem; color: #64748b;">
+                <a href="../../index.html" style="text-decoration: underline;">Home</a> /
+                <a href="../../categories/physics-calculators.html" style="text-decoration: underline;">Physics</a> /
+                <span style="font-weight: 600; color: #0f172a;">Wavelength Calculator</span>
+            </div>
+
+            <div class="wavelength-widget-container" id="tool-container">
+
+                <h1 class="section-header" style="justify-content:center; font-size: 2rem; margin-bottom: 30px;">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+                        style="color: #10b981; margin-right: 15px;">
+                        <path d="M2 12C2 12 4 4 7 4C10 4 11 12 14 12C17 12 18 4 22 4" stroke="currentColor"
+                            stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M2 20C2 20 4 12 7 12C10 12 11 20 14 20C17 20 18 12 22 12" stroke="currentColor"
+                            stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.3" />
+                    </svg> Wavelength Calculator
+                    – Calculate λ from Frequency & Speed
+                </h1>
+
+                <!-- Definition Paragraph -->
+                <p
+                    style="text-align: center; max-width: 700px; margin: 0 auto 30px; font-size: 1.1rem; color: #475569; line-height: 1.6;">
+                    Easily <strong>find wavelength given frequency</strong> and wave speed using the fundamental
+                    <strong>wavelength equation</strong>. Perfect for calculating radio, sound, or light waves.
+                </p>
+
+                <!-- Calculator Form -->
+                <div class="calculator-form">
+
+                    <!-- Wavelength Input (Primary) -->
+                    <div class="input-group">
+                        <label for="wavelength">Wavelength (λ)</label>
+                        <div class="input-with-unit">
+                            <input type="number" id="wavelength" class="input-field" placeholder="Enter wavelength"
+                                step="any">
+                            <select id="wavelengthUnit" class="unit-select">
+                                <option value="m">m</option>
+                                <option value="cm">cm</option>
+                                <option value="mm">mm</option>
+                                <option value="µm">µm</option>
+                                <option value="nm">nm</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Frequency Input -->
+                    <div class="input-group">
+                        <label for="frequency">Frequency (f)</label>
+                        <div class="input-with-unit">
+                            <input type="number" id="frequency" class="input-field" placeholder="Enter frequency"
+                                step="any">
+                            <select id="frequencyUnit" class="unit-select">
+                                <option value="Hz">Hz</option>
+                                <option value="kHz">kHz</option>
+                                <option value="MHz">MHz</option>
+                                <option value="GHz">GHz</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Wave Speed Input -->
+                    <div class="input-group">
+                        <label for="speed">Wave Speed (v)</label>
+                        <div class="input-with-unit">
+                            <input type="number" id="speed" class="input-field" placeholder="Enter wave speed"
+                                step="any" value="299792458">
+                            <select id="speedUnit" class="unit-select">
+                                <option value="m/s">m/s</option>
+                                <option value="km/s">km/s</option>
+                            </select>
+                        </div>
+                        <div style="margin-top: 10px;">
+                            <label for="mediumSelect"
+                                style="font-size: 0.9rem; color: #64748b; font-weight: normal;">Select Medium
+                                (Auto-fills Speed)</label>
+                            <select id="mediumSelect" class="input-field" style="margin-top: 5px;">
+                                <option value="" disabled selected>-- Select a Medium --</option>
+                                <optgroup label="Light / EM Waves">
+                                    <option value="299792458">Light in Vacuum (c)</option>
+                                    <option value="299700000">Light in Air</option>
+                                    <option value="225000000">Light in Water</option>
+                                    <option value="200000000">Light in Glass</option>
+                                </optgroup>
+                                <optgroup label="Sound Waves">
+                                    <option value="331.5">Sound in Air (0°C)</option>
+                                    <option value="343">Sound in Air (20°C)</option>
+                                    <option value="349">Sound in Air (30°C)</option>
+                                    <option value="1480">Sound in Water (20°C)</option>
+                                    <option value="1531">Sound in Seawater</option>
+                                    <option value="5960">Sound in Steel</option>
+                                    <option value="6420">Sound in Aluminum</option>
+                                    <option value="3960">Sound in Wood (Pine)</option>
+                                </optgroup>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Period Input -->
+                    <div class="input-group">
+                        <label for="period">Period (T)</label>
+                        <div class="input-with-unit">
+                            <input type="number" id="period" class="input-field" placeholder="Enter period" step="any">
+                            <select id="periodUnit" class="unit-select">
+                                <option value="s">s</option>
+                                <option value="ms">ms</option>
+                                <option value="µs">µs</option>
+                                <option value="ns">ns</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <button id="calculateBtn" class="calc-action-btn">Calculate Wavelength</button>
+                </div>
+
+                <!-- Results -->
+                <div id="resultContainer" class="result-container" aria-live="polite">
+                    <h3 style="margin-bottom: 20px; color: #111827; text-align: center;">Calculation Results</h3>
+
+                    <div class="result-grid">
+                        <div class="result-card wavelength">
+                            <h4>Wavelength</h4>
+                            <div class="result-value" id="resultWavelength">--</div>
+                        </div>
+                        <div class="result-card frequency">
+                            <h4>Frequency</h4>
+                            <div class="result-value" id="resultFrequency">--</div>
+                        </div>
+                        <div class="result-card period">
+                            <h4>Period</h4>
+                            <div class="result-value" id="resultPeriod">--</div>
+                        </div>
+                        <div class="result-card speed">
+                            <h4>Wave Speed</h4>
+                            <div class="result-value" id="resultSpeed">--</div>
+                        </div>
+                    </div>
+
+                    <!-- Advanced Results -->
+                    <div id="advancedResults"
+                        style="margin-top: 30px; border-top: 1px solid #e2e8f0; padding-top: 20px;">
+                        <h4 style="text-align: center; color: #64748b; margin-bottom: 20px; font-size: 1.1rem;">Advanced
+                            Properties</h4>
+                        <div class="result-grid">
+                            <div class="result-card" style="border-top: 5px solid #ec4899;">
+                                <h4>Wavenumber (k)</h4>
+                                <div class="result-value" id="resultWavenumber">--</div>
+                                <div style="font-size: 0.8rem; color: #64748b; margin-top: 5px;">Spectroscopic
+                                    wavenumber (m⁻¹)</div>
+                            </div>
+                            <div class="result-card" style="border-top: 5px solid #8b5cf6;">
+                                <h4>Angular Freq (ω)</h4>
+                                <div class="result-value" id="resultAngularFreq">--</div>
+                                <div style="font-size: 0.8rem; color: #64748b; margin-top: 5px;">rad/s</div>
+                            </div>
+                            <div class="result-card" id="photonEnergyCard"
+                                style="border-top: 5px solid #eab308; display: none;">
+                                <h4>Photon Energy (E)</h4>
+                                <div class="result-value" id="resultPhotonEnergy">--</div>
+                                <div style="font-size: 0.8rem; color: #64748b; margin-top: 5px;">Joules (J)</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Educational Content -->
+                <article>
+                    <h2>Wavelength Formulas & Physics</h2>
+
+                    <div class="formula-box">
+                        <h4>Wavelength Formula</h4>
+                        <div class="formula">λ = v / f</div>
+                        <p style="margin-top: 10px; color: #475569;">Where: <strong>λ</strong> = wavelength (m),
+                            <strong>v</strong> = wave speed (m/s), <strong>f</strong> = frequency (Hz)
+                        </p>
+                    </div>
+
+                    <p>
+                        Wavelength (λ) is the spatial period of a periodic wave—the distance over which the wave's shape
+                        repeats. It is inversely proportional to frequency: as frequency increases, wavelength
+                        decreases.
+                    </p>
+
+                    <h3>What is Wavenumber (k)?</h3>
+                    <p>
+                        <strong>Wavenumber (k)</strong> represents the spatial frequency of a wave, describing how many
+                        cycles exist per unit distance.
+                        The formula used here is <strong>k = 1 / λ</strong> (spectroscopic definition), though in
+                        physics (angular wavenumber), it's often defined as <strong>k = 2π / λ</strong>.
+                        This calculator provides the spectroscopic wavenumber in m⁻¹.
+                    </p>
+
+                    <h3>What is Angular Frequency (ω)?</h3>
+                    <p>
+                        <strong>Angular frequency (ω)</strong> measures the rate of rotation or oscillation in radians
+                        per second. It is related to ordinary frequency (f) by the equation:
+                        <strong>ω = 2πf</strong>. It is commonly used in harmonic motion and wave mechanics analysis.
+                    </p>
+
+                    <h3>Photon Energy (E)</h3>
+                    <p>
+                        For electromagnetic waves (light), energy is directly proportional to frequency. Using Planck's
+                        constant (h), the energy of a single photon is calculated as:
+                        <strong>E = h · f</strong> or <strong>E = h · c / λ</strong>.
+                        This output is automatically displayed when the wave speed is close to the speed of light.
+                    </p>
+
+                    <div class="formula-box" style="border-color: #e0f2fe; background: #f0f9ff;">
+                        <h4 style="color: #0284c7;">Derived Formulas</h4>
+                        <ul style="list-style: none; padding: 0; margin: 0; color: #475569;">
+                            <li style="margin-bottom: 5px;"><strong>Frequency:</strong> f = v / λ</li>
+                            <li style="margin-bottom: 5px;"><strong>Wave Speed:</strong> v = f · λ</li>
+                            <li style="margin-bottom: 5px;"><strong>Period:</strong> T = 1 / f</li>
+                        </ul>
+                    </div>
+
+                    <h3>Related Tools</h3>
+                    <p>
+                        Need to solve for other variables? Use our specialized tools:
+                        <a href="../frequency-calculator/"
+                            style="color: var(--primary); text-decoration: underline;">Frequency Calculator</a> or check
+                        our Physics category for more.
+                    </p>
+
+                </article>
+
+                <!-- FAQ Section -->
+                <section class="faq-section" style="max-width: 800px; margin: 40px auto;">
+                    <h2>Frequently Asked Questions</h2>
+
+                    <div class="faq-item">
+                        <div class="faq-question">1. What is the difference between wavelength and period?</div>
+                        <div class="faq-answer"><strong>Wavelength (λ)</strong> is the <em>spatial</em> distance between
+                            two peaks of a wave, measured in meters. <strong>Period (T)</strong> is the <em>time</em> it
+                            takes for one complete cycle to pass a point, measured in seconds. They are related by
+                            speed: λ = v · T.</div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">2. How does the medium affect wavelength?</div>
+                        <div class="faq-answer">The <strong>medium</strong> determines the speed of the wave. For
+                            example, sound travels faster in water than in air. Since frequency usually stays constant
+                            (determined by the source), a change in speed causes a direct change in wavelength (λ = v /
+                            f).</div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">3. What is the wavenumber?</div>
+                        <div class="faq-answer">The <strong>wavenumber</strong> is the number of waves per unit
+                            distance. It is the spatial analog of frequency. In spectroscopy, it is calculated as k =
+                            1/λ, while in wave mechanics, it is often k = 2π/λ. This calculator displays k = 1/λ.</div>
+                    </div>
+                </section>
+            </div>
+        </div>
+        <div id="related-calculators"></div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <span
+                        style="font-weight: 800; font-size: 1.2rem; display:block; margin-bottom:10px; color:var(--text-main);">FairCalculator</span>
+                    <p>Simple, fast, and accurate online calculators.</p>
+                </div>
+                <div>
+                    <h4>Menu</h4>
+                    <ul>
+                        <li><a href="../../index.html">Home</a></li>
+                        <li><a href="../../about.html">About Us</a></li>
+                        <li><a href="../../contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="../../legal/privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="../../legal/terms-of-service.html">Terms</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2025 FairCalculator. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Wavelength Calculator",
+      "applicationCategory": "UtilityApplication",
+      "applicationSubCategory": "Physics Calculator",
+      "operatingSystem": "Any",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is the difference between wavelength and period?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Wavelength (λ) is the spatial distance between two peaks of a wave, measured in meters. Period (T) is the time it takes for one complete cycle to pass a point, measured in seconds. They are related by speed: λ = v · T."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does the medium affect wavelength?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The medium determines the speed of the wave. For example, sound travels faster in water than in air. Since frequency usually stays constant (determined by the source), a change in speed causes a direct change in wavelength (λ = v / f)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the wavenumber?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The wavenumber is the number of waves per unit distance. It is the spatial analog of frequency. In spectroscopy, it is calculated as k = 1/λ, while in wave mechanics, it is often k = 2π/λ. This calculator displays k = 1/λ."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <script>
+        var ROOT_PATH = '../../';
+    </script>
+    <script src="../../assets/js/data.js"></script>
+    <script src="../../assets/js/search.js"></script>
+    <script src="../../assets/js/mobile-menu.js"></script>
+
+    <!-- Calculator Logic (Reused from Frequency Calculator but optimized for Wavelength context if needed) -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // DOM Elements
+            const frequencyInput = document.getElementById('frequency');
+            const wavelengthInput = document.getElementById('wavelength');
+            const speedInput = document.getElementById('speed');
+            const periodInput = document.getElementById('period');
+            const mediumSelect = document.getElementById('mediumSelect');
+
+            const frequencyUnit = document.getElementById('frequencyUnit');
+            const wavelengthUnit = document.getElementById('wavelengthUnit');
+            const speedUnit = document.getElementById('speedUnit');
+            const periodUnit = document.getElementById('periodUnit');
+
+            const calculateBtn = document.getElementById('calculateBtn');
+            const resultContainer = document.getElementById('resultContainer');
+
+            // Result Elements
+            const resultFrequency = document.getElementById('resultFrequency');
+            const resultWavelength = document.getElementById('resultWavelength');
+            const resultPeriod = document.getElementById('resultPeriod');
+            const resultSpeed = document.getElementById('resultSpeed');
+
+            // Advanced Result Elements
+            const resultWavenumber = document.getElementById('resultWavenumber');
+            const resultAngularFreq = document.getElementById('resultAngularFreq');
+            const resultPhotonEnergy = document.getElementById('resultPhotonEnergy');
+            const photonEnergyCard = document.getElementById('photonEnergyCard');
+
+            // Constants
+            const PLANCK_CONSTANT = 6.62607015e-34; // J·s
+            const LIGHT_SPEED_VACUUM = 299792458;
+
+            // Unit conversion factors to base units
+            const frequencyUnits = { 'Hz': 1, 'kHz': 1e3, 'MHz': 1e6, 'GHz': 1e9 };
+            const wavelengthUnits = { 'm': 1, 'cm': 0.01, 'mm': 0.001, 'µm': 1e-6, 'nm': 1e-9 };
+            const speedUnits = { 'm/s': 1, 'km/s': 1000 };
+            const periodUnits = { 's': 1, 'ms': 0.001, 'µs': 1e-6, 'ns': 1e-9 };
+
+            // Medium Selection Handler
+            mediumSelect.addEventListener('change', () => {
+                if (mediumSelect.value) {
+                    speedInput.value = mediumSelect.value;
+                    speedUnit.value = 'm/s';
+                }
+            });
+
+            // Clear preset selection on manual speed input
+            speedInput.addEventListener('input', () => {
+                mediumSelect.value = "";
+            });
+
+            // Enter Key Support
+            document.addEventListener('keydown', e => {
+                if (e.key === 'Enter') calculateBtn.click();
+            });
+
+            // Calculate Button
+            calculateBtn.addEventListener('click', () => {
+                const freq = frequencyInput.value !== '' ? parseFloat(frequencyInput.value) * frequencyUnits[frequencyUnit.value] : null;
+                const wl = wavelengthInput.value !== '' ? parseFloat(wavelengthInput.value) * wavelengthUnits[wavelengthUnit.value] : null;
+                const spd = speedInput.value !== '' ? parseFloat(speedInput.value) * speedUnits[speedUnit.value] : null;
+                const per = periodInput.value !== '' ? parseFloat(periodInput.value) * periodUnits[periodUnit.value] : null;
+
+                // Check for valid input values
+                const hasFreq = freq !== null;
+                const hasWl = wl !== null;
+                const hasSpd = spd !== null;
+                const hasPer = per !== null;
+
+                if ((hasFreq && freq === 0) || (hasPer && per === 0)) {
+                    alert('Frequency and period must be greater than zero.');
+                    return;
+                }
+
+                // Consistency Check (Optional Safety)
+                if (hasFreq && hasWl && hasSpd) {
+                    const calculatedSpeed = freq * wl;
+                    const percentDiff = Math.abs((spd - calculatedSpeed) / spd);
+                    if (percentDiff > 0.01) {
+                        // Show non-blocking warning (using console or alert for now, non-blocking UI preferred but alert is standard for this scope unless user asked for UI notice)
+                        // User said: "Don’t block calculation, just show notice"
+                        // Since I don't have a dedicated warning UI container in this requested scope, I will use a non-intrusive alert or simply just proceed. 
+                        // Actually, I'll add a small text alert if the result container is visible, or just let it override. 
+                        // Given the instruction "Warn only", I will use a simple alert that doesn't stop the calculation below.
+                        alert('Notice: The provided Frequency, Wavelength, and Speed do not mathematically align (v ≠ f × λ). The calculator will recalculate compatible values based on priority.');
+                    }
+                }
+
+                let frequency, wavelength, speed, period;
+
+                // Logic to solve for missing values
+                if (hasFreq && hasWl) {
+                    frequency = freq;
+                    wavelength = wl;
+                    speed = frequency * wavelength;
+                    period = 1 / frequency;
+                } else if (hasFreq && hasSpd) {
+                    frequency = freq;
+                    speed = spd;
+                    wavelength = speed / frequency;
+                    period = 1 / frequency;
+                } else if (hasFreq && hasPer) {
+                    if (!hasSpd) {
+                        alert('Speed is required to calculate wavelength. Please enter a wave speed or select a medium.');
+                        return;
+                    }
+                    frequency = freq;
+                    period = per;
+                    speed = spd;
+                    wavelength = speed / frequency;
+                } else if (hasWl && hasSpd) {
+                    wavelength = wl;
+                    speed = spd;
+                    frequency = speed / wavelength;
+                    period = 1 / frequency;
+                } else if (hasWl && hasPer) {
+                    wavelength = wl;
+                    period = per;
+                    frequency = 1 / period;
+                    speed = frequency * wavelength;
+                } else if (hasSpd && hasPer) {
+                    speed = spd;
+                    period = per;
+                    frequency = 1 / period;
+                    wavelength = speed / frequency;
+                } else if (hasFreq) {
+                    if (!hasSpd) {
+                        alert('Speed is required to calculate wavelength. Please enter a wave speed or select a medium.');
+                        return;
+                    }
+                    frequency = freq;
+                    speed = spd;
+                    wavelength = speed / frequency;
+                    period = 1 / frequency;
+                } else {
+                    alert('Please enter at least two valid values (e.g., Frequency and Speed) to calculate.');
+                    return;
+                }
+
+                displayResult(frequency, wavelength, speed, period);
+            });
+
+            function displayResult(freq, wl, spd, per) {
+                // 1. Basic Results
+                formatFrequency(freq);
+                formatWavelength(wl);
+                formatPeriod(per);
+                formatSpeed(spd);
+
+                // 2. Advanced Results
+                const k = 1 / wl;
+                resultWavenumber.textContent = formatScientific(k) + ' m⁻¹';
+
+                const omega = 2 * Math.PI * freq;
+                resultAngularFreq.textContent = formatScientific(omega) + ' rad/s';
+
+                if (spd > 2e8) {
+                    const energy = PLANCK_CONSTANT * freq;
+                    resultPhotonEnergy.textContent = formatScientific(energy) + ' J';
+                    photonEnergyCard.style.display = 'block';
+                } else {
+                    photonEnergyCard.style.display = 'none';
+                }
+
+                resultContainer.style.display = 'block';
+                resultContainer.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }
+
+            // Helper formatters
+            function formatScientific(val) {
+                if (val === 0) return '0';
+                if (Math.abs(val) < 1e-4 || Math.abs(val) >= 1e4) {
+                    return val.toExponential(4);
+                }
+                return val.toPrecision(5);
+            }
+
+            function formatFrequency(freq) {
+                if (freq >= 1e9) resultFrequency.textContent = (freq / 1e9).toFixed(5) + ' GHz';
+                else if (freq >= 1e6) resultFrequency.textContent = (freq / 1e6).toFixed(5) + ' MHz';
+                else if (freq >= 1e3) resultFrequency.textContent = (freq / 1e3).toFixed(5) + ' kHz';
+                else resultFrequency.textContent = freq.toFixed(5) + ' Hz';
+            }
+
+            function formatWavelength(wl) {
+                if (wl >= 1) resultWavelength.textContent = wl.toFixed(5) + ' m';
+                else if (wl >= 1e-2) resultWavelength.textContent = (wl * 100).toFixed(5) + ' cm';
+                else if (wl >= 1e-3) resultWavelength.textContent = (wl * 1000).toFixed(5) + ' mm';
+                else if (wl >= 1e-6) resultWavelength.textContent = (wl * 1e6).toFixed(5) + ' µm';
+                else if (wl >= 1e-9) resultWavelength.textContent = (wl * 1e9).toFixed(5) + ' nm';
+                else resultWavelength.textContent = formatScientific(wl) + ' m';
+            }
+
+            function formatPeriod(per) {
+                if (per >= 1) resultPeriod.textContent = per.toFixed(5) + ' s';
+                else if (per >= 1e-3) resultPeriod.textContent = (per * 1e3).toFixed(5) + ' ms';
+                else if (per >= 1e-6) resultPeriod.textContent = (per * 1e6).toFixed(5) + ' µs';
+                else if (per >= 1e-9) resultPeriod.textContent = (per * 1e9).toFixed(5) + ' ns';
+                else resultPeriod.textContent = formatScientific(per) + ' s';
+            }
+
+            function formatSpeed(spd) {
+                if (spd >= 1000) resultSpeed.textContent = (spd / 1000).toFixed(5) + ' km/s';
+                else resultSpeed.textContent = spd.toFixed(5) + ' m/s';
+            }
+        });
+    </script>
+
+    <script src="../../assets/js/related-calculators.js" defer></script>
+</body>
+
+</html>

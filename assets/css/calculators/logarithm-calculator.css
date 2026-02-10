@@ -1,0 +1,280 @@
+.log-widget-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.calculator-form {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e2e8f0;
+    margin-bottom: 2rem;
+}
+
+.input-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 25px;
+}
+
+@media (max-width: 600px) {
+    .input-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-label {
+    font-weight: 700;
+    color: #374151;
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+}
+
+.lc-input {
+    padding: 12px 15px;
+    border: 2px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    transition: all 0.3s;
+    background: #f9fafb;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.lc-input:focus {
+    border-color: var(--primary);
+    background: #fff;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+/* Quick Buttons */
+.quick-btn-row {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 25px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.q-btn {
+    padding: 8px 15px;
+    border: 1px solid #e5e7eb;
+    background: #fff;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    color: #4b5563;
+    transition: 0.2s;
+}
+
+.q-btn:hover {
+    background: #eff6ff;
+    color: var(--primary);
+    border-color: var(--primary);
+}
+
+.q-btn.active {
+    background: var(--primary);
+    color: white;
+    border-color: var(--primary);
+}
+
+.calc-action-btn {
+    width: 100%;
+    padding: 1.2rem;
+    background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.calc-action-btn:hover {
+    transform: translateY(-2px);
+    background: linear-gradient(135deg, #1d4ed8 0%, #1e40af 100%);
+}
+
+/* Results */
+.result-area {
+    display: none;
+    margin-top: 30px;
+    animation: fadeIn 0.4s;
+}
+
+.result-box {
+    background: #f0fdf4;
+    border: 1px solid #bbf7d0;
+    border-left: 6px solid #16a34a;
+    padding: 25px;
+    border-radius: 12px;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.res-title {
+    color: #15803d;
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.res-val {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #16a34a;
+}
+
+.res-eq {
+    font-family: 'Times New Roman', serif;
+    font-size: 1.4rem;
+    margin-top: 10px;
+    color: #064e3b;
+}
+
+/* Step Box */
+.steps-box {
+    border-top: 1px solid #eee;
+    padding-top: 20px;
+    text-align: left;
+}
+
+.steps-box h3 {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    color: var(--text-main);
+}
+
+.step-line {
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+    color: #333;
+}
+
+/* Content Sections */
+.info-section {
+    background: #fff;
+    padding: 2.5rem;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    margin-top: 3rem;
+}
+
+.info-section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-main);
+    border-left: 5px solid var(--primary);
+    padding-left: 15px;
+}
+
+.info-section h3 {
+    font-size: 1.4rem;
+    margin: 1.5rem 0 1rem;
+    color: #374151;
+}
+
+.info-section p,
+.info-section li {
+    margin-bottom: 1rem;
+    line-height: 1.7;
+    color: #4b5563;
+}
+
+.table-wrapper {
+    overflow-x: auto;
+    margin: 20px 0;
+    border-radius: 8px;
+    border: 1px solid #eee;
+}
+
+.log-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 500px;
+}
+
+.log-table th {
+    background: #f8fafc;
+    padding: 15px;
+    text-align: left;
+    border-bottom: 2px solid #e2e8f0;
+    color: #111;
+}
+
+.log-table td {
+    padding: 15px;
+    border-bottom: 1px solid #f1f5f9;
+    color: #555;
+}
+
+.formula-card {
+    background: #eff6ff;
+    border: 1px solid #bfdbfe;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    margin: 25px 0;
+    font-weight: 700;
+    color: #1e3a8a;
+    font-size: 1.3rem;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.faq-item {
+    border-bottom: 1px solid #f1f5f9;
+    padding: 20px 0;
+}
+
+.faq-q {
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    color: #374151;
+    font-size: 1.1rem;
+    transition: color 0.2s;
+}
+
+.faq-q:hover {
+    color: var(--primary);
+}
+
+.faq-a {
+    display: none;
+    padding-top: 15px;
+    color: #4b5563;
+    line-height: 1.6;
+}
+
+.faq-a.open {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

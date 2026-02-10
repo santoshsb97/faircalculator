@@ -1,0 +1,317 @@
+﻿<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Free Salary Solver. Use our fast, accurate tool to simplify finance and income calculations. Get precise results and guidance on Fair Calculator.">
+    <link rel="canonical" href="https://www.faircalculator.com/calculators/salary-calculator/">
+
+    <!-- Preload Critical Assets -->
+    <link rel="preload" href="../../assets/css/style.css" as="style">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        as="style">
+    <title>Salary Calculator - Hourly to Annual Converter</title>
+
+    <!-- 1. GLOBAL ASSETS (Go up 2 folders) -->
+    <link rel="icon" type="image/x-icon" href="../../assets/images/favicon.png">
+    <link rel="stylesheet" href="../../assets/css/style.css">
+
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Schema -->
+    <script type="application/ld+json">
+    {
+    "@context": "https://schema.org",
+    "@type": "FinancialProduct",
+    "name": "Salary Calculator",
+    "description": "Convert salary rates between hourly, daily, weekly, monthly, and annual.",
+    "provider": { "@type": "Organization", "name": "FairCalculator" }
+    }
+    </script>
+
+    <link rel="preload" href="../../assets/css/calculators/salary-calculator.css" as="style">
+    <link rel="stylesheet" href="../../assets/css/calculators/salary-calculator.css">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BVENYYJ869"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-BVENYYJ869');
+    </script>
+    <script type="text/javascript">
+        (function (c, l, a, r, i, t, y) {
+            c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+            t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+            y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+        })(window, document, "clarity", "script", "udqk27trde");
+    </script>
+</head>
+
+<body>
+
+    <!-- 3. HEADER -->
+    <header class="header">
+        <div class="container header-inner">
+            <a href="../../index.html" class="logo">FairCalculator</a>
+            <div class="header-search">
+                <input type="text" id="searchInput" class="search-input" placeholder="Search tools..."
+                    aria-label="Search">
+            </div>
+            <button class="menu-btn" id="menuToggle"><i class="fas fa-bars"></i></button>
+        </div>
+    </header>
+
+    <!-- 4. CATEGORY BAR -->
+    <nav class="category-bar">
+        <div class="container">
+            <ul id="category-list">
+                <li><a href="../../index.html">All</a></li>
+                <li><a href="../../categories/finance-calculators.html"
+                        style="background:#eff6ff; color:#2563eb; border-color:#bfdbfe;">Finance</a></li>
+                <li><a href="../../categories/math-calculators.html">Math</a></li>
+                <li><a href="../../categories/health-calculators.html">Health</a></li>
+                <li><a href="../../categories/date-time-calculators.html">Date</a></li>
+                <li><a href="../../categories/unit-converters.html">Converters</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="mobile-close" id="closeMenu">&times;</button>
+        <div style="margin-top: 40px;">
+            <ul class="sidebar-list">
+                <li><a href="../../index.html">Home</a></li>
+                <li><a href="../../index.html#calculators">All Calculators</a></li>
+                <li><a href="../../about.html">About</a></li>
+                <li><a href="../../contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- 5. MAIN CONTENT -->
+    <main class="main-content">
+        <div class="container">
+
+            <!-- Breadcrumbs -->
+            <div style="margin-bottom: 20px; font-size: 0.9rem; color: #64748b;">
+                <a href="../../index.html" style="text-decoration: underline;">Home</a> /
+                <a href="../../categories/finance-calculators.html" style="text-decoration: underline;">Finance</a> /
+                <span style="font-weight: 600; color: #0f172a;">Salary Calculator</span>
+            </div>
+
+            <!-- Search Results Placeholder -->
+            <div id="searchResults" style="display:none; margin-bottom: 40px;">
+                <div class="section-header">Search Results</div>
+                <div class="grid" id="searchResultsContent"></div>
+            </div>
+
+            <!-- TOOL CONTAINER -->
+            <div class="salary-widget-container" id="tool-container">
+
+                <h1 class="section-header" style="justify-content:center; font-size: 2rem; margin-bottom: 30px;">
+                    <i class="fas fa-money-bill-wave" style="color: #10b981; margin-right: 15px;"></i> Salary Calculator
+                </h1>
+
+                <!-- Calculator Form -->
+                <div class="calculator-form">
+
+                    <!-- Amount Input -->
+                    <div class="input-wrapper">
+                        <div class="input-header">
+                            <label>Amount</label>
+                            <select id="currency" class="currency-select">
+                                <option value="USD">USD ($)</option>
+                                <option value="EUR">EUR (€)</option>
+                                <option value="GBP">GBP (£)</option>
+                                <option value="INR">INR (₹)</option>
+                            </select>
+                        </div>
+                        <input type="number" id="amount" class="input-field" placeholder="e.g., 25" step="0.01">
+                    </div>
+
+                    <!-- Frequency -->
+                    <div class="input-wrapper">
+                        <label class="input-header">Pay Frequency</label>
+                        <select id="period" class="input-field">
+                            <option value="hour">Hourly</option>
+                            <option value="day">Daily</option>
+                            <option value="week">Weekly</option>
+                            <option value="biweek">Bi-Weekly (Every 2 weeks)</option>
+                            <option value="month">Monthly</option>
+                            <option value="year">Annually</option>
+                        </select>
+                    </div>
+
+                    <!-- Work Schedule -->
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 1.5rem;">
+                        <div>
+                            <label style="display:block; margin-bottom:0.5rem; font-weight:600;">Hours / Week</label>
+                            <input type="number" id="hoursPerWeek" class="input-field" value="40" step="1">
+                        </div>
+                        <div>
+                            <label style="display:block; margin-bottom:0.5rem; font-weight:600;">Days / Week</label>
+                            <input type="number" id="daysPerWeek" class="input-field" value="5" step="1">
+                        </div>
+                    </div>
+
+                    <button id="calculateBtn" class="calc-action-btn">Convert Salary</button>
+                </div>
+
+                <!-- RESULTS -->
+                <div id="resultContainer" class="result-container">
+
+                    <!-- Hero Card -->
+                    <div class="hero-card">
+                        <div class="hero-label">Annual Salary</div>
+                        <div class="hero-value" id="annualResult">--</div>
+                    </div>
+
+                    <!-- Details Grid -->
+                    <div class="result-grid">
+                        <div class="result-card">
+                            <h4>Monthly</h4>
+                            <div class="result-value" id="monthlyResult">--</div>
+                        </div>
+                        <div class="result-card">
+                            <h4>Bi-Weekly</h4>
+                            <div class="result-value" id="biweeklyResult">--</div>
+                        </div>
+                        <div class="result-card">
+                            <h4>Weekly</h4>
+                            <div class="result-value" id="weeklyResult">--</div>
+                        </div>
+                        <div class="result-card">
+                            <h4>Daily</h4>
+                            <div class="result-value" id="dailyResult">--</div>
+                        </div>
+                        <div class="result-card">
+                            <h4>Hourly</h4>
+                            <div class="result-value" id="hourlyResult">--</div>
+                        </div>
+                    </div>
+
+                    <!-- Chart & Stats -->
+                    <div class="breakdown-section">
+                        <h3 class="breakdown-title" style="text-align: center;">Work Schedule Analysis</h3>
+
+                        <div class="chart-wrapper">
+                            <div id="donutChart" class="donut-chart" style="--p: 0%;">
+                                <div class="donut-hole" id="donutPercent">0% Work</div>
+                            </div>
+                        </div>
+
+                        <div class="chart-legend">
+                            <div class="legend-item"><span class="dot blue"></span> Working Days</div>
+                            <div class="legend-item"><span class="dot gray"></span> Off Days</div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <!-- Engaging SEO Guide -->
+                <div class="info-section">
+                    <h2>Know Your Worth: Salary Guide</h2>
+                    <article>
+                        <h3>The True Value of Your Time</h3>
+                        <p>When you look at a job offer, the annual salary is the headline number—but it doesn't tell
+                            the whole story. Breaking it down into hourly, weekly, or even daily rates changes your
+                            perspective. Is that $60,000/year job worth it if it demands 60 hours a week? Our calculator
+                            helps you find the <em>real</em> hourly wage you're earning.</p>
+
+                        <h3>Hourly vs. Salary: The Pros and Cons</h3>
+                        <ul>
+                            <li><strong>Hourly:</strong> You get paid for every minute you work. Overtime (usually 1.5x
+                                pay) is a huge perk. If you work late, you get rewarded.</li>
+                            <li><strong>Salary:</strong> Stability is the main benefit. You get the same paycheck
+                                whether business is slow or busy. However, you might work late nights without extra pay.
+                            </li>
+                        </ul>
+
+                        <h3>Negotiation Tip: The "Bi-Weekly" Effect</h3>
+                        <p>Most corporate jobs pay bi-weekly (every 2 weeks). This means there are two months in the
+                            year where you get <strong>three paychecks</strong> instead of two. Savvy budgeters use
+                            these "bonus" checks for savings or vacations, living strictly off the standard two checks
+                            per month.</p>
+
+                        <h3>Frequently Asked Questions</h3>
+                        <div class="faq-item">
+                            <div class="faq-question">How does a 40-hour week translate to annual hours?</div>
+                            <p class="faq-answer">The standard formula is 40 hours × 52 weeks = <strong>2,080
+                                    hours</strong> per year. Use this number to quickly convert any hourly rate to an
+                                annual salary (e.g., $25/hr × 2080 = $52,000).</p>
+                        </div>
+                        <div class="faq-item">
+                            <div class="faq-question">What is the difference between Gross and Net pay?</div>
+                            <p class="faq-answer"><strong>Gross Pay</strong> is the big number on your offer letter.
+                                <strong>Net Pay</strong> is what actually hits your bank account after taxes, insurance,
+                                and retirement contributions are taken out.
+                            </p>
+                        </div>
+                        <div class="faq-item">
+                            <div class="faq-question">Why calculate a daily rate?</div>
+                            <p class="faq-answer">Knowing your daily rate helps with freelance work or negotiating
+                                per-diem rates. It's also a great motivator—knowing you earn $200 a day can make that
+                                morning coffee run feel more affordable!</p>
+                        </div>
+                    </article>
+                </div>
+
+            </div>
+        </div>
+        <div id="related-calculators"></div>
+    </main>
+
+    <!-- 6. FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <span
+                        style="font-weight: 800; font-size: 1.2rem; display:block; margin-bottom:10px; color:var(--text-main);">FairCalculator</span>
+                    <p>Simple, fast, and accurate online calculators.</p>
+                </div>
+                <div>
+                    <h4>Menu</h4>
+                    <ul>
+                        <li><a href="../../index.html">Home</a></li>
+                        <li><a href="../../about.html">About Us</a></li>
+                        <li><a href="../../contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="../../legal/privacy-policy.html">Privacy</a></li>
+                        <li><a href="../../legal/terms-of-service.html">Terms</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2025 FairCalculator. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- 7. SCRIPTS -->
+    <script>var ROOT_PATH = '../../';</script>
+    <script src="../../assets/js/data.js"></script>
+    <script src="../../assets/js/search.js"></script>
+    <script src="../../assets/js/mobile-menu.js"></script>
+
+    <!-- WIDGET JS LOGIC -->
+    <script src="../../assets/js/calculators/salary-calculator.js" defer></script>
+
+    <script src="../../assets/js/related-calculators.js" defer></script>
+</body>
+
+</html>

@@ -1,0 +1,273 @@
+/* assets/css/calculators/amortization-calculator.css */
+
+#amortization-calculator-pro-v8 {
+    --bg-color: #f8fafc;
+    --primary-color: #6C63FF;
+    --text-color: #3f4a5a;
+    --green-color: #27ae60;
+    --glass-bg: rgba(255, 255, 255, 0.6);
+    --glass-border: rgba(255, 255, 255, 0.8);
+
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    display: block;
+    width: 100%;
+    background-color: var(--bg-color);
+    background-image: radial-gradient(circle at 10% 20%, hsla(243, 100%, 70%, 0.1), transparent 40%),
+        radial-gradient(circle at 85% 75%, hsla(330, 100%, 80%, 0.1), transparent 40%);
+    padding: 30px;
+    border-radius: 24px;
+    margin: 0 auto;
+    color: var(--text-color);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e2e8f0;
+}
+
+#amortization-calculator-pro-v8 * {
+    box-sizing: border-box;
+}
+
+#amortization-calculator-pro-v8 .calculator-wrapper {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+#amortization-calculator-pro-v8 .glass-card,
+#amortization-calculator-pro-v8 .neumorphic-card {
+    border-radius: 20px;
+    padding: 25px;
+    margin-bottom: 30px;
+}
+
+#amortization-calculator-pro-v8 .glass-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.05);
+}
+
+#amortization-calculator-pro-v8 .neumorphic-card {
+    background: #ffffff;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e2e8f0;
+}
+
+#amortization-calculator-pro-v8 h1 {
+    text-align: center;
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    margin-bottom: 25px;
+}
+
+#amortization-calculator-pro-v8 h2 {
+    font-size: 1.4rem;
+    color: var(--text-color);
+    border-bottom: 2px solid rgba(0, 0, 0, 0.05);
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+#amortization-calculator-pro-v8 h3 {
+    font-size: 1.1rem;
+    color: var(--primary-color);
+}
+
+#amortization-calculator-pro-v8 .form-group {
+    margin-bottom: 20px;
+}
+
+#amortization-calculator-pro-v8 .form-label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+}
+
+#amortization-calculator-pro-v8 .form-input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    font-size: 1rem;
+    background: #f1f5f9;
+    color: var(--text-color);
+    transition: all 0.2s ease;
+}
+
+#amortization-calculator-pro-v8 .form-input:focus {
+    outline: none;
+    background: #fff;
+    border-color: var(--primary-color);
+}
+
+#amortization-calculator-pro-v8 .extra-fields-container {
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 12px;
+    padding: 20px;
+    margin-top: 20px;
+    border: 1px solid #e2e8f0;
+}
+
+#amortization-calculator-pro-v8 .btn {
+    display: inline-block;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    text-align: center;
+    width: 100%;
+    transition: transform 0.1s;
+}
+
+#amortization-calculator-pro-v8 .btn-primary {
+    background: var(--primary-color);
+    color: #fff;
+    box-shadow: 0 4px 14px rgba(108, 99, 255, 0.4);
+}
+
+#amortization-calculator-pro-v8 .btn-primary:hover {
+    background: #5a52d5;
+    transform: translateY(-2px);
+}
+
+#amortization-calculator-pro-v8 .btn-export {
+    width: auto;
+    font-size: 0.9rem;
+    padding: 8px 15px;
+    background: var(--green-color);
+    color: white;
+}
+
+#amortization-calculator-pro-v8 #result-summary {
+    margin-top: 30px;
+    text-align: center;
+}
+
+#amortization-calculator-pro-v8 #result-value {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin: 10px 0;
+}
+
+#amortization-calculator-pro-v8 #result-savings {
+    background: #dcfce7;
+    color: #15803d;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+#amortization-calculator-pro-v8 .result-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+#amortization-calculator-pro-v8 .result-table td {
+    padding: 10px;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+#amortization-calculator-pro-v8 .result-table tr:last-child td {
+    border-bottom: none;
+    font-weight: 700;
+    font-size: 1.1rem;
+    padding-top: 15px;
+}
+
+#amortization-calculator-pro-v8 .result-table td:last-child {
+    text-align: right;
+}
+
+#amortization-calculator-pro-v8 .schedule-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+#amortization-calculator-pro-v8 .schedule-container {
+    max-height: 400px;
+    overflow-y: auto;
+    border-radius: 10px;
+    border: 1px solid #e2e8f0;
+}
+
+#amortization-calculator-pro-v8 table#schedule-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+}
+
+#amortization-calculator-pro-v8 table#schedule-table th {
+    background: #f1f5f9;
+    position: sticky;
+    top: 0;
+    text-align: right;
+    padding: 10px;
+    font-size: 0.85rem;
+    border-bottom: 2px solid #e2e8f0;
+    z-index: 2;
+}
+
+#amortization-calculator-pro-v8 table#schedule-table td {
+    padding: 8px 10px;
+    text-align: right;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+#amortization-calculator-pro-v8 table#schedule-table tr:nth-child(even) {
+    background-color: #f8fafc;
+}
+
+#amortization-calculator-pro-v8 .formula-code {
+    background: #e2e8f0;
+    padding: 15px;
+    border-radius: 8px;
+    font-family: monospace;
+    text-align: center;
+    margin: 15px 0;
+    word-break: break-all;
+}
+
+#amortization-calculator-pro-v8 .faq-item {
+    background: #fff;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    border: 1px solid #e2e8f0;
+    overflow: hidden;
+}
+
+#amortization-calculator-pro-v8 .faq-question {
+    padding: 15px 20px;
+    cursor: pointer;
+    font-weight: 600;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#amortization-calculator-pro-v8 .faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    background: #f8fafc;
+}
+
+#amortization-calculator-pro-v8 .faq-item.active .faq-answer {
+    max-height: 300px;
+}
+
+#amortization-calculator-pro-v8 .faq-answer p {
+    padding: 15px 20px;
+    margin: 0;
+}

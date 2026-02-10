@@ -1,0 +1,395 @@
+﻿<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Loan Calculator - FairCalculator</title>
+    <meta name="description"
+        content="Free Advanced Loan Calculator with extra payments, amortization, and fee breakdown. Calculate mortgages, auto, and personal loans effectively.">
+
+    <link rel="canonical" href="https://www.faircalculator.com/calculators/loan-calculator/">
+
+    <!-- Preload Critical Assets -->
+    <link rel="preload" href="../../assets/css/style.css" as="style">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        as="style">
+
+    <!-- FIXED PATH: Go up 2 levels (../../) to find the global style -->
+    <link rel="stylesheet" href="../../assets/css/style.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Schema.org Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Advanced Loan Calculator",
+      "url": "https://faircalculator.com/calculators/loan-calculator/",
+      "applicationCategory": "CalculatorApplication",
+      "operatingSystem": "All",
+      "browserRequirements": "Requires JavaScript",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD", "category": "Free" }
+    }
+    </script>
+
+    <!-- Calculator Specific CSS (Internal Styles work fine) -->
+    <link rel="stylesheet" href="../../assets/css/calculators/loan-calculator.css">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BVENYYJ869"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-BVENYYJ869');
+    </script>
+    <script type="text/javascript">
+        (function (c, l, a, r, i, t, y) {
+            c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+            t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+            y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+        })(window, document, "clarity", "script", "udqk27trde");
+    </script>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container header-inner">
+            <!-- FIXED PATH: ../../ to go up 2 levels -->
+            <a href="../../index.html" class="logo">FairCalculator</a>
+            <div class="header-search">
+                <input type="text" id="searchInput" class="search-input" placeholder="Search tools..."
+                    aria-label="Search">
+            </div>
+            <button class="menu-btn" id="menuToggle"><i class="fas fa-bars"></i></button>
+        </div>
+    </header>
+
+    <!-- Category Bar -->
+    <nav class="category-bar">
+        <div class="container">
+            <ul id="category-list">
+                <!-- FIXED PATHS: ../../categories/ -->
+                <li><a href="../../index.html">All</a></li>
+                <li><a href="../../categories/finance-calculators.html"
+                        style="background:#eff6ff; color:#2563eb; border-color:#bfdbfe;">Finance</a></li>
+                <li><a href="../../categories/math-calculators.html">Math</a></li>
+                <li><a href="../../categories/health-calculators.html">Health</a></li>
+                <li><a href="../../categories/date-time-calculators.html">Date</a></li>
+                <li><a href="../../categories/unit-converters.html">Converters</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="mobile-close" id="closeMenu">&times;</button>
+        <div style="margin-top: 40px;">
+            <ul class="sidebar-list">
+                <li><a href="../../index.html">Home</a></li>
+                <li><a href="../../index.html#calculators">All Calculators</a></li>
+                <li><a href="../../about.html">About</a></li>
+                <li><a href="../../contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+
+            <!-- Breadcrumb -->
+            <div style="margin-bottom: 20px; font-size: 0.9rem; color: var(--text-muted);">
+                <a href="../../index.html" style="text-decoration: underline;">Home</a>
+                <span style="margin: 0 8px;">/</span>
+                <a href="../../categories/finance-calculators.html" style="text-decoration: underline;">Finance</a>
+                <span style="margin: 0 8px;">/</span>
+                <span style="font-weight: 600; color: var(--text-main);">Loan Calculator</span>
+            </div>
+
+            <!-- SEARCH RESULTS (Hidden by default) -->
+            <div id="searchResults" style="display:none; margin-bottom: 40px;">
+                <h2 class="section-header">Search Results</h2>
+                <div class="grid" id="searchResultsContent"></div>
+            </div>
+
+            <!-- CALCULATOR WIDGET START -->
+            <div class="neo-calculator-container">
+                <h1 class="calc-main-title">Advanced Loan Calculator</h1>
+
+                <div class="glass-card">
+                    <div class="neo-form-group">
+                        <label for="loanAmount">Loan Amount ($) <span class="neo-info-icon" tabindex="0">i<span
+                                    class="neo-tooltip">Total principal amount of your loan</span></span></label>
+                        <input type="text" id="loanAmount" class="neo-input" value="250000" placeholder="e.g. 250000">
+                    </div>
+
+                    <div class="neo-form-group">
+                        <label for="interestRate">Annual Interest Rate (%) <span class="neo-info-icon"
+                                tabindex="0">i<span class="neo-tooltip">Annual percentage rate</span></span></label>
+                        <input type="number" id="interestRate" class="neo-input" step="0.01" value="4.75"
+                            placeholder="e.g. 4.75">
+                    </div>
+
+                    <div class="neo-form-group">
+                        <label for="loanTerm">Loan Term (Years) <span class="neo-info-icon" tabindex="0">i<span
+                                    class="neo-tooltip">Duration in years</span></span></label>
+                        <input type="number" id="loanTerm" class="neo-input" value="30" placeholder="e.g. 30">
+                    </div>
+                </div>
+
+                <div class="glass-card additional-options">
+                    <h3 class="section-title" style="margin-bottom:15px; font-size:1.1rem; color:var(--text-main);">
+                        Extra Payment Options</h3>
+
+                    <div class="neo-option-item">
+                        <div class="neo-toggle-group">
+                            <input type="checkbox" id="enableExtraPayments" class="neo-toggle">
+                            <label for="enableExtraPayments" class="neo-toggle-label">Include Extra Payments</label>
+                        </div>
+
+                        <div id="extraPaymentSection" style="display:none; margin-top:15px;">
+                            <input type="text" id="extraPaymentAmount" class="neo-input-small"
+                                placeholder="Extra amount ($)" disabled>
+                            <div class="neo-button-group">
+                                <button class="neo-freq-btn active" data-frequency="monthly">Monthly</button>
+                                <button class="neo-freq-btn" data-frequency="yearly">Yearly</button>
+                                <button class="neo-freq-btn" data-frequency="onetime">One-time</button>
+                            </div>
+                            <div id="startMonthGroup">
+                                <input type="number" id="startMonth" class="neo-input-small"
+                                    placeholder="Start at month (1)" value="1" disabled>
+                            </div>
+                            <div id="oneTimeMonthGroup" style="display:none;">
+                                <input type="number" id="oneTimeMonth" class="neo-input-small"
+                                    placeholder="Payment at month" value="12" disabled>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="neo-option-item" style="margin-top:20px;">
+                        <div class="neo-toggle-group">
+                            <input type="checkbox" id="enableFees" class="neo-toggle">
+                            <label for="enableFees" class="neo-toggle-label">Include Additional Fees</label>
+                        </div>
+
+                        <div id="feesSection" style="display:none; margin-top:15px;">
+                            <input type="number" id="originationFee" class="neo-input-small"
+                                placeholder="Origination fee %" value="1">
+                            <input type="number" id="closingCosts" class="neo-input-small"
+                                placeholder="Closing costs ($)" value="2000">
+                            <input type="number" id="otherFees" class="neo-input-small" placeholder="Other fees ($)"
+                                value="0">
+                        </div>
+                    </div>
+                </div>
+
+                <button type="button" id="calculateBtn" class="neo-calculate-btn">Calculate Loan</button>
+
+                <div id="results" class="neo-results">
+                    <h3 class="result-title">Payment Summary</h3>
+
+                    <div class="neo-result-grid">
+                        <div class="neo-result-item"><span>Monthly Payment</span><strong id="monthlyPayment">$0</strong>
+                        </div>
+                        <div class="neo-result-item"><span>Total Payment</span><strong id="totalPayment">$0</strong>
+                        </div>
+                        <div class="neo-result-item"><span>Total Interest</span><strong id="totalInterest">$0</strong>
+                        </div>
+                        <div class="neo-result-item"><span>Total Fees</span><strong id="totalFees">$0</strong></div>
+                        <div class="neo-result-item highlight"><span>Interest Saved</span><strong
+                                id="interestSaved">$0</strong></div>
+                        <div class="neo-result-item highlight"><span>Time Saved</span><strong id="timeSaved">0
+                                months</strong></div>
+                    </div>
+
+                    <div class="neo-schedule-section">
+                        <button id="toggleScheduleBtn" class="neo-toggle-btn">View Payment Schedule ▼</button>
+                        <div id="scheduleContainer" class="neo-schedule-container">
+                            <div
+                                style="display:flex; justify-content:space-between; margin-bottom:15px; align-items:center;">
+                                <select id="scheduleView" class="neo-input-small" style="width:auto; margin:0;">
+                                    <option value="monthly">Monthly View</option>
+                                    <option value="yearly">Yearly View</option>
+                                </select>
+                                <button id="downloadCSV" class="neo-freq-btn active">Download CSV</button>
+                            </div>
+                            <div class="neo-table-container">
+                                <table id="amortizationTable" class="neo-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Date</th>
+                                            <th>Payment</th>
+                                            <th>Principal</th>
+                                            <th>Interest</th>
+                                            <th>Balance</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="scheduleBody"></tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="neo-disclaimer"
+                    style="margin-top:30px; padding:15px; background:#fff7ed; border-radius:8px; border:1px solid #ffedd5; color:#9a3412; font-size:0.85rem;">
+                    <p><strong>Disclaimer:</strong> This calculator provides estimates only. Actual payments may vary
+                        based on lender terms, credit score, and location.</p>
+                </div>
+                <!-- CALCULATOR WIDGET END -->
+
+                <!-- Related Tools (Links Fixed) -->
+                <div class="neo-related-section">
+                    <h2 class="section-main-title">Related Financial Calculators</h2>
+                    <div class="neo-calc-grid">
+                        <a href="../mortgage-calculator/index.html" class="neo-calc-card">
+                            <div class="calc-icon">🏠</div>
+                            <h4>Mortgage Calculator</h4>
+                            <p>With taxes and insurance</p>
+                        </a>
+                        <a href="../amortization-calculator/index.html" class="neo-calc-card">
+                            <div class="calc-icon">🚗</div>
+                            <h4>Auto Loan Calculator</h4>
+                            <p>Find your monthly car payment</p>
+                        </a>
+                        <a href="../simple-interest-calculator/index.html" class="neo-calc-card">
+                            <div class="calc-icon">📈</div>
+                            <h4>Simple Interest</h4>
+                            <p>Calculate interest on loans</p>
+                        </a>
+                    </div>
+                </div>
+
+
+                <!-- Engaging SEO Guide -->
+                <div class="neo-seo-container">
+                    <div class="neo-seo-content">
+                        <h2>Take Control of Your Loan</h2>
+                        <section class="neo-seo-section">
+                            <h3>More Than Just a Monthly Payment</h3>
+                            <p>taking out a loan is a big commitment, whether it's for a car, a home renovation, or
+                                consolidating debt. It's easy to just look at the monthly payment and say "I can afford
+                                that," but it's crucial to understand the total cost of borrowing.</p>
+                            <p>This calculator breaks down your loan into its DNA: <strong>Principal</strong> (the money
+                                you
+                                borrowed) and <strong>Interest</strong> (the price you pay to borrow it). Seeing this
+                                split
+                                helps you understand why your balance moves so slowly at the beginning of the term.</p>
+                        </section>
+
+                        <section class="neo-seo-section">
+                            <h3>The Power of "One Extra Payment"</h3>
+                            <p>Want to know a secret banks don't advertise? Making just <em>one</em> extra payment a
+                                year
+                                can shave years off your loan term and save you thousands in interest.</p>
+                            <p>Use the "Extra Payment Options" toggle above to see for yourself. Try adding $50 to your
+                                monthly payment or simulating a one-time lump sum payment from a tax refund. The results
+                                might shock you!</p>
+                        </section>
+
+                        <section class="neo-seo-section">
+                            <h3>Strategies to Pay Off Debt Faster</h3>
+                            <ul style="margin-top:15px; padding-left:20px; color:var(--text-muted);">
+                                <li style="margin-bottom:10px;"><strong>Round Up:</strong> If your payment is $365,
+                                    round it
+                                    up to $400. You won't miss the difference, but your loan balance will drop faster.
+                                </li>
+                                <li style="margin-bottom:10px;"><strong>Bi-Weekly Payments:</strong> Instead of paying
+                                    monthly, pay half every two weeks. By the end of the year, you'll have made 13 full
+                                    payments instead of 12.</li>
+                                <li style="margin-bottom:10px;"><strong>Refinance:</strong> If your credit score has
+                                    improved since you took out the loan, check if you can refinance at a lower rate.
+                                </li>
+                            </ul>
+                        </section>
+                    </div>
+                </div>
+
+                <!-- FAQ -->
+                <div class="neo-faq-section">
+                    <h2 class="section-main-title">Common Loan Questions</h2>
+                    <div class="neo-faq-container">
+                        <div class="neo-faq-item">
+                            <h4 class="faq-question">What is "amortization"?</h4>
+                            <p class="faq-answer">It's a fancy word for "killing off" the debt. An amortization schedule
+                                shows exactly how much of each payment goes to interest vs. principal. In the early
+                                years,
+                                you're mostly paying interest. In the later years, you're mostly paying off the loan.
+                            </p>
+                        </div>
+                        <div class="neo-faq-item">
+                            <h4 class="faq-question">Does paying early have penalty fees?</h4>
+                            <p class="faq-answer">It depends on your lender. Most modern loans (like mortgages and auto
+                                loans) don't have "prepayment penalties," but personal loans might. Always check your
+                                loan
+                                agreement before dropping a large lump sum.</p>
+                        </div>
+                        <div class="neo-faq-item">
+                            <h4 class="faq-question">Should I pay off my loan or invest?</h4>
+                            <p class="faq-answer">Compare the interest rates. If your loan interest is 7% but your
+                                investments only earn 5%, it's mathematically better to pay off the debt. If your loan
+                                is a
+                                low-interest mortgage (e.g., 3%), investing might yield higher returns.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div id="related-calculators"></div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <span
+                        style="font-weight: 800; font-size: 1.2rem; display:block; margin-bottom:10px; color:var(--text-main);">FairCalculator</span>
+                    <p>Simple, fast, and accurate online calculators.</p>
+                </div>
+                <div>
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="../../index.html">Home</a></li>
+                        <li><a href="../../about.html">About</a></li>
+                        <li><a href="../../contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="../../legal/privacy-policy.html">Privacy</a></li>
+                        <li><a href="../../legal/terms-of-service.html">Terms</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2025 FairCalculator. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts (Paths Fixed) -->
+    <script>var ROOT_PATH = '../../';</script>
+    <script src="../../assets/js/data.js"></script>
+    <script src="../../assets/js/search.js"></script>
+    <script src="../../assets/js/mobile-menu.js"></script>
+
+    <!-- CALCULATOR LOGIC -->
+
+    <script src="../../assets/js/calculators/loan-calculator.js" defer></script>
+    <script src="../../assets/js/related-calculators.js" defer></script>
+</body>
+
+</html>

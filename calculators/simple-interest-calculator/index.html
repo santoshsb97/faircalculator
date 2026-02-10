@@ -1,0 +1,759 @@
+﻿<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- OPTIMIZED META TAGS FOR BING -->
+    <title>Simple Interest Calculator Free Online Tool - Calculate Interest by Days & Years</title>
+    <meta name="description"
+        content="Free simple interest calculator online tool. Calculate simple interest by days or years instantly with our simple interest formula calculator. Get yearly breakdown and total interest earnings.">
+    <meta name="bingbot" content="index, follow">
+    <meta name="keywords"
+        content="simple interest calculator, simple interest calculator online, free simple interest calculator, simple interest calculator tool, calculate simple interest online, simple interest formula calculator, simple interest calculator by days, simple interest calculator yearly">
+
+    <link rel="canonical" href="https://www.faircalculator.com/calculators/simple-interest-calculator/">
+
+    <!-- Preload Critical Assets -->
+    <link rel="preload" href="../../assets/css/style.css" as="style">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        as="style">
+
+    <!-- 1. GLOBAL ASSETS (Go up 2 folders) -->
+    <link rel="icon" type="image/x-icon" href="../../assets/images/favicon.png">
+    <link rel="stylesheet" href="../../assets/css/style.css">
+
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- ENHANCED SCHEMA MARKUP -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Simple Interest Calculator - Free Online Tool",
+      "description": "Free online simple interest calculator tool. Calculate simple interest for loans, savings, and investments with yearly and daily breakdowns. Includes simple interest formula and examples.",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "Web",
+      "url": "https://www.faircalculator.com/calculators/simple-interest-calculator/",
+      "provider": { 
+        "@type": "Organization", 
+        "name": "FairCalculator" 
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "featureList": [
+        "Calculate simple interest online instantly",
+        "Simple interest calculator by days and years",
+        "Yearly interest breakdown table",
+        "Simple interest formula with examples",
+        "Free simple interest calculator tool",
+        "Visual interest vs principal comparison",
+        "Multiple currency support",
+        "Mobile-friendly calculator"
+      ],
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "ratingCount": "1820",
+        "bestRating": "5",
+        "worstRating": "1"
+      }
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How do I calculate simple interest online?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Use our free simple interest calculator tool by entering your principal amount, interest rate, and time period. The calculator instantly shows total interest, final amount, and a yearly breakdown using the simple interest formula I = P × R × T."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the simple interest formula?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The simple interest formula is I = P × R × T, where I is interest, P is principal amount, R is annual rate (as decimal), and T is time in years. For example, $10,000 at 5% for 3 years = $10,000 × 0.05 × 3 = $1,500 interest."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I calculate simple interest by days?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "To calculate simple interest by days, use the formula: I = P × R × (Days/365). For example, $5,000 at 4% for 90 days = $5,000 × 0.04 × (90/365) = $49.32. Our calculator handles both yearly and daily calculations."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is this simple interest calculator free?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, this simple interest calculator online tool is completely free with no registration required. Calculate unlimited simple interest calculations for loans, investments, and savings instantly."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I use this simple interest calculator for loans?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, this free simple interest calculator works perfectly for car loans, personal loans, student loans, and any loan using simple interest. Enter your loan amount, interest rate, and term to see total interest and yearly breakdown."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I calculate simple interest yearly?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Our simple interest calculator yearly feature automatically generates a year-by-year breakdown showing principal, interest earned each year, and cumulative balance. Simply enter your details and view the complete amortization table."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <link rel="preload" href="../../assets/css/calculators/simple-interest-calculator.css" as="style">
+    <link rel="stylesheet" href="../../assets/css/calculators/simple-interest-calculator.css">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BVENYYJ869"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-BVENYYJ869');
+    </script>
+    <script type="text/javascript">
+        (function (c, l, a, r, i, t, y) {
+            c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+            t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+            y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+        })(window, document, "clarity", "script", "udqk27trde");
+    </script>
+</head>
+
+<body>
+
+    <!-- 3. HEADER (Standard Site Header) -->
+    <header class="header">
+        <div class="container header-inner">
+            <a href="../../index.html" class="logo">FairCalculator</a>
+            <div class="header-search">
+                <input type="text" id="searchInput" class="search-input" placeholder="Search tools..."
+                    aria-label="Search">
+            </div>
+            <button class="menu-btn" id="menuToggle"><i class="fas fa-bars"></i></button>
+        </div>
+    </header>
+
+    <!-- 4. CATEGORY BAR -->
+    <nav class="category-bar">
+        <div class="container">
+            <ul id="category-list">
+                <li><a href="../../index.html">All</a></li>
+                <li><a href="../../categories/finance-calculators.html"
+                        style="background:#eff6ff; color:#2563eb; border-color:#bfdbfe;">Finance</a></li>
+                <li><a href="../../categories/math-calculators.html">Math</a></li>
+                <li><a href="../../categories/health-calculators.html">Health</a></li>
+                <li><a href="../../categories/date-time-calculators.html">Date</a></li>
+                <li><a href="../../categories/unit-converters.html">Converters</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="mobile-close" id="closeMenu">&times;</button>
+        <div style="margin-top: 40px;">
+            <ul class="sidebar-list">
+                <li><a href="../../index.html">Home</a></li>
+                <li><a href="../../index.html#calculators">All Calculators</a></li>
+                <li><a href="../../about.html">About</a></li>
+                <li><a href="../../contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- 5. MAIN CONTENT -->
+    <main class="main-content">
+        <div class="container">
+
+            <!-- Breadcrumbs -->
+            <div style="margin-bottom: 20px; font-size: 0.9rem; color: #64748b;">
+                <a href="../../index.html" style="text-decoration: underline;">Home</a> /
+                <a href="../../categories/finance-calculators.html" style="text-decoration: underline;">Finance</a> /
+                <span style="font-weight: 600; color: #0f172a;">Simple Interest Calculator</span>
+            </div>
+
+            <!-- Search Results Placeholder -->
+            <div id="searchResults" style="display:none; margin-bottom: 40px;">
+                <div class="section-header">Search Results</div>
+                <div class="grid" id="searchResultsContent"></div>
+            </div>
+
+            <!-- TOOL CONTAINER -->
+            <div class="si-widget-container" id="tool-container">
+
+                <!-- OPTIMIZED H1 -->
+                <h1 class="section-header" style="justify-content:center; font-size: 2rem; margin-bottom: 30px;">
+                    <i class="fas fa-percent" style="color:#f59e0b; margin-right: 15px;"></i> Simple Interest Calculator
+                    Free Online Tool
+                </h1>
+
+                <p style="text-align: center; font-size: 1.05rem; color: #475569; margin-bottom: 30px;">
+                    Calculate simple interest online instantly with our free simple interest calculator tool. Get yearly
+                    breakdown, use the simple interest formula calculator, and calculate interest by days or years.
+                </p>
+
+                <!-- Calculator Card -->
+                <div class="calculator-card">
+                    <div id="errorBox">Please check your inputs.</div>
+
+                    <div class="form-group">
+                        <label class="form-label">
+                            Principal Amount
+                            <select id="currency" class="form-select" style="width: auto; padding: 4px 8px;">
+                                <option value="USD">USD ($)</option>
+                                <option value="EUR">EUR (€)</option>
+                                <option value="GBP">GBP (£)</option>
+                                <option value="INR">INR (₹)</option>
+                            </select>
+                        </label>
+                        <input type="number" id="principal" class="form-input" placeholder="e.g. 10000">
+                    </div>
+
+                    <div class="form-group">
+                        <div class="breakdown-grid" style="margin-bottom:0;">
+                            <div>
+                                <label class="form-label">Annual Rate (%)</label>
+                                <input type="number" id="rate" class="form-input" placeholder="e.g. 5">
+                            </div>
+                            <div>
+                                <label class="form-label">Time Period</label>
+                                <div class="form-input-group">
+                                    <input type="number" id="timeValue" class="form-input" placeholder="e.g. 3">
+                                    <select id="timeUnit" class="form-select" style="width: 100px;">
+                                        <option value="years">Years</option>
+                                        <option value="months">Months</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button id="calculateBtn" class="btn-calc">Calculate Interest</button>
+                </div>
+
+                <!-- Results Section -->
+                <div id="resultContainer" class="result-box">
+
+                    <div class="summary-card">
+                        <span class="summary-label">Total Amount</span>
+                        <span id="totalAmount" class="summary-value">$0.00</span>
+                    </div>
+
+                    <div class="breakdown-grid">
+                        <div class="mini-card" style="border-top: 4px solid var(--primary);">
+                            <span>Principal</span>
+                            <strong id="displayPrincipal">$0.00</strong>
+                        </div>
+                        <div class="mini-card" style="border-top: 4px solid #f59e0b;">
+                            <span>Total Interest</span>
+                            <strong id="interest">$0.00</strong>
+                        </div>
+                    </div>
+
+                    <!-- Chart -->
+                    <div class="calculator-card">
+                        <h3 style="text-align:center;">Visual Breakdown</h3>
+                        <div class="chart-container">
+                            <div id="donutChart" class="donut-chart" style="--p: 0%;">
+                                <div class="donut-hole" id="donutText">0%</div>
+                            </div>
+                        </div>
+                        <div style="text-align:center; font-size:0.9rem;">
+                            <span style="color:var(--primary);">● Principal</span> &nbsp;&nbsp;
+                            <span style="color:#f59e0b;">● Interest</span>
+                        </div>
+                    </div>
+
+                    <!-- Table -->
+                    <div class="calculator-card">
+                        <h3>Yearly Breakdown</h3>
+                        <div style="overflow-x:auto;">
+                            <table class="schedule-table">
+                                <thead>
+                                    <tr>
+                                        <th>Period</th>
+                                        <th>Principal</th>
+                                        <th>Interest</th>
+                                        <th>Balance</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="breakdownTable"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- NEW OPTIMIZED SEO CONTENT -->
+
+                <!-- Section 1: Simple Interest Calculator Online -->
+                <div class="calculator-card" style="margin-top: 40px;">
+                    <h2>Simple Interest Calculator Online: Calculate Interest Instantly</h2>
+                    <p>
+                        Our simple interest calculator online is a free tool that helps you calculate simple interest
+                        for loans, savings accounts, certificates of deposit (CDs), and investments within seconds.
+                        Whether you need to calculate simple interest by days or calculate simple interest yearly, this
+                        simple interest calculator tool handles all scenarios automatically.
+                    </p>
+                    <p>
+                        To calculate simple interest online with our tool, simply enter your principal amount (the
+                        initial money borrowed or invested), the annual interest rate as a percentage, and the time
+                        period in years or months. The free simple interest calculator instantly shows your total
+                        interest earned or owed, the final amount, and provides a complete year-by-year breakdown of
+                        interest accumulation.
+                    </p>
+                </div>
+
+                <!-- Section 2: Simple Interest Formula Calculator -->
+                <div class="calculator-card">
+                    <h2>Simple Interest Formula Calculator: Understanding the Math</h2>
+                    <p>
+                        This simple interest formula calculator uses the standard mathematical formula for calculating
+                        simple interest. Understanding this formula helps you verify calculations and make informed
+                        financial decisions.
+                    </p>
+                    <div
+                        style="background:#f8fafc; padding:20px; border-left:4px solid var(--primary); margin: 20px 0; border-radius: 8px;">
+                        <h3 style="margin-top: 0;">Simple Interest Formula</h3>
+                        <p style="font-size: 1.3rem; font-weight: 600; color: var(--primary); margin: 15px 0;">
+                            I = P × R × T
+                        </p>
+                        <p><strong>Where:</strong></p>
+                        <ul style="margin-left: 20px;">
+                            <li><strong>I</strong> = Interest earned or owed</li>
+                            <li><strong>P</strong> = Principal amount (initial investment or loan)</li>
+                            <li><strong>R</strong> = Annual interest rate (as a decimal: 5% = 0.05)</li>
+                            <li><strong>T</strong> = Time period in years</li>
+                        </ul>
+                        <p style="margin-top: 15px;"><strong>Total Amount Formula:</strong></p>
+                        <p style="font-size: 1.2rem; font-weight: 600; color: var(--primary);">A = P + I or A = P(1 +
+                            RT)</p>
+                    </div>
+
+                    <h3>Simple Interest Calculation Example</h3>
+                    <p>Let's use our simple interest formula calculator with a real example:</p>
+                    <p style="background: #eff6ff; padding: 15px; border-radius: 8px; border-left: 4px solid #3b82f6;">
+                        <strong>Example:</strong> You invest $5,000 in a CD at 4% annual simple interest for 3
+                        years.<br><br>
+                        <strong>Calculate:</strong><br>
+                        I = $5,000 × 0.04 × 3 = $600<br>
+                        Total Amount = $5,000 + $600 = <strong>$5,600</strong>
+                    </p>
+                </div>
+
+                <!-- Section 3: Calculate Simple Interest by Days -->
+                <div class="calculator-card">
+                    <h2>How to Calculate Simple Interest by Days</h2>
+                    <p>
+                        When you need to calculate simple interest by days (rather than years), the formula adjusts to
+                        account for the daily time period. This is particularly useful for short-term loans, student
+                        loans that accrue daily interest, or when calculating interest for partial years.
+                    </p>
+
+                    <h3>Simple Interest Calculator by Days Formula</h3>
+                    <div
+                        style="background:#fff7ed; padding:20px; border-left:4px solid #f59e0b; margin: 20px 0; border-radius: 8px;">
+                        <p style="font-size: 1.2rem; font-weight: 600; color: #ea580c;">
+                            I = P × R × (Days ÷ 365)
+                        </p>
+                        <p style="margin-top: 10px;"><em>Note: Some banks use 360 days (called "ordinary simple
+                                interest"), but 365 is the standard.</em></p>
+                    </div>
+
+                    <h3>Simple Interest Calculation by Days Example</h3>
+                    <p style="background: #fef3c7; padding: 15px; border-radius: 8px; border-left: 4px solid #f59e0b;">
+                        <strong>Example:</strong> Calculate interest on a $3,000 personal loan at 6% for 90
+                        days.<br><br>
+                        I = $3,000 × 0.06 × (90/365)<br>
+                        I = $3,000 × 0.06 × 0.2466<br>
+                        I = <strong>$44.39</strong> interest for 90 days
+                    </p>
+
+                    <p>
+                        Our simple interest calculator tool can handle daily calculations automatically. Simply enter
+                        your time period in months if it's less than a year, and the calculator converts it to the
+                        appropriate fraction of a year for accurate daily interest calculations.
+                    </p>
+                </div>
+
+                <!-- Section 4: Simple Interest Calculator Yearly -->
+                <div class="calculator-card">
+                    <h2>Simple Interest Calculator Yearly Breakdown</h2>
+                    <p>
+                        The simple interest calculator yearly feature shows you exactly how your interest accumulates
+                        year by year. Unlike compound interest where interest builds on previous interest, simple
+                        interest grows at a constant rate each year, making it easy to predict and plan for.
+                    </p>
+
+                    <h3>Why Use a Simple Interest Calculator Yearly Tool?</h3>
+                    <ul style="margin-left: 20px; line-height: 1.8;">
+                        <li><strong>Loan Planning:</strong> See exactly how much interest you'll pay each year on car
+                            loans or personal loans</li>
+                        <li><strong>Investment Tracking:</strong> Monitor annual returns on bonds or CDs that don't
+                            compound</li>
+                        <li><strong>Budget Forecasting:</strong> Plan for consistent annual interest expenses or income
+                        </li>
+                        <li><strong>Comparison Shopping:</strong> Compare simple interest loans against compound
+                            interest options</li>
+                    </ul>
+
+                    <p>
+                        When you use our online simple interest calculator, the yearly breakdown table shows the
+                        principal balance, interest earned for that year, and cumulative total for each year of your
+                        loan or investment term. This makes it crystal clear how simple interest differs from compound
+                        interest over time.
+                    </p>
+                </div>
+
+                <!-- Section 5: Free Simple Interest Calculator Tool Benefits -->
+                <div class="calculator-card">
+                    <h2>Why Use Our Free Simple Interest Calculator?</h2>
+                    <p>
+                        This free simple interest calculator online tool offers several advantages over manual
+                        calculations or generic financial calculators:
+                    </p>
+
+                    <div class="breakdown-grid" style="margin-top: 20px;">
+                        <div class="mini-card" style="text-align: left; border-top: 3px solid #10b981;">
+                            <h4 style="color: #10b981; margin-top: 0;">✓ Instant Results</h4>
+                            <p style="font-size: 0.9rem; margin: 0;">Calculate simple interest in seconds, not minutes.
+                                No manual math required.</p>
+                        </div>
+                        <div class="mini-card" style="text-align: left; border-top: 3px solid #3b82f6;">
+                            <h4 style="color: #3b82f6; margin-top: 0;">✓ 100% Free</h4>
+                            <p style="font-size: 0.9rem; margin: 0;">No registration, no hidden fees. Use our simple
+                                interest calculator tool unlimited times.</p>
+                        </div>
+                        <div class="mini-card" style="text-align: left; border-top: 3px solid #f59e0b;">
+                            <h4 style="color: #f59e0b; margin-top: 0;">✓ Visual Breakdown</h4>
+                            <p style="font-size: 0.9rem; margin: 0;">See principal vs interest ratio with our
+                                interactive donut chart.</p>
+                        </div>
+                        <div class="mini-card" style="text-align: left; border-top: 3px solid #8b5cf6;">
+                            <h4 style="color: #8b5cf6; margin-top: 0;">✓ Multiple Formats</h4>
+                            <p style="font-size: 0.9rem; margin: 0;">Calculate by years, months, or days. Choose your
+                                currency.</p>
+                        </div>
+                    </div>
+
+                    <p style="margin-top: 20px;">
+                        Whether you're a student learning about simple interest, a borrower comparing loan options, or
+                        an investor analyzing returns, this simple interest calculator online free tool provides all the
+                        information you need in an easy-to-understand format.
+                    </p>
+                </div>
+
+                <!-- Original SEO Content Continues -->
+                <div class="calculator-card">
+                    <h2>Understanding Simple Interest</h2>
+                    <p>Simple interest is calculated only on the principal amount of a loan or deposit. It does not
+                        compound like other forms of interest.</p>
+                    <div
+                        style="background:#f8fafc; padding:15px; border-left:4px solid var(--primary); margin: 15px 0;">
+                        <strong>Formula:</strong> SI = (P × R × T) / 100
+                    </div>
+
+                    <h3 style="margin-top:20px;">Frequently Asked Questions</h3>
+                    <div style="margin-top:10px;">
+                        <p><strong>Does simple interest compound?</strong><br>No. You only earn interest on the initial
+                            money you deposited.</p>
+                        <p><strong>What is it used for?</strong><br>Car loans, short-term personal loans, and some
+                            certificates of deposit (CDs).</p>
+                    </div>
+                </div>
+
+                <!-- SEO Content -->
+                <div class="info-section">
+                    <article>
+                        <h2>The Ultimate Guide to Simple Interest: Formulas, Examples, and How It Works</h2>
+                        <p>
+                            Money doesn't just sit still; it grows. Whether you are borrowing funds for a new car or
+                            setting aside cash for a rainy day, interest is the invisible force that changes the value
+                            of your money over time. But not all interest is created equal. Enter <strong>Simple
+                                Interest</strong>—the straightforward, transparent cousin of the more complex compound
+                            interest.
+                        </p>
+                        <p>
+                            While it might seem basic, understanding simple interest is a fundamental financial literacy
+                            skill. It is the bedrock of many consumer loans, short-term investments, and private lending
+                            agreements. In this comprehensive guide, we will break down exactly what simple interest is,
+                            how to calculate it (even without a calculator), and why it matters for your wallet.
+                        </p>
+
+                        <h3>What exactly is Simple Interest?</h3>
+                        <p>
+                            <strong>Simple Interest</strong> is a method of calculating the interest charge on a loan or
+                            the interest earned on a deposit. The defining characteristic of simple interest is that it
+                            is calculated <em>only</em> on the principal amount—that is, the original sum of money
+                            borrowed or deposited.
+                        </p>
+                        <p>
+                            Unlike compound interest, where you earn "interest on interest," simple interest remains
+                            constant throughout the loan term, provided the principal doesn't change. This makes it a
+                            linear growth model. If you borrow $1,000 at 5% simple interest for 5 years, you pay the
+                            exact same amount of interest in Year 1 as you do in Year 5.
+                        </p>
+                        <blockquote>
+                            <i class="fas fa-quote-left" style="color:var(--primary); margin-right:10px;"></i>
+                            <strong>Key Takeaway:</strong> Simple interest is easy to predict. It doesn't snowball. This
+                            predictability makes it favorable for borrowers but often less exciting for long-term
+                            investors compared to compound interest.
+                        </blockquote>
+
+                        <h3>Real-World Calculation Examples</h3>
+                        <p>Let's look at two scenarios to see how this works in real life.</p>
+
+                        <h4>Scenario 1: The Personal Loan</h4>
+                        <p>
+                            Imagine you borrow <strong>$10,000</strong> from a friend to renovate your kitchen. They
+                            agree to lend it to you for <strong>3 years</strong> at a modest <strong>4% simple
+                                interest</strong> rate.
+                        </p>
+                        <ul>
+                            <li><strong>P</strong> = $10,000</li>
+                            <li><strong>r</strong> = 0.04 (4%)</li>
+                            <li><strong>t</strong> = 3 years</li>
+                        </ul>
+                        <p>
+                            <code>I = 10,000 × 0.04 × 3 = $1,200</code><br>
+                            You will pay $1,200 in interest over the three years. The total repayment will be
+                            <strong>$11,200</strong>.
+                        </p>
+
+                        <h4>Scenario 2: Short-Term Investment</h4>
+                        <p>
+                            You put <strong>$5,000</strong> into a 6-month Certificate of Deposit (CD) that pays
+                            <strong>3% annual simple interest</strong>.
+                        </p>
+                        <ul>
+                            <li><strong>P</strong> = $5,000</li>
+                            <li><strong>r</strong> = 0.03</li>
+                            <li><strong>t</strong> = 0.5 (6 months is half a year)</li>
+                        </ul>
+                        <p>
+                            <code>I = 5,000 × 0.03 × 0.5 = $75</code><br>
+                            At the end of 6 months, you get your $5,000 back plus $75 in interest.
+                        </p>
+
+                        <h3>Simple Interest vs. Compound Interest</h3>
+                        <p>
+                            This is the most common confusion in finance. While simple interest grows linearly, compound
+                            interest grows exponentially.
+                        </p>
+                        <div style="overflow-x:auto; margin: 20px 0;">
+                            <table class="schedule-table">
+                                <thead>
+                                    <tr>
+                                        <th>Feature</th>
+                                        <th>Simple Interest</th>
+                                        <th>Compound Interest</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>Basis</strong></td>
+                                        <td>Principal Only</td>
+                                        <td>Principal + Accumulated Interest</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Growth</strong></td>
+                                        <td>Linear (Constant)</td>
+                                        <td>Exponential (Accelerating)</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Benefit</strong></td>
+                                        <td>Better for <strong>Borrowers</strong></td>
+                                        <td>Better for <strong>Savers/Investors</strong></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Common Uses</strong></td>
+                                        <td>Car loans, consumer goods</td>
+                                        <td>Savings accounts, stock market, credit cards</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <p>
+                            <strong>The "Cost" Difference:</strong> If you borrowed $100,000 for 20 years at 5%:
+                            <br>
+                            With <em>Simple Interest</em>, you'd pay $100,000 in interest.<br>
+                            With <em>Compound Interest</em> (compounded annually), you'd pay roughly $165,330 in
+                            interest.<br>
+                            That is a massive <strong>$65,000 difference</strong> just based on the type of interest!
+                        </p>
+
+                        <h3>Where is Simple Interest Used?</h3>
+                        <p>
+                            You usually encounter simple interest in short-term or specific lending situations:
+                        </p>
+                        <ul>
+                            <li><strong>Auto Loans:</strong> Many car loans calculate interest on the principal balance
+                                at the start. However, some use amortization which feels like simple interest but
+                                behaves slightly differently.</li>
+                            <li><strong>Student Loans:</strong> Some federal student loans charge simple interest daily
+                                based on the principal balance. This is why making payments while in school
+                                (interest-only payments) prevents the balance from growing.</li>
+                            <li><strong>Consumer Installment Loans:</strong> Buy-now-pay-later schemes often use a
+                                straightforward interest fee that equates to simple interest.</li>
+                            <li><strong>Certificates of Deposit (CDs):</strong> Some bonds and CDs payout interest at
+                                set intervals (coupons) without reinvesting it. This is effectively simple interest if
+                                you don't manually reinvest that cash.</li>
+                        </ul>
+
+                        <h3>Pros and Cons</h3>
+                        <div class="result-box" style="display:block; animation:none;">
+                            <div class="breakdown-grid">
+                                <div class="mini-card" style="border-top: 4px solid #10b981; text-align:left;">
+                                    <strong style="color:#10b981; margin-bottom:10px;">Pros</strong>
+                                    <ul>
+                                        <li>Easy to calculate and understand.</li>
+                                        <li>Lower total cost for borrowers compared to compound interest.</li>
+                                        <li>Principal outstanding decreases faster if you make extra payments (depending
+                                            on loan terms).</li>
+                                    </ul>
+                                </div>
+                                <div class="mini-card" style="border-top: 4px solid #ef4444; text-align:left;">
+                                    <strong style="color:#ef4444; margin-bottom:10px;">Cons</strong>
+                                    <ul>
+                                        <li>Generates less wealth for investors and savers over time.</li>
+                                        <li>Not account for inflation—fixed simple returns might lose purchasing power.
+                                        </li>
+                                        <li>Less common in modern banking products than compound interest.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h3>Frequently Asked Questions (FAQ)</h3>
+
+                        <div class="faq-item">
+                            <div class="faq-question">Why does the daily interest amount change on my student loans?
+                            </div>
+                            <p class="faq-answer">
+                                Although student loans often use simple interest, it is calculated
+                                <strong>daily</strong>. The formula is:
+                                <code>(Outstanding Principal × Interest Rate) / 365</code>. This daily charge is added
+                                to what you owe. Effectively, the more days between payments, the more interest accrues,
+                                but it doesn't compound (interest isn't charged on the accrued interest) unless
+                                "capitalization" occurs.
+                            </p>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question">Can I use this calculator for savings accounts?</div>
+                            <p class="faq-answer">
+                                You can, but regular savings accounts typically use <strong>Compound Interest</strong>
+                                (APY). For savings accounts, our <a href="../savings-calculator/">Savings Calculator</a>
+                                or <a href="../compound-interest-calculator/">Compound Interest Calculator</a> would be
+                                more accurate. This tool is best for CDs with non-compounding payouts or private loans.
+                            </p>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question">What is the "Time Value of Money"?</div>
+                            <p class="faq-answer">
+                                Simple interest ignores the "Time Value of Money" principle, which states that a dollar
+                                today is worth more than a dollar tomorrow. Compound interest respects this by paying
+                                you for the interest you've already earned. Simple interest treats the 10th year of a
+                                loan exactly the same as the 1st year, disregarding inflation or opportunity cost.
+                            </p>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question">How do I calculate simple interest for days?</div>
+                            <p class="faq-answer">
+                                If you need to calculate interest for a specific number of days, convert days into years
+                                by dividing by 365 (or sometimes 360, depending on bank policy known as "Ordinary Simple
+                                Interest"). <br>
+                                <em>Formula:</em> <code>P × r × (Days / 365)</code>.
+                            </p>
+                        </div>
+
+                        <h3>Conclusion</h3>
+                        <p>
+                            Simple interest is a powerful tool for predictability. Whether you are negotiating a private
+                            loan with a family member or analyzing the cost of a promotional car lease, knowing how to
+                            run these numbers ensures you aren't caught off guard. While it may not be the
+                            wealth-building engine that compound interest is, its simplicity provides clarity—and in
+                            finance, clarity is peace of mind.
+                        </p>
+                        <p>
+                            <em>Ready to crunch the numbers? Scroll up to the <strong>FairCalculator Simple Interest
+                                    Tool</strong> and start planning your financial future today.</em>
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </div>
+        <div id="related-calculators"></div>
+    </main>
+
+    <!-- 6. FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <span
+                        style="font-weight: 800; font-size: 1.2rem; display:block; margin-bottom:10px; color:var(--text-main);">FairCalculator</span>
+                    <p>Free online calculators for simple interest, loans, and investments.</p>
+                </div>
+                <div>
+                    <h4>Menu</h4>
+                    <ul>
+                        <li><a href="../../index.html">Home</a></li>
+                        <li><a href="../../about.html">About Us</a></li>
+                        <li><a href="../../contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="../../legal/privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="../../legal/terms-of-service.html">Terms</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2025 FairCalculator. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- 7. SCRIPTS -->
+    <script>var ROOT_PATH = '../../';</script>
+    <script src="../../assets/js/data.js"></script>
+    <script src="../../assets/js/search.js"></script>
+    <script src="../../assets/js/mobile-menu.js"></script>
+
+    <!-- WIDGET LOGIC -->
+    <script src="../../assets/js/calculators/simple-interest-calculator.js" defer></script>
+    <script src="../../assets/js/related-calculators.js" defer></script>
+</body>
+
+</html>

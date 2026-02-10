@@ -1,0 +1,231 @@
+/* assets/css/calculators/australian-income-tax-calculator.css */
+
+.tax-widget-container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.calculator-form {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e2e8f0;
+    margin-bottom: 2rem;
+}
+
+.input-wrapper {
+    margin-bottom: 1.5rem;
+}
+
+.input-header {
+    display: block;
+    font-weight: 600;
+    color: var(--text-main);
+    margin-bottom: 0.5rem;
+}
+
+.input-field,
+select.input-field {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.2s;
+    background: #f8fafc;
+}
+
+.input-field:focus {
+    outline: none;
+    border-color: var(--primary);
+    background: #fff;
+}
+
+.radio-group {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.radio-option {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 10px 15px;
+    background: #f1f5f9;
+    border-radius: 8px;
+    border: 1px solid #cbd5e1;
+    transition: all 0.2s;
+}
+
+.radio-option:hover {
+    background: #e2e8f0;
+}
+
+.radio-option input {
+    transform: scale(1.2);
+    margin-right: 10px;
+    accent-color: var(--primary);
+}
+
+.result-container {
+    margin-top: 2rem;
+    display: none;
+    animation: fadeIn 0.4s ease-out;
+}
+
+.hero-card {
+    background: #10b981;
+    color: white;
+    padding: 2rem;
+    border-radius: 12px;
+    text-align: center;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+}
+
+.hero-label {
+    opacity: 0.9;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+}
+
+.hero-value {
+    font-size: 2.5rem;
+    font-weight: 800;
+}
+
+.hero-sub {
+    font-size: 0.9rem;
+    opacity: 0.9;
+    margin-top: 5px;
+}
+
+.tax-breakdown {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.breakdown-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    border-bottom: 1px solid #f1f5f9;
+    font-size: 0.95rem;
+    color: #334155;
+    align-items: center;
+}
+
+.breakdown-row:last-child {
+    border-bottom: none;
+    font-weight: 700;
+    background: #f8fafc;
+    border-top: 2px solid #e2e8f0;
+}
+
+.dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-right: 8px;
+}
+
+.dot.tax {
+    background: #ef4444;
+}
+
+.dot.med {
+    background: #3b82f6;
+}
+
+.dot.net {
+    background: #10b981;
+}
+
+.chart-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.chart-container {
+    width: 180px;
+    height: 180px;
+    position: relative;
+    border-radius: 50%;
+    background: conic-gradient(#ef4444 0% var(--tax),
+            #3b82f6 var(--tax) var(--med),
+            #10b981 var(--med) 100%);
+    transition: --tax 1s, --med 1s;
+}
+
+.chart-hole {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 140px;
+    height: 140px;
+    background: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.result-grid-layout {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 40px;
+    align-items: start;
+}
+
+.disclaimer-text {
+    margin-top: 20px;
+    font-size: 0.85rem;
+    color: #94a3b8;
+    font-style: italic;
+    line-height: 1.4;
+}
+
+@media (max-width: 700px) {
+    .result-grid-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .radio-group {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+@property --tax {
+    syntax: '<percentage>';
+    inherits: false;
+    initial-value: 0%;
+}
+
+@property --med {
+    syntax: '<percentage>';
+    inherits: false;
+    initial-value: 0%;
+}

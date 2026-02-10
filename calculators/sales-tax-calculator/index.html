@@ -1,0 +1,875 @@
+﻿<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="2026 Sales Tax Calculator: Instantly calculate combined State & Local tax for any US location. Updated for new April 2025 rates.">
+    <link rel="canonical" href="https://www.faircalculator.com/calculators/sales-tax-calculator/">
+
+    <!-- OPTIMIZED META TAGS FOR SOCIAL SHARING -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://faircalculator.com/calculators/sales-tax-calculator/">
+    <meta property="og:title" content="Sales Tax Calculator 2026 (US) – Calculate State & Local Tax Instantly">
+    <meta property="og:description"
+        content="2026 Sales Tax Calculator: Instantly calculate combined State & Local tax for any US location. Updated for new April 2025 rates.">
+    <meta property="og:image"
+        content="https://faircalculator.com/assets/images/calculators/sales-tax-calculator-preview.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://faircalculator.com/calculators/sales-tax-calculator/">
+    <meta property="twitter:title" content="Sales Tax Calculator 2026 (US) – Calculate State & Local Tax Instantly">
+    <meta property="twitter:description"
+        content="2026 Sales Tax Calculator: Instantly calculate combined State & Local tax for any US location. Updated for new April 2025 rates.">
+    <meta property="twitter:image"
+        content="https://faircalculator.com/assets/images/calculators/sales-tax-calculator-preview.png">
+
+    <!-- Preload Critical Assets -->
+    <link rel="preload" href="../../assets/css/style.css" as="style">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        as="style">
+
+    <title>Sales Tax Calculator 2026 (US) – Calculate State & Local Tax Instantly</title>
+
+    <!-- GLOBAL ASSETS -->
+    <link rel="icon" type="image/x-icon" href="../../assets/images/favicon.png">
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script type="application/ld+json">
+    [
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "US Sales Tax Calculator",
+        "description": "Calculates combined state and local sales tax for any purchase in the United States.",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "Web",
+        "dateModified": "2026-02-07",
+        "url": "https://faircalculator.com/calculators/sales-tax-calculator/",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [{
+          "@type": "ListItem",
+          "position": 1, "name": "Home", "item": "https://faircalculator.com/"
+        },{
+          "@type": "ListItem",
+          "position": 2, "name": "Finance Calculators", "item": "https://faircalculator.com/categories/finance-calculators.html"
+        },{
+          "@type": "ListItem",
+          "position": 3, "name": "Sales Tax Calculator"
+        }]
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [{
+          "@type": "Question",
+          "name": "Can I calculate sales tax backward (reverse tax)?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes! Using the 'Remove Tax' mode, you can enter the final total price you paid to determine the original base price and the specific amount of tax included."
+          }
+        },{
+          "@type": "Question",
+          "name": "How accurate are the tax rates in this calculator?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Our calculator uses the latest 2026 state sales tax rates. Local tax rates vary by county and city, so we provide an input field for specific local rates."
+          }
+        },{
+          "@type": "Question",
+          "name": "Are there items that are exempt from sales tax?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, many states exempt certain items like groceries and prescription medications. This calculator assumes a standard taxable purchase."
+          }
+        }]
+      }
+    ]
+    </script>
+    <script type="text/javascript">
+        (function (c, l, a, r, i, t, y) {
+            c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+            t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+            y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+        })(window, document, "clarity", "script", "udqk27trde");
+    </script>
+
+
+    .footer {
+    background: #ffffff !important;
+    border-top: 1px solid #e2e8f0 !important;
+    padding: 40px 0 !important;
+    margin-top: 60px !important;
+    display: block !important;
+    text-align: center;
+    }
+
+    .copyright {
+    color: #64748b;
+    font-size: 0.85rem;
+    }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <div class="container header-inner">
+            <h1 class="logo">
+                <a href="../../index.html">
+                    <i class="fas fa-calculator"></i>
+                    <span>Fair<span class="logo-highlight">Calculator</span></span>
+                </a>
+            </h1>
+            <div class="header-search">
+                <input type="text" id="searchInput" class="search-input" placeholder="Search tools..."
+                    aria-label="Search">
+            </div>
+            <button class="menu-btn" id="menuToggle" aria-label="Open Menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="mobile-close" id="menuClose">&times;</button>
+        <div style="margin-top: 50px;">
+            <ul class="sidebar-list">
+                <li><a href="../../index.html">Home</a></li>
+                <li><a href="../../categories/finance-calculators.html">Finance Calculators</a></li>
+                <li><a href="../../categories/health-calculators.html">Health Calculators</a></li>
+                <li><a href="../../categories/math-calculators.html">Math Calculators</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <main class="main-content">
+        <div class="container">
+            <!-- Search Results Container -->
+            <div id="searchResults" style="display:none; margin-bottom: 40px;">
+                <h2 class="section-header">Search Results</h2>
+                <div class="grid" id="searchResultsContent"></div>
+            </div>
+
+            <div class="tax-widget-container" id="tool-container">
+                <h1 class="section-header" style="justify-content:center; font-size: 2rem; margin-bottom: 30px;">
+                    <i class="fas fa-tags" style="color: #10b981; margin-right: 15px;"></i> US Sales Tax Calculator 2026
+                </h1>
+
+                <form id="taxForm" class="calculator-form">
+                    <div class="tax-mode-container">
+                        <label class="input-header">Calculation Mode</label>
+                        <div class="segmented-control">
+                            <div class="segment-item">
+                                <input type="radio" id="modeAdd" name="taxMode" value="add" checked>
+                                <label for="modeAdd">Add Tax (Before Tax)</label>
+                            </div>
+                            <div class="segment-item">
+                                <input type="radio" id="modeRemove" name="taxMode" value="remove">
+                                <label for="modeRemove">Remove Tax (After Tax)</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="input-wrapper">
+                        <label for="purchaseAmount" id="amountLabel" class="input-header">Amount Before Tax ($)</label>
+                        <input type="number" id="purchaseAmount" class="input-field" placeholder="e.g., 100.00"
+                            step="0.01" min="0.01">
+                    </div>
+
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+                        <div class="input-wrapper">
+                            <label for="stateRate" class="input-header">State Rate (%)</label>
+                            <select id="stateRate" class="input-field">
+                                <option value="0">Select State (0%)</option>
+                                <option value="4">Alabama (4.00%)</option>
+                                <option value="0">Alaska (0.00%)</option>
+                                <option value="5.6">Arizona (5.60%)</option>
+                                <option value="6.5">Arkansas (6.50%)</option>
+                                <option value="7.25">California (7.25%)</option>
+                                <option value="2.9">Colorado (2.90%)</option>
+                                <option value="6.35">Connecticut (6.35%)</option>
+                                <option value="0">Delaware (0.00%)</option>
+                                <option value="6">Florida (6.00%)</option>
+                                <option value="4">Georgia (4.00%)</option>
+                                <option value="4">Hawaii (4.00%)</option>
+                                <option value="6">Idaho (6.00%)</option>
+                                <option value="6.25">Illinois (6.25%)</option>
+                                <option value="7">Indiana (7.00%)</option>
+                                <option value="6">Iowa (6.00%)</option>
+                                <option value="6.5">Kansas (6.50%)</option>
+                                <option value="6">Kentucky (6.00%)</option>
+                                <option value="5">Louisiana (5.00%)</option>
+                                <option value="5.5">Maine (5.50%)</option>
+                                <option value="6">Maryland (6.00%)</option>
+                                <option value="6.25">Massachusetts (6.25%)</option>
+                                <option value="6">Michigan (6.00%)</option>
+                                <option value="6.875">Minnesota (6.875%)</option>
+                                <option value="7">Mississippi (7.00%)</option>
+                                <option value="4.225">Missouri (4.225%)</option>
+                                <option value="0">Montana (0.00%)</option>
+                                <option value="5.5">Nebraska (5.50%)</option>
+                                <option value="6.85">Nevada (6.85%)</option>
+                                <option value="0">New Hampshire (0.00%)</option>
+                                <option value="6.625">New Jersey (6.625%)</option>
+                                <option value="4.875">New Mexico (4.875%)</option>
+                                <option value="4">New York (4.00%)</option>
+                                <option value="4.75">North Carolina (4.75%)</option>
+                                <option value="5">North Dakota (5.00%)</option>
+                                <option value="5.75">Ohio (5.75%)</option>
+                                <option value="4.5">Oklahoma (4.50%)</option>
+                                <option value="0">Oregon (0.00%)</option>
+                                <option value="6">Pennsylvania (6.00%)</option>
+                                <option value="7">Rhode Island (7.00%)</option>
+                                <option value="6">South Carolina (6.00%)</option>
+                                <option value="4.2">South Dakota (4.20%)</option>
+                                <option value="7">Tennessee (7.00%)</option>
+                                <option value="6.25">Texas (6.25%)</option>
+                                <option value="6.1">Utah (6.10%)</option>
+                                <option value="6">Vermont (6.00%)</option>
+                                <option value="5.3">Virginia (5.30%)</option>
+                                <option value="6.5">Washington (6.50%)</option>
+                                <option value="6">West Virginia (6.00%)</option>
+                                <option value="5">Wisconsin (5.00%)</option>
+                                <option value="4">Wyoming (4.00%)</option>
+                                <option value="6">District of Columbia (6.00%)</option>
+                            </select>
+                        </div>
+                        <div class="input-wrapper">
+                            <label for="localRate" class="input-header">Local/City Rate (%)</label>
+                            <input type="number" id="localRate" class="input-field" placeholder="e.g., 2.5" step="0.01"
+                                value="0" min="0">
+                            <div class="tax-note">Note: Local tax is calculated on the base purchase price, not on the
+                                amount including state tax.</div>
+                        </div>
+                    </div>
+
+                    <button type="submit" id="calculateBtn" class="calc-action-btn">Calculate Total Price</button>
+                </form>
+
+                <div id="resultContainer" class="result-container" aria-live="polite" aria-atomic="true">
+                    <div class="hero-card">
+                        <div class="hero-label" id="heroResultLabel">Total Purchase Price</div>
+                        <div class="hero-value" id="heroResultValue">--</div>
+                    </div>
+
+                    <div class="result-grid-layout">
+                        <div class="chart-wrapper">
+                            <div id="taxChart" class="chart-container" style="--tax: 0%;">
+                                <div class="chart-hole">
+                                    <span style="font-size: 0.8rem; color: #64748b;">Tax as % of Purchase</span>
+                                    <strong id="combinedRateDisplay">0%</strong>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tax-breakdown">
+                            <div class="breakdown-row"><span>Amount Before Tax</span><span id="netDisplay">$0</span>
+                            </div>
+                            <div class="breakdown-row"><span><span class="dot tax"></span>State Sales Tax</span><span
+                                    id="stateTaxDisplay">$0</span></div>
+                            <div class="breakdown-row"><span><span class="dot tax"></span>Local/City Tax</span><span
+                                    id="localTaxDisplay">$0</span></div>
+                            <div class="breakdown-row"><span>Total Tax Amount</span><span id="totalTaxDisplay"
+                                    style="color: #ef4444;">--</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- How to Use Section -->
+                <div class="how-to-use">
+                    <h2>How to Use the Sales Tax Calculator</h2>
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div>Choose your <strong>Calculation Mode</strong>: "Add Tax" if you know the base price, or
+                            "Remove Tax" if you have the total price and want to find the base amount.</div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div>Enter the dollar amount in the <strong>Amount</strong> field.</div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div>Select your state to auto-fill the state rate, and enter any local or city tax rates if
+                            applicable.</div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <div>Review your <strong>Total Tax Breakdown</strong>, including net amount, specific
+                            state/local taxes, and the total price.</div>
+                    </div>
+                </div>
+
+                <!-- Formula Section -->
+                <div class="formula-section">
+                    <div class="formula-title">Sales Tax Calculation Formulas</div>
+                    <div style="margin-bottom: 15px;">
+                        <strong>1. Adding Tax (Forward Calculation):</strong>
+                        <p>Total Price = Amount Before Tax Ã— (1 + Tax Rate)</p>
+                    </div>
+                    <div>
+                        <strong>2. Removing Tax (Backward Calculation):</strong>
+                        <p>Amount Before Tax = Amount After Tax Ã· (1 + Tax Rate)</p>
+                        <p>Tax Amount = Amount After Tax - Amount Before Tax</p>
+                    </div>
+                    <p style="margin-top:15px; font-size: 0.9rem; color: #64748b;">*Tax Rate = (State Rate + Local Rate)
+                        / 100</p>
+                </div>
+
+                <!-- Examples Section -->
+                <div class="example-section">
+                    <h3>Practical Examples</h3>
+
+                    <div class="example-title"><i class="fas fa-lightbulb"></i> Example 1: Basic Purchase in California
+                    </div>
+                    <p><strong>Purchase Amount:</strong> $500<br>
+                        <strong>State Rate:</strong> 7.25%<br>
+                        <strong>Local Rate:</strong> 1.00%<br>
+                        <strong>Total Tax Rate:</strong> 8.25%<br>
+                        <strong>Total Tax:</strong> $41.25<br>
+                        <strong>Total Price:</strong> $541.25
+                    </p>
+
+                    <div class="example-title"><i class="fas fa-lightbulb"></i> Example 2: High-Tax Area (New Jersey)
+                    </div>
+                    <p><strong>Purchase Amount:</strong> $1,200<br>
+                        <strong>State Rate:</strong> 6.625%<br>
+                        <strong>Local Rate:</strong> 1.50%<br>
+                        <strong>Total Tax Rate:</strong> 8.125%<br>
+                        <strong>Total Tax:</strong> $97.50<br>
+                        <strong>Total Price:</strong> $1,297.50
+                    </p>
+
+                    <div class="example-title"><i class="fas fa-lightbulb"></i> Example 3: No State Sales Tax (Oregon)
+                    </div>
+                    <p><strong>Purchase Amount:</strong> $350<br>
+                        <strong>State Rate:</strong> 0.00%<br>
+                        <strong>Local Rate:</strong> 0.00%<br>
+                        <strong>Total Tax Rate:</strong> 0.00%<br>
+                        <strong>Total Tax:</strong> $0.00<br>
+                        <strong>Total Price:</strong> $350.00
+                    </p>
+
+                    <div class="example-title"><i class="fas fa-lightbulb"></i> Example 4: Large Purchase with Local Tax
+                    </div>
+                    <p><strong>Purchase Amount:</strong> $10,000 (e.g., furniture)<br>
+                        <strong>State Rate:</strong> 6.50% (Texas)<br>
+                        <strong>Local Rate:</strong> 2.00%<br>
+                        <strong>Total Tax Rate:</strong> 8.50%<br>
+                        <strong>Total Tax:</strong> $850.00<br>
+                        <strong>Total Price:</strong> $10,850.00
+                    </p>
+                </div>
+
+                <!-- State Tax Rates Table -->
+                <div style="margin-top: 30px;">
+                    <h2>2026 US State Sales Tax Rates</h2>
+                    <p>Below is a complete reference table of state sales tax rates. Note that these are base rates only
+                        - local jurisdictions may add additional taxes.</p>
+
+                    <table class="state-tax-table">
+                        <caption>2026 State Sales Tax Rates</caption>
+                        <thead>
+                            <tr>
+                                <th>State</th>
+                                <th>State Sales Tax Rate</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Alabama</td>
+                                <td>4.00%</td>
+                            </tr>
+                            <tr>
+                                <td>Alaska</td>
+                                <td>0.00%</td>
+                            </tr>
+                            <tr>
+                                <td>Arizona</td>
+                                <td>5.60%</td>
+                            </tr>
+                            <tr>
+                                <td>Arkansas</td>
+                                <td>6.50%</td>
+                            </tr>
+                            <tr>
+                                <td>California (a)</td>
+                                <td>7.25%</td>
+                            </tr>
+                            <tr>
+                                <td>Colorado</td>
+                                <td>2.90%</td>
+                            </tr>
+                            <tr>
+                                <td>Connecticut</td>
+                                <td>6.35%</td>
+                            </tr>
+                            <tr>
+                                <td>Delaware</td>
+                                <td>0.00%</td>
+                            </tr>
+                            <tr>
+                                <td>Florida</td>
+                                <td>6.00%</td>
+                            </tr>
+                            <tr>
+                                <td>Georgia</td>
+                                <td>4.00%</td>
+                            </tr>
+                            <tr>
+                                <td>Hawaii (b)</td>
+                                <td>4.00%</td>
+                            </tr>
+                            <tr>
+                                <td>Idaho</td>
+                                <td>6.00%</td>
+                            </tr>
+                            <tr>
+                                <td>Illinois</td>
+                                <td>6.25%</td>
+                            </tr>
+                            <tr>
+                                <td>Indiana</td>
+                                <td>7.00%</td>
+                            </tr>
+                            <tr>
+                                <td>Iowa</td>
+                                <td>6.00%</td>
+                            </tr>
+                            <tr>
+                                <td>Kansas</td>
+                                <td>6.50%</td>
+                            </tr>
+                            <tr>
+                                <td>Kentucky</td>
+                                <td>6.00%</td>
+                            </tr>
+                            <tr>
+                                <td>Louisiana</td>
+                                <td>5.00%</td>
+                            </tr>
+                            <tr>
+                                <td>Maine</td>
+                                <td>5.50%</td>
+                            </tr>
+                            <tr>
+                                <td>Maryland</td>
+                                <td>6.00%</td>
+                            </tr>
+                            <tr>
+                                <td>Massachusetts</td>
+                                <td>6.25%</td>
+                            </tr>
+                            <tr>
+                                <td>Michigan</td>
+                                <td>6.00%</td>
+                            </tr>
+                            <tr>
+                                <td>Minnesota</td>
+                                <td>6.875%</td>
+                            </tr>
+                            <tr>
+                                <td>Mississippi</td>
+                                <td>7.00%</td>
+                            </tr>
+                            <tr>
+                                <td>Missouri</td>
+                                <td>4.225%</td>
+                            </tr>
+                            <tr>
+                                <td>Montana (c)</td>
+                                <td>0.00%</td>
+                            </tr>
+                            <tr>
+                                <td>Nebraska</td>
+                                <td>5.50%</td>
+                            </tr>
+                            <tr>
+                                <td>Nevada</td>
+                                <td>6.85%</td>
+                            </tr>
+                            <tr>
+                                <td>New Hampshire</td>
+                                <td>0.00%</td>
+                            </tr>
+                            <tr>
+                                <td>New Jersey (d)</td>
+                                <td>6.625%</td>
+                            </tr>
+                            <tr>
+                                <td>New Mexico (b)</td>
+                                <td>4.875%</td>
+                            </tr>
+                            <tr>
+                                <td>New York</td>
+                                <td>4.00%</td>
+                            </tr>
+                            <tr>
+                                <td>North Carolina</td>
+                                <td>4.75%</td>
+                            </tr>
+                            <tr>
+                                <td>North Dakota</td>
+                                <td>5.00%</td>
+                            </tr>
+                            <tr>
+                                <td>Ohio</td>
+                                <td>5.75%</td>
+                            </tr>
+                            <tr>
+                                <td>Oklahoma</td>
+                                <td>4.50%</td>
+                            </tr>
+                            <tr>
+                                <td>Oregon</td>
+                                <td>0.00%</td>
+                            </tr>
+                            <tr>
+                                <td>Pennsylvania</td>
+                                <td>6.00%</td>
+                            </tr>
+                            <tr>
+                                <td>Rhode Island</td>
+                                <td>7.00%</td>
+                            </tr>
+                            <tr>
+                                <td>South Carolina</td>
+                                <td>6.00%</td>
+                            </tr>
+                            <tr>
+                                <td>South Dakota (b)</td>
+                                <td>4.20%</td>
+                            </tr>
+                            <tr>
+                                <td>Tennessee</td>
+                                <td>7.00%</td>
+                            </tr>
+                            <tr>
+                                <td>Texas</td>
+                                <td>6.25%</td>
+                            </tr>
+                            <tr>
+                                <td>Utah (a)</td>
+                                <td>6.10%</td>
+                            </tr>
+                            <tr>
+                                <td>Vermont</td>
+                                <td>6.00%</td>
+                            </tr>
+                            <tr>
+                                <td>Virginia (a)</td>
+                                <td>5.30%</td>
+                            </tr>
+                            <tr>
+                                <td>Washington</td>
+                                <td>6.50%</td>
+                            </tr>
+                            <tr>
+                                <td>West Virginia</td>
+                                <td>6.00%</td>
+                            </tr>
+                            <tr>
+                                <td>Wisconsin</td>
+                                <td>5.00%</td>
+                            </tr>
+                            <tr>
+                                <td>Wyoming</td>
+                                <td>4.00%</td>
+                            </tr>
+                            <tr>
+                                <td>District of Columbia</td>
+                                <td>6.00%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div id="seo-content" style="margin-top: 50px;">
+                    <h2>How US Sales Tax is Calculated</h2>
+                    <p>Sales tax in the United States is not a single national rate. Instead, it is a combination of
+                        <strong>State, County, and City</strong> taxes. When you make a purchase, the merchant collects
+                        the combined rate based on the location of the transaction.
+                    </p>
+
+                    <h3>States with No Sales Tax</h3>
+                    <p>Known as the "NOMAD" states, these five states do not impose a general statewide sales tax:</p>
+                    <ul>
+                        <li>New Hampshire</li>
+                        <li>Oregon</li>
+                        <li>Montana</li>
+                        <li>Alaska (though some local municipalities charge tax)</li>
+                        <li>Delaware</li>
+                    </ul>
+
+                    <h3>2026 Sales Tax Guide</h3>
+                    <p>To use this <strong>sales tax estimator</strong>, enter the base price of your item, select your
+                        state to auto-fill the statewide rate, and manually enter any local or district taxes if
+                        applicable. This tool helps you <a href="../../calculators/savings-calculator/">budget for large
+                            purchases</a> like electronics, furniture, or
+                        vehicles using detailed tax breakdowns. You can also calculate prices after <a
+                            href="../../calculators/discount-calculator/">discounts</a> by adjusting the base amount.
+                    </p>
+                </div>
+
+                <div class="faq-section">
+                    <h2>Frequently Asked Questions</h2>
+
+                    <div class="faq-item">
+                        <div class="faq-question"><i class="fas fa-question-circle"></i> Can I calculate sales tax
+                            backward (reverse tax)?</div>
+                        <div class="faq-answer">Yes! Using the "Remove Tax" mode, you can enter the final total price
+                            you paid. The calculator will then work backward to determine the original base price and
+                            the specific amount of tax included in that total.</div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question"><i class="fas fa-question-circle"></i> How accurate are the tax rates
+                            in this calculator?</div>
+                        <div class="faq-answer">Our calculator uses the latest 2026 state sales tax rates. Local tax
+                            rates vary by county, city, and special districts, so we provide a field for you to enter
+                            your specific local rate. For the most precise calculation, check with your local tax
+                            authority or the merchant where you're making the purchase.</div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question"><i class="fas fa-question-circle"></i> Why doesn't my state's tax rate
+                            match exactly what I pay?</div>
+                        <div class="faq-answer">Many states have different rates for specific items (like groceries,
+                            clothing, or prepared food) and some counties or cities may have additional special tax
+                            districts. Our calculator provides a general estimate based on standard sales tax rates.
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question"><i class="fas fa-question-circle"></i> How is local tax calculated in
+                            relation to state tax?</div>
+                        <div class="faq-answer">In most jurisdictions, local tax is calculated on the base purchase
+                            price (not including state tax). However, some areas calculate local tax on the amount
+                            including state tax. Our calculator uses the most common method (base amount only) but
+                            displays a note about this assumption.</div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question"><i class="fas fa-question-circle"></i> Are there items that are exempt
+                            from sales tax?</div>
+                        <div class="faq-answer">Yes, many states exempt certain items like groceries, prescription
+                            medications, and sometimes clothing or educational materials. Tax exemptions vary
+                            significantly by state and locality. This calculator assumes a standard taxable purchase.
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question"><i class="fas fa-question-circle"></i> Do online purchases have
+                            different tax rules?</div>
+                        <div class="faq-answer">Since the 2018 Supreme Court decision in South Dakota v. Wayfair, online
+                            retailers are generally required to collect sales tax based on the buyer's location,
+                            following the same rules as brick-and-mortar stores. However, small sellers may have
+                            different requirements depending on state laws.</div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question"><i class="fas fa-question-circle"></i> How often are the tax rates in
+                            this calculator updated?</div>
+                        <div class="faq-answer">We review and update our tax rate database annually at the beginning of
+                            each year to reflect current rates. Major mid-year tax changes are also updated promptly
+                            when they occur and are published by state authorities.</div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question"><i class="fas fa-question-circle"></i> Is my data saved when I use
+                            this calculator?</div>
+                        <div class="faq-answer">No, all calculations are performed locally in your browser. We do not
+                            store, track, or transmit any of the amounts or tax rates you enter. Your privacy and data
+                            security are important to us.</div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question"><i class="fas fa-question-circle"></i> Can I use this calculator for
+                            business tax planning?</div>
+                        <div class="faq-answer">While this calculator can provide estimates for business purchases, it's
+                            not designed for comprehensive business tax planning. Businesses have additional
+                            considerations like resale certificates, use tax obligations, and multi-state nexus rules.
+                            Consult with a tax professional for business-specific tax advice.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <span
+                        style="font-weight: 800; font-size: 1.2rem; display:block; margin-bottom:10px; color:var(--text-main);">FairCalculator</span>
+                    <p>Simple, fast, and accurate online calculators.</p>
+                </div>
+                <div>
+                    <h4>Menu</h4>
+                    <ul>
+                        <li><a href="../../index.html">Home</a></li>
+                        <li><a href="../../about.html">About Us</a></li>
+                        <li><a href="../../contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="../../legal/privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="../../legal/terms-of-service.html">Terms of Service</a></li>
+                        <li><a href="../../legal/cookie-policy.html">Cookie Policy</a></li>
+                        <li><a href="../../legal/disclaimer.html">Disclaimer</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2026 FairCalculator. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // DOM Elements
+            const taxForm = document.getElementById('taxForm');
+            const purchaseAmountInput = document.getElementById('purchaseAmount');
+            const amountLabel = document.getElementById('amountLabel');
+            const stateRateSelect = document.getElementById('stateRate');
+            const localRateInput = document.getElementById('localRate');
+            const resultContainer = document.getElementById('resultContainer');
+            const heroResultLabel = document.getElementById('heroResultLabel');
+            const heroResultValue = document.getElementById('heroResultValue');
+            const netDisplay = document.getElementById('netDisplay');
+            const stateTaxDisplay = document.getElementById('stateTaxDisplay');
+            const localTaxDisplay = document.getElementById('localTaxDisplay');
+            const totalTaxDisplay = document.getElementById('totalTaxDisplay');
+            const combinedRateDisplay = document.getElementById('combinedRateDisplay');
+            const taxChart = document.getElementById('taxChart');
+            const menuToggle = document.getElementById('menuToggle');
+            const searchInput = document.getElementById('searchInput');
+
+            // Handle Mode Changes
+            const modeInputs = document.querySelectorAll('input[name="taxMode"]');
+            modeInputs.forEach(input => {
+                input.addEventListener('change', function () {
+                    if (this.value === 'add') {
+                        amountLabel.textContent = 'Amount Before Tax ($)';
+                        heroResultLabel.textContent = 'Total Purchase Price';
+                    } else {
+                        amountLabel.textContent = 'Amount After Tax ($)';
+                        heroResultLabel.textContent = 'Net Amount (Before Tax)';
+                    }
+                });
+            });
+
+            // Calculate sales tax
+            function calculateSalesTax() {
+                // Get mode
+                const mode = document.querySelector('input[name="taxMode"]:checked').value;
+
+                // Get input values
+                const amountValue = parseFloat(purchaseAmountInput.value) || 0;
+                const stateRate = parseFloat(stateRateSelect.value) || 0;
+                const localRate = parseFloat(localRateInput.value) || 0;
+                const combinedRate = stateRate + localRate;
+
+                // Validate inputs
+                if (amountValue <= 0) {
+                    alert('Please enter a valid amount greater than zero.');
+                    return;
+                }
+
+                // Validate tax rates
+                if (stateRate < 0 || localRate < 0) {
+                    alert('Tax rates cannot be negative.');
+                    return;
+                }
+
+                if (combinedRate > 50) {
+                    alert('The combined tax rate appears unrealistically high. Please verify your state and local tax rates.');
+                    return;
+                }
+
+                let netAmount, stateTax, localTax, totalTax, totalPrice;
+
+                if (mode === 'add') {
+                    // Forward calculation
+                    netAmount = amountValue;
+                    stateTax = netAmount * (stateRate / 100);
+                    localTax = netAmount * (localRate / 100);
+                    totalTax = stateTax + localTax;
+                    totalPrice = netAmount + totalTax;
+
+                    heroResultValue.textContent = formatCurrency(totalPrice);
+                } else {
+                    // Backward calculation (Inclusive)
+                    totalPrice = amountValue;
+                    const totalRateDecimal = combinedRate / 100;
+                    netAmount = totalPrice / (1 + totalRateDecimal);
+                    totalTax = totalPrice - netAmount;
+
+                    // Proportionally split tax based on rates
+                    if (combinedRate > 0) {
+                        stateTax = totalTax * (stateRate / combinedRate);
+                        localTax = totalTax * (localRate / combinedRate);
+                    } else {
+                        stateTax = 0;
+                        localTax = 0;
+                    }
+
+                    heroResultValue.textContent = formatCurrency(netAmount);
+                }
+
+                // Update display values with formatted currency
+                netDisplay.textContent = formatCurrency(netAmount);
+                stateTaxDisplay.textContent = formatCurrency(stateTax);
+                localTaxDisplay.textContent = formatCurrency(localTax);
+                totalTaxDisplay.textContent = formatCurrency(totalTax);
+                combinedRateDisplay.textContent = combinedRate.toFixed(2) + '%';
+
+                // Update chart visualization
+                // For better visual, we use the tax as % of TOTAL price
+                const taxPercentageOfTotal = (totalTax / totalPrice) * 100;
+                taxChart.style.setProperty('--tax', `${taxPercentageOfTotal}%`);
+
+                // Show results container
+                resultContainer.style.display = 'block';
+
+                // Scroll to results
+                resultContainer.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }
+
+            // Format number as currency
+            function formatCurrency(amount) {
+                return '$' + amount.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+            }
+
+            // Form submission handling
+            taxForm.addEventListener('submit', function (e) {
+                e.preventDefault();
+                calculateSalesTax();
+            });
+
+            // Also allow Enter key in purchase amount field
+            purchaseAmountInput.addEventListener('keypress', function (e) {
+                if (e.key === 'Enter') {
+                    calculateSalesTax();
+                }
+            });
+        });
+    </script>
+    <script>var ROOT_PATH = '../../';</script>
+    <script src="../../assets/js/data.js"></script>
+    <script src="../../assets/js/search.js"></script>
+    <script src="../../assets/js/mobile-menu.js"></script>
+</body>
+
+</html>

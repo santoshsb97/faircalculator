@@ -1,0 +1,314 @@
+﻿<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Free Logarithm Solver. Use our fast, accurate tool to simplify math and algebra calculations. Get precise results and guidance on Fair Calculator.">
+    <link rel="canonical" href="https://www.faircalculator.com/calculators/logarithm-calculator/">
+
+    <!-- Preload Critical Assets -->
+    <link rel="preload" href="../../assets/css/style.css" as="style">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        as="style">
+    <title>Logarithm Calculator - Solve Log Base 10, Log Base 2, and ln</title>
+
+    <!-- 1. GLOBAL ASSETS -->
+    <link rel="icon" type="image/x-icon" href="../../assets/images/favicon.png">
+    <link rel="stylesheet" href="../../assets/css/style.css">
+
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Logarithm Calculator & Solver",
+      "description": "Calculate logarithms with any base (log10, log2, ln). Includes formula explanations, log rules, and step-by-step examples.",
+      "applicationCategory": "MathCalculator",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    }
+    </script>
+
+    <!-- 2. WIDGET SPECIFIC CSS -->
+    <link rel="stylesheet" href="../../assets/css/calculators/logarithm-calculator.css">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BVENYYJ869"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-BVENYYJ869');
+    </script>
+    <script type="text/javascript">
+        (function (c, l, a, r, i, t, y) {
+            c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+            t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+            y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+        })(window, document, "clarity", "script", "udqk27trde");
+    </script>
+</head>
+
+<body>
+    <!-- 3. HEADER -->
+    <header class="header">
+        <div class="container header-inner">
+            <a href="../../index.html" class="logo">FairCalculator</a>
+            <div class="header-search"><input type="text" id="searchInput" class="search-input"
+                    placeholder="Search tools..."></div>
+            <button class="menu-btn" id="menuToggle"><i class="fas fa-bars"></i></button>
+        </div>
+    </header>
+
+    <!-- 4. CATEGORY BAR -->
+    <nav class="category-bar">
+        <div class="container">
+            <ul id="category-list">
+                <li><a href="../../index.html">All</a></li>
+                <li><a href="../../categories/finance-calculators.html">Finance</a></li>
+                <li><a href="../../categories/math-calculators.html"
+                        style="background:#eff6ff; color:#2563eb; border-color:#bfdbfe;">Math</a></li>
+                <li><a href="../../categories/health-calculators.html">Health</a></li>
+                <li><a href="../../categories/date-time-calculators.html">Date</a></li>
+                <li><a href="../../categories/unit-converters.html">Converters</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="mobile-close" id="closeMenu">&times;</button>
+        <div style="margin-top: 40px;">
+            <ul class="sidebar-list">
+                <li><a href="../../index.html">Home</a></li>
+                <li><a href="../../index.html#calculators">All Calculators</a></li>
+                <li><a href="../../about.html">About</a></li>
+                <li><a href="../../contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- 5. MAIN CONTENT -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Breadcrumbs -->
+            <div style="margin-bottom: 20px; font-size: 0.9rem; color: #64748b;">
+                <a href="../../index.html" style="text-decoration: underline;">Home</a> /
+                <a href="../../categories/math-calculators.html" style="text-decoration: underline;">Math</a> /
+                <span style="font-weight: 600; color: #0f172a;">Logarithm</span>
+            </div>
+
+            <div id="searchResults" style="display:none; margin-bottom: 40px;">
+                <div class="section-header">Search Results</div>
+                <div class="grid" id="searchResultsContent"></div>
+            </div>
+
+            <div class="log-widget-container" id="tool-container">
+                <h1 class="section-header" style="justify-content:center; font-size: 2rem; margin-bottom: 30px;">
+                    <i class="fas fa-calculator" style="color: #2563eb; margin-right: 15px;"></i> Logarithm Calculator
+                </h1>
+
+                <div class="calculator-form">
+                    <div class="quick-btn-row">
+                        <button class="q-btn" onclick="setBase(10)">Log 10</button>
+                        <button class="q-btn" onclick="setBase(2)">Log 2</button>
+                        <button class="q-btn" onclick="setBase('e')">ln (Base e)</button>
+                        <button class="q-btn active" onclick="setBase('')">Custom</button>
+                    </div>
+
+                    <div class="input-grid">
+                        <div class="input-group">
+                            <label class="input-label" for="inpBase">Base (b)</label>
+                            <input type="number" id="inpBase" class="lc-input" placeholder="10">
+                        </div>
+                        <div class="input-group">
+                            <label class="input-label" for="inpNum">Number (x)</label>
+                            <input type="number" id="inpNum" class="lc-input" placeholder="100">
+                        </div>
+                    </div>
+
+                    <button class="calc-action-btn" onclick="calcLog()">Calculate Logarithm</button>
+
+                    <div id="resultArea" class="result-area">
+                        <div class="result-box">
+                            <span class="res-title">Result:</span>
+                            <div class="res-val" id="finalRes">2</div>
+                            <div class="res-eq" id="resEq">log<sub>10</sub>(100) = 2</div>
+                        </div>
+
+                        <div class="steps-box">
+                            <h3>Calculation Explanation:</h3>
+                            <div class="step-line">The logarithm asks: To what power must we raise the base
+                                <strong>b</strong> to equal <strong>x</strong>?
+                            </div>
+                            <div class="step-line"
+                                style="text-align:center; font-size:1.4rem; margin:15px 0; font-weight:bold; color:#2563eb;">
+                                b<sup>y</sup> = x</div>
+                            <div class="step-line" id="stepExpl">Since 10<sup>2</sup> = 100, the log is 2.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SEO Content -->
+                <div class="info-section">
+                    <h2><i class="fas fa-book-open" style="color: #2563eb; margin-right: 12px;"></i> Detailed Guide to
+                        Logarithms</h2>
+                    <p>Logarithms are one of the fundamental concepts in algebra, serving as the inverse operation to
+                        exponentiation. While exponents allow us to calculate the result of raising a number to a power
+                        (e.g., 2<sup>3</sup> = 8), logarithms allow us to find the power itself (e.g., log<sub>2</sub> 8
+                        = 3).</p>
+                    <p>They are essential in various fields, including computer science (measuring algorithm
+                        efficiency), physics (measuring sound in decibels), chemistry (pH scale), and finance (compound
+                        interest).</p>
+
+                    <h3>Definition of a Logarithm</h3>
+                    <p>The logarithm of a number <strong>x</strong> with base <strong>b</strong> is the exponent to
+                        which <strong>b</strong> must be raised to produce <strong>x</strong>.</p>
+                    <div class="formula-card">If b<sup>y</sup> = x, then log<sub>b</sub>(x) = y</div>
+                    <p><strong>Key Conditions:</strong></p>
+                    <ul>
+                        <li>The Base <strong>b</strong> must be positive and not equal to 1 (b > 0, b ≠ 1).</li>
+                        <li>The Argument <strong>x</strong> must be a positive number (x > 0).</li>
+                    </ul>
+
+                    <h3>Types of Logarithms</h3>
+                    <p>While a logarithm can have any valid base, three specific bases are used so frequently that they
+                        have their own notation:</p>
+
+                    <div class="table-wrapper">
+                        <table class="log-table">
+                            <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Notation</th>
+                                    <th>Base</th>
+                                    <th>Common Use</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Common Logarithm</td>
+                                    <td>log(x)</td>
+                                    <td>10</td>
+                                    <td>Science, Engineering, pH, Richter Scale</td>
+                                </tr>
+                                <tr>
+                                    <td>Natural Logarithm</td>
+                                    <td>ln(x)</td>
+                                    <td><em>e</em> (2.718)</td>
+                                    <td>Calculus, Physics, Biology, Finance</td>
+                                </tr>
+                                <tr>
+                                    <td>Binary Logarithm</td>
+                                    <td>log₂(x)</td>
+                                    <td>2</td>
+                                    <td>Computer Science, Information Theory</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3>Logarithm Rules & Properties</h3>
+                    <p>Knowing these rules makes solving logarithmic equations much easier:</p>
+                    <ul>
+                        <li><strong>Product Rule:</strong> log<sub>b</sub>(M · N) = log<sub>b</sub> M + log<sub>b</sub>
+                            N</li>
+                        <li><strong>Quotient Rule:</strong> log<sub>b</sub>(M / N) = log<sub>b</sub> M - log<sub>b</sub>
+                            N</li>
+                        <li><strong>Power Rule:</strong> log<sub>b</sub>(M<sup>p</sup>) = p · log<sub>b</sub> M</li>
+                        <li><strong>Identity Rule:</strong> log<sub>b</sub> b = 1</li>
+                        <li><strong>Zero Rule:</strong> log<sub>b</sub> 1 = 0</li>
+                    </ul>
+
+                    <h3>Change of Base Formula</h3>
+                    <p>Most physical calculators only have buttons for <strong>log</strong> (base 10) and
+                        <strong>ln</strong> (base e). To calculate a log with a different base, such as log<sub>2</sub>
+                        8, you
+                        use the Change of Base Formula:
+                    </p>
+                    <div class="formula-card">log<sub>b</sub>(x) = ln(x) / ln(b)</div>
+                </div>
+
+                <!-- FAQ SECTION -->
+                <div class="info-section">
+                    <h2><i class="fas fa-question-circle" style="color: #2563eb; margin-right: 12px;"></i> Frequently
+                        Asked Questions (FAQ)</h2>
+
+                    <div class="faq-item">
+                        <div class="faq-q" onclick="toggleFAQ(this)">1. Why can't I take the log of a negative number?
+                            <span>▼</span>
+                        </div>
+                        <div class="faq-a">Because there is no power to which you can raise a positive base to get a
+                            negative number. The result of b<sup>y</sup> is always positive for any real number y.</div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-q" onclick="toggleFAQ(this)">2. What is the value of ln(e)? <span>▼</span></div>
+                        <div class="faq-a">The value is <strong>1</strong>. Since the base of the natural log (ln) is
+                            <em>e</em>, you are asking "to what power must I raise <em>e</em> to get <em>e</em>?". The
+                            answer is 1.
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-q" onclick="toggleFAQ(this)">3. What is the difference between log and ln?
+                            <span>▼</span>
+                        </div>
+                        <div class="faq-a"><strong>log</strong> usually refers to base 10, while <strong>ln</strong>
+                            refers to base <em>e</em> (approx 2.718). They function the same way, just with different
+                            scaling factors.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="related-calculators"></div>
+    </main>
+
+    <!-- 6. FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <span
+                        style="font-weight: 800; font-size: 1.2rem; display:block; margin-bottom:10px; color:var(--text-main);">FairCalculator</span>
+                    <p>Simple, fast, and accurate online calculators.</p>
+                </div>
+                <div>
+                    <h4>Menu</h4>
+                    <ul>
+                        <li><a href="../../index.html">Home</a></li>
+                        <li><a href="../../about.html">About Us</a></li>
+                        <li><a href="../../contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="../../legal/privacy-policy.html">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">&copy; 2026 FairCalculator. All rights reserved.</div>
+        </div>
+    </footer>
+
+    <!-- 7. SCRIPTS -->
+    <script>var ROOT_PATH = '../../';</script>
+    <script src="../../assets/js/data.js"></script>
+    <script src="../../assets/js/search.js"></script>
+    <script src="../../assets/js/mobile-menu.js"></script>
+
+
+    <script src="../../assets/js/calculators/logarithm-calculator.js" defer></script>
+    <script src="../../assets/js/related-calculators.js" defer></script>
+</body>
+
+</html>

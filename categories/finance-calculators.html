@@ -1,0 +1,301 @@
+﻿<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financial Calculators - FairCalculator</title>
+    <meta name="description"
+        content="Access free financial calculators for loans, mortgages, investments, taxes, and savings. Plan your financial future with accurate, professional-grade tools.">
+
+    <link rel="canonical" href="https://www.faircalculator.com/categories/finance-calculators/">
+
+    <!-- Preload Critical Assets -->
+    <link rel="preload" href="../assets/css/style.css" as="style">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        as="style">
+
+    <!-- Preconnect to CDNs -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+
+    <!-- CSS (Points to parent folder) -->
+    <link rel="stylesheet" href="../assets/css/style.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome (Non-blocking) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        media="print" onload="this.media='all'">
+    <noscript>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    </noscript>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BVENYYJ869"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-BVENYYJ869');
+    </script>
+    <script type="text/javascript">
+        (function (c, l, a, r, i, t, y) {
+            c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+            t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+            y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+        })(window, document, "clarity", "script", "udqk27trde");
+    </script>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container header-inner">
+            <a href="../index.html" class="logo">FairCalculator</a>
+
+            <div class="header-search">
+                <input type="text" id="searchInput" class="search-input"
+                    placeholder="Search tools (e.g. Mortgage, BMI)..." aria-label="Search">
+            </div>
+
+            <button class="menu-btn" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Category Bar -->
+    <nav class="category-bar">
+        <div class="container">
+            <ul id="category-list">
+                <li><a href="../index.html">All</a></li>
+                <!-- Active State for Finance -->
+                <li><a href="finance-calculators.html"
+                        style="background:#eff6ff; color:#2563eb; border-color:#bfdbfe;">Financial Tools</a></li>
+                <li><a href="math-calculators.html">Math Calculators</a></li>
+                <li><a href="health-calculators.html">Health & Fitness</a></li>
+                <li><a href="date-time-calculators.html">Date & Time</a></li>
+                <li><a href="unit-converters.html">Unit Converters</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="mobile-close" id="closeMenu">&times;</button>
+        <div style="margin-top: 40px;">
+            <ul class="sidebar-list">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../index.html#calculators">All Calculators</a></li>
+                <li><a href="../about.html">About</a></li>
+                <li><a href="../contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+
+            <!-- Breadcrumb -->
+            <div style="margin-bottom: 20px; font-size: 0.9rem; color: var(--text-muted);">
+                <a href="../index.html" style="text-decoration: underline;">Home</a>
+                <span style="margin: 0 8px;">/</span>
+                <span style="font-weight: 600; color: var(--text-main);">Finance</span>
+            </div>
+
+            <!-- Page Title -->
+            <div class="section-header" style="display:block; border:none; margin-bottom: 30px;">
+                <h1 style="font-size: 2rem; margin-bottom: 10px;">
+                    <i class="fas fa-dollar-sign" style="color: #3b82f6; margin-right: 10px;"></i>Financial Tools
+                </h1>
+                <p style="font-weight: 400; color: var(--text-muted); font-size: 1rem;">
+                    Plan your financial future with our free calculators for loans, interest, savings, and taxes.
+                </p>
+            </div>
+
+            <!-- Search Results Container -->
+            <div id="searchResults" style="display:none; margin-bottom: 40px;">
+                <h2 class="section-header">Search Results</h2>
+                <div class="grid" id="searchResultsContent"></div>
+            </div>
+
+            <!-- Finance Grid -->
+            <h2 class="section-header">Financial Tools List</h2>
+            <div class="grid" id="finance-grid">
+                <div style="text-align:center; grid-column:1/-1;">Loading Financial Tools...</div>
+            </div>
+
+            <!-- SEO Content Section -->
+            <section class="info-section" style="margin-top: 60px; border:none; padding: 0;">
+                <h2 style="font-size: 1.8rem; margin-bottom: 20px; color: var(--text-main);">Master Your Money: A
+                    Complete Guide</h2>
+                <div
+                    style="background: #fff; padding: 40px; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); border: 1px solid #e2e8f0;">
+
+                    <h3 style="color: #1d4ed8; margin-bottom: 15px;">Why Financial Planning Matters</h3>
+                    <p style="color: var(--text-muted); line-height: 1.7; margin-bottom: 25px;">
+                        Financial freedom isn't about how much money you make; it's about how much you keep and grow.
+                        Whether you are analyzing a <strong>mortgage</strong> for your dream home, calculating
+                        <strong>income tax</strong> liabilities, or projecting the growth of your
+                        <strong>investments</strong>, accuracy is key. Our suite of financial tools helps you make
+                        data-driven decisions rather than relying on guesswork.
+                    </p>
+
+                    <div
+                        style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-bottom: 30px;">
+                        <div>
+                            <h4 style="font-weight: 700; color: var(--text-main); margin-bottom: 10px;"><i
+                                    class="fas fa-hand-holding-dollar" style="margin-right: 10px;"></i> Debt Management
+                            </h4>
+                            <p style="color: var(--text-muted); font-size: 0.95rem;">
+                                Debt can be a useful tool or a heavy burden. Use our <strong>Loan Calculator</strong> to
+                                see how extra payments can shave years off your debt, or the <strong>Credit Card Payoff
+                                    Calculator</strong> to create a debt-free timeline. Understanding principal vs.
+                                interest is the first step to becoming debt-free.
+                            </p>
+                        </div>
+                        <div>
+                            <h4 style="font-weight: 700; color: var(--text-main); margin-bottom: 10px;"><i
+                                    class="fas fa-chart-line" style="margin-right: 10px;"></i> Investment Growth</h4>
+                            <p style="color: var(--text-muted); font-size: 0.95rem;">
+                                Albert Einstein reportedly called <strong>Compound Interest</strong> the eighth wonder
+                                of the world. Our <strong>Investment Calculator</strong> shows the explosive power of
+                                time and consistency. Even small monthly contributions can grow into a substantial nest
+                                egg over 20 or 30 years.
+                            </p>
+                        </div>
+                    </div>
+
+                    <h3 style="color: #1d4ed8; margin-bottom: 20px;">Precision Planning for Long-Term Wealth</h3>
+                    <p style="color: var(--text-muted); line-height: 1.7; margin-bottom: 25px;">
+                        Financial tools are only as good as the logic behind them. At FairCalculator, we use standard
+                        amortization formulas and the latest tax bracket data to ensure your projections are as
+                        accurate as possible. Whether you're calculating the <strong>effective interest rate</strong> on
+                        a payday loan or projecting your <strong>401(k)</strong> growth, our tools provide the clarity
+                        needed for professional-grade planning.
+                    </p>
+
+                    <div
+                        style="margin-bottom: 30px; background: #f0f7ff; padding: 30px; border-radius: 12px; border-left: 5px solid #3b82f6;">
+                        <h4 style="color: var(--text-main); margin-bottom: 15px;">Smart Financial Habits</h4>
+                        <ul
+                            style="color: var(--text-muted); display: grid; grid-template-columns: 1fr 1fr; gap: 15px; padding-left: 20px;">
+                            <li><strong>Emergency Funds:</strong> Goal for 3-6 months of net income.</li>
+                            <li><strong>Debt Snowball:</strong> Pay off smallest debts first for psychological wins.
+                            </li>
+                            <li><strong>Tax Harvesting:</strong> Offset investment gains with strategic losses.</li>
+                            <li><strong>Mortgage Points:</strong> Calculate if buying down your rate saves money
+                                long-term.
+                            </li>
+                        </ul>
+                    </div>
+
+                    <h3 style="color: #1d4ed8; margin-bottom: 20px;">Frequently Asked Questions (FAQ)</h3>
+                    <div style="display: flex; flex-direction: column; gap: 20px;">
+                        <div>
+                            <h4 style="color: var(--text-main); margin-bottom: 5px;">How often are the tax calculators
+                                updated?</h4>
+                            <p style="color: var(--text-muted); font-size: 0.95rem; margin: 0;">We review and update our
+                                tax and finance logic annually or whenever major legislative changes occur (e.g., new
+                                IRS brackets or UK HMRC updates) to ensure maximum accuracy.</p>
+                        </div>
+                        <div>
+                            <h4 style="color: var(--text-main); margin-bottom: 5px;">Is my financial data safe?</h4>
+                            <p style="color: var(--text-muted); font-size: 0.95rem; margin: 0;">Yes. Unlike other
+                                platforms, FairCalculator processes all math locally in your browser. We do not store or
+                                transmit your income, debt, or asset details to any external servers.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <span
+                        style="font-weight: 800; font-size: 1.2rem; display:block; margin-bottom:10px; color:var(--text-main);">FairCalculator</span>
+                    <p>Simple, fast, and accurate online calculators.</p>
+                </div>
+                <div>
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../about.html">About</a></li>
+                        <li><a href="../contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="../legal/privacy-policy.html">Privacy</a></li>
+                        <li><a href="../legal/terms-of-service.html">Terms</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2026 FairCalculator. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>var ROOT_PATH = '../';</script>
+    <script src="../assets/js/data.js"></script>
+    <script src="../assets/js/search.js"></script>
+    <script src="../assets/js/mobile-menu.js"></script>
+
+    <!-- Load ONLY Finance Calculators -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const grid = document.getElementById('finance-grid');
+
+            if (typeof calculatorsData !== 'undefined' && grid) {
+                // Filter for Finance tools
+                const financeTools = calculatorsData.filter(item =>
+                    item.category === 'Finance' || item.type === 'finance'
+                );
+
+                grid.innerHTML = ''; // Clear loading text
+
+                if (financeTools.length === 0) {
+                    grid.innerHTML = '<p>No financial tools found.</p>';
+                    return;
+                }
+
+                financeTools.forEach(tool => {
+                    const card = document.createElement('a');
+
+                    // Fix pathing for sub-folder
+                    let relativeUrl = tool.url;
+                    if (!relativeUrl.startsWith('http') && !relativeUrl.startsWith('../')) {
+                        relativeUrl = '../' + relativeUrl;
+                    }
+
+                    card.href = relativeUrl;
+                    card.className = 'card';
+                    card.innerHTML = `
+                        <h3>
+                            <i class="fas ${tool.icon || 'fa-coins'}" style="margin-right:8px; color:var(--primary);"></i>
+                            ${tool.name}
+                        </h3>
+                        <p>${tool.desc}</p>
+                    `;
+                    grid.appendChild(card);
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>

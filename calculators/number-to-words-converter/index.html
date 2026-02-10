@@ -1,0 +1,540 @@
+﻿<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Free Number Converter. Use our fast, accurate tool for math and language calculations. Get precise results and expert guidance on Fair Calculator.">
+    <link rel="canonical" href="https://www.faircalculator.com/calculators/number-to-words-converter/">
+    <title>Number to Words Converter | Check & Currency Format</title>
+
+    <!-- Preload Critical Assets -->
+    <link rel="preload" href="../../assets/css/style.css" as="style">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        as="style">
+
+    <!-- Preconnect to CDNs -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+
+    <!-- GLOBAL ASSETS -->
+    <link rel="icon" type="image/x-icon" href="../../assets/images/favicon.png">
+    <link rel="stylesheet" href="../../assets/css/style.css">
+
+    <!-- Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome (Non-blocking) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        media="print" onload="this.media='all'">
+    <noscript>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    </noscript>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BVENYYJ869"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-BVENYYJ869');
+    </script>
+    <script type="text/javascript">
+        (function (c, l, a, r, i, t, y) {
+            c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+            t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+            y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+        })(window, document, "clarity", "script", "udqk27trde");
+    </script>
+
+    <link rel="stylesheet" href="../../assets/css/calculators/number-to-words-converter.css">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BVENYYJ869"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-BVENYYJ869');
+    </script>
+    <script type="text/javascript">
+        (function (c, l, a, r, i, t, y) {
+            c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+            t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+            y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+        })(window, document, "clarity", "script", "udqk27trde");
+    </script>
+</head>
+
+<body>
+    <!-- HEADER -->
+    <header class="header">
+        <div class="container header-inner">
+            <a href="../../index.html" class="logo">FairCalculator</a>
+            <div class="header-search">
+                <input type="text" id="searchInput" class="search-input" placeholder="Search tools...">
+            </div>
+            <button class="menu-btn" id="menuToggle" aria-label="Toggle Menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- NAVIGATION -->
+    <nav class="category-bar" aria-label="Main Categories">
+        <div class="container">
+            <ul id="category-list">
+                <li><a href="../../index.html">All</a></li>
+                <li><a href="../../categories/finance-calculators.html">Finance</a></li>
+                <li><a href="../../categories/math-calculators.html">Math</a></li>
+                <li><a href="../../categories/health-calculators.html">Health</a></li>
+                <li><a href="../../categories/date-time-calculators.html">Date</a></li>
+                <li><a href="../../categories/unit-converters.html"
+                        style="background:#eff6ff; color:#2563eb; border-color:#bfdbfe;"
+                        aria-current="page">Converters</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- MAIN APP -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Breadcrumbs -->
+            <div style="margin-bottom: 20px; font-size: 0.9rem; color: #64748b;">
+                <a href="../../index.html" style="text-decoration: underline;">Home</a> /
+                <a href="../../categories/unit-converters.html" style="text-decoration: underline;">Converters</a> /
+                <span style="font-weight: 600; color: #0f172a;">Number to Words Converter</span>
+            </div>
+
+            <div class="calculator-wrapper">
+                <header class="section-header-custom">
+                    <h1><i class="fas fa-font" aria-hidden="true"></i> Number to Words Converter</h1>
+                    <p style="font-size: 1rem; color: #64748b; font-weight: 400; margin-top: 0.5rem;">
+                        Convert any amount into written English for checks, bank forms, and documents.
+                    </p>
+                </header>
+
+                <div class="calc-card">
+                    <!-- Calculator Inputs -->
+                    <div class="input-group-custom">
+                        <label for="numberInput">
+                            Enter Number
+                            <i class="fas fa-question-circle tooltip-icon"
+                                title="Supports up to 66 digits (Vigintillion). Supports commas and decimals."></i>
+                        </label>
+                        <input type="text" id="numberInput" placeholder="e.g., 1,234.56 or 1500"
+                            oninput="convertNumber()" maxlength="70" />
+                        <p class="helper-text">Handles numbers up to 66 digits. Supports decimals for cents.</p>
+                    </div>
+
+                    <div class="controls-row">
+                        <div class="input-group-custom">
+                            <label for="caseOption">Output Case:</label>
+                            <select id="caseOption" onchange="convertNumber()">
+                                <option value="lowercase">lowercase</option>
+                                <option value="UPPERCASE">UPPERCASE</option>
+                                <option value="SentenceCase">Sentence Case</option>
+                                <option value="TitleCase">Title Case</option>
+                            </select>
+                        </div>
+                        <div class="input-group-custom">
+                            <label for="currencySelect">Currency:</label>
+                            <select id="currencySelect" onchange="convertNumber()">
+                                <option value="usd">US Dollar ($)</option>
+                                <option value="eur">Euro (â‚¬)</option>
+                                <option value="gbp">British Pound (Â£)</option>
+                                <option value="inr">Indian Rupee (â‚¹)</option>
+                                <option value="cad">Canadian Dollar (C$)</option>
+                                <option value="aud">Australian Dollar (A$)</option>
+                                <option value="aed">UAE Dirham (Ø¯.Ø¥)</option>
+                                <option value="sar">Saudi Riyal (SR)</option>
+                                <option value="pkr">Pakistani Rupee (Rs)</option>
+                                <option value="jpy">Japanese Yen (Â¥)</option>
+                                <option value="custom">Custom...</option>
+                            </select>
+                        </div>
+                        <div class="input-group-custom" id="customCurrencyWrapper" style="display: none;">
+                            <label for="currencyName">Custom Currency:</label>
+                            <input type="text" id="currencyName" value="dollar" oninput="convertNumber()"
+                                placeholder="e.g. Credit" />
+                        </div>
+                    </div>
+
+                    <button class="convert-btn" onclick="convertNumber()">
+                        Convert to Words <i class="fas fa-arrow-right"></i>
+                    </button>
+
+                    <!-- Results Section -->
+                    <div class="results-area">
+                        <div class="result-box">
+                            <button class="copy-btn" onclick="copyToClipboard('wordsOutput', this)"><i
+                                    class="far fa-copy"></i> Copy</button>
+                            <label>Standard English Words</label>
+                            <div class="result-text" id="wordsOutput">Enter a number to see results...</div>
+                        </div>
+
+                        <div class="result-box">
+                            <button class="copy-btn" onclick="copyToClipboard('currencyOutput', this)"><i
+                                    class="far fa-copy"></i> Copy</button>
+                            <label>Currency Format (Legal/Bank)</label>
+                            <div class="result-text" id="currencyOutput">Enter a number to see results...</div>
+                        </div>
+
+                        <div class="result-box">
+                            <button class="copy-btn" onclick="copyToClipboard('checkOutput', this)"><i
+                                    class="far fa-copy"></i> Copy</button>
+                            <label>Check/Cheque Writing Format</label>
+                            <div class="result-text" id="checkOutput">Enter a number to see results...</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SEO Content -->
+                <article style="margin-top: 4rem;">
+                    <h2>What is a Number to Words Converter?</h2>
+                    <p>A <strong>number to words converter</strong> is a specialized tool that transforms numerical
+                        digits into their full written English equivalent. This utility is essential for situations
+                        requiring formal documentation, where spelling out numbers reduces the risk of ambiguity or
+                        tampering.</p>
+
+                    <p>Our tool supports three distinct output modes: <strong>standard English prose</strong>,
+                        <strong>full currency format</strong>, and a <strong>secure check-writing format</strong> used
+                        by banks globally.
+                    </p>
+
+                    <h2>Standard Number Spelling Rules</h2>
+                    <p>Spelling out numbers correctly requires following specific grammatical standards. Here are the
+                        most important rules for formal and financial writing:</p>
+                    <ul>
+                        <li><strong>The Hyphen Rule:</strong> Always hyphenate compound numbers between twenty-one (21)
+                            and ninety-nine (99). For example: <em>forty-two</em>, <em>seventy-five</em>.</li>
+                        <li><strong>No Hyphens for Hundreds:</strong> Do not hyphenate between the hundreds and the rest
+                            of the number. Correct: <em>five hundred twenty</em>. Incorrect:
+                            <em>five-hundred-twenty</em>.
+                        </li>
+                        <li><strong>Decimal "And":</strong> In American English, the word "and" is strictly reserved for
+                            the decimal point (the separator between dollars and cents).</li>
+                        <li><strong>Large Numbers:</strong> Numbers are grouped in threes (thousands, millions,
+                            billions) using commas as separators in numerical form to ensure readability.</li>
+                    </ul>
+
+                    <div class="highlight-card">
+                        <h3>ðŸ’¡ Quick Reference</h3>
+                        <div class="example-grid">
+                            <div class="example-card">
+                                <span class="num">100</span>
+                                <span class="word">one hundred</span>
+                            </div>
+                            <div class="example-card">
+                                <span class="num">1,500</span>
+                                <span class="word">one thousand five hundred</span>
+                            </div>
+                            <div class="example-card">
+                                <span class="num">25,000</span>
+                                <span class="word">twenty-five thousand</span>
+                            </div>
+                            <div class="example-card">
+                                <span class="num">1,000,000</span>
+                                <span class="word">one million</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h2>How to Correctly Write Checks</h2>
+                    <p>Writing a check accurately is a vital financial skill. Using the wrong format can lead to bank
+                        rejection or security issues. Follow these professional standards:</p>
+                    <ol>
+                        <li><strong>Numerical Amount</strong>: Write the exact amount in the small box next to the $
+                            sign.</li>
+                        <li><strong>Spelled Amount</strong>: Write the amount in words on the long line ending in
+                            "Dollars".</li>
+                        <li><strong>Handling Cents</strong>: Best practice is to write cents as a fraction (e.g.,
+                            50/100).</li>
+                        <li><strong>The "Only" Suffix</strong>: For whole numbers, always add "only" at the end to
+                            prevent anyone from adding more digits.</li>
+                    </ol>
+
+                    <h3>Check Writing Reference Table</h3>
+                    <table class="info-table">
+                        <thead>
+                            <tr>
+                                <th>Amount</th>
+                                <th>Check Format (Written)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>$50.00</td>
+                                <td>Fifty dollars only</td>
+                            </tr>
+                            <tr>
+                                <td>$125.50</td>
+                                <td>One hundred twenty-five dollars and 50/100</td>
+                            </tr>
+                            <tr>
+                                <td>$1,000.00</td>
+                                <td>One thousand dollars only</td>
+                            </tr>
+                            <tr>
+                                <td>$1,500.75</td>
+                                <td>One thousand five hundred dollars and 75/100</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h2>Understanding Large Number Names</h2>
+                    <p>When dealing with trillions or more, naming scales can get confusing. Our converter handles
+                        massive numbers up to <strong>Vigintillion</strong> (66 zeros). Here is the standard short
+                        scale:</p>
+                    <ul>
+                        <li><strong>Million</strong>: 6 zeros</li>
+                        <li><strong>Billion</strong>: 9 zeros</li>
+                        <li><strong>Trillion</strong>: 12 zeros</li>
+                        <li><strong>Quadrillion</strong>: 15 zeros</li>
+                        <li><strong>Quintillion</strong>: 18 zeros</li>
+                        <li><strong>Sextillion</strong>: 21 zeros</li>
+                    </ul>
+
+                    <div class="fc-formula-box">
+                        <h3>Googol Fact</h3>
+                        <p>A <strong>Googol</strong> is a 1 followed by 100 zeros. While we support massive numbers, a
+                            Googol is technically larger than the number of atoms in the visible universe!</p>
+                    </div>
+
+                    <h2>Frequently Asked Questions</h2>
+                    <div class="faq-item">
+                        <div class="faq-question">How do I write 1000 in words?</div>
+                        <div class="faq-answer">1000 is written as "one thousand". For a check, write "One thousand
+                            dollars only".</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Should I use "and" in whole numbers?</div>
+                        <div class="faq-answer">In American English, "and" is usually reserved for the decimal point
+                            (cents). In British English, it is often used before the last two digits (e.g., "one hundred
+                            and twenty"). Our tool defaults to the common financial standard.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">How are cents written on a check?</div>
+                        <div class="faq-answer">Cents are most commonly written as a fraction over 100. For example, 75
+                            cents is written as "75/100". If there are no cents, write "00/100" or just "only".</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Can I use this for Euros or Rupees?</div>
+                        <div class="faq-answer">Yes, simply type "Euro" or "Rupee" into the Currency Name field, and the
+                            tool will automatically adjust the pluralization and formats.</div>
+                    </div>
+                </article>
+            </div>
+        </div>
+        <div id="related-calculators"></div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <span
+                        style="font-weight: 800; font-size: 1.2rem; display:block; margin-bottom:10px; color:var(--text-main);">FairCalculator</span>
+                    <p>Simple, fast, and accurate online calculators for daily life.</p>
+                </div>
+                <div>
+                    <h4>Menu</h4>
+                    <ul>
+                        <li><a href="../../index.html">Home</a></li>
+                        <li><a href="../../about.html">About Us</a></li>
+                        <li><a href="../../contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="../../legal/privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="../../legal/terms-of-service.html">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">&copy; 2025 FairCalculator. All rights reserved.</div>
+        </div>
+    </footer>
+
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Number to Words Converter",
+      "url": "https://www.faircalculator.com/calculators/number-to-words-converter/",
+      "description": "Convert numbers into written words for checks and documents.",
+      "applicationCategory": "CalculatorApplication",
+      "operatingSystem": "All",
+      "creator": {
+        "@type": "Organization",
+        "name": "Fair Calculator"
+      }
+    }
+    </script>
+
+    <!-- SCRIPTS -->
+    <script>var ROOT_PATH = '../../';</script>
+    <script src="../../assets/js/data.js"></script>
+    <script src="../../assets/js/search.js"></script>
+    <script src="../../assets/js/mobile-menu.js"></script>
+
+    <!-- Calculator Logic -->
+    <script>
+        const units = ['', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine'];
+        const teens = ['ten', 'eleven', 'twelve', 'thirteen', 'fourteen', 'fifteen', 'sixteen', 'seventeen', 'eighteen', 'nineteen'];
+        const tens = ['', '', 'twenty', 'thirty', 'forty', 'fifty', 'sixty', 'seventy', 'eighty', 'ninety'];
+
+        const scales = [
+            '', 'thousand', 'million', 'billion', 'trillion', 'quadrillion',
+            'quintillion', 'sextillion', 'septillion', 'octillion', 'nonillion',
+            'decillion', 'undecillion', 'duodecillion', 'tredecillion', 'quattuordecillion',
+            'quindecillion', 'sexdecillion', 'septendecillion', 'octodecillion', 'novemdecillion',
+            'vigintillion'
+        ];
+
+        function convertHundreds(numStr) {
+            let num = parseInt(numStr, 10);
+            if (isNaN(num)) return '';
+            let word = '';
+            if (num > 99) {
+                word += units[Math.floor(num / 100)] + ' hundred';
+                num %= 100;
+                if (num > 0) word += ' and ';
+            }
+            if (num >= 10 && num <= 19) {
+                word += teens[num - 10];
+            } else if (num >= 20) {
+                word += tens[Math.floor(num / 10)];
+                num %= 10;
+                if (num > 0) word += '-';
+                word += units[num];
+            } else if (num > 0) {
+                word += units[num];
+            }
+            return word.trim();
+        }
+
+        function numberToWords(numStr) {
+            if (!numStr || numStr === '0') return 'zero';
+            numStr = numStr.replace(/^0+/, '') || '0';
+            if (numStr === '0') return 'zero';
+            if (numStr.length > 66) return 'Number too large';
+            let padding = numStr.length % 3;
+            if (padding !== 0) numStr = '0'.repeat(3 - padding) + numStr;
+            let groups = [];
+            let finalWords = [];
+            for (let i = 0; i < numStr.length; i += 3) groups.push(numStr.substring(i, i + 3));
+            for (let i = 0; i < groups.length; i++) {
+                let part = groups[i];
+                let scaleIndex = groups.length - 1 - i;
+                if (parseInt(part, 10) > 0) {
+                    let words = convertHundreds(part);
+                    let scale = scales[scaleIndex];
+                    if (words) finalWords.push(words + (scale ? ' ' + scale : ''));
+                }
+            }
+            return finalWords.join(', ').replace(/\s+/g, ' ').trim();
+        }
+
+        function formatOutput(text, caseOption) {
+            if (!text) return text;
+            switch (caseOption) {
+                case 'UPPERCASE': return text.toUpperCase();
+                case 'SentenceCase': return text.charAt(0).toUpperCase() + text.slice(1).toLowerCase();
+                case 'TitleCase': return text.replace(/\w\S*/g, (txt) => txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase());
+                default: return text.toLowerCase();
+            }
+        }
+
+        const currencyData = {
+            usd: { unit: 'dollar', plural: 'dollars', subunit: 'cent', subplural: 'cents' },
+            eur: { unit: 'euro', plural: 'euros', subunit: 'cent', subplural: 'cents' },
+            gbp: { unit: 'pound', plural: 'pounds', subunit: 'penny', subplural: 'pence' },
+            inr: { unit: 'rupee', plural: 'rupees', subunit: 'paisa', subplural: 'paise' },
+            cad: { unit: 'dollar', plural: 'dollars', subunit: 'cent', subplural: 'cents' },
+            aud: { unit: 'dollar', plural: 'dollars', subunit: 'cent', subplural: 'cents' },
+            aed: { unit: 'dirham', plural: 'dirhams', subunit: 'fils', subplural: 'fils' },
+            sar: { unit: 'riyal', plural: 'riyals', subunit: 'halala', subplural: 'halalas' },
+            pkr: { unit: 'rupee', plural: 'rupees', subunit: 'paisa', subplural: 'paise' },
+            jpy: { unit: 'yen', plural: 'yen', subunit: '', subplural: '' }
+        };
+
+        function convertNumber() {
+            const input = document.getElementById('numberInput').value.replace(/[^0-9.]/g, '');
+            const caseOption = document.getElementById('caseOption').value;
+            const currencyKey = document.getElementById('currencySelect').value;
+
+            let unitSingular, unitPlural, subSingular, subPlural;
+
+            if (currencyKey === 'custom') {
+                document.getElementById('customCurrencyWrapper').style.display = 'block';
+                unitSingular = document.getElementById('currencyName').value.trim() || 'unit';
+                unitPlural = unitSingular.endsWith('y') ? unitSingular.slice(0, -1) + 'ies' : unitSingular + 's';
+                subSingular = 'subunit';
+                subPlural = 'subunits';
+            } else {
+                document.getElementById('customCurrencyWrapper').style.display = 'none';
+                const data = currencyData[currencyKey];
+                unitSingular = data.unit;
+                unitPlural = data.plural;
+                subSingular = data.subunit;
+                subPlural = data.subplural;
+            }
+
+            if (!input) {
+                ['wordsOutput', 'currencyOutput', 'checkOutput'].forEach(id => document.getElementById(id).textContent = '...');
+                return;
+            }
+
+            const [intPart, fracPart] = input.split('.');
+            const integerWords = numberToWords(intPart || '0');
+            const centsValue = fracPart ? fracPart.padEnd(2, '0').substring(0, 2) : '00';
+
+            // 1. Standard
+            document.getElementById('wordsOutput').textContent = formatOutput(integerWords, caseOption);
+
+            // 2. Currency
+            const unitStr = (intPart === '1') ? unitSingular : unitPlural;
+            let currencyText = `${integerWords} ${unitStr}`;
+
+            if (centsValue !== '00') {
+                const subStr = (centsValue === '01') ? subSingular : subPlural;
+                if (subStr) {
+                    currencyText += ` and ${numberToWords(centsValue)} ${subStr}`;
+                }
+            } else if (unitSingular) {
+                currencyText += ` and zero ${subPlural || 'subunits'}`;
+            }
+            document.getElementById('currencyOutput').textContent = formatOutput(currencyText, caseOption);
+
+            // 3. Check
+            let checkText = `${integerWords} ${unitStr}`;
+            checkText += (centsValue === '00') ? " only" : ` and ${centsValue}/100`;
+            document.getElementById('checkOutput').textContent = formatOutput(checkText, caseOption);
+        }
+
+        function copyToClipboard(id, btn) {
+            const text = document.getElementById(id).textContent;
+            if (text === '...') return;
+            navigator.clipboard.writeText(text).then(() => {
+                const originalText = btn.innerHTML;
+                btn.innerHTML = '<i class="fas fa-check"></i> Copied!';
+                btn.classList.add('copied');
+                setTimeout(() => {
+                    btn.innerHTML = originalText;
+                    btn.classList.remove('copied');
+                }, 2000);
+            });
+        }
+    </script>
+    <script src="../../assets/js/related-calculators.js" defer></script>
+</body>
+
+</html>

@@ -1,0 +1,411 @@
+﻿<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Free BMI Calculator. Use our fast, accurate tool to simplify health and fitness calculations. Get precise results and expert guidance on Fair Calculator.">
+    <link rel="canonical" href="https://www.faircalculator.com/calculators/bmi-calculator/">
+    <title>BMI Calculator | CDC BMI Calculator & BMI Categories Guide</title>
+
+    <!-- Preload Critical Assets -->
+    <link rel="preload" href="../../assets/css/style.css" as="style">
+    <link rel="preload" href="../../assets/css/calculators/bmi-calculator.css" as="style">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        as="style">
+
+    <!-- 1. GLOBAL ASSETS (Go up 2 folders) -->
+    <link rel="icon" type="image/x-icon" href="../../assets/images/favicon.png">
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/calculators/bmi-calculator.css">
+
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "BMI Calculator",
+      "description": "Calculate Body Mass Index (BMI) and view classification charts.",
+      "applicationCategory": "HealthCalculator",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    }
+    </script>
+
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BVENYYJ869"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-BVENYYJ869');
+    </script>
+    <script type="text/javascript">
+        (function (c, l, a, r, i, t, y) {
+            c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+            t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+            y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+        })(window, document, "clarity", "script", "udqk27trde");
+    </script>
+</head>
+
+<body>
+
+    <!-- 3. HEADER -->
+    <header class="header">
+        <div class="container header-inner">
+            <a href="../../index.html" class="logo">FairCalculator</a>
+            <div class="header-search">
+                <input type="text" id="searchInput" class="search-input" placeholder="Search tools..."
+                    aria-label="Search">
+            </div>
+            <button class="menu-btn" id="menuToggle"><i class="fas fa-bars"></i></button>
+        </div>
+    </header>
+
+    <!-- 4. CATEGORY BAR -->
+    <nav class="category-bar">
+        <div class="container">
+            <ul id="category-list">
+                <li><a href="../../index.html">All</a></li>
+                <li><a href="../../categories/finance-calculators.html">Finance</a></li>
+                <li><a href="../../categories/math-calculators.html">Math</a></li>
+                <li><a href="../../categories/health-calculators.html"
+                        style="background:#eff6ff; color:#2563eb; border-color:#bfdbfe;">Health</a></li>
+                <li><a href="../../categories/date-time-calculators.html">Date</a></li>
+                <li><a href="../../categories/unit-converters.html">Converters</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="mobile-close" id="closeMenu">&times;</button>
+        <div style="margin-top: 40px;">
+            <ul class="sidebar-list">
+                <li><a href="../../index.html">Home</a></li>
+                <li><a href="../../index.html#calculators">All Calculators</a></li>
+                <li><a href="../../about.html">About</a></li>
+                <li><a href="../../contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- 5. MAIN CONTENT -->
+    <main class="main-content">
+        <div class="container">
+
+            <!-- Breadcrumbs -->
+            <div style="margin-bottom: 20px; font-size: 0.9rem; color: #64748b;">
+                <a href="../../index.html" style="text-decoration: underline;">Home</a> /
+                <a href="../../categories/health-calculators.html" style="text-decoration: underline;">Health</a> /
+                <span style="font-weight: 600; color: #0f172a;">BMI Calculator</span>
+            </div>
+
+            <!-- Search Results Placeholder -->
+            <div id="searchResults" style="display:none; margin-bottom: 40px;">
+                <div class="section-header">Search Results</div>
+                <div class="grid" id="searchResultsContent"></div>
+            </div>
+
+            <!-- TOOL CONTAINER -->
+            <div class="bmi-widget-container" id="tool-container">
+
+                <h1 class="section-header" style="justify-content:center; font-size: 2rem; margin-bottom: 30px;">
+                    <i class="fas fa-weight" style="color: #10b981; margin-right: 15px;"></i> BMI Calculator - CDC Adult
+                    & Pediatric BMI Guide
+                </h1>
+
+                <div class="featured-calculator">
+                    <div class="calculator-form">
+
+                        <!-- GENDER SECTION -->
+                        <div class="input-wrapper">
+                            <label
+                                style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--text-main);">Gender</label>
+                            <div class="gender-group">
+                                <label class="gender-label">
+                                    <input type="radio" name="gender" value="male" checked>
+                                    <i class="fas fa-mars" style="color: #3b82f6;"></i> Male
+                                </label>
+                                <label class="gender-label">
+                                    <input type="radio" name="gender" value="female">
+                                    <i class="fas fa-venus" style="color: #ec4899;"></i> Female
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- HEIGHT SECTION -->
+                        <div class="input-wrapper">
+                            <div class="input-header">
+                                <label>Height</label>
+                                <select id="heightUnit" class="unit-select">
+                                    <option value="cm">Centimeters (cm)</option>
+                                    <option value="ft_in">Feet + Inches (ft/in)</option>
+                                    <option value="ft">Feet (ft)</option>
+                                    <option value="in">Inches (in)</option>
+                                </select>
+                            </div>
+                            <div id="heightInputContainer"></div>
+                        </div>
+
+                        <!-- WEIGHT SECTION -->
+                        <div class="input-wrapper">
+                            <div class="input-header">
+                                <label>Weight</label>
+                                <select id="weightUnit" class="unit-select">
+                                    <option value="kg">Kilograms (kg)</option>
+                                    <option value="lb">Pounds (lb)</option>
+                                    <option value="st_lb">Stone + Pounds (st/lb)</option>
+                                </select>
+                            </div>
+                            <div id="weightInputContainer"></div>
+                        </div>
+
+                        <button id="calculateBtn" class="calc-action-btn">Calculate BMI</button>
+                    </div>
+
+                    <!-- RESULTS -->
+                    <div id="resultContainer" class="result-container">
+                        <div class="bmi-score" id="bmiValue">--</div>
+                        <div class="bmi-category" id="bmiCategory">--</div>
+
+                        <!-- Visual Gauge -->
+                        <div class="bmi-gauge-container">
+                            <div class="bmi-marker" id="bmiMarker" style="left: 0;"></div>
+                        </div>
+                        <div class="gauge-labels">
+                            <span>15</span>
+                            <span>18.5</span>
+                            <span>25</span>
+                            <span>30</span>
+                            <span>40</span>
+                        </div>
+
+                        <div class="formula-box">
+                            <strong>Healthy Weight Range:</strong><br>
+                            <span id="healthyRange">--</span>
+                        </div>
+
+                        <!-- BMI CHART TABLE -->
+                        <div class="bmi-table-container" style="display: block;">
+                            <div class="bmi-table-title">BMI Classification</div>
+                            <table class="bmi-table">
+                                <thead>
+                                    <tr>
+                                        <th>Category</th>
+                                        <th>BMI Range</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr id="row-under">
+                                        <td style="color: #3498db; font-weight: 500;">Underweight</td>
+                                        <td>&lt; 18.5</td>
+                                    </tr>
+                                    <tr id="row-normal">
+                                        <td style="color: #2ecc71; font-weight: 500;">Normal Weight</td>
+                                        <td>18.5 â€“ 24.9</td>
+                                    </tr>
+                                    <tr id="row-over">
+                                        <td style="color: #f1c40f; font-weight: 500;">Overweight</td>
+                                        <td>25.0 â€“ 29.9</td>
+                                    </tr>
+                                    <tr id="row-obese1">
+                                        <td style="color: #e67e22; font-weight: 500;">Obesity Class I</td>
+                                        <td>30.0 â€“ 34.9</td>
+                                    </tr>
+                                    <tr id="row-obese2">
+                                        <td style="color: #e74c3c; font-weight: 500;">Obesity Class II</td>
+                                        <td>35.0 â€“ 39.9</td>
+                                    </tr>
+                                    <tr id="row-obese3">
+                                        <td style="color: #c0392b; font-weight: 500;">Obesity Class III</td>
+                                        <td>&ge; 40.0</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Engaging SEO Guide -->
+                <div class="info-section">
+                    <h2>Decoding Your Result: The Meaning of BMI</h2>
+                    <article>
+                        <h3>What is the Meaning of BMI?</h3>
+                        <p>When you ask about the <strong>meaning of BMI</strong> (or <strong>meaning bmi</strong>), you
+                            are looking for a measure of body
+                            fatness based on height and weight. Our <strong>cdc bmi calculator</strong> (based on
+                            official standards) provides an <strong>average bmi</strong> benchmark. While the
+                            <strong>average american bmi</strong> has shifted over the years, staying within healthy
+                            <strong>bmi categories</strong> remains a key health goal.
+                        </p>
+                        <p>Whether you have a <strong>high bmi</strong> or an <strong>underweight bmi</strong>, this
+                            tool helps you identify where you stand. Our <strong>smart bmi calculator</strong> (also
+                            known as a <strong>smartbmicalculator</strong> or <strong>bmi calculator smart</strong>) is
+                            a <strong>new bmi calculator</strong> designed for modern health tracking.</p>
+
+                        <h3>Pediatric, Teenager, and Infant BMI</h3>
+                        <p>Calculating Body Mass Index for younger populations requires a specialized approach. Use our
+                            <strong>pediatric bmi calculator</strong> or the <strong>cdc pediatric bmi
+                                calculator</strong> for children and adolescents. Unlike adults, these results are
+                            mapped to a <strong>bmi percentile calculator</strong> or <strong>bmi centile
+                                calculator</strong> to account for growth spurts.
+                        </p>
+                        <p>We offer specialized tools like the <strong>bmi calculator for infants</strong>,
+                            <strong>paediatric bmi calculator</strong>, and <strong>newborn bmi calculator</strong>.
+                            Whether you are tracking a <strong>teenager bmi</strong> or looking for <strong>bmi for
+                                teens</strong>, understanding the <strong>bmi percent</strong> and <strong>bmi
+                                percentile calculator</strong> results is crucial for proper development tracking.
+                        </p>
+
+                        <h3>Military and Army BMI Standards</h3>
+                        <p>The armed forces use strict physical standards. Our <strong>military bmi calculator</strong>
+                            and <strong>army bmi calculator</strong> help service members prepare for tape tests and
+                            fitness requirements. For even more precision, some users look for a <strong>bmi calculator
+                                with frame size</strong> or a <strong>bmi bsa calculator</strong> (Body Surface Area) to
+                            get a more comprehensive physical profile.</p>
+                        <p>If you are exploring alternative tools like the <strong>aarp bmi calculator</strong> or the
+                            popular
+                            <strong>bmi calculator calculator net</strong> (often searched as <strong>calculator net
+                                bmi</strong>), you
+                            will find that our <strong>new bmi</strong> logic maintains the highest accuracy for all
+                            demographics, including a specialized <strong>bmi calculator asian</strong> mode for
+                            regional adjustments.
+                        </p>
+
+                        <h3>Visual BMI and Classification Charts</h3>
+                        <p>Numbers alone don't tell the whole story. Use our <strong>bmi visualizer</strong> and
+                            <strong>body bmi visualizer</strong> to see how different scores look. Our <strong>bmi
+                                graph</strong> makes it easy to spot trends. Whether you are looking at a <strong>13
+                                bmi</strong>, <strong>bmi 13</strong>, <strong>14 bmi</strong>, or <strong>15
+                                bmi</strong>, the <strong>bmi categories</strong> help define your health path.
+                        </p>
+                        <p>Common thresholds on our chart include <strong>18.5 bmi</strong> (the start of normal
+                            weight), <strong>bmi of 21</strong>, <strong>23 bmi</strong>, or even <strong>bmi
+                                50</strong>. Understanding where you fallâ€”be it <strong>16 bmi</strong>, <strong>18
+                                bmi</strong>, <strong>19 bmi</strong>, <strong>20 bmi</strong>, or <strong>45
+                                bmi</strong>â€”is the first step toward a healthier lifestyle.</p>
+
+                        <h3>Special Considerations: Pregnancy and Reverse BMI</h3>
+                        <p>For expecting mothers, a standard <strong>bmi cdc</strong> check might not be sufficient;
+                            always use a <strong>bmi for pregnant women</strong> guide to track healthy weight gain. If
+                            you have a target weight in mind, our <strong>bmi calculator reverse</strong> feature can
+                            help you find your goal weight based on a desired BMI score.</p>
+                        <p>This <strong>new bmi</strong> approach ensures that everyoneâ€”from those checking their
+                            <strong>bmi cdc</strong> status to those using a <strong>smart bmi calculator</strong>â€”has
+                            access to the best possible data.
+                        </p>
+                    </article>
+                </div>
+
+                <!-- FAQ Section -->
+                <div class="faq-section">
+                    <h2>Frequently Asked Questions</h2>
+
+                    <div class="faq-item">
+                        <h3><i class="fas fa-question-circle"></i> What is a "Smart BMI Calculator"?</h3>
+                        <p>A <strong>smart bmi calculator</strong> (also known as a <strong>smartbmicalculator</strong>)
+                            is a modern version of the standard tool that often integrates with wearable technology or
+                            health apps to track your progress over time. While the core formula remains the <strong>bmi
+                                cdc</strong> standard, "smart" tools provide more interactive data and personalized
+                            insights into your <strong>bmi categories</strong>.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3><i class="fas fa-question-circle"></i> Can I use this as a pediatric bmi calculator for
+                            infants?</h3>
+                        <p>Yes, but with caution. A <strong>bmi calculator for infants</strong> or a <strong>paediatric
+                                bmi calculator</strong> requires different interpretation. Instead of fixed ranges,
+                            results are compared to a <strong>bmi percentile calculator</strong> or <strong>bmi centile
+                                calculator</strong>. Always use the <strong>cdc pediatric bmi calculator</strong>
+                            standards for anyone under 20 to ensure age and growth are properly factored in.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3><i class="fas fa-question-circle"></i> Is there a specific BMI for pregnant women?</h3>
+                        <p>Standard BMI interpretation does not apply during pregnancy. Expecting mothers should use a
+                            specialized <strong>bmi for pregnant women</strong> chart provided by their healthcare
+                            provider. The focus shifts from weight loss to healthy weight gain, and using a <strong>bmi
+                                calculator reverse</strong> tool can help you find your pre-pregnancy baseline to track
+                            development.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3><i class="fas fa-question-circle"></i> How does a "BMI Visualizer" work?</h3>
+                        <p>A <strong>bmi visualizer</strong> or <strong>body bmi visualizer</strong> uses 3D models or
+                            silhouette charts to help you see what different BMI levels look like on various body types.
+                            This <strong>bmi visualizer tool</strong> is excellent for setting realistic goals, as it
+                            shows the physical difference between, for example, an <strong>18.5 bmi</strong> and a
+                            <strong>bmi of 21</strong>.
+                        </p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3><i class="fas fa-question-circle"></i> Does frame size affect BMI accuracy?</h3>
+                        <p>Yes. A <strong>bmi calculator with frame size</strong> or a <strong>bmi bsa
+                                calculator</strong> (Body Surface Area) offers more precision for individuals with high
+                            muscle mass or very small frames. While the standard <strong>new bmi</strong> formula is a
+                            great general indicator, specialized measurements help differentiate between bone density,
+                            muscle, and body fat.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div id="related-calculators"></div>
+    </main>
+
+    <!-- 6. FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <span
+                        style="font-weight: 800; font-size: 1.2rem; display:block; margin-bottom:10px; color:var(--text-main);">FairCalculator</span>
+                    <p>Simple, fast, and accurate online calculators.</p>
+                </div>
+                <div>
+                    <h4>Menu</h4>
+                    <ul>
+                        <li><a href="../../index.html">Home</a></li>
+                        <li><a href="../../about.html">About Us</a></li>
+                        <li><a href="../../contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="../../legal/privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="../../legal/terms-of-service.html">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2025 FairCalculator. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- 7. SCRIPTS -->
+    <script>var ROOT_PATH = '../../';</script>
+    <script src="../../assets/js/data.js"></script>
+    <script src="../../assets/js/search.js"></script>
+    <script src="../../assets/js/mobile-menu.js"></script>
+
+    <!-- WIDGET JS LOGIC -->
+    <script src="../../assets/js/calculators/bmi-calculator.js" defer></script>
+    <script src="../../assets/js/related-calculators.js" defer></script>
+</body>
+
+</html>

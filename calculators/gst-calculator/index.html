@@ -1,0 +1,1103 @@
+﻿<!DOCTYPE html>
+<html lang="en-IN"> <!-- Changed to Indian English -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GST Calculator India (2026) – Calculate CGST, SGST & IGST Instantly</title>
+    <meta name="description"
+        content="Calculate GST for India (2026). Instant CGST, SGST & IGST breakdown. Supports 'Reverse GST' to find actual value excluding tax. 100% Accurate.">
+    <link rel="canonical" href="https://www.faircalculator.com/calculators/gst-calculator/">
+
+    <!-- OPTIMIZED META TAGS FOR SOCIAL SHARING -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://faircalculator.com/calculators/gst-calculator/">
+    <meta property="og:title" content="GST Calculator India (2026) – Calculate CGST, SGST & IGST Instantly">
+    <meta property="og:description"
+        content="Calculate GST for India (2026). Instant CGST, SGST & IGST breakdown. Supports 'Reverse GST' to find actual value excluding tax. 100% Accurate.">
+    <meta property="og:image" content="https://faircalculator.com/assets/images/calculators/gst-calculator-preview.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://faircalculator.com/calculators/gst-calculator/">
+    <meta property="twitter:title" content="GST Calculator India (2026) – Calculate CGST, SGST & IGST Instantly">
+    <meta property="twitter:description"
+        content="Calculate GST for India (2026). Instant CGST, SGST & IGST breakdown. Supports 'Reverse GST' to find actual value excluding tax. 100% Accurate.">
+    <meta property="twitter:image"
+        content="https://faircalculator.com/assets/images/calculators/gst-calculator-preview.png">
+
+
+    <!-- Preload Critical Assets -->
+    <link rel="preload" href="../../assets/css/style.css" as="style">
+    <link rel="preload" href="../../assets/css/calculators/gst-calculator.css" as="style">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        as="style">
+
+    <!-- Favicon with Indian Colors -->
+    <link rel="icon" type="image/x-icon" href="../../assets/images/favicon-india.png">
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/calculators/gst-calculator.css">
+
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- India-specific Schema Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "India GST Calculator",
+      "description": "Free online calculator for Goods and Services Tax (GST) in India. Calculate CGST, SGST and IGST amounts accurately.",
+      "applicationCategory": "CalculatorApplication",
+      "operatingSystem": "Any",
+      "dateModified": "2026-02-07",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "INR"
+      },
+      "provider": {
+        "@type": "Organization",
+        "name": "FairCalculator",
+        "areaServed": "IN"
+      }
+    }
+    </script>
+
+    <style>
+        /* India-Specific Info Section */
+        .india-info-box {
+            background: linear-gradient(135deg, rgba(255, 153, 51, 0.1) 0%, rgba(19, 136, 8, 0.1) 100%);
+            border: 1px solid rgba(37, 99, 235, 0.3);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .india-info-title {
+            display: flex;
+            align-items: center;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .india-info-title i {
+            margin-right: 10px;
+            font-size: 1.2rem;
+        }
+
+        .gst-council-note {
+            background: #dbeafe;
+            padding: 12px;
+            border-radius: 8px;
+            margin: 1rem 0;
+            font-size: 0.9rem;
+        }
+
+        /* Mobile Performance Optimization */
+        @media (hover: none) {
+
+            .input-field,
+            .calc-action-btn,
+            .mode-card,
+            .percent-btn {
+                touch-action: manipulation;
+                -webkit-tap-highlight-color: transparent;
+            }
+
+            .calc-action-btn {
+                padding: 1rem;
+                font-size: 1.1rem;
+            }
+        }
+
+        /* Data Tables for GST Rates */
+        .gst-rate-table-container {
+            overflow-x: auto;
+            margin: 20px 0;
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+            background: #fff;
+        }
+
+        .gst-rate-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.95rem;
+        }
+
+        .gst-rate-table th {
+            background-color: #f8fafc;
+            color: #1e293b;
+            font-weight: 700;
+            text-align: left;
+            padding: 12px 15px;
+            border-bottom: 2px solid #e2e8f0;
+        }
+
+        .gst-rate-table td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #f1f5f9;
+            color: #475569;
+            vertical-align: top;
+        }
+
+        .gst-rate-table tr:hover {
+            background-color: #f8fafc;
+        }
+
+        .rate-badge {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-weight: 700;
+            font-size: 0.85rem;
+        }
+
+        .rate-down {
+            background: #dcfce7;
+            color: #166534;
+        }
+
+        .rate-up {
+            background: #fee2e2;
+            color: #991b1b;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- Header with Indian Context -->
+    <header class="header">
+        <div class="container header-inner">
+            <a href="../../index.html" class="logo">FairCalculator</a>
+            <div class="header-search">
+                <input type="text" id="searchInput" class="search-input" placeholder="Search GST tools..."
+                    aria-label="Search GST calculators">
+            </div>
+            <button class="menu-btn" id="menuToggle"><i class="fas fa-bars"></i></button>
+        </div>
+    </header>
+
+    <!-- Category Bar -->
+    <nav class="category-bar">
+        <div class="container">
+            <ul id="category-list">
+                <li><a href="../../index.html">All</a></li>
+                <li><a href="../../categories/finance-calculators.html">Finance</a></li>
+                <li><a href="../../categories/math-calculators.html">Math</a></li>
+                <li><a href="../../categories/health-calculators.html">Health</a></li>
+                <li><a href="../../categories/date-time-calculators.html">Date</a></li>
+                <li><a href="../../categories/physics-calculators.html">Physics</a></li>
+                <li><a href="../../categories/unit-converters.html">Converters</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="mobile-close" id="closeMenu">&times;</button>
+        <div style="margin-top: 40px;">
+            <ul class="sidebar-list">
+                <li><a href="../../index.html">Home</a></li>
+                <li><a href="../../categories/indian-calculators.html">India Calculators</a></li>
+                <li><a href="../../calculators/income-tax-calculator/">Income Tax Calculator</a></li>
+                <li><a href="../../calculators/gst-calculator/">GST Calculator</a></li>
+                <li><a href="../../about.html">About</a></li>
+                <li><a href="../../contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+
+            <!-- Breadcrumbs with India Context -->
+            <div style="margin-bottom: 20px; font-size: 0.9rem; color: #64748b;">
+                <a href="../../index.html" style="text-decoration: underline;">Home</a> /
+                <a href="../../categories/indian-calculators.html" style="text-decoration: underline;">India Tools</a> /
+                <span style="font-weight: 600; color: #0f172a;">GST Calculator</span>
+            </div>
+
+            <!-- TOOL CONTAINER -->
+            <div class="gst-widget-container" id="tool-container">
+
+                <!-- Featured Header -->
+                <div style="text-align: center; margin-bottom: 40px;">
+                    <h1 style="font-size: 2.5rem; font-weight: 800; color: #1e293b; margin-bottom: 15px;">GST Calculator
+                        India 2026</h1>
+                    <p style="font-size: 1.1rem; color: #64748b; max-width: 600px; margin: 0 auto; line-height: 1.5;">
+                        Calculate GST amounts in seconds with our simple and accurate tool. No complex math required.
+                    </p>
+                </div>
+
+                <!-- Calculator Visual Form -->
+                <div class="calculator-form"
+                    style="padding: 2.5rem; border-radius: 12px; background: #fff; border: 1px solid #e2e8f0; box-shadow: 0 4px 12px rgba(0,0,0,0.03);">
+
+                    <!-- Top Input Row -->
+                    <div class="calculator-grid"
+                        style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-bottom: 50px;">
+                        <div class="input-wrapper" style="margin-bottom: 0;">
+                            <label
+                                style="display: block; font-weight: 700; margin-bottom: 12px; font-size: 1.1rem; color: #000;">Amount</label>
+                            <input type="number" id="amount" class="input-field" placeholder="" value="25000"
+                                style="border-color: #cbd5e1; border-radius: 6px; padding: 12px 15px; font-size: 1.1rem; background: #fff; border: 1px solid #c7d2fe;">
+                        </div>
+                        <div class="input-wrapper" style="margin-bottom: 0;">
+                            <label
+                                style="display: block; font-weight: 700; margin-bottom: 12px; font-size: 1.1rem; color: #000;">GST
+                                %</label>
+                            <select id="gstRate" class="input-field"
+                                style="border-color: #c7d2fe; border-radius: 6px; padding: 12px 15px; font-size: 1.1rem; background: #fff; appearance: auto; cursor: pointer;">
+                                <option value="0">0% (Exempt)</option>
+                                <option value="0.25">0.25% (Rough Diamond)</option>
+                                <option value="3">3% (Gold/Silver)</option>
+                                <option value="5">5% (Essentials)</option>
+                                <option value="18" selected>18% (Standard)</option>
+                                <option value="40">40% (Sin/Luxury)</option>
+                            </select>
+                        </div>
+                        <div class="input-wrapper" style="margin-bottom: 0;">
+                            <label
+                                style="display: block; font-weight: 700; margin-bottom: 12px; font-size: 1.1rem; color: #000;">Tax</label>
+                            <select id="mode" class="input-field"
+                                style="border-color: #c7d2fe; border-radius: 6px; padding: 12px 15px; font-size: 1.1rem; background: #fff; appearance: auto; cursor: pointer;">
+                                <option value="exclusive">Exclusive</option>
+                                <option value="inclusive">Inclusive</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Horizontal Equation Row -->
+                    <div class="equation-container"
+                        style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 40px; text-align: center; max-width: 1000px; margin-left: auto; margin-right: auto; gap: 10px; overflow-x: auto; padding: 10px 0; flex-wrap: nowrap;">
+                        <div class="equation-item" style="flex: 1; min-width: fit-content;">
+                            <div id="netAmount"
+                                style="font-size: clamp(1.2rem, 4vw, 2.2rem); font-weight: 800; color: #1e293b; white-space: nowrap;">
+                                ₹0</div>
+                            <div
+                                style="font-size: 0.85rem; color: #2563eb; font-weight: 600; text-transform: uppercase;">
+                                Actual Amount</div>
+                        </div>
+
+                        <div class="equation-symbol" style="font-size: 1.5rem; color: #94a3b8; font-weight: 300;">+
+                        </div>
+
+                        <div class="equation-item" style="flex: 1; min-width: fit-content;">
+                            <div id="gstAmount"
+                                style="font-size: clamp(1.2rem, 4vw, 2.2rem); font-weight: 800; color: #16a34a; white-space: nowrap;">
+                                ₹0</div>
+                            <div
+                                style="font-size: 0.85rem; color: #16a34a; font-weight: 600; text-transform: uppercase;">
+                                GST Amount</div>
+                        </div>
+
+                        <div class="equation-symbol" style="font-size: 1.5rem; color: #94a3b8; font-weight: 300;">=
+                        </div>
+
+                        <div class="equation-item" style="flex: 1; min-width: fit-content;">
+                            <div id="totalAmount"
+                                style="font-size: clamp(1.2rem, 4vw, 2.2rem); font-weight: 800; color: #2563eb; white-space: nowrap;">
+                                ₹0</div>
+                            <div
+                                style="font-size: 0.85rem; color: #2563eb; font-weight: 600; text-transform: uppercase;">
+                                Total Amount</div>
+                        </div>
+                    </div>
+
+                    <!-- Hidden breakdown for India details (accessible via logic) -->
+                    <div id="taxBreakdownSection"
+                        style="display:none; margin-top: 30px; border-top: 1px solid #f1f5f9; padding-top: 20px;">
+                        <div id="taxBreakdownInfo"
+                            style="text-align: center; font-weight: 600; font-size: 0.95rem; color: #64748b; margin-bottom: 15px;">
+                        </div>
+                        <div id="taxBreakdownGrid"
+                            style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px;"></div>
+                    </div>
+
+                    <!-- Main Action Button -->
+                    <div style="text-align: center; margin-top: 20px;">
+                        <button id="calculateBtn" class="calc-action-btn"
+                            style="width: 100%; max-width: 400px; border-radius: 8px; font-weight: 600; height: 55px; font-size: 1.1rem; background: #2563eb; color: #fff; border: none; cursor: pointer;">
+                            Calculate GST
+                        </button>
+                    </div>
+                </div>
+
+                <!-- India-Specific Information Box -->
+                <div class="india-info-box">
+                    <h3 class="india-info-title">
+                        <i class="fas fa-india"></i> GST Calculation in India
+                    </h3>
+                    <p>This GST calculator follows the latest GST Council guidelines and is updated for the financial
+                        year 2025-2026.</p>
+
+                    <div class="gst-council-note">
+                        <strong><i class="fas fa-info-circle"></i> Info:</strong>
+                        For intra-state transactions, GST is split evenly between CGST and SGST. For inter-state sales,
+                        Integrated GST (IGST) is applied.
+                    </div>
+                </div>
+
+                <!-- Embed / Share Widget -->
+                <div class="embed-widget"
+                    style="background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 12px; padding: 20px; margin-top: 30px;">
+                    <h3
+                        style="margin-top: 0; color: #166534; font-size: 1.1rem; display: flex; align-items: center; margin-bottom: 10px;">
+                        <i class="fas fa-code" style="margin-right: 10px;"></i> Embed This Calculator
+                    </h3>
+                    <p style="font-size: 0.9rem; color: #15803d; margin-bottom: 15px; background: none; padding: 0;">
+                        Want to use this <strong>GST Calculator India</strong> on your own website or blog? Copy the
+                        code below to add it for free!
+                    </p>
+                    <div style="position: relative;">
+                        <textarea readonly
+                            style="width: 100%; height: 80px; padding: 10px; border-radius: 6px; border: 1px solid #cbd5e1; font-family: monospace; font-size: 0.85rem; resize: none; background: #fff; cursor: pointer;"
+                            onclick="this.select();"><iframe src="https://www.faircalculator.com/calculators/gst-calculator/" width="100%" height="700" frameborder="0" style="border:0; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);"></iframe></textarea>
+                    </div>
+                    <p style="font-size: 0.8rem; color: #64748b; margin-top: 8px; text-align: right;">
+                        <i class="fas fa-check-circle" style="color: #166534;"></i> 100% Free & Responsive Widget
+                    </p>
+                </div>
+
+                <!-- Detailed SEO Guide - India Focused -->
+                <div class="info-section" style="margin-top: 40px;">
+                    <h2>Complete Guide to GST Calculation in India</h2>
+                    <article>
+                        <h3>What is GST in India?</h3>
+                        <p>Goods and Services Tax (GST) is India's comprehensive indirect tax on manufacture, sale and
+                            consumption of goods and services. Implemented on July 1st, 2017, GST replaced multiple
+                            indirect taxes like excise duty, service tax, VAT, and others to create a unified taxation
+                            system across India.</p>
+
+                        <h3>GST Structure in India</h3>
+                        <p>India's GST system has three components:</p>
+                        <ul>
+                            <li><strong>CGST (Central GST):</strong> Collected by the Central government on intra-state
+                                sales</li>
+                            <li><strong>SGST (State GST):</strong> Collected by the State government on intra-state
+                                sales</li>
+                            <li><strong>IGST (Integrated GST):</strong> Collected by the Central government on
+                                inter-state sales and imports</li>
+                        </ul>
+
+                        <div class="india-info-box" style="margin: 20px 0; padding: 15px;">
+                            <p style="margin: 0; font-weight: 600; color: #1e293b;">
+                                <i class="fas fa-lightbulb" style="color: #f59e0b; margin-right: 8px;"></i>
+                                Remember: For intra-state transactions, GST rate is split equally between CGST and SGST.
+                                For example, 18% GST = 9% CGST + 9% SGST.
+                            </p>
+                        </div>
+
+                        <h3>How to Use This India GST Calculator</h3>
+                        <ol>
+                            <li><strong>Enter Amount:</strong> Input your amount in Indian Rupees (₹). Our calculator
+                                defaults to ₹25,000 to get you started!</li>
+                            <li><strong>Select GST %:</strong> Choose from the specific rates: 0%, 5%, 18%, or the
+                                special
+                                40% demerit rate based on your product category.</li>
+                            <li><strong>Configure Tax Mode:</strong> Select "Exclusive" to add GST to your actual
+                                amount, or "Inclusive" to find the breakdown from the total amount.</li>
+                            <li><strong>Visual Equation:</strong> Watch the real-time update in the equation row:
+                                <strong>Actual Amount + GST Amount = Total Amount</strong>. This helps in understanding
+                                your <a href="../../calculators/income-tax-calculator/">tax liabilities</a> better.
+                            </li>
+                        </ol>
+
+                        <h3>Practical GST Calculation Examples for India</h3>
+
+                        <h4>Example 1: Product with 18% GST (Exclusive)</h4>
+                        <p>Actual Amount: ₹10,000</p>
+                        <div class="fc-formula-box">
+                            <code>GST Amount = (10,000 × 18%) = ₹1,800</code><br>
+                            <code>Total Amount = ₹10,000 + ₹1,800 = ₹11,800</code>
+                        </div>
+
+                        <h4>Example 2: Luxury Item with 40% Demerit Rate (Exclusive)</h4>
+                        <p>Actual Amount: ₹1,00,000</p>
+                        <div class="fc-formula-box">
+                            <code>GST Amount = (1,00,000 × 40%) = ₹40,000</code><br>
+                            <code>Total Amount = ₹1,40,000</code>
+                        </div>
+
+                        <h4>Example 3: Reverse GST Calculation (Finding Actual Price)</h4>
+                        <p>Total Amount (Inclusive): ₹59,000 with 18% GST. Useful for checking <a
+                                href="../../calculators/discount-calculator/">post-discount prices</a>.</p>
+                        <div class="fc-formula-box">
+                            <code>Actual Amount = 59,000 ÷ (1 + 18/100) = ₹50,000</code><br>
+                            <code>GST Amount = ₹59,000 - ₹50,000 = ₹9,000</code>
+                        </div>
+
+                        <h3>Revised GST Rates (Effective from September 22, 2025)</h3>
+                        <p><strong>Note:</strong> The "GST 2.0" reforms have significantly simplified the tax structure.
+                            The old <strong>12% and 28% slabs have been abolished</strong>. Most items were merged into
+                            the 5% and 18% slabs, while luxury and sin goods now attract a <strong>flat 40% Demerit
+                                Rate</strong>, eliminating the complex Compensation Cess calculations of the past.</p>
+                        <p>This represents the most comprehensive GST rate overhaul since 2017, directly impacting
+                            financial strategies and consumer prices.</p>
+
+                        <h4>Major GST Rate Cuts</h4>
+                        <div class="gst-rate-table-container">
+                            <table class="gst-rate-table">
+                                <thead>
+                                    <tr>
+                                        <th>Category</th>
+                                        <th>Items</th>
+                                        <th>Old</th>
+                                        <th>New</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>Daily Essentials</strong></td>
+                                        <td>Hair Oil, Shampoo, Toothpaste, Soap, Shaving Cream</td>
+                                        <td>18%</td>
+                                        <td><span class="rate-badge rate-down">5%</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Dairy & Food</strong></td>
+                                        <td>Butter, Ghee, Namkeens, Bhujia, Mixtures</td>
+                                        <td>12%</td>
+                                        <td><span class="rate-badge rate-down">5%</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Household</strong></td>
+                                        <td>Utensils, Baby Napkins, Diapers, Sewing Machines</td>
+                                        <td>12%</td>
+                                        <td><span class="rate-badge rate-down">5%</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Agriculture</strong></td>
+                                        <td>Tractors, Tyres, Bio-pesticides, Drip Irrigation</td>
+                                        <td>12-18%</td>
+                                        <td><span class="rate-badge rate-down">5%</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Healthcare</strong></td>
+                                        <td>Health & Life Insurance, Diagnostic Kits, Oxygen</td>
+                                        <td>12-18%</td>
+                                        <td><span class="rate-badge rate-down">0-5%</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Automobiles</strong></td>
+                                        <td>Small Cars (Petrol/Diesel), 3-Wheelers</td>
+                                        <td>28%</td>
+                                        <td><span class="rate-badge rate-down">18%</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Education</strong></td>
+                                        <td>Maps, Pencils, Notebooks, Erasers</td>
+                                        <td>5-12%</td>
+                                        <td><span class="rate-badge rate-down">0%</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Appliances</strong></td>
+                                        <td>Air Conditioners, Large TVs (>32"), Dishwashers</td>
+                                        <td>28%</td>
+                                        <td><span class="rate-badge rate-down">18%</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <h4>Important GST Rate Hikes</h4>
+                        <div class="gst-rate-table-container">
+                            <table class="gst-rate-table">
+                                <thead>
+                                    <tr>
+                                        <th>Category</th>
+                                        <th>Items</th>
+                                        <th>Old</th>
+                                        <th>New</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>Sin Goods</strong></td>
+                                        <td>Tobacco, Pan Masala, Aerated/Caffeinated Drinks</td>
+                                        <td>28%</td>
+                                        <td><span class="rate-badge rate-up">40%</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Luxury Goods</strong></td>
+                                        <td>Big Hybrids, Large Motorcycles, Private Aircraft, Yachts</td>
+                                        <td>28%</td>
+                                        <td><span class="rate-badge rate-up">40%</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Entertainment</strong></td>
+                                        <td>Betting, Casinos, Online Money Gaming, IPL Events</td>
+                                        <td>28%</td>
+                                        <td><span class="rate-badge rate-up">40%</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Industrial</strong></td>
+                                        <td>Coal, Lignite, Peat, Wood Pulp, Paperboards</td>
+                                        <td>5-12%</td>
+                                        <td><span class="rate-badge rate-up">18%</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Apparel</strong></td>
+                                        <td>Apparel & Made-ups > ₹2,500 per piece</td>
+                                        <td>12%</td>
+                                        <td><span class="rate-badge rate-up">18%</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <p style="font-size: 0.85rem; color: #64748b; margin-top: 10px;"><em>Effective rates may
+                                    include GST plus applicable cess. Final tax liability depends on GST Council
+                                    notifications.</em></p>
+                        </div>
+
+                        <h2>Detailed India GST Rate Schedule 2025-26</h2>
+                        <p>Understanding which GST slab your product or service falls into is crucial for accurate
+                            billing and compliance. Below is a human-friendly breakdown of the current Indian GST
+                            landscape, covering everything from daily groceries to luxury yachts.</p>
+
+                        <h3>1. The 0% GST Slab (Tax-Exempt & Nil Rated)</h3>
+                        <p>These are items the government considers absolutely essential for the common man. They
+                            carry no GST burden to keep living costs manageable.</p>
+                        <div class="gst-rate-table-container">
+                            <table class="gst-rate-table">
+                                <thead>
+                                    <tr>
+                                        <th>Category</th>
+                                        <th>Key Items Included</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>Fresh Food</strong></td>
+                                        <td>Fresh vegetables (potatoes, onions, etc.), fruits, nuts (coconuts), fresh
+                                            ginger, turmeric, and non-packaged tender coconut water.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Dairy & Staples</strong></td>
+                                        <td>Milk (fresh/UHT), curd, lassi, non-packaged buttermilk, eggs, bread, roti,
+                                            and non-packaged cereals/flours (wheat, rice, pulses).</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Health & Personal</strong></td>
+                                        <td>Contraceptives, condoms, hearing aids, sanitary napkins/tampons, and common
+                                            personal items like Bindi, Sindur, and Kajal.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Education & Books</strong></td>
+                                        <td>Printed books, newspapers, maps, globes, and Braille books. Includes
+                                            children's drawing books and geometry items.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Handmade Artisanal</strong></td>
+                                        <td>Earthen pots, clay idols, glass bangles (non-precious), and khadi fabric
+                                            products (KVIC).</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <h3>2. The 5% GST Slab (Mass Consumption Items)</h3>
+                        <p>This slab covers widely used goods that aren't "basic" enough to be exempt but are still
+                            taxed at a lower rate to protect the middle class.</p>
+                        <div class="gst-rate-table-container">
+                            <table class="gst-rate-table">
+                                <thead>
+                                    <tr>
+                                        <th>Category</th>
+                                        <th>Key Items Included</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>Processed Foods</strong></td>
+                                        <td>Spices (pepper, vanilla, etc.), tea, coffee (roasted), vegetable oils,
+                                            packaged food like paneer, honey, and namkeens.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Clothing (Low Cost)</strong></td>
+                                        <td>Any apparel, accessories, or footwear priced at or below ₹2,500 per piece.
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Medical Setup</strong></td>
+                                        <td>Insulin, diagnostic kits, stents, glucometers, and basic medical equipment
+                                            like wheelchairs or orthopaedic aids.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Industry & Agria</strong></td>
+                                        <td>Bio-gas, coal, semi-coke, solar cookers, and agricultural tools like
+                                            sprinklers and tractor engines.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Transport</strong></td>
+                                        <td>Ships, boats, aircraft, and parts related to these transport systems.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <h3>3. The 18% GST Slab (The Standard Rate)</h3>
+                        <p>The 18% rate is the default "Standard Rate" for most goods and services in India that
+                            don't fit into other special categories.</p>
+                        <div class="gst-rate-table-container">
+                            <table class="gst-rate-table">
+                                <thead>
+                                    <tr>
+                                        <th>Category</th>
+                                        <th>Key Items Included</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>Premium Apparel</strong></td>
+                                        <td>Clothing and footwear priced above ₹2,500 per piece.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Electronics/IT</strong></td>
+                                        <td>TVs, monitors, projectors, cameras, electrical motors, and most IT or
+                                            electronic components.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Construction</strong></td>
+                                        <td>Cement, concrete, metal structures, pipes, fittings, and industrial wiring.
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Personal Care</strong></td>
+                                        <td>Cosmetics, perfumes, soaps, and skincare products that aren't specifically
+                                            exempted.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Metals & Tools</strong></td>
+                                        <td>Steel rods, bars, most hand tools, fasteners, and industrial machinery
+                                            parts.
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <h3>4. 28% GST + Demerit Rate (Effective ~40%)</h3>
+                        <p>Reserved for what are known as "Sin Goods" or high-end luxury items. This category
+                            historically falls under the 28% slab but carries additional demerit taxes or cess.</p>
+                        <div class="gst-rate-table-container">
+                            <table class="gst-rate-table">
+                                <thead>
+                                    <tr>
+                                        <th>Category</th>
+                                        <th>Key Items Included</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>High-End Vehicles</strong></td>
+                                        <td>Passenger cars (luxury models), hybrid vehicles (>1200cc), and heavy
+                                            motorcycles (>350cc).</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Actionable Claims</strong></td>
+                                        <td>Online money gaming, casinos, betting, and gambling activities.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Specific Beverages</strong></td>
+                                        <td>Sugared aerated waters, caffeinated drinks, and carbonated fruit juice
+                                            beverages.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Other Luxury</strong></td>
+                                        <td>Yachts, pleasure vessels, private aircraft, and smoking-related articles.
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <p style="font-size: 0.85rem; color: #64748b; margin-top: 10px;"><em>Effective rates may
+                                    include GST plus applicable cess. Final tax liability depends on GST Council
+                                    notifications.</em></p>
+                        </div>
+
+                        <h3>5. Special GST Rates (Gemstones & Jewellery)</h3>
+                        <p>Because precious metals and stones are high-value and used as investments, they are
+                            subject to unique, very low tax percentages.</p>
+                        <div class="gst-rate-table-container">
+                            <table class="gst-rate-table">
+                                <thead>
+                                    <tr>
+                                        <th>GST Rate</th>
+                                        <th>Items Included</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>3% GST</strong></td>
+                                        <td>Gold, Silver, Platinum (in all forms), and finished Jewellery.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>0.25% GST</strong></td>
+                                        <td>Rough/Uncut Diamonds, precious stones (non-diamond), and synthetic stones in
+                                            unprocessed form.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <p style="font-size: 0.85rem; color: #64748b; margin-top: 10px;"><em>*All rates are indicative.
+                                Final tax liability depends on GST Council notifications and HSN classifications.</em>
+                        </p>
+
+
+                        <h2>State GST Code List (India) – 2026</h2>
+                        <p>The GST State Code consists of the first two digits of a 15-digit GSTIN (GST Identification
+                            Number). This code identifies the state or union territory where the business is registered.
+                        </p>
+
+                        <h3>🇮🇳 GST Codes for Indian States & UTs</h3>
+                        <div class="gst-rate-table-container">
+                            <table class="gst-rate-table">
+                                <thead>
+                                    <tr>
+                                        <th>Code</th>
+                                        <th>State / Territory</th>
+                                        <th>Code</th>
+                                        <th>State / Territory</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>01</strong></td>
+                                        <td>Jammu & Kashmir</td>
+                                        <td><strong>20</strong></td>
+                                        <td>Jharkhand</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>02</strong></td>
+                                        <td>Himachal Pradesh</td>
+                                        <td><strong>21</strong></td>
+                                        <td>Odisha</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>03</strong></td>
+                                        <td>Punjab</td>
+                                        <td><strong>22</strong></td>
+                                        <td>Chhattisgarh</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>04</strong></td>
+                                        <td>Chandigarh</td>
+                                        <td><strong>23</strong></td>
+                                        <td>Madhya Pradesh</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>05</strong></td>
+                                        <td>Uttarakhand</td>
+                                        <td><strong>24</strong></td>
+                                        <td>Gujarat</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>06</strong></td>
+                                        <td>Haryana</td>
+                                        <td><strong>25</strong></td>
+                                        <td>Dadra & Nagar Haveli and Daman & Diu</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>07</strong></td>
+                                        <td>Delhi</td>
+                                        <td><strong>26</strong></td>
+                                        <td>DNH & DD (Legacy/Merged)</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>08</strong></td>
+                                        <td>Rajasthan</td>
+                                        <td><strong>27</strong></td>
+                                        <td>Maharashtra</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>09</strong></td>
+                                        <td>Uttar Pradesh</td>
+                                        <td><strong>28</strong></td>
+                                        <td>Andhra Pradesh</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>10</strong></td>
+                                        <td>Bihar</td>
+                                        <td><strong>29</strong></td>
+                                        <td>Karnataka</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>11</strong></td>
+                                        <td>Sikkim</td>
+                                        <td><strong>30</strong></td>
+                                        <td>Goa</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>12</strong></td>
+                                        <td>Arunachal Pradesh</td>
+                                        <td><strong>31</strong></td>
+                                        <td>Lakshadweep</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>13</strong></td>
+                                        <td>Nagaland</td>
+                                        <td><strong>32</strong></td>
+                                        <td>Kerala</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>14</strong></td>
+                                        <td>Manipur</td>
+                                        <td><strong>33</strong></td>
+                                        <td>Tamil Nadu</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>15</strong></td>
+                                        <td>Mizoram</td>
+                                        <td><strong>34</strong></td>
+                                        <td>Puducherry</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>16</strong></td>
+                                        <td>Tripura</td>
+                                        <td><strong>35</strong></td>
+                                        <td>Andaman & Nicobar Islands</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>17</strong></td>
+                                        <td>Meghalaya</td>
+                                        <td><strong>36</strong></td>
+                                        <td>Telangana</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>18</strong></td>
+                                        <td>Assam</td>
+                                        <td><strong>37</strong></td>
+                                        <td>Andhra Pradesh</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>19</strong></td>
+                                        <td>West Bengal</td>
+                                        <td><strong>38</strong></td>
+                                        <td>Ladakh (New UT)</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <h3>🏛 Union Territories & Special Codes</h3>
+                        <div class="gst-rate-table-container">
+                            <table class="gst-rate-table">
+                                <thead>
+                                    <tr>
+                                        <th>Code</th>
+                                        <th>Description / Purpose</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>97</strong></td>
+                                        <td>Other Territory (Offshore / Continental Shelf)</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>99</strong></td>
+                                        <td>Centre Jurisdiction (For specific central services)</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>04, 26, 31, 34, 35</strong></td>
+                                        <td>Standard Union Territory Codes</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>07, 32*</strong></td>
+                                        <td>UTs with Legislature (Delhi & J&K context)</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <h3>📌 Example GSTIN Breakdown</h3>
+                        <p>A GSTIN is a 15-digit alpha-numeric identifier. Here is how it is structured:</p>
+                        <div class="fc-formula-box" style="text-align: left; padding-left: 20px;">
+                            <strong>GSTIN: 27ABCDE1234F1Z5</strong><br><br>
+                            <ul>
+                                <li><strong>27:</strong> State Code (e.g., Maharashtra)</li>
+                                <li><strong>ABCDE1234F:</strong> PAN of the Business</li>
+                                <li><strong>1:</strong> Entity registration number for the same PAN</li>
+                                <li><strong>Z:</strong> Default character (fixed)</li>
+                                <li><strong>5:</strong> Check digit for data integrity</li>
+                            </ul>
+                        </div>
+
+                        <h3>Frequently Asked Questions about GST in India</h3>
+
+                        <div class="faq-item">
+                            <div class="faq-question">When did GST come to India?</div>
+                            <p class="faq-answer">GST was launched in India on July 1, 2017, during a historic midnight
+                                session
+                                of Parliament. It replaced a complex web of indirect taxes like VAT, Excise, and Service
+                                Tax with a unified "One Nation, One Tax" system.</p>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question">What is the GST rate in India?</div>
+                            <p class="faq-answer">India uses a multi-tier rate system. While the historical slabs were
+                                5%, 12%, 18%, and 28%, recent 2025-26 reforms have shifted the primary focus to 0%
+                                (exempt), 5%, and 18% (standard). Select luxury and sin goods attract a special 40%
+                                demerit GST rate.</p>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question">Is 28% GST removed?</div>
+                            <p class="faq-answer">Yes. Under the 2026 "GST 2.0" reforms, the 28% slab has been abolished
+                                to
+                                simplify the tax structure. Most consumer items previously in the 28% category have been
+                                moved to the 18% slab, while high-end luxury and sin goods now attract a flat 40%
+                                demerit rate.</p>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question">Who is eligible for GST registration?</div>
+                            <p class="faq-answer">Business owners with an annual turnover of over ₹40 lakhs for goods or
+                                ₹20
+                                lakhs for services must register. For North-Eastern states, the limit is lower
+                                (₹20L/₹10L).
+                                Also, anyone selling products across state lines (inter-state) needs a GST number
+                                regardless
+                                of turnover.</p>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question">Can I register GST for free?</div>
+                            <p class="faq-answer">Absolutely! GST registration is 100% free on the official government
+                                portal
+                                (gst.gov.in). There are no government fees. If you use a professional or CA to help with
+                                the
+                                paperwork, you are only paying for their professional service, not the registration
+                                itself.</p>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question">What documents do I need for GST registration?</div>
+                            <p class="faq-answer">The essentials are: PAN Card, Aadhaar Card, proof of business address
+                                (like
+                                a electricity bill or rental agreement), a cancelled cheque or bank statement, and
+                                photographs of the business owners.</p>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question">Can I get a GST number without PAN?</div>
+                            <p class="faq-answer">No. A Permanent Account Number (PAN) is mandatory for GST registration
+                                in
+                                India. The GST number (GSTIN) is actually derived from your PAN, making it the primary
+                                identification for the tax department.</p>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question">Is a CA required for GST filing?</div>
+                            <p class="faq-answer">While a CA is not legally "mandatory" for filing your regular monthly
+                                or
+                                quarterly returns, many businesses prefer using one to avoid errors, stay compliant with
+                                changing laws, and handle complex tax credits (ITC) correctly.</p>
+                        </div>
+
+                        <h3>Important GST Resources for Indian Businesses</h3>
+                        <ul>
+                            <li><a href="https://www.gst.gov.in/" target="_blank" rel="noopener">Official GST Portal</a>
+                                - For registration, return filing, and payments</li>
+                            <li><a href="https://cbic-gst.gov.in/" target="_blank" rel="noopener">CBIC GST
+                                    Notifications</a> - Latest updates and notifications</li>
+                            <li><a href="https://tutorial.gst.gov.in/userguide/returns/index.htm#t=manual_change_profile.htm"
+                                    target="_blank" rel="noopener">GST e-Learning
+                                    Portal</a> - Free tutorials on GST procedures</li>
+                            <li>GST Helpline: 011-23370147 / helpdesk@gst.gov.in</li>
+                        </ul>
+                    </article>
+                </div>
+            </div>
+        </div>
+        <div id="related-calculators">
+            <!-- Will be populated by JavaScript -->
+        </div>
+    </main>
+
+    <!-- Footer with Indian Context -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <span
+                        style="font-weight: 800; font-size: 1.2rem; display:block; margin-bottom:10px; color:var(--text-main);">
+                        <i class="fas fa-india" style="margin-right: 8px; color: #FF9933;"></i> FairCalculator India
+                    </span>
+                    <p>Trusted by 2.5 million+ Indian businesses for accurate tax calculations.</p>
+                    <div style="margin-top: 15px; display: flex; gap: 10px;">
+                        <a href="#" style="color: #94a3b8; font-size: 1.2rem;"><i class="fab fa-facebook"></i></a>
+                        <a href="#" style="color: #94a3b8; font-size: 1.2rem;"><i class="fab fa-twitter"></i></a>
+                        <a href="#" style="color: #94a3b8; font-size: 1.2rem;"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" style="color: #94a3b8; font-size: 1.2rem;"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4>India Calculators</h4>
+                    <ul>
+                        <li><a href="../../calculators/gst-calculator/">GST Calculator</a></li>
+                        <li><a href="../../calculators/income-tax-calculator/">Income Tax Calculator</a></li>
+                        <li><a href="../../calculators/tds-calculator/">TDS Calculator</a></li>
+                        <li><a href="../../calculators/ppf-calculator/">PPF Calculator</a></li>
+                        <li><a href="../../calculators/sip-calculator/">SIP Calculator</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="../../legal/privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="../../legal/terms-of-service.html">Terms of Service</a></li>
+                        <li><a href="../../legal/disclaimer.html">Disclaimer</a></li>
+                        <li><a href="../../legal/refund-policy.html">Refund Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2026 FairCalculator. Made for India with ❤️
+                <div style="margin-top: 8px; font-size: 0.85rem; color: #94a3b8;">
+                    All calculations are indicative. Consult a CA for tax advice specific to your situation.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Performance Optimized Scripts -->
+    <script>var ROOT_PATH = '../../';</script>
+    <script src="../../assets/js/data.js" defer></script>
+    <script src="../../assets/js/search.js" defer></script>
+    <script src="../../assets/js/mobile-menu.js" defer></script>
+    <script src="../../assets/js/calculators/gst-calculator-india.js" defer></script>
+    <script src="../../assets/js/related-calculators.js" defer></script>
+
+    <!-- Preload India calculator script -->
+    <link rel="preload" href="../../assets/js/calculators/gst-calculator-india.js" as="script">
+    <!-- Performance Optimized: Analytics scripts at end of body -->
+    <!-- Google tag (gtag.js) - India Optimized -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BVENYYJ869"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-BVENYYJ869', {
+            'country': 'IN',
+            'currency': 'INR'
+        });
+    </script>
+    <script type="text/javascript">
+        (function (c, l, a, r, i, t, y) {
+            c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+            t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+            y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+        })(window, document, "clarity", "script", "udqk27trde");
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,237 @@
+/* Widget Container */
+.rmd-widget-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Calculator Form */
+.calculator-form {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e2e8f0;
+    margin-bottom: 2rem;
+}
+
+/* Grid Layout for Inputs */
+.input-grid-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 1.5rem;
+}
+
+.input-group {
+    margin-bottom: 0;
+}
+
+/* Reset bottom margin inside grid */
+.input-group.full-width {
+    margin-bottom: 1.5rem;
+}
+
+.input-label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--text-main);
+    font-size: 0.95em;
+}
+
+.input-field {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.2s;
+    background: #f8fafc;
+}
+
+.input-field:focus {
+    outline: none;
+    border-color: var(--primary);
+    background: #fff;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+/* Action Button */
+.calc-action-btn {
+    width: 100%;
+    padding: 1.2rem;
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.2s, background 0.2s;
+    margin-top: 10px;
+}
+
+.calc-action-btn:hover {
+    background: var(--primary-hover);
+    transform: translateY(-2px);
+}
+
+/* --- RESULT SECTION --- */
+.result-container {
+    margin-top: 2rem;
+    display: none;
+    animation: fadeIn 0.4s ease-out;
+}
+
+/* Hero Result */
+.hero-card {
+    background: #10b981;
+    /* Green for Money */
+    color: white;
+    padding: 2rem;
+    border-radius: 12px;
+    text-align: center;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+}
+
+.hero-label {
+    opacity: 0.9;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+}
+
+.hero-value {
+    font-size: 2.5rem;
+    font-weight: 800;
+}
+
+/* Status Message Box */
+.status-box {
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.status-info {
+    background: #eff6ff;
+    color: #1e40af;
+    border: 1px solid #dbeafe;
+}
+
+/* Grid for Details */
+.result-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.result-card {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.result-card h4 {
+    color: #64748b;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.result-value {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--text-main);
+}
+
+/* Border Colors for Cards */
+.card-blue {
+    border-top: 4px solid #3b82f6;
+}
+
+.card-purple {
+    border-top: 4px solid #8b5cf6;
+}
+
+/* SEO Content */
+.info-section {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    margin-top: 3rem;
+}
+
+.info-section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--text-main);
+    border-bottom: 2px solid #f1f5f9;
+    padding-bottom: 0.5rem;
+}
+
+.info-section h3 {
+    font-size: 1.25rem;
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+    color: var(--text-main);
+}
+
+.info-section p {
+    margin-bottom: 1rem;
+    line-height: 1.6;
+    color: var(--text-muted);
+}
+
+.info-section ul {
+    margin-left: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--text-muted);
+}
+
+.info-section li {
+    margin-bottom: 0.5rem;
+}
+
+.faq-item {
+    margin-bottom: 1.5rem;
+}
+
+.faq-question {
+    font-weight: 700;
+    color: var(--text-main);
+    margin-bottom: 0.5rem;
+}
+
+.faq-answer {
+    margin-bottom: 0;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 600px) {
+    .input-grid-row {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        margin-bottom: 15px;
+    }
+}

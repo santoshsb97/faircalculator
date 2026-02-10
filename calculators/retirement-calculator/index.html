@@ -1,0 +1,305 @@
+﻿<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Free Retirement Solver. Use our fast, accurate tool to simplify pension calculations. Get precise results and expert guidance on Fair Calculator.">
+    <link rel="canonical" href="https://www.faircalculator.com/calculators/retirement-calculator/">
+
+    <!-- Preload Critical Assets -->
+    <link rel="preload" href="../../assets/css/style.css" as="style">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        as="style">
+
+    <!-- Preconnect to CDNs -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+
+    <title>Retirement Calculator - Savings Projection</title>
+
+    <!-- GLOBAL ASSETS -->
+    <link rel="icon" type="image/x-icon" href="../../assets/images/favicon.png">
+    <link rel="stylesheet" href="../../assets/css/style.css">
+
+    <!-- Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome (Non-blocking) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        media="print" onload="this.media='all'">
+    <noscript>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    </noscript>
+
+    <!-- Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FinancialProduct",
+      "name": "Retirement Calculator",
+      "description": "Plan your retirement savings and estimate how long your money will last.",
+      "provider": { "@type": "Organization", "name": "FairCalculator" }
+    }
+    </script>
+
+    <!-- 2. WIDGET SPECIFIC CSS -->
+    <link rel="stylesheet" href="../../assets/css/calculators/retirement-calculator.css">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BVENYYJ869"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-BVENYYJ869');
+    </script>
+    <script type="text/javascript">
+        (function (c, l, a, r, i, t, y) {
+            c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+            t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+            y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+        })(window, document, "clarity", "script", "udqk27trde");
+    </script>
+</head>
+
+<body>
+
+    <!-- 3. HEADER -->
+    <header class="header">
+        <div class="container header-inner">
+            <a href="../../index.html" class="logo">FairCalculator</a>
+            <div class="header-search">
+                <input type="text" id="searchInput" class="search-input" placeholder="Search tools..."
+                    aria-label="Search">
+            </div>
+            <button class="menu-btn" id="menuToggle"><i class="fas fa-bars"></i></button>
+        </div>
+    </header>
+
+    <!-- 4. CATEGORY BAR -->
+    <nav class="category-bar">
+        <div class="container">
+            <ul id="category-list">
+                <li><a href="../../index.html">All</a></li>
+                <li><a href="../../categories/finance-calculators.html"
+                        style="background:#eff6ff; color:#2563eb; border-color:#bfdbfe;">Finance</a></li>
+                <li><a href="../../categories/math-calculators.html">Math</a></li>
+                <li><a href="../../categories/health-calculators.html">Health</a></li>
+                <li><a href="../../categories/date-time-calculators.html">Date</a></li>
+                <li><a href="../../categories/unit-converters.html">Converters</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="mobile-close" id="closeMenu">&times;</button>
+        <div style="margin-top: 40px;">
+            <ul class="sidebar-list">
+                <li><a href="../../index.html">Home</a></li>
+                <li><a href="../../index.html#calculators">All Calculators</a></li>
+                <li><a href="../../about.html">About</a></li>
+                <li><a href="../../contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- 5. MAIN CONTENT -->
+    <main class="main-content">
+        <div class="container">
+
+            <!-- Breadcrumbs -->
+            <div style="margin-bottom: 20px; font-size: 0.9rem; color: #64748b;">
+                <a href="../../index.html" style="text-decoration: underline;">Home</a> /
+                <a href="../../categories/finance-calculators.html" style="text-decoration: underline;">Finance</a> /
+                <span style="font-weight: 600; color: #0f172a;">Retirement Calculator</span>
+            </div>
+
+            <!-- Search Results Placeholder -->
+            <div id="searchResults" style="display:none; margin-bottom: 40px;">
+                <div class="section-header">Search Results</div>
+                <div class="grid" id="searchResultsContent"></div>
+            </div>
+
+            <!-- TOOL CONTAINER -->
+            <div class="ret-widget-container" id="tool-container">
+
+                <h1 class="section-header" style="justify-content:center; font-size: 2rem; margin-bottom: 30px;">
+                    <i class="fas fa-umbrella-beach" style="color: #f59e0b; margin-right: 15px;"></i> Retirement
+                    Calculator
+                </h1>
+
+                <!-- Calculator Form -->
+                <div class="calculator-form">
+
+                    <div class="input-grid-row">
+                        <div class="input-group">
+                            <label class="input-label" for="currentAge">Current Age</label>
+                            <input type="number" id="currentAge" class="input-field" placeholder="e.g., 35" step="1">
+                        </div>
+                        <div class="input-group">
+                            <label class="input-label" for="retirementAge">Retirement Age</label>
+                            <input type="number" id="retirementAge" class="input-field" placeholder="e.g., 65" step="1">
+                        </div>
+                    </div>
+
+                    <div class="input-group full-width">
+                        <label class="input-label" for="currentSavings">Current Retirement Savings ($)</label>
+                        <input type="number" id="currentSavings" class="input-field" placeholder="e.g., 50000"
+                            step="1000">
+                    </div>
+
+                    <div class="input-group full-width">
+                        <label class="input-label" for="monthlyContribution">Monthly Contribution ($)</label>
+                        <input type="number" id="monthlyContribution" class="input-field" placeholder="e.g., 1000"
+                            step="50">
+                    </div>
+
+                    <div class="input-grid-row">
+                        <div class="input-group">
+                            <label class="input-label" for="returnRate">Annual Return (%)</label>
+                            <input type="number" id="returnRate" class="input-field" placeholder="e.g., 7" step="0.1">
+                        </div>
+                        <div class="input-group">
+                            <label class="input-label" for="annualIncome">Desired Annual Income ($)</label>
+                            <input type="number" id="annualIncome" class="input-field" placeholder="e.g., 60000"
+                                step="1000">
+                        </div>
+                    </div>
+
+                    <button id="calculateBtn" class="calc-action-btn">Calculate Retirement</button>
+                </div>
+
+                <!-- RESULTS -->
+                <div id="resultContainer" class="result-container">
+
+                    <!-- Hero Card -->
+                    <div class="hero-card">
+                        <div class="hero-label">Projected Total Savings</div>
+                        <div class="hero-value" id="retirementSavings">--</div>
+                    </div>
+
+                    <!-- Status Message -->
+                    <div id="statusMessage" class="status-box"></div>
+
+                    <!-- Details Grid -->
+                    <div class="result-grid">
+                        <div class="result-card card-blue">
+                            <h4>Time to Grow</h4>
+                            <div class="result-value"><span id="yearsToRetirement">--</span> Years</div>
+                        </div>
+                        <div class="result-card card-purple">
+                            <h4>Total Contributed</h4>
+                            <div class="result-value" id="totalContributions">--</div>
+                        </div>
+                        <div class="result-card card-orange">
+                            <h4>Investment Growth</h4>
+                            <div class="result-value" id="investmentGrowth">--</div>
+                        </div>
+                    </div>
+
+                    <!-- Additional Info Card -->
+                    <div
+                        style="background:#f8fafc; padding:20px; border-radius:10px; border:1px solid #e2e8f0; text-align:center;">
+                        <h4 style="margin-bottom:10px; color:#475569;">How long will it last?</h4>
+                        <p style="margin-bottom:0; color:#1e293b;">
+                            Based on your desired income, your savings could last approx.
+                            <strong style="color:#2563eb; font-size:1.2rem;"><span id="yearsLastWill">--</span>
+                                years</strong>.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <!-- Engaging SEO Guide -->
+                <div class="info-section">
+                    <h2>Plan Your Dream Retirement</h2>
+                    <article>
+                        <h3>Will You Outlive Your Money?</h3>
+                        <p>It's the question that keeps many of us awake at night. Retirement should be about freedom,
+                            not financial stress. The good news? You don't need to be a Wall Street genius to secure
+                            your future.</p>
+                        <p>This calculator does the heavy lifting, showing you exactly how your current savings and
+                            monthly contributions will grow over time thanks to the magic of <strong>compound
+                                interest</strong>.</p>
+
+                        <h3>The "Rule of 25" Shortcut</h3>
+                        <p>How much do you <em>really</em> need? A popular benchmark is the <strong>Rule of 25</strong>:
+                        </p>
+                        <ul>
+                            <li>Take your desired annual retirement income (e.g., $60,000).</li>
+                            <li>Subtract any guaranteed income like Social Security or pensions (e.g., -$20,000 =
+                                $40,000 needed from savings).</li>
+                            <li>Multiply that number by 25 ($40,000 × 25 = $1,000,000).</li>
+                        </ul>
+                        <p>This gives you a rough target to aim for, assuming you withdraw 4% per year.</p>
+
+                        <h3>Frequently Asked Questions</h3>
+                        <div class="faq-item">
+                            <div class="faq-question">What is a safe withdrawal rate?</div>
+                            <p class="faq-answer">The <strong>4% Rule</strong> is the gold standard. It suggests that if
+                                you withdraw 4% of your portfolio in the first year of retirement and adjust for
+                                inflation annually, your money has a very high chance of lasting 30 years.</p>
+                        </div>
+                        <div class="faq-item">
+                            <div class="faq-question">Why start early?</div>
+                            <p class="faq-answer">Compound interest needs time. Saving $500/month starting at age 25 can
+                                grow to over $1 million by age 65 (at 7% return). Starting at age 45, you'd need to save
+                                over $2,000/month to hit the same goal!</p>
+                        </div>
+                    </article>
+                </div>
+
+            </div>
+        </div>
+        <div id="related-calculators"></div>
+    </main>
+
+    <!-- 6. FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <span
+                        style="font-weight: 800; font-size: 1.2rem; display:block; margin-bottom:10px; color:var(--text-main);">FairCalculator</span>
+                    <p>Simple, fast, and accurate online calculators.</p>
+                </div>
+                <div>
+                    <h4>Menu</h4>
+                    <ul>
+                        <li><a href="../../index.html">Home</a></li>
+                        <li><a href="../../about.html">About</a></li>
+                        <li><a href="../../contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="../../legal/privacy-policy.html">Privacy</a></li>
+                        <li><a href="../../legal/terms-of-service.html">Terms</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2025 FairCalculator. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- 7. SCRIPTS -->
+    <script>var ROOT_PATH = '../../';</script>
+    <script src="../../assets/js/data.js"></script>
+    <script src="../../assets/js/search.js"></script>
+    <script src="../../assets/js/mobile-menu.js"></script>
+
+    <!-- WIDGET JS LOGIC -->
+    <script src="../../assets/js/calculators/retirement-calculator.js" defer></script>
+
+    <script src="../../assets/js/related-calculators.js" defer></script>
+</body>
+
+</html>

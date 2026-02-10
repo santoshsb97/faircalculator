@@ -1,0 +1,429 @@
+/* Scoped Variables for this specific tool */
+.savings-app-wrapper {
+    --primary: #10b981;
+    /* Green */
+    --primary-dark: #059669;
+    --secondary: #3b82f6;
+    /* Blue */
+    --accent: #f59e0b;
+    /* Amber */
+    --bg-light: #f0fdf4;
+    --bg-white: #ffffff;
+    --text-dark: #1f2937;
+    --text-gray: #6b7280;
+    --border: #d1d5db;
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    color: var(--text-dark);
+    max-width: 1100px;
+    /* Wider for side-by-side layout */
+    margin: 0 auto;
+}
+
+/* --- LAYOUT GRID --- */
+.calculator-section {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    /* Inputs slightly wider */
+    gap: 40px;
+    margin-bottom: 40px;
+    align-items: start;
+}
+
+/* --- INPUT PANEL --- */
+.input-panel {
+    background: var(--bg-light);
+    padding: 30px;
+    border-radius: 15px;
+    border: 1px solid var(--border);
+}
+
+.input-panel h2 {
+    color: var(--primary);
+    font-size: 1.5em;
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Compact Grid for Inputs */
+.input-grid-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--text-dark);
+    font-size: 0.9em;
+}
+
+.input-group input,
+.input-group select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-size: 1em;
+    transition: all 0.2s;
+    background: white;
+}
+
+.input-group input:focus,
+.input-group select:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.15);
+}
+
+.input-helper {
+    font-size: 0.8em;
+    color: var(--text-gray);
+    margin-top: 5px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.info-icon {
+    color: var(--secondary);
+    font-weight: bold;
+    cursor: help;
+    border: 1px solid var(--secondary);
+    border-radius: 50%;
+    width: 16px;
+    height: 16px;
+    text-align: center;
+    line-height: 14px;
+    font-size: 0.75em;
+    display: inline-block;
+}
+
+/* Button */
+.calc-btn {
+    width: 100%;
+    padding: 15px;
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.1em;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s;
+    margin-top: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.calc-btn:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+}
+
+/* --- RESULTS PANEL (Sticky) --- */
+.results-panel-wrapper {
+    position: sticky;
+    top: 100px;
+    /* Sticks below header */
+}
+
+.results-panel {
+    background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+    color: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: var(--shadow-lg);
+}
+
+.results-panel h2 {
+    color: white;
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding-bottom: 15px;
+}
+
+.result-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 15px 20px;
+    border-radius: 12px;
+    margin-bottom: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.result-label {
+    font-size: 0.85em;
+    opacity: 0.9;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.result-value {
+    font-size: 2em;
+    font-weight: 700;
+    margin-bottom: 2px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.result-detail {
+    font-size: 0.85em;
+    opacity: 0.9;
+}
+
+/* Breakdown Chart */
+.breakdown-chart {
+    margin-top: 25px;
+    background: rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    border-radius: 12px;
+}
+
+.chart-bar {
+    margin: 15px 0;
+}
+
+.chart-label {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+    font-size: 0.9em;
+    font-weight: 500;
+}
+
+.chart-progress {
+    height: 10px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.chart-fill {
+    height: 100%;
+    background: #ffffff;
+    border-radius: 10px;
+    transition: width 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.chart-fill.interest {
+    background: #fbbf24;
+}
+
+/* Amber for interest */
+
+/* --- SCHEDULE & INFO --- */
+.info-section {
+    background: var(--bg-white);
+    padding: 30px;
+    border-radius: 15px;
+    margin-top: 30px;
+    border: 1px solid var(--border);
+}
+
+.info-section h2 {
+    color: var(--primary);
+    font-size: 1.6em;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Schedule Controls */
+.schedule-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.schedule-controls {
+    display: flex;
+    gap: 10px;
+}
+
+.schedule-controls button {
+    padding: 8px 16px;
+    border: 1px solid var(--primary);
+    background: white;
+    color: var(--primary);
+    cursor: pointer;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.2s;
+}
+
+.schedule-controls button.active,
+.schedule-controls button:hover {
+    background: var(--primary);
+    color: white;
+}
+
+/* Scrollable Table */
+.schedule-table-container {
+    overflow-x: auto;
+    max-height: 500px;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+}
+
+.schedule-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 600px;
+    font-size: 0.9em;
+}
+
+.schedule-table th,
+.schedule-table td {
+    padding: 12px;
+    text-align: right;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.schedule-table th {
+    background: #f0fdf4;
+    position: sticky;
+    top: 0;
+    text-align: right;
+    color: var(--text-dark);
+    font-weight: 700;
+    z-index: 5;
+}
+
+.schedule-table tr:hover {
+    background: #f9fafb;
+}
+
+/* --- RESPONSIVE DESIGN --- */
+@media (max-width: 968px) {
+    .calculator-section {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .results-panel-wrapper {
+        position: static;
+    }
+
+    /* Remove sticky on mobile */
+    .input-grid-row {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    /* Keep 2 cols on tablet */
+}
+
+@media (max-width: 600px) {
+    .input-panel {
+        padding: 20px;
+    }
+
+    .input-grid-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    /* 1 col on mobile */
+
+    .schedule-header {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .schedule-controls {
+        width: 100%;
+    }
+
+    .schedule-controls button {
+        flex: 1;
+    }
+
+    .results-panel {
+        padding: 20px;
+    }
+
+    .result-value {
+        font-size: 1.8em;
+    }
+}
+
+/* --- EXTRAS --- */
+.faq-item {
+    margin-bottom: 10px;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.faq-question {
+    width: 100%;
+    text-align: left;
+    padding: 15px;
+    background: #fff;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+}
+
+.faq-question:after {
+    content: '+';
+    font-size: 1.2em;
+    font-weight: normal;
+}
+
+.faq-question.open:after {
+    content: '-';
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    background: #f9fafb;
+    padding: 0 15px;
+}
+
+.faq-answer.show {
+    max-height: 1000px;
+    padding: 15px;
+}
+
+.comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    font-size: 0.9em;
+}
+
+.comparison-table th,
+.comparison-table td {
+    padding: 10px;
+    border: 1px solid #e5e7eb;
+    text-align: left;
+}
+
+.comparison-table th {
+    background: #f0fdf4;
+    color: var(--primary-dark);
+}

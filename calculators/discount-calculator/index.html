@@ -1,0 +1,376 @@
+﻿<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Free Discount Calculator. Use our fast, accurate tool for shopping calculations. Get precise results and expert guidance on Fair Calculator.">
+    <link rel="canonical" href="https://www.faircalculator.com/calculators/discount-calculator/">
+
+    <!-- Preload Critical Assets -->
+    <link rel="preload" href="../../assets/css/style.css" as="style">
+    <link rel="preload" href="../../assets/css/calculators/discount-calculator.css" as="style">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        as="style">
+    <title>Discount Calculator - Percentage & Fixed Amount Off</title>
+
+    <!-- 1. GLOBAL ASSETS (Go up 2 folders) -->
+    <link rel="icon" type="image/x-icon" href="../../assets/images/favicon.png">
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/calculators/discount-calculator.css">
+
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Discount Calculator",
+      "url": "https://faircalculator.com/calculators/discount-calculator/",
+      "description": "Free Discount Calculator that supports percentage discounts, fixed amount discounts, tax, and shipping.",
+      "applicationCategory": "CalculatorApplication",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    }
+    </script>
+
+    <!-- 2. WIDGET SPECIFIC CSS -->
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BVENYYJ869"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-BVENYYJ869');
+    </script>
+    <script type="text/javascript">
+        (function (c, l, a, r, i, t, y) {
+            c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+            t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+            y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+        })(window, document, "clarity", "script", "udqk27trde");
+    </script>
+</head>
+
+<body>
+
+    <!-- 3. HEADER -->
+    <header class="header">
+        <div class="container header-inner">
+            <a href="../../index.html" class="logo">FairCalculator</a>
+            <div class="header-search">
+                <input type="text" id="searchInput" class="search-input" placeholder="Search tools..."
+                    aria-label="Search">
+            </div>
+            <button class="menu-btn" id="menuToggle"><i class="fas fa-bars"></i></button>
+        </div>
+    </header>
+
+    <!-- 4. CATEGORY BAR -->
+    <nav class="category-bar">
+        <div class="container">
+            <ul id="category-list">
+                <li><a href="../../index.html">All</a></li>
+                <li><a href="../../categories/finance-calculators.html"
+                        style="background:#eff6ff; color:#2563eb; border-color:#bfdbfe;">Finance</a></li>
+                <li><a href="../../categories/math-calculators.html">Math</a></li>
+                <li><a href="../../categories/health-calculators.html">Health</a></li>
+                <li><a href="../../categories/date-time-calculators.html">Date</a></li>
+                <li><a href="../../categories/unit-converters.html">Converters</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="mobile-close" id="closeMenu">&times;</button>
+        <div style="margin-top: 40px;">
+            <ul class="sidebar-list">
+                <li><a href="../../index.html">Home</a></li>
+                <li><a href="../../index.html#calculators">All Calculators</a></li>
+                <li><a href="../../about.html">About</a></li>
+                <li><a href="../../contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- 5. MAIN CONTENT -->
+    <main class="main-content">
+        <div class="container">
+
+            <!-- Breadcrumbs -->
+            <div style="margin-bottom: 20px; font-size: 0.9rem; color: #64748b;">
+                <a href="../../index.html" style="text-decoration: underline;">Home</a> /
+                <a href="../../categories/finance-calculators.html" style="text-decoration: underline;">Finance</a> /
+                <span style="font-weight: 600; color: #0f172a;">Discount Calculator</span>
+            </div>
+
+            <!-- Search Results Placeholder -->
+            <div id="searchResults" style="display:none; margin-bottom: 40px;">
+                <div class="section-header">Search Results</div>
+                <div class="grid" id="searchResultsContent"></div>
+            </div>
+
+            <!-- TOOL CONTAINER -->
+            <div class="discount-widget-container" id="tool-container">
+
+                <h1 class="section-header" style="justify-content:center; font-size: 2rem; margin-bottom: 30px;">
+                    <i class="fas fa-tags" style="color: #f97316; margin-right: 15px;"></i> Discount Calculator
+                </h1>
+
+                <!-- Calculator Form -->
+                <div class="calculator-form">
+
+                    <!-- Toggle -->
+                    <div class="discount-type-toggle">
+                        <button class="type-btn active" onclick="setDiscountType('percentage')">Percentage Off
+                            (%)</button>
+                        <button class="type-btn" onclick="setDiscountType('fixed')">Fixed Amount Off ($)</button>
+                    </div>
+
+                    <div class="input-wrapper">
+                        <label class="input-label" for="originalPrice">Original Price ($)</label>
+                        <input type="number" id="originalPrice" class="input-field" placeholder="100.00" min="0"
+                            step="0.01">
+                    </div>
+
+                    <div class="calc-row" style="display:grid; grid-template-columns:1fr 1fr; gap:15px;">
+                        <div class="input-wrapper">
+                            <label class="input-label" for="discountValue">
+                                <span id="discountLabel">Discount (%)</span>
+                            </label>
+                            <input type="number" id="discountValue" class="input-field" placeholder="20" min="0"
+                                step="0.01">
+                        </div>
+
+                        <div class="input-wrapper">
+                            <label class="input-label" for="quantity">Quantity</label>
+                            <input type="number" id="quantity" class="input-field" placeholder="1" min="1" value="1">
+                        </div>
+                    </div>
+
+                    <!-- Quick Buttons -->
+                    <div class="quick-discounts" id="quickDiscounts">
+                        <div class="quick-discount-label">Quick Select</div>
+                        <div class="quick-buttons">
+                            <button class="quick-btn" onclick="setQuickDiscount(5)">5%</button>
+                            <button class="quick-btn" onclick="setQuickDiscount(10)">10%</button>
+                            <button class="quick-btn" onclick="setQuickDiscount(15)">15%</button>
+                            <button class="quick-btn" onclick="setQuickDiscount(20)">20%</button>
+                            <button class="quick-btn" onclick="setQuickDiscount(25)">25%</button>
+                            <button class="quick-btn" onclick="setQuickDiscount(30)">30%</button>
+                            <button class="quick-btn" onclick="setQuickDiscount(40)">40%</button>
+                            <button class="quick-btn" onclick="setQuickDiscount(50)">50%</button>
+                            <button class="quick-btn" onclick="setQuickDiscount(75)">75%</button>
+                        </div>
+                    </div>
+
+                    <div class="calc-row" style="display:grid; grid-template-columns:1fr 1fr; gap:15px;">
+                        <div class="input-wrapper">
+                            <label class="input-label" for="taxRate">Tax Rate (%)</label>
+                            <input type="number" id="taxRate" class="input-field" placeholder="0" min="0" step="0.01"
+                                value="0">
+                        </div>
+
+                        <div class="input-wrapper">
+                            <label class="input-label" for="shipping">Shipping ($)</label>
+                            <input type="number" id="shipping" class="input-field" placeholder="0" min="0" step="0.01"
+                                value="0">
+                        </div>
+                    </div>
+
+                    <div class="input-wrapper">
+                        <label class="input-label" for="couponCode">Coupon Code (Optional)</label>
+                        <input type="text" id="couponCode" class="input-field" placeholder="SAVE20" maxlength="20">
+                    </div>
+
+                    <button class="calc-action-btn" onclick="calculateDiscount()">Calculate Discount</button>
+                    <div class="error-message" id="error"></div>
+                </div>
+
+                <!-- RESULT -->
+                <div class="calc-result" id="result">
+                    <div class="result-item">
+                        <span class="result-label">Original Price:</span>
+                        <span class="result-value" id="res-original">$0.00</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">Discount Applied:</span>
+                        <span class="result-value">
+                            <span id="res-discount-amount">$0.00</span>
+                            <span class="discount-badge" id="res-discount-percent">0%</span>
+                        </span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">Price After Discount:</span>
+                        <span class="result-value" id="res-after-discount">$0.00</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">Quantity:</span>
+                        <span class="result-value" id="res-quantity">1</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">Subtotal:</span>
+                        <span class="result-value" id="res-subtotal">$0.00</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">Tax Amount:</span>
+                        <span class="result-value" id="res-tax">$0.00</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">Shipping:</span>
+                        <span class="result-value" id="res-shipping">$0.00</span>
+                    </div>
+
+                    <div class="result-savings">
+                        <div class="result-item" style="border:none; margin:0; padding:0;">
+                            <span class="result-label" style="color:#065f46;">💰 Total Savings:</span>
+                            <span class="result-value" id="res-savings">$0.00</span>
+                        </div>
+                    </div>
+
+                    <div class="result-total">
+                        <div class="result-item" style="border:none; margin:0; padding:0;">
+                            <span class="result-label">Final Total:</span>
+                            <span class="result-value" id="res-total">$0.00</span>
+                        </div>
+                    </div>
+
+                    <div class="coupon-display" id="couponDisplay">
+                        <small style="color: #b45309;">Coupon Applied:</small><br>
+                        <span class="coupon-code" id="displayedCoupon"></span>
+                    </div>
+                </div>
+
+                <!-- TABLE -->
+                <div class="table-container" id="tableContainer">
+                    <h3 class="table-title">Discount Comparison</h3>
+                    <div class="table-wrapper">
+                        <table class="calc-table">
+                            <thead>
+                                <tr>
+                                    <th class="text-center">Discount</th>
+                                    <th>Price/Item</th>
+                                    <th>Total (×<span id="table-qty">1</span>)</th>
+                                    <th>Savings</th>
+                                    <th>Final Price</th>
+                                </tr>
+                            </thead>
+                            <tbody id="comparisonTableBody"></tbody>
+                        </table>
+                    </div>
+                </div>
+
+
+                <!-- Engaging SEO Guide -->
+                <div class="info-section">
+                    <h2>The Smart Shopper's Handbook</h2>
+                    <article>
+                        <h3>Never Overpay Again</h3>
+                        <p>We've all been there: standing in a store aisle or staring at an online cart, trying to do
+                            mental gymnastics to figure out the <em>real</em> price. Is "30% off plus an extra 10%"
+                            better than a flat $50 discount?</p>
+                        <p>This calculator ends the guessing game. It handles the math for you—including the sneaky
+                            additions like tax and shipping that often blow the budget.</p>
+
+                        <h3>Percentage vs. Fixed Amount: Which is Better?</h3>
+                        <p>It depends on the price of the item:</p>
+                        <ul>
+                            <li><strong>For expensive items:</strong> Percentage discounts are usually king. 20% off a
+                                $1,000 laptop saves you $200.</li>
+                            <li><strong>For cheap items:</strong> Fixed amounts often win. $10 off a $20 shirt is
+                                effectively a 50% discount!</li>
+                        </ul>
+
+                        <h3>Pro Tip: Double Discounts</h3>
+                        <p>Many stores offer "stacked" discounts (e.g., "Take an extra 15% off clearance"). To calculate
+                            this manually: calculate the first discount, get the new price, and <em>then</em> apply the
+                            second discount to that lower price. Or, just let our calculator do it in two quick steps!
+                        </p>
+
+                        <h3>Frequently Asked Questions</h3>
+                        <div class="faq-item">
+                            <div class="faq-question" onclick="toggleFAQ(this)">How do I calculate a discount
+                                percentage? <span class="faq-toggle">+</span></div>
+                            <div class="faq-answer">
+                                <p>Divide the discount amount by the original price, then multiply by 100. For example,
+                                    $15 off a $60 game is (15 / 60) * 100 = 25% off.</p>
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <div class="faq-question" onclick="toggleFAQ(this)">Is tax calculated before or after the
+                                discount? <span class="faq-toggle">+</span></div>
+                            <div class="faq-answer">
+                                <p>Almost always <strong>after</strong>. You only pay sales tax on the amount you
+                                    actually pay the store. This saves you even more money!</p>
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <div class="faq-question" onclick="toggleFAQ(this)">What about "Buy One Get One" (BOGO)?
+                                <span class="faq-toggle">+</span>
+                            </div>
+                            <div class="faq-answer">
+                                <p>BOGO Free is basically a 50% discount if you buy two items. BOGO 50% off is
+                                    equivalent to a 25% discount on two items.</p>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+            </div>
+        </div>
+        <div id="related-calculators"></div>
+    </main>
+
+    <!-- 6. FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <span
+                        style="font-weight: 800; font-size: 1.2rem; display:block; margin-bottom:10px; color:var(--text-main);">FairCalculator</span>
+                    <p>Simple, fast, and accurate online calculators.</p>
+                </div>
+                <div>
+                    <h4>Menu</h4>
+                    <ul>
+                        <li><a href="../../index.html">Home</a></li>
+                        <li><a href="../../about.html">About Us</a></li>
+                        <li><a href="../../contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="../../legal/privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="../../legal/terms-of-service.html">Terms</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2025 FairCalculator. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- 7. SCRIPTS -->
+    <script>var ROOT_PATH = '../../';</script>
+    <script src="../../assets/js/data.js"></script>
+    <script src="../../assets/js/search.js"></script>
+    <script src="../../assets/js/mobile-menu.js"></script>
+
+    <!-- WIDGET JS LOGIC -->
+    <script src="../../assets/js/calculators/discount-calculator.js" defer></script>
+
+    <script src="../../assets/js/related-calculators.js" defer></script>
+</body>
+
+</html>

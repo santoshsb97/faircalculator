@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Australian GST Calculator 2026 – Add or Remove 10% GST</title>
+    <meta name="description"
+        content="Free Australian GST Calculator: Calculate GST for your business quickly and accurately. Add 10% or extract GST from total prices. Compliant with ATO guidelines.">
+    <link rel="canonical" href="https://www.faircalculator.com/calculators/australian-gst-calculator/">
+
+    <!-- Preload Critical Assets -->
+    <link rel="preload" href="../../assets/css/style.css" as="style">
+    <link rel="preload" href="../../assets/css/calculators/gst-calculator.css" as="style">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        as="style">
+
+    <link rel="icon" type="image/x-icon" href="../../assets/images/favicon.png">
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/calculators/gst-calculator.css">
+
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Australia-specific Schema Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Australian GST Calculator",
+      "description": "Calculate 10% Goods and Services Tax (GST) in Australia. Add GST to net prices or extract it from inclusive totals.",
+      "applicationCategory": "CalculatorApplication",
+      "operatingSystem": "Any",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "AUD"
+      },
+      "provider": {
+        "@type": "Organization",
+        "name": "FairCalculator",
+        "areaServed": "AU"
+      }
+    }
+    </script>
+    <script type="text/javascript">
+        (function (c, l, a, r, i, t, y) {
+            c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+            t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+            y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+        })(window, document, "clarity", "script", "udqk27trde");
+    </script>
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="container header-inner">
+            <a href="../../index.html" class="logo">FairCalculator</a>
+            <div class="header-search">
+                <input type="text" id="searchInput" class="search-input" placeholder="Search GST tools..."
+                    aria-label="Search GST calculators">
+            </div>
+            <button class="menu-btn" id="menuToggle"><i class="fas fa-bars"></i></button>
+        </div>
+    </header>
+
+    <nav class="category-bar">
+        <div class="container">
+            <ul id="category-list">
+                <li><a href="../../index.html">All</a></li>
+                <li><a href="../../categories/finance-calculators.html">Finance</a></li>
+                <li><a href="../../categories/math-calculators.html">Math</a></li>
+                <li><a href="../../categories/health-calculators.html">Health</a></li>
+                <li><a href="../../categories/date-time-calculators.html">Date</a></li>
+                <li><a href="../../categories/physics-calculators.html">Physics</a></li>
+                <li><a href="../../categories/unit-converters.html">Converters</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <div class="container">
+
+            <div style="margin-bottom: 20px; font-size: 0.9rem; color: #64748b;">
+                <a href="../../index.html" style="text-decoration: underline;">Home</a> /
+                <span style="font-weight: 600; color: #0f172a;">Australian GST Calculator</span>
+            </div>
+
+            <div class="gst-widget-container" id="tool-container">
+
+                <div style="text-align: center; margin-bottom: 40px;">
+                    <h1 style="font-size: 2.5rem; font-weight: 800; color: #1e293b; margin-bottom: 15px;">Australian GST
+                        Calculator</h1>
+                    <p style="font-size: 1.1rem; color: #64748b; max-width: 600px; margin: 0 auto; line-height: 1.5;">
+                        Quickly add or remove 10% GST from any amount. Our tool is accurate and compliant with the
+                        latest ATO guidelines.
+                    </p>
+                </div>
+
+                <div class="calculator-form"
+                    style="padding: 2.5rem; border-radius: 12px; background: #fff; border: 1px solid #e2e8f0; box-shadow: 0 4px 12px rgba(0,0,0,0.03);">
+
+                    <div class="calculator-grid"
+                        style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-bottom: 50px;">
+                        <div class="input-wrapper" style="margin-bottom: 0;">
+                            <label
+                                style="display: block; font-weight: 700; margin-bottom: 12px; font-size: 1.1rem; color: #000;">Amount
+                                ($)</label>
+                            <input type="number" id="amount" class="input-field" placeholder="" value="1000"
+                                style="border-color: #cbd5e1; border-radius: 6px; padding: 12px 15px; font-size: 1.1rem; background: #fff; border: 1px solid #c7d2fe;">
+                        </div>
+                        <div class="input-wrapper" style="margin-bottom: 0;">
+                            <label
+                                style="display: block; font-weight: 700; margin-bottom: 12px; font-size: 1.1rem; color: #000;">GST
+                                %</label>
+                            <input type="number" id="gstRate" class="input-field" value="10"
+                                style="border-color: #c7d2fe; border-radius: 6px; padding: 12px 15px; font-size: 1.1rem; background: #fff; border: 1px solid #c7d2fe;">
+                        </div>
+                        <div class="input-wrapper" style="margin-bottom: 0;">
+                            <label
+                                style="display: block; font-weight: 700; margin-bottom: 12px; font-size: 1.1rem; color: #000;">Tax
+                                Mode</label>
+                            <select id="mode" class="input-field"
+                                style="border-color: #c7d2fe; border-radius: 6px; padding: 12px 15px; font-size: 1.1rem; background: #fff; appearance: auto; cursor: pointer;">
+                                <option value="exclusive">Exclusive (Add GST)</option>
+                                <option value="inclusive">Inclusive (Remove GST)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="equation-container"
+                        style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 40px; text-align: center; max-width: 1000px; margin-left: auto; margin-right: auto; gap: 10px; overflow-x: auto; padding: 10px 0;">
+                        <div class="equation-item" style="flex: 1; min-width: fit-content;">
+                            <div id="netAmount"
+                                style="font-size: clamp(1.2rem, 4vw, 2.2rem); font-weight: 800; color: #1e293b; white-space: nowrap;">
+                                $0.00</div>
+                            <div
+                                style="font-size: 0.85rem; color: #64748b; font-weight: 600; text-transform: uppercase;">
+                                Net Amount</div>
+                        </div>
+
+                        <div class="equation-symbol" style="font-size: 1.5rem; color: #94a3b8; font-weight: 300;">+
+                        </div>
+
+                        <div class="equation-item" style="flex: 1; min-width: fit-content;">
+                            <div id="gstAmount"
+                                style="font-size: clamp(1.2rem, 4vw, 2.2rem); font-weight: 800; color: #16a34a; white-space: nowrap;">
+                                $0.00</div>
+                            <div
+                                style="font-size: 0.85rem; color: #16a34a; font-weight: 600; text-transform: uppercase;">
+                                GST (10%)</div>
+                        </div>
+
+                        <div class="equation-symbol" style="font-size: 1.5rem; color: #94a3b8; font-weight: 300;">=
+                        </div>
+
+                        <div class="equation-item" style="flex: 1; min-width: fit-content;">
+                            <div id="totalAmount"
+                                style="font-size: clamp(1.2rem, 4vw, 2.2rem); font-weight: 800; color: #2563eb; white-space: nowrap;">
+                                $0.00</div>
+                            <div
+                                style="font-size: 0.85rem; color: #2563eb; font-weight: 600; text-transform: uppercase;">
+                                Total Amount</div>
+                        </div>
+                    </div>
+
+                    <div style="text-align: center; margin-top: 20px;">
+                        <button id="calculateBtn" class="calc-action-btn"
+                            style="width: 100%; max-width: 400px; border-radius: 8px; font-weight: 600; height: 55px; font-size: 1.1rem; background: #2563eb; color: #fff; border: none; cursor: pointer;">
+                            Calculate Australian GST
+                        </button>
+                    </div>
+                </div>
+
+                <div class="info-section">
+                    <section>
+                        <h2><i class="fas fa-info-circle" style="color: var(--primary);"></i> Introduction</h2>
+                        <p style="font-size: 1.1rem; line-height: 1.7; color: #475569;">Australia applies a flat
+                            <strong>10% Goods and Services Tax (GST)</strong> to most goods and services. Whether you
+                            are a business owner issuing invoices or a shopper checking a receipt, accurate calculation
+                            is essential. This tool provides instant, ATO-compliant results for any transaction.
+                        </p>
+                    </section>
+
+                    <section>
+                        <h2><i class="fas fa-bullseye" style="color: #ef4444;"></i> Key Highlights</h2>
+                        <div class="highlights-grid">
+                            <div class="highlight-item"><i class="fas fa-check-circle"></i> Standard 10% Rate</div>
+                            <div class="highlight-item"><i class="fas fa-sync-alt"></i> Add & Remove Modes</div>
+                            <div class="highlight-item"><i class="fas fa-file-invoice"></i> Clear GST Breakdown</div>
+                            <div class="highlight-item"><i class="fas fa-dollar-sign"></i> AUD Optimized</div>
+                            <div class="highlight-item"><i class="fas fa-bolt"></i> Instant & Free</div>
+                        </div>
+                    </section>
+
+                    <section>
+                        <h2><i class="fas fa-cog" style="color: #6366f1;"></i> How the Calculation Works</h2>
+                        <div class="step-list">
+                            <div class="step-item">
+                                <div class="step-number">1</div>
+                                <div><strong>Enter Amount:</strong> Input the price in Australian Dollars.</div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-number">2</div>
+                                <div><strong>Select Type:</strong> Pick "Add GST" (Exclusive) or "Remove GST"
+                                    (Inclusive).</div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-number">3</div>
+                                <div><strong>Instant Analysis:</strong> The tool calculates the 10% base and tax
+                                    component.</div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-number">4</div>
+                                <div><strong>See Results:</strong> Get a clear 3-way breakdown of the transaction.</div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section>
+                        <h2><i class="fas fa-calculator" style="color: #f59e0b;"></i> Example Calculation</h2>
+                        <p>A Sydney cafe sells a taxable lunch for <strong>$44.00 including GST</strong>. Here is how
+                            the numbers break down:</p>
+
+                        <div class="gst-rate-table-container">
+                            <table class="gst-rate-table">
+                                <thead>
+                                    <tr>
+                                        <th>Item Component</th>
+                                        <th>Calculation Logic</th>
+                                        <th>Amount</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Amount Excluding GST</td>
+                                        <td>$44.00 ÷ 1.10</td>
+                                        <td>$40.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>GST Amount (10%)</td>
+                                        <td>$44.00 ÷ 11</td>
+                                        <td>$4.00</td>
+                                    </tr>
+                                    <tr style="background: #f0fdf4;">
+                                        <td><strong>Final Price Paid</strong></td>
+                                        <td><strong>Inclusive Total</strong></td>
+                                        <td><strong>$44.00</strong></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+
+                    <section>
+                        <h2><i class="fas fa-lightbulb" style="color: #10b981;"></i> Use Cases & Benefits</h2>
+                        <div class="content-card-grid">
+                            <div class="feature-card">
+                                <h4><i class="fas fa-briefcase"></i> Small Businesses</h4>
+                                <p>Add GST to quotes and invoices accurately. Ensure your pricing covers tax obligations
+                                    for ATO reporting.</p>
+                            </div>
+                            <div class="feature-card">
+                                <h4><i class="fas fa-shopping-cart"></i> Smart Shoppers</h4>
+                                <p>Compare prices on big-ticket items. Know exactly how much of your purchase is going
+                                    towards tax.</p>
+                            </div>
+                            <div class="feature-card">
+                                <h4><i class="fas fa-user-tie"></i> Accountants</h4>
+                                <p>Quickly extract GST from expense claims and receipts. Perfect for double-checking
+                                    records for BAS.</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section>
+                        <h2><i class="fas fa-balance-scale" style="color: #64748b;"></i> Comparison with Manual Methods
+                        </h2>
+                        <div class="gst-rate-table-container">
+                            <table class="gst-rate-table">
+                                <thead>
+                                    <tr>
+                                        <th>Method/Tool</th>
+                                        <th>Speed</th>
+                                        <th>Accuracy</th>
+                                        <th>Ease of Use</th>
+                                        <th>Handles Both</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>This Calculator</strong></td>
+                                        <td style="color: #16a34a;">Instant</td>
+                                        <td>High</td>
+                                        <td>Excellent</td>
+                                        <td>Yes</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Manual (/11)</td>
+                                        <td>Slow</td>
+                                        <td>Medium</td>
+                                        <td>Moderate</td>
+                                        <td>Yes</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Phone App</td>
+                                        <td>Medium</td>
+                                        <td>High</td>
+                                        <td>Good</td>
+                                        <td>Limited</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+
+                    <section class="faq-section">
+                        <h2 style="justify-content: center; border: none; margin-bottom: 40px;"><i
+                                class="fas fa-question-circle"></i> Frequently Asked Questions</h2>
+
+                        <div class="faq-accordion">
+                            <!-- FAQ 1 -->
+                            <div class="faq-item">
+                                <button class="faq-question">
+                                    How do I calculate GST in Australia?
+                                    <i class="fas fa-chevron-down"></i>
+                                </button>
+                                <div class="faq-answer">
+                                    <p>Enter your price amount and select <strong>"Add GST"</strong> if the price
+                                        excludes tax, or <strong>"Remove GST"</strong> if the price already includes it.
+                                        The tool automatically applies the 10% rate and provides a full breakdown.</p>
+                                </div>
+                            </div>
+
+                            <!-- FAQ 2 -->
+                            <div class="faq-item">
+                                <button class="faq-question">
+                                    How much is GST in Australia?
+                                    <i class="fas fa-chevron-down"></i>
+                                </button>
+                                <div class="faq-answer">
+                                    <p>The standard Goods and Services Tax (GST) rate in Australia is
+                                        <strong>10%</strong>. This rate applies to most taxable goods and services sold
+                                        or consumed within the country.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- FAQ 3 -->
+                            <div class="faq-item">
+                                <button class="faq-question">
+                                    Are all items subject to GST?
+                                    <i class="fas fa-chevron-down"></i>
+                                </button>
+                                <div class="faq-answer">
+                                    <p>No, some essentials are "GST-free." This includes most basic fresh foods, certain
+                                        medical and health services, and some educational courses. You can check the
+                                        official ATO website for a specific list.</p>
+                                </div>
+                            </div>
+
+                            <!-- FAQ 4 -->
+                            <div class="faq-item">
+                                <button class="faq-question">
+                                    Can I use this for my BAS?
+                                    <i class="fas fa-chevron-down"></i>
+                                </button>
+                                <div class="faq-answer">
+                                    <p>Yes, business owners can use this calculator to quickly separate the GST
+                                        component from their totals for accurate Business Activity Statement (BAS)
+                                        reporting.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 FairCalculator. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../../assets/js/calculators/australian-gst-calculator.js"></script>
+</body>
+
+</html>

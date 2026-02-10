@@ -1,0 +1,410 @@
+﻿<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amortization Calculator | Amortization Schedule & Table Calculator</title>
+    <meta name="description"
+        content="Free Amortization Solver. Use our fast, accurate tool to simplify finance and loan calculations. Get precise results and expert guidance on Fair Calculator.">
+
+    <link rel="canonical" href="https://www.faircalculator.com/calculators/amortization-calculator/">
+
+    <!-- Preload Critical Assets -->
+    <link rel="preload" href="../../assets/css/style.css" as="style">
+    <link rel="preload" href="../../assets/css/calculators/amortization-calculator.css" as="style">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        as="style">
+
+    <!-- CSS PATH FIX: This goes up 2 folders to find assets -->
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/calculators/amortization-calculator.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="../../assets/images/favicon.png">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Schema Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Amortization Calculator",
+      "url": "https://faircalculator.com/calculators/amortization-calculator/",
+      "applicationCategory": "FinanceApplication",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    }
+    </script>
+
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BVENYYJ869"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-BVENYYJ869');
+    </script>
+    <script type="text/javascript">
+        (function (c, l, a, r, i, t, y) {
+            c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+            t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+            y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+        })(window, document, "clarity", "script", "udqk27trde");
+    </script>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container header-inner">
+            <a href="../../index.html" class="logo">FairCalculator</a>
+            <div class="header-search">
+                <input type="text" id="searchInput" class="search-input" placeholder="Search tools..."
+                    aria-label="Search">
+            </div>
+            <button class="menu-btn" id="menuToggle"><i class="fas fa-bars"></i></button>
+        </div>
+    </header>
+
+    <!-- Category Bar -->
+    <nav class="category-bar">
+        <div class="container">
+            <ul id="category-list">
+                <li><a href="../../index.html">All</a></li>
+                <!-- Active State for Finance -->
+                <li><a href="../../categories/finance-calculators.html"
+                        style="background:#eff6ff; color:#2563eb; border-color:#bfdbfe;">Finance</a></li>
+                <li><a href="../../categories/math-calculators.html">Math</a></li>
+                <li><a href="../../categories/health-calculators.html">Health</a></li>
+                <li><a href="../../categories/date-time-calculators.html">Date</a></li>
+                <li><a href="../../categories/unit-converters.html">Converters</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="mobile-close" id="closeMenu">&times;</button>
+        <div style="margin-top: 40px;">
+            <ul class="sidebar-list">
+                <li><a href="../../index.html">Home</a></li>
+                <li><a href="../../index.html#calculators">All Calculators</a></li>
+                <li><a href="../../about.html">About</a></li>
+                <li><a href="../../contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+
+            <!-- Breadcrumb -->
+            <div style="margin-bottom: 20px; font-size: 0.9rem; color: var(--text-muted);">
+                <a href="../../index.html" style="text-decoration: underline;">Home</a>
+                <span style="margin: 0 8px;">/</span>
+                <a href="../../categories/finance-calculators.html" style="text-decoration: underline;">Finance</a>
+                <span style="margin: 0 8px;">/</span>
+                <span style="font-weight: 600; color: var(--text-main);">Amortization</span>
+            </div>
+
+            <!-- SEARCH RESULTS (Global) -->
+            <div id="searchResults" style="display:none; margin-bottom: 40px;">
+                <h2 class="section-header">Search Results</h2>
+                <div class="grid" id="searchResultsContent"></div>
+            </div>
+
+            <!-- *** START AMORTIZATION WIDGET *** -->
+            <div id="amortization-calculator-pro-v8">
+                <div class="calculator-wrapper">
+
+                    <!-- Calculator Card -->
+                    <div class="glass-card">
+                        <h1><i class="fas fa-file-invoice-dollar" aria-hidden="true"></i> Amortization Schedule
+                            Calculator</h1>
+                        <p style="text-align: center; margin-bottom: 25px; color: #64748b;">
+                            Use our <strong>amortization estimator</strong> to <strong>find amortization
+                                calculator</strong>
+                            results for any loan. Generate a <strong>loan amortization</strong> plan instantly.
+                        </p>
+                        <form id="amortization-form">
+                            <!-- Main Inputs -->
+                            <div class="form-group">
+                                <label for="loanAmount" class="form-label">Loan Amount ($)</label>
+                                <input type="number" id="loanAmount" class="form-input" placeholder="e.g., 300000"
+                                    required>
+                            </div>
+                            <div class="form-group">
+                                <label for="interestRate" class="form-label">Annual Interest Rate (%)</label>
+                                <input type="number" id="interestRate" class="form-input" step="0.01"
+                                    placeholder="e.g., 5.5" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="loanTerm" class="form-label">Loan Term (Years)</label>
+                                <input type="number" id="loanTerm" class="form-input" placeholder="e.g., 30" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="paymentFrequency" class="form-label">Payment Frequency</label>
+                                <select id="paymentFrequency" class="form-input">
+                                    <option value="12" selected>Monthly</option>
+                                    <option value="24">Semi-monthly (24/yr)</option>
+                                    <option value="26">Bi-weekly (26/yr)</option>
+                                    <option value="52">Weekly (52/yr)</option>
+                                    <option value="6">Bi-monthly (every 2 mo)</option>
+                                    <option value="4">Quarterly (4/yr)</option>
+                                    <option value="2">Semi-annually (2/yr)</option>
+                                    <option value="1">Annually (1/yr)</option>
+                                </select>
+                            </div>
+
+                            <!-- Extra Payment Fields -->
+                            <div class="extra-fields-container">
+                                <div class="form-group">
+                                    <label for="extraPerPayment" class="form-label">Extra Per Payment (Optional)</label>
+                                    <input type="number" id="extraPerPayment" class="form-input"
+                                        placeholder="e.g., 100">
+                                </div>
+                                <div class="form-group">
+                                    <label for="oneTimeExtra" class="form-label">One-Time Extra Payment
+                                        (Optional)</label>
+                                    <input type="number" id="oneTimeExtra" class="form-input" placeholder="e.g., 5000">
+                                    <small>Added to your first payment.</small>
+                                </div>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary">Calculate</button>
+                        </form>
+                        <div id="result-summary"></div>
+                    </div>
+
+                    <!-- Amortization Schedule Section -->
+                    <section id="schedule-section" class="neumorphic-card" style="display: none;">
+                        <div class="schedule-header">
+                            <h2>Amortization Schedule</h2>
+                            <button id="exportCsvBtn" type="button" class="btn btn-export">Export CSV</button>
+                        </div>
+                        <div class="schedule-container">
+                            <table id="schedule-table">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Payment</th>
+                                        <th>Principal</th>
+                                        <th>Interest</th>
+                                        <th>Extra</th>
+                                        <th>Balance</th>
+                                    </tr>
+                                </thead>
+                                <tbody></tbody>
+                            </table>
+                        </div>
+                    </section>
+
+                    <!-- Content Section -->
+
+                    <section id="seo-content-section" class="neumorphic-card">
+                        <div class="content-block">
+                            <h2>Complete Amortization Schedule Table Guide</h2>
+                            <article>
+                                <h3>What is a Loan Amortization Calculator?</h3>
+                                <p>A <strong>loan amortization calculator</strong> or <strong>amortization table
+                                        calculator</strong> is
+                                    an essential financial tool used to <strong>amortize debt</strong> over a fixed
+                                    period.
+                                    Whether you are looking for a <strong>mortgage amortization calculator</strong> or a
+                                    <strong>simple amortization calculator</strong>, this tool helps you visualize how
+                                    every cent of your payment is distributed between principal and interest.
+                                </p>
+                                <p>Our <strong>amortization chart calculator</strong> provides a clear
+                                    <strong>amortization repayment schedule</strong>,
+                                    helping you understand the <strong>loans and amortization</strong> process for
+                                    <strong>home loan amortization calculator</strong> needs, auto loans, or personal
+                                    debt.
+                                </p>
+
+                                <h3>How to Generate an Amortization Table</h3>
+                                <p>To <strong>compute loan amortization</strong>, you simply need to enter your loan
+                                    details.
+                                    Our <strong>amortisation table calculator</strong> (also known as an
+                                    <strong>amortization calendar calculator</strong>)
+                                    will then generate a <strong>payment amortization table</strong>. Here is what you
+                                    need:
+                                </p>
+                                <ol style="margin-left: 20px; margin-bottom: 20px; color: #475569; line-height: 1.6;">
+                                    <li><strong>Loan Amount:</strong> This is the total principal for your <strong>loan
+                                            amortization</strong>.</li>
+                                    <li><strong>Interest Rate:</strong> Used by our <strong>loan amortization formula
+                                            calculator</strong> to find monthly costs.</li>
+                                    <li><strong>Loan Term:</strong> Use this to <strong>calculate amortization
+                                            mortgage</strong> terms, usually 15 or 30 years.</li>
+                                    <li><strong>Frequency:</strong> Standard for a <strong>monthly amortization
+                                            schedule</strong>.</li>
+                                </ol>
+
+                                <h3>Mortgage and Home Loan Amortization</h3>
+                                <p>If you are a homeowner, you probably need a <strong>mortgage calculator and
+                                        amortization</strong> tool.
+                                    A <strong>house amortization calculator</strong> or <strong>housing loan
+                                        amortization calculator</strong>
+                                    is vital for seeing how quickly you build equity. By using a <strong>mortgage loan
+                                        calculator amortization</strong> feature,
+                                    you can view a <strong>mortgage amortization chart</strong> to see the long-term
+                                    impact of your interest rate.</p>
+                                <p>For those in different regions, our <strong>amortisation calculator home
+                                        loan</strong> functionality
+                                    supports various <strong>amortisation plan</strong> standards to ensure your
+                                    <strong>loan payment schedule calculator</strong>
+                                    outputs are accurate globally.
+                                </p>
+
+                                <h3>Maximizing Savings with Extra Payments</h3>
+                                <p>Our <strong>calculator extra mortgage payments</strong> feature allows you to see how
+                                    additional principal payments reduce your total interest. This transforms your
+                                    standard
+                                    <strong>amortization worksheet</strong> into a powerful <strong>debt amortization
+                                        calculator</strong>.
+                                    A <strong>loan payoff amortization calculator</strong> is the best way to see how
+                                    you can
+                                    shave years off your <strong>mtg amortization calculator</strong> results.
+                                </p>
+                                <p>Using an <strong>amortization calendar</strong> approach, you can track your
+                                    <strong>amortization payment schedule</strong> and see the compounding effect of
+                                    staying ahead of your <strong>loan repayment schedule calculator</strong>.
+                                </p>
+
+                                <h3>Common Frequently Asked Questions (FAQ)</h3>
+                                <div class="faq-item">
+                                    <div class="faq-question">What is an amortization schedule table?</div>
+                                    <p class="faq-answer">An <strong>amortization schedule table</strong> is a detailed
+                                        breakdown of each periodic payment. It functions as an <strong>amortization
+                                            table</strong>
+                                        showing how much goes to interest vs. principal.</p>
+                                </div>
+                                <div class="faq-item">
+                                    <div class="faq-question">How do I find a printable amortization schedule?</div>
+                                    <p class="faq-answer">You can use our tool as a <strong>printable amortization
+                                            schedule</strong> generator.
+                                        Simply calculate your results and use the export feature to get a <strong>loan
+                                            interest schedule calculator</strong>
+                                        output ready for your records.</p>
+                                </div>
+                                <div class="faq-item">
+                                    <div class="faq-question">What is a debt amortization schedule calculator?</div>
+                                    <p class="faq-answer">A <strong>debt amortization schedule calculator</strong> is
+                                        used
+                                        to track the repayment of any significant debt, like a student loan or credit
+                                        card consolidation,
+                                        functioning as a <strong>loan calculator and amortization</strong> hybrid.</p>
+                                </div>
+                                <div class="faq-item">
+                                    <div class="faq-question">Can I see an annual amortization schedule?</div>
+                                    <p class="faq-answer">Yes, many users prefer an <strong>annual amortization
+                                            schedule</strong> to
+                                        see their yearly progress. You can easily derive this from our
+                                        <strong>amortization schedule</strong> data.
+                                    </p>
+                                </div>
+                                <div class="faq-item">
+                                    <div class="faq-question">How do I use an amortization worksheet for budgeting?
+                                    </div>
+                                    <p class="faq-answer">An <strong>amortization worksheet</strong> is a great tool for
+                                        financial planning.
+                                        By mapping out your <strong>amortization payment schedule</strong>, you can
+                                        adjust your
+                                        monthly budget to account for <strong>loans and amortization</strong> costs
+                                        accurately.</p>
+                                </div>
+                                <div class="faq-item">
+                                    <div class="faq-question">How does a loan interest schedule calculator help?</div>
+                                    <p class="faq-answer">A <strong>loan interest schedule calculator</strong> helps you
+                                        see
+                                        exactly how much of your payment is "lost" to interest. This knowledge is key to
+                                        using a
+                                        <strong>calculator extra mortgage payments</strong> strategy to build equity
+                                        faster.
+                                    </p>
+                                </div>
+                                <div class="faq-item">
+                                    <div class="faq-question">What is included in an amortisation plan?</div>
+                                    <p class="faq-answer">A standard <strong>amortisation plan</strong> includes the
+                                        interest rate,
+                                        total number of payments, and a detailed <strong>amortization table</strong>.
+                                        It provides a clear roadmap for your <strong>amortisation table
+                                            calculator</strong> results.</p>
+                                </div>
+                                <div class="faq-item">
+                                    <div class="faq-question">How accurate is an amortization estimator?</div>
+                                    <p class="faq-answer">Our <strong>amortization estimator</strong> uses the standard
+                                        mathematical formula for <strong>loan amortization</strong>. It provides highly
+                                        accurate results, effectively acting as a <strong>mortgage amortization
+                                            calculator</strong>
+                                        for planning purposes.</p>
+                                </div>
+                            </article>
+                        </div>
+                    </section>
+                </div>
+            </div>
+            <!-- *** END AMORTIZATION WIDGET *** -->
+
+        </div>
+        <div id="related-calculators"></div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <span
+                        style="font-weight: 800; font-size: 1.2rem; display:block; margin-bottom:10px; color:var(--text-main);">FairCalculator</span>
+                    <p>Simple, fast, and accurate online calculators.</p>
+                </div>
+                <div>
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="../../index.html">Home</a></li>
+                        <li><a href="../../about.html">About</a></li>
+                        <li><a href="../../contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="../../legal/privacy-policy.html">Privacy</a></li>
+                        <li><a href="../../legal/terms-of-service.html">Terms</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2025 FairCalculator. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts (Fixed Paths) -->
+    <!-- Define ROOT_PATH for search logic -->
+    <script>var ROOT_PATH = '../../';</script>
+    <script src="../../assets/js/data.js"></script>
+    <script src="../../assets/js/search.js"></script>
+    <script src="../../assets/js/mobile-menu.js"></script>
+
+    <!-- WIDGET JS LOGIC -->
+    <script src="../../assets/js/calculators/amortization-calculator.js" defer></script>
+
+    <script src="../../assets/js/related-calculators.js" defer></script>
+</body>
+
+</html>

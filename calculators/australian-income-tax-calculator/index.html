@@ -1,0 +1,722 @@
+﻿<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Australian Income Tax Calculator (1983–2026) – Historical & Current Rates</title>
+    <meta name="description"
+        content="Free Australian Income Tax Calculator. Calculate tax payable and Medicare levy for financial years 1983–2026, including Stage 3 tax cuts where applicable.">
+    <meta name="keywords"
+        content="income tax calculator 2026, takehome pay calculator, tax bracket calculator, after tax income calculator, calculating medicare levy surcharge, medicare levy surcharge rate, medicare levy calculation">
+    <link rel="canonical" href="https://www.faircalculator.com/calculators/australian-income-tax-calculator/">
+
+    <!-- Preload Critical Assets -->
+    <link rel="preload" href="../../assets/css/style.css" as="style">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        as="style">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../assets/css/style.css">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Australian Income Tax Calculator",
+      "description": "Calculate Australian income tax and Medicare levy for financial years 1983–2026.",
+      "mainEntity": {
+        "@type": "SoftwareApplication",
+        "name": "Australian Income Tax Calculator",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "Web",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "AUD"
+        }
+      }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://faircalculator.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Finance Calculators", "item": "https://faircalculator.com/categories/finance-calculators.html" },
+        { "@type": "ListItem", "position": 3, "name": "Australian Income Tax Calculator" }
+      ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [{
+        "@type": "Question",
+        "name": "How do I work out my residency status for tax purposes?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The ATO uses four tests to determine residency: 1) The 'Resides' test (primary test of where you live), 2) The Domicile test (your permanent home by law), 3) The 183-day test (present in Australia for >50% of the year), and 4) The Commonwealth Superannuation test. Meeting any one of these generally makes you a tax resident."
+        }
+      }, {
+        "@type": "Question",
+        "name": "What are the tax implications of residency?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Residents are taxed on worldwide income and get a tax-free threshold ($18,200), but pay the Medicare Levy. Non-residents are taxed only on Australian-sourced income, have no tax-free threshold (taxed from $1), and generally don't pay the Medicare Levy."
+        }
+      }, {
+        "@type": "Question",
+        "name": "What are some common situations regarding your residency status?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Common examples regarding residency: 1) Migrating to Australia permanently (Resident). 2) Working holiday makers (often Non-Resident or specific WHM rates). 3) Studying in Australia for >6 months (often Resident). 4) Australian working overseas temporarily (often remains Resident)."
+        }
+      }, {
+        "@type": "Question",
+        "name": "What is taxable income?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Taxable income is your total assessable income (wages, interest, dividends, business income, etc.) minus any allowable tax deductions (work-related expenses, donations, etc.). This is the amount the ATO uses to calculate how much tax you owe."
+        }
+      }, {
+        "@type": "Question",
+        "name": "What are the new Stage 3 tax cuts?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "From 1 July 2024 (2024-25 financial year), the Stage 3 tax cuts reduce the 32.5% rate to 30% for incomes between $45,000 and $135,000, and increase the threshold for the 37% bracket to $135,000."
+        }
+      }, {
+        "@type": "Question",
+        "name": "Do I pay Medicare Levy if I am a non-resident?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No, non-residents for tax purposes are generally exempt from paying the Medicare Levy. This calculator automatically excludes the levy when 'Non-Resident' is selected."
+        }
+      }, {
+        "@type": "Question",
+        "name": "What is the tax-free threshold in Australia?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "For Australian residents, the first $18,200 of income is tax-free. Non-residents generally do not have a tax-free threshold and pay tax from the first dollar earned."
+        }
+      }]
+    }
+    </script>
+
+    <!-- 2. WIDGET SPECIFIC CSS -->
+    <style>
+        /* Widget Container */
+        .tax-widget-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        /* Calculator Form */
+        .calculator-form {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            border: 1px solid #e2e8f0;
+            margin-bottom: 2rem;
+        }
+
+        .input-wrapper {
+            margin-bottom: 1.5rem;
+        }
+
+        .input-header {
+            display: block;
+            font-weight: 600;
+            color: var(--text-main);
+            margin-bottom: 0.5rem;
+        }
+
+        /* Inputs */
+        .input-field,
+        select.input-field {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: all 0.2s;
+            background: #f8fafc;
+        }
+
+        .input-field:focus {
+            outline: none;
+            border-color: var(--primary);
+            background: #fff;
+        }
+
+        /* Toggle Switch / Radio Group Styling */
+        .radio-group {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .radio-option {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            padding: 10px 15px;
+            background: #f1f5f9;
+            border-radius: 8px;
+            border: 1px solid #cbd5e1;
+            transition: all 0.2s;
+        }
+
+        .radio-option:hover {
+            background: #e2e8f0;
+        }
+
+        .radio-option input {
+            transform: scale(1.2);
+            margin-right: 10px;
+            accent-color: var(--primary);
+        }
+
+        /* --- RESULT SECTION --- */
+        .result-container {
+            margin-top: 2rem;
+            display: none;
+            /* JS toggles this */
+            animation: fadeIn 0.4s ease-out;
+        }
+
+        /* Hero Result (Net Pay) */
+        .hero-card {
+            background: #10b981;
+            color: white;
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+        }
+
+        .hero-label {
+            opacity: 0.9;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+        }
+
+        .hero-value {
+            font-size: 2.5rem;
+            font-weight: 800;
+        }
+
+        .hero-sub {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            margin-top: 5px;
+        }
+
+        /* Breakdown List */
+        .tax-breakdown {
+            background: #fff;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .breakdown-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 15px;
+            border-bottom: 1px solid #f1f5f9;
+            font-size: 0.95rem;
+            color: #334155;
+            align-items: center;
+        }
+
+        .breakdown-row:last-child {
+            border-bottom: none;
+            font-weight: 700;
+            background: #f8fafc;
+            border-top: 2px solid #e2e8f0;
+        }
+
+        /* Color Indicators */
+        .dot {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            margin-right: 8px;
+        }
+
+        .dot.tax {
+            background: #ef4444;
+        }
+
+        /* Red */
+        .dot.med {
+            background: #3b82f6;
+        }
+
+        /* Blue */
+        .dot.net {
+            background: #10b981;
+        }
+
+        /* Green */
+
+        /* Chart Container */
+        .chart-wrapper {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .chart-container {
+            width: 180px;
+            height: 180px;
+            position: relative;
+            border-radius: 50%;
+            /* Gradient Logic: Tax -> Medicare -> Net */
+            background: conic-gradient(#ef4444 0% var(--tax),
+                    #3b82f6 var(--tax) var(--med),
+                    #10b981 var(--med) 100%);
+            transition: --tax 1s, --med 1s;
+        }
+
+        .chart-hole {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 140px;
+            height: 140px;
+            background: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Grid for Result Breakdown */
+        .result-grid-layout {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 40px;
+            align-items: start;
+        }
+
+        .disclaimer-text {
+            margin-top: 20px;
+            font-size: 0.85rem;
+            color: #94a3b8;
+            font-style: italic;
+            line-height: 1.4;
+        }
+
+        @media (max-width: 700px) {
+            .result-grid-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .radio-group {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+
+        /* Custom property support needed for transition */
+        @property --tax {
+            syntax: '<percentage>';
+            inherits: false;
+            initial-value: 0%;
+        }
+
+        @property --med {
+            syntax: '<percentage>';
+            inherits: false;
+            initial-value: 0%;
+        }
+    </style>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BVENYYJ869"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-BVENYYJ869');
+    </script>
+    <script type="text/javascript">
+        (function (c, l, a, r, i, t, y) {
+            c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+            t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+            y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+        })(window, document, "clarity", "script", "udqk27trde");
+    </script>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container header-inner">
+            <a href="../../index.html" class="logo">FairCalculator</a>
+            <nav class="nav-desktop">
+                <a href="../../index.html" style="margin-right: 20px;">Home</a>
+                <a href="../../categories/finance-calculators.html"
+                    style="font-weight: 600; color: var(--primary);">Finance</a>
+                <a href="../../about.html" style="margin-left: 20px;">About</a>
+            </nav>
+            <button class="menu-btn" id="menuToggle"><i class="fas fa-bars"></i></button>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="container">
+
+            <!-- Breadcrumb -->
+            <div style="margin-bottom: 20px; font-size: 0.9rem; color: var(--text-muted);">
+                <a href="../../index.html">Home</a> /
+                <a href="../../categories/finance-calculators.html">Finance</a> /
+                <span style="color: var(--text-main);">Aus Income Tax</span>
+            </div>
+
+            <!-- Page Header -->
+            <div class="section-header" style="display:block; border:none; margin-bottom: 2rem;">
+                <h1 style="font-size: 2rem; margin-bottom: 10px;">
+                    <i class="fas fa-money-bill-wave" style="color: #10b981; margin-right: 10px;"></i>
+                    Australian Income Tax Calculator
+                </h1>
+                <p style="font-weight: 400; color: var(--text-muted); font-size: 1.1rem; max-width: 800px;">
+                    Estimate your income tax payable and Medicare levy for financial years 1983-2026. Updated for Stage
+                    3 tax cuts.
+                </p>
+            </div>
+
+            <!-- Main Widget Area -->
+            <div class="tax-widget-container">
+
+                <!-- Calculator Card -->
+                <div class="calculator-form">
+
+                    <div class="input-wrapper">
+                        <label class="input-header">Financial Year</label>
+                        <select id="tax-year" class="input-field" aria-label="Select Financial Year">
+                            <!-- Populated by JS -->
+                        </select>
+                    </div>
+
+                    <div class="input-wrapper">
+                        <label class="input-header">Annual Taxable Income (AUD)</label>
+                        <input type="number" id="income" class="input-field"
+                            aria-label="Annual taxable income in Australian dollars" placeholder="e.g. 90000">
+                    </div>
+
+                    <div class="input-wrapper">
+                        <label class="input-header">Residency Status</label>
+                        <div class="radio-group">
+                            <label class="radio-option">
+                                <input type="radio" name="residency" value="resident" checked>
+                                <span>Resident</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="residency" value="non_resident">
+                                <span>Non-Resident</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="residency" value="part_year">
+                                <span>Part-Year Resident</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div id="months-container" class="input-wrapper" style="display: none;">
+                        <label class="input-header">Months as Resident</label>
+                        <select id="resident-months" class="input-field">
+                            <option value="1">1 Month</option>
+                            <option value="2">2 Months</option>
+                            <option value="3">3 Months</option>
+                            <option value="4">4 Months</option>
+                            <option value="5">5 Months</option>
+                            <option value="6">6 Months</option>
+                            <option value="7">7 Months</option>
+                            <option value="8">8 Months</option>
+                            <option value="9">9 Months</option>
+                            <option value="10">10 Months</option>
+                            <option value="11">11 Months</option>
+                            <option value="12" selected>12 Months (Full Year)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Results Section -->
+                <div id="result-container" class="result-container">
+
+                    <div class="result-grid-layout">
+
+                        <!-- Chart Side -->
+                        <div>
+                            <div class="hero-card">
+                                <div class="hero-label">Estimated Net Income</div>
+                                <div class="hero-value" id="val-net-income">$0</div>
+                                <div class="hero-sub">After Tax & Medicare</div>
+                            </div>
+
+                            <div class="chart-wrapper">
+                                <div class="chart-container" id="tax-chart" style="--tax: 0%; --med: 0%;">
+                                    <div class="chart-hole">
+                                        <div style="font-size:0.8rem; color:#64748b;">Effective Tax Rate</div>
+                                        <div id="val-effective-rate"
+                                            style="font-size:1.5rem; font-weight:700; color:#1e293b;">0%</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="text-align:center; font-size:0.9rem; color:#64748b; margin-bottom:20px;">
+                                <span class="dot tax"></span>Tax &nbsp;
+                                <span class="dot med"></span>Medicare &nbsp;
+                                <span class="dot net"></span>Net
+                            </div>
+                        </div>
+
+                        <!-- Breakdown Side -->
+                        <div>
+                            <h3 style="margin-top:0; margin-bottom:15px; font-size:1.2rem;">Tax Breakdown</h3>
+                            <div class="tax-breakdown">
+                                <div class="breakdown-row">
+                                    <span><span class="dot tax"></span>Income Tax</span>
+                                    <span id="val-income-tax">$0</span>
+                                </div>
+                                <div class="breakdown-row">
+                                    <span><span class="dot med"></span>Medicare Levy (2%)</span>
+                                    <span id="val-medicare">$0</span>
+                                </div>
+                                <div class="breakdown-row"
+                                    style="border-top: 1px solid #e2e8f0; background:#f8fafc; font-weight:600;">
+                                    <span>Total Tax Payable</span>
+                                    <span id="val-total-tax" style="color:#ef4444;">$0</span>
+                                </div>
+                            </div>
+
+                            <p class="disclaimer-text">
+                                <strong>Note:</strong> This is a standard estimate based on the ATO brackets for the
+                                selected year.
+                                It does not include offsets (LITO/LMSO), HELP/HECS repayments, or the Medicare Levy
+                                Surcharge.
+                            </p>
+
+
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Content Side -->
+            <article style="max-width:800px; margin: 40px auto 0;">
+                <h2>How Australian Income Tax Works</h2>
+                <p>
+                    Australia uses a <strong>progressive tax system</strong>, meaning you pay higher rates of tax
+                    only on the portion of your income that falls into higher brackets. The first $18,200 of income
+                    for residents is currently tax-free (the tax-free threshold).
+                </p>
+                <p>
+                    Most residents also pay a <strong>Medicare Levy</strong>, which is typically 2% of taxable
+                    income, to help fund the public health system. This is calculated separately from income tax.
+                </p>
+
+                <h3>Tax Rates by Year (1983–2026)</h3>
+                <p>
+                    This calculator allows you to go back in time and see how tax rates have changed over the last
+                    40 years. For example, in the mid-1980s, the top marginal tax rate was 60%, significantly higher
+                    than the current top rate of 45%.
+                </p>
+                <div class="fc-formula-box">
+                    <strong>Current 2024-25 Residents Structure (Stage 3):</strong><br><br>
+                    $0 – $18,200: <strong>0%</strong><br>
+                    $18,201 – $45,000: <strong>16%</strong><br>
+                    $45,001 – $135,000: <strong>30%</strong><br>
+                    $135,001 – $190,000: <strong>37%</strong><br>
+                    Over $190,000: <strong>45%</strong>
+                </div>
+
+                <h3>How This Calculator Works</h3>
+                <p>
+                    Our tool uses a precise dataset of historical ATO tax brackets. When you select a year and
+                    residency status:
+                </p>
+                <ol>
+                    <li>It identifies the correct tax brackets for that specific financial year.</li>
+                    <li>It splits your income into the applicable chunks (brackets).</li>
+                    <li>It applies the specific tax rate to each chunk and sums the total.</li>
+                    <li>It calculates the Medicare Levy (if you are a resident) and adds it to the total.</li>
+                </ol>
+
+                <!-- Related Links Placeholder -->
+                <div style="margin-top: 40px; padding: 20px; background: #f1f5f9; border-radius: 8px;">
+                    <h4 style="margin-top:0;">See Also:</h4>
+                    <ul style="margin-bottom:0;">
+                        <li><a href="../salary-calculator/index.html">Salary Calculator</a></li>
+                        <li><a href="../../categories/finance-calculators.html">All Finance Tools</a></li>
+                    </ul>
+                </div>
+            </article>
+
+            <!-- FAQ Section -->
+            <section class="info-section">
+                <!-- FAQ Content (Kept as is, just wrapped in section) -->
+                <h2>Frequently Asked Questions</h2>
+                <div class="faq-item">
+                    <div class="faq-question">How do I work out my residency status for tax purposes?</div>
+                    <div class="faq-answer">
+                        <p>The ATO uses four specific tests to determine if you are a resident for tax purposes:</p>
+                        <ol>
+                            <li><strong>The "Resides" Test:</strong> Do you reside in Australia according to ordinary
+                                concepts?</li>
+                            <li><strong>The Domicile Test:</strong> Is your permanent home in Australia?</li>
+                            <li><strong>The 183-Day Test:</strong> Have you been in Australia for more than half the
+                                income year?</li>
+                            <li><strong>The Superannuation Test:</strong> For Australian government employees working
+                                overseas.</li>
+                        </ol>
+                        <p>Meeting any one of these generally makes you a tax resident.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">What are the tax implications of residency?</div>
+                    <div class="faq-answer">
+                        <p><strong>Residents:</strong> Taxed on worldwide income, entitled to the tax-free threshold
+                            ($18,200), but generally pay the Medicare Levy.</p>
+                        <p><strong>Non-Residents:</strong> Taxed only on Australian-sourced income, no tax-free
+                            threshold (tax paid from first dollar), but generally exempt from Medicare Levy.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">What are some common situations regarding your residency status?</div>
+                    <div class="faq-answer">
+                        <ul>
+                            <li><strong>New Migrants:</strong> Usually residents from the day they arrive to live
+                                permanently.</li>
+                            <li><strong>Working Holiday Makers:</strong> Often non-residents or subject to specific WHM
+                                rates (15% up to $45k).</li>
+                            <li><strong>Students (course > 6 months):</strong> Often considered residents.</li>
+                            <li><strong>Australians working overseas temporarily:</strong> Typically remain residents if
+                                they intend to return.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">What is taxable income?</div>
+                    <p class="faq-answer">
+                        Taxable income is your <strong>Total Assessable Income</strong> (all wages, interest, dividends,
+                        business income, rent, etc.) minus your <strong>Allowable Deductions</strong> (work-related
+                        expenses, donations, cost of managing tax affairs, etc.). This is the final figure the ATO uses
+                        to calculate your tax bill.
+                    </p>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">What is the "Stage 3" tax cut?</div>
+                    <p class="faq-answer">
+                        The Stage 3 tax cuts were a major reform to the Australian tax system that took effect on 1 July
+                        2024. They simplified the tax brackets, reducing the 32.5% rate to 30% for a large income range
+                        and increasing the threshold for the 37% bracket, effectively lowering tax for many Australians.
+                    </p>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Do non-residents pay tax on all income?</div>
+                    <p class="faq-answer">
+                        Non-residents for tax purposes generally only pay tax on Australian-sourced income. Unlike
+                        residents, they typically do not get a tax-free threshold, meaning they pay tax starting from
+                        the first dollar earned.
+                    </p>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Does this include HECS/HELP repayments?</div>
+                    <p class="faq-answer">
+                        No, this calculator only estimates base income tax and the Medicare levy. Study loan repayments
+                        (HECS/HELP) are separate calculations based on your repayment income.
+                    </p>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Why is my net income lower than expected?</div>
+                    <p class="faq-answer">
+                        Remember to account for the Medicare Levy (2%) which is added on top of your standard income
+                        tax. This calculator includes that levy in the "Total Tax Payable" figure for residents.
+                    </p>
+                </div>
+            </section>
+
+            <div id="related-calculators"></div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <a href="../../index.html" class="logo" style="font-size: 1.2rem;">FairCalculator</a>
+                    <p style="margin-top: 15px;">
+                        Professional grade calculators for finance, math, health, and science.
+                        Fast, accurate, and free to use.
+                    </p>
+                </div>
+                <div>
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="../../index.html">Home</a></li>
+                        <li><a href="../../about.html">About Us</a></li>
+                        <li><a href="../../contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="../../legal/privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="../../legal/terms-of-service.html">Terms of Service</a></li>
+                        <li><a href="../../legal/disclaimer.html">Disclaimer</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2025 FairCalculator. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>var ROOT_PATH = '../../';</script>
+    <script src="../../assets/js/data.js"></script>
+    <script src="../../assets/js/search.js"></script>
+    <script src="../../assets/js/mobile-menu.js"></script>
+
+    <!-- Calculator Logic -->
+    <script src="../../assets/js/calculators/australian-income-tax-data.js"></script>
+    <script src="../../assets/js/calculators/australian-income-tax-calculator.js"></script>
+    <script src="../../assets/js/related-calculators.js" defer></script>
+</body>
+
+</html>

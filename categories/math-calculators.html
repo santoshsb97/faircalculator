@@ -1,0 +1,304 @@
+﻿<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Calculators - FairCalculator</title>
+    <meta name="description"
+        content="Solve complex math problems easily with free online tools for algebra, geometry, statistics, and more. Get step-by-step solutions for every calculation.">
+
+    <link rel="canonical" href="https://www.faircalculator.com/categories/math-calculators/">
+
+    <!-- Preload Critical Assets -->
+    <link rel="preload" href="../assets/css/style.css" as="style">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        as="style">
+
+    <!-- Preconnect to CDNs -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+
+    <!-- CSS (Points to parent folder) -->
+    <link rel="stylesheet" href="../assets/css/style.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome (Non-blocking) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        media="print" onload="this.media='all'">
+    <noscript>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    </noscript>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BVENYYJ869"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-BVENYYJ869');
+    </script>
+    <script type="text/javascript">
+        (function (c, l, a, r, i, t, y) {
+            c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+            t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+            y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+        })(window, document, "clarity", "script", "udqk27trde");
+    </script>
+</head>
+
+<body>
+
+    <!-- Header (Updated to match Homepage) -->
+    <header class="header">
+        <div class="container header-inner">
+            <a href="../index.html" class="logo">FairCalculator</a>
+
+            <div class="header-search">
+                <input type="text" id="searchInput" class="search-input"
+                    placeholder="Search tools (e.g. Mortgage, BMI)..." aria-label="Search">
+            </div>
+
+            <button class="menu-btn" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Category Bar (Updated links with ../) -->
+    <nav class="category-bar">
+        <div class="container">
+            <ul id="category-list">
+                <!-- Hardcoded for stability on sub-pages -->
+                <li><a href="../index.html">All</a></li>
+                <li><a href="finance-calculators.html">Financial Tools</a></li>
+                <!-- Active State for Math -->
+                <li><a href="math-calculators.html"
+                        style="background:#eff6ff; color:#2563eb; border-color:#bfdbfe;">Math Calculators</a></li>
+                <li><a href="health-calculators.html">Health & Fitness</a></li>
+                <li><a href="date-time-calculators.html">Date & Time</a></li>
+                <li><a href="unit-converters.html">Unit Converters</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="mobile-close" id="closeMenu">&times;</button>
+        <div style="margin-top: 40px;">
+            <ul class="sidebar-list">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../index.html#calculators">All Calculators</a></li>
+                <li><a href="../about.html">About</a></li>
+                <li><a href="../contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+
+            <!-- Breadcrumb -->
+            <div style="margin-bottom: 20px; font-size: 0.9rem; color: var(--text-muted);">
+                <a href="../index.html" style="text-decoration: underline;">Home</a>
+                <span style="margin: 0 8px;">/</span>
+                <span style="font-weight: 600; color: var(--text-main);">Math</span>
+            </div>
+
+            <!-- Page Title -->
+            <div class="section-header" style="display:block; border:none; margin-bottom: 30px;">
+                <h1 style="font-size: 2rem; margin-bottom: 10px;">Math Calculators</h1>
+                <p style="font-weight: 400; color: var(--text-muted); font-size: 1rem;">
+                    Free mathematical tools for students, teachers, and professionals. Fractions, percentages, geometry,
+                    and more.
+                </p>
+            </div>
+
+            <!-- Search Results Container -->
+            <div id="searchResults" style="display:none; margin-bottom: 40px;">
+                <h2 class="section-header">Search Results</h2>
+                <div class="grid" id="searchResultsContent"></div>
+            </div>
+
+            <!-- Math Grid -->
+            <h2 class="section-header">Mathematical Tools List</h2>
+            <div class="grid" id="math-grid">
+                <!-- JS will load Math tools here -->
+                <div style="text-align:center; grid-column:1/-1;">Loading Math Tools...</div>
+            </div>
+
+            <!-- SEO Content Section -->
+            <section class="info-section" style="margin-top: 60px; border:none; padding: 0;">
+                <h2 style="font-size: 1.8rem; margin-bottom: 20px; color: var(--text-main);">Math Made Simple:
+                    Calculation Tools for Everyone</h2>
+                <div
+                    style="background: #fff; padding: 40px; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); border: 1px solid #e2e8f0;">
+
+                    <h3 style="color: #4338ca; margin-bottom: 15px;">Why Use Online Math Tools?</h3>
+                    <p style="color: var(--text-muted); line-height: 1.7; margin-bottom: 25px;">
+                        Whether you are a student checking your homework, a teacher creating lesson plans, or a DIY
+                        enthusiast planning a project, precision matters. Math can be tricky, but our tools break down
+                        complex formulas into simple steps. From basic arithmetic (fractions, exponents) to geometric
+                        applications (area, volume), we handle the heavy lifting.
+                    </p>
+
+                    <div
+                        style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-bottom: 30px;">
+                        <div>
+                            <h4 style="font-weight: 700; color: var(--text-main); margin-bottom: 10px;"><i
+                                    class="fas fa-shapes" style="margin-right: 10px;"></i> Geometry in Real Life</h4>
+                            <p style="color: var(--text-muted); font-size: 0.95rem;">
+                                Geometry isn't just for textbooks; it's for building. Our <strong>Area
+                                    Calculator</strong> helps with flooring and painting projects, while the
+                                <strong>Volume Calculator</strong> is essential for gardening (soil/mulch) and shipping.
+                                Knowing the exact dimensions prevents waste and saves money.
+                            </p>
+                        </div>
+                        <div>
+                            <h4 style="font-weight: 700; color: var(--text-main); margin-bottom: 10px;"><i
+                                    class="fas fa-divide" style="margin-right: 10px;"></i> Fractions & Everyday Math
+                            </h4>
+                            <p style="color: var(--text-muted); font-size: 0.95rem;">
+                                Cooking a big meal? You'll need to double the recipe, which means multiplying fractions.
+                                Our <strong>Fraction Calculator</strong> handles addition, subtraction, and conversion
+                                to decimals instantly. It's perfect for chefs, bakers, and carpenters who need precise
+                                measurements.
+                            </p>
+                        </div>
+                    </div>
+
+                    <h3 style="color: #4338ca; margin-bottom: 15px;">Advanced Problem Solving for Students & Pros</h3>
+                    <p style="color: var(--text-muted); line-height: 1.7; margin-bottom: 25px;">
+                        Math isn't just about finding the right answer; it's about understanding the process. Our
+                        calculators, like the <strong>System of Equations Solver</strong>, don't just give you 'x'—they
+                        show you how you got there. This makes our platform an invaluable resource for students
+                        mastering algebra or professionals needing a quick verification for complex engineering
+                        tolerances.
+                    </p>
+
+                    <div style="margin-bottom: 30px; background: #f8fafc; padding: 30px; border-radius: 12px;">
+                        <h4 style="color: var(--text-main); margin-bottom: 15px;">Common Math Scenarios We Solve</h4>
+                        <ul
+                            style="color: var(--text-muted); display: grid; grid-template-columns: 1fr 1fr; gap: 15px; padding-left: 20px;">
+                            <li><strong>Unit Scaling:</strong> Adjusting floor plans using percentage calculators.</li>
+                            <li><strong>Statistical Analysis:</strong> Finding averages and deviations for data sets.
+                            </li>
+                            <li><strong>Financial Math:</strong> Calculating loan interest using geometric formulas.
+                            </li>
+                            <li><strong>Construction:</strong> Using the Area/Volume tools for material estimation.
+                            </li>
+                        </ul>
+                    </div>
+
+                    <h3 style="color: #4338ca; margin-bottom: 20px;">Frequently Asked Questions (FAQ)</h3>
+                    <div style="display: flex; flex-direction: column; gap: 20px;">
+                        <div>
+                            <h4 style="color: var(--text-main); margin-bottom: 5px;">Are these calculators accurate for
+                                school work?</h4>
+                            <p style="color: var(--text-muted); font-size: 0.95rem; margin: 0;">Yes. We use standard
+                                mathematical algorithms used in top-tier scientific calculators. However, always use our
+                                "Steps" feature to understand the methodology behind the result.</p>
+                        </div>
+                        <div>
+                            <h4 style="color: var(--text-main); margin-bottom: 5px;">Can I use these tools on my phone?
+                            </h4>
+                            <p style="color: var(--text-muted); font-size: 0.95rem; margin: 0;">Our platform is fully
+                                responsive. Whether you're in the classroom or on a construction site, the interface
+                                adapts to provide a seamless mobile experience.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <span
+                        style="font-weight: 800; font-size: 1.2rem; display:block; margin-bottom:10px; color:var(--text-main);">FairCalculator</span>
+                    <p>Simple, fast, and accurate online calculators.</p>
+                </div>
+                <div>
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../about.html">About</a></li>
+                        <li><a href="../contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="../legal/privacy-policy.html">Privacy</a></li>
+                        <li><a href="../legal/terms-of-service.html">Terms</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2026 FairCalculator. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>var ROOT_PATH = '../';</script>
+    <!-- Load Data -->
+    <script src="../assets/js/data.js"></script>
+    <!-- Load Search Logic -->
+    <script src="../assets/js/search.js"></script>
+    <!-- Load Mobile Menu Logic -->
+    <script src="../assets/js/mobile-menu.js"></script>
+
+    <!-- Specific Script to Load ONLY Math Tools -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const grid = document.getElementById('math-grid');
+
+            if (typeof calculatorsData !== 'undefined' && grid) {
+                // Filter for Math tools
+                const mathTools = calculatorsData.filter(item =>
+                    item.category === 'Math' || item.type === 'math'
+                );
+
+                grid.innerHTML = ''; // Clear loading text
+
+                if (mathTools.length === 0) {
+                    grid.innerHTML = '<p>No math calculators found.</p>';
+                    return;
+                }
+
+                mathTools.forEach(tool => {
+                    const card = document.createElement('a');
+                    // Ensure the URL is correct relative to this folder
+                    // If your data.js has "calculators/name", we need "../calculators/name"
+                    let relativeUrl = tool.url;
+                    if (!relativeUrl.startsWith('http') && !relativeUrl.startsWith('../')) {
+                        relativeUrl = '../' + relativeUrl;
+                    }
+
+                    card.href = relativeUrl;
+                    card.className = 'card';
+                    card.innerHTML = `
+                        <h3>
+                            <i class="fas ${tool.icon || 'fa-calculator'}" style="margin-right:8px; color:var(--primary);"></i>
+                            ${tool.name}
+                        </h3>
+                        <p>${tool.desc}</p>
+                    `;
+                    grid.appendChild(card);
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>

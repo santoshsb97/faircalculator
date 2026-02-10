@@ -1,0 +1,267 @@
+﻿<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Free Percentage Solver. Use our fast, accurate tool to simplify math and finance calculations. Get precise results and guidance on Fair Calculator.">
+    <link rel="canonical" href="https://www.faircalculator.com/calculators/percentage-calculator/">
+
+    <!-- Preload Critical Assets -->
+    <link rel="preload" href="../../assets/css/style.css" as="style">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        as="style">
+    <title>Percentage Calculator - 12-in-1 Tool</title>
+
+    <!-- 1. GLOBAL ASSETS (Go up 2 folders) -->
+    <link rel="icon" type="image/x-icon" href="../../assets/images/favicon.png">
+    <link rel="stylesheet" href="../../assets/css/style.css">
+
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Percentage Calculator",
+      "description": "12-in-1 Percentage Calculator for increases, decreases, margins, and fractions.",
+      "applicationCategory": "CalculatorApplication",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    }
+    </script>
+
+    <!-- 2. WIDGET SPECIFIC CSS -->
+    <link rel="stylesheet" href="../../assets/css/calculators/percentage-calculator.css">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BVENYYJ869"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-BVENYYJ869');
+    </script>
+    <script type="text/javascript">
+        (function (c, l, a, r, i, t, y) {
+            c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+            t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+            y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+        })(window, document, "clarity", "script", "udqk27trde");
+    </script>
+</head>
+
+<body>
+
+    <!-- 3. HEADER -->
+    <header class="header">
+        <div class="container header-inner">
+            <a href="../../index.html" class="logo">FairCalculator</a>
+            <div class="header-search">
+                <input type="text" id="searchInput" class="search-input" placeholder="Search tools..."
+                    aria-label="Search">
+            </div>
+            <button class="menu-btn" id="menuToggle"><i class="fas fa-bars"></i></button>
+        </div>
+    </header>
+
+    <!-- 4. CATEGORY BAR -->
+    <nav class="category-bar">
+        <div class="container">
+            <ul id="category-list">
+                <li><a href="../../index.html">All</a></li>
+                <li><a href="../../categories/finance-calculators.html">Finance</a></li>
+                <li><a href="../../categories/math-calculators.html"
+                        style="background:#eff6ff; color:#2563eb; border-color:#bfdbfe;">Math</a></li>
+                <li><a href="../../categories/health-calculators.html">Health</a></li>
+                <li><a href="../../categories/date-time-calculators.html">Date</a></li>
+                <li><a href="../../categories/unit-converters.html">Converters</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="mobile-close" id="closeMenu">&times;</button>
+        <div style="margin-top: 40px;">
+            <ul class="sidebar-list">
+                <li><a href="../../index.html">Home</a></li>
+                <li><a href="../../index.html#calculators">All Calculators</a></li>
+                <li><a href="../../about.html">About</a></li>
+                <li><a href="../../contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- 5. MAIN CONTENT -->
+    <main class="main-content">
+        <div class="container">
+
+            <!-- Breadcrumbs -->
+            <div style="margin-bottom: 20px; font-size: 0.9rem; color: #64748b;">
+                <a href="../../index.html" style="text-decoration: underline;">Home</a> /
+                <a href="../../categories/math-calculators.html" style="text-decoration: underline;">Math</a> /
+                <span style="font-weight: 600; color: #0f172a;">Percentage Calculator</span>
+            </div>
+
+            <!-- Search Results Placeholder -->
+            <div id="searchResults" style="display:none; margin-bottom: 40px;">
+                <div class="section-header">Search Results</div>
+                <div class="grid" id="searchResultsContent"></div>
+            </div>
+
+            <!-- TOOL CONTAINER -->
+            <div class="pct-widget-container" id="tool-container">
+
+                <h1 class="section-header" style="justify-content:center; font-size: 2rem; margin-bottom: 30px;">
+                    <i class="fas fa-percentage" style="color: #4f46e5; margin-right: 15px;"></i> Ultimate Percentage
+                    Calculator
+                </h1>
+
+                <!-- Calculator Form -->
+                <div class="calculator-form">
+
+                    <!-- Mode Selector -->
+                    <div class="mode-select-wrapper">
+                        <label class="input-header" style="margin-bottom: 8px;">Select Calculator Type</label>
+                        <select id="calcMode" class="input-field" style="border-color: #4f46e5;">
+                            <option value="1">1. What is X% of Y?</option>
+                            <option value="2">2. X is what % of Y?</option>
+                            <option value="3">3. Percentage Increase</option>
+                            <option value="4">4. Percentage Decrease</option>
+                            <option value="5">5. Percentage Difference</option>
+                            <option value="6">6. Add Percentage (Tax)</option>
+                            <option value="7">7. Subtract Percentage (Discount)</option>
+                            <option value="8">8. Reverse (Find Original from Total)</option>
+                            <option value="9">9. Fraction to Percentage</option>
+                            <option value="10">10. Percent of Percent</option>
+                            <option value="11">11. Original Price (Before Sale)</option>
+                            <option value="12">12. Profit Margin</option>
+                        </select>
+                    </div>
+
+                    <!-- Dynamic Inputs -->
+                    <div id="inputsContainer"
+                        style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 1.5rem;">
+                        <!-- Injected by JS -->
+                    </div>
+
+                    <button id="calculateBtn" class="calc-action-btn">Calculate</button>
+                </div>
+
+                <!-- RESULTS -->
+                <div id="resultContainer" class="result-container">
+
+                    <!-- Hero Result -->
+                    <div class="hero-card">
+                        <div class="hero-label" id="resultLabel">Result</div>
+                        <div class="hero-value" id="mainResult">--</div>
+                    </div>
+
+                    <!-- Formula & Steps -->
+                    <div class="formula-box">
+                        <strong>Formula:</strong><br>
+                        <span id="formulaDisplay">--</span>
+                        <br><br>
+                        <strong>Calculation:</strong><br>
+                        <span id="stepDisplay">--</span>
+                    </div>
+
+                </div>
+
+
+                <!-- Engaging SEO Guide -->
+                <div class="info-section">
+                    <h2>Master Math in Seconds</h2>
+                    <article>
+                        <h3>Why Everyone Needs This Tool</h3>
+                        <p>Percentages are everywhere—from the tip on your dinner bill to the battery life on your
+                            phone. Yet, our brains often freeze up when trying to calculate them on the spot. This tool
+                            is your digital cheat sheet.</p>
+
+                        <h3>Real-World Examples</h3>
+                        <ul>
+                            <li><strong>Shopping:</strong> A shirt is $40 with a 15% discount. Select "Subtract
+                                Percentage" to see you'll pay $34.</li>
+                            <li><strong>Tipping:</strong> Your bill is $56.50 and you want to leave 20%. Select "What is
+                                X% of Y?" to find the tip amount ($11.30).</li>
+                            <li><strong>Business Growth:</strong> Revenue went from $100k to $150k. Select "Percentage
+                                Increase" to show your boss a 50% growth stat!</li>
+                        </ul>
+
+                        <h3>The "Percent of Percent" Trap</h3>
+                        <p>Be careful with stacked percentages. If a stock drops 50% and then gains 50%, you are NOT
+                            back to even. You are actually down 25%! <br><em>Example: $100 drops to $50. $50 grows by
+                                50% ($25) to become $75.</em></p>
+
+                        <h3>Frequently Asked Questions</h3>
+                        <div class="faq-item">
+                            <div class="faq-question">How do I calculate a percentage difference?</div>
+                            <p class="faq-answer">This is used when comparing two values where neither is "original"
+                                (like the height of two buildings). It divides the difference by the average of the two
+                                numbers.</p>
+                        </div>
+                        <div class="faq-item">
+                            <div class="faq-question">Can I calculate margin with this?</div>
+                            <p class="faq-answer">Yes! Use mode #12. Remember, <strong>Margin</strong> is based on
+                                revenue, while <strong>Markup</strong> is based on cost. They are often confused but
+                                give very different numbers.</p>
+                        </div>
+                    </article>
+                </div>
+
+            </div>
+        </div>
+        <div id="related-calculators"></div>
+    </main>
+
+    <!-- 6. FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <span
+                        style="font-weight: 800; font-size: 1.2rem; display:block; margin-bottom:10px; color:var(--text-main);">FairCalculator</span>
+                    <p>Simple, fast, and accurate online calculators.</p>
+                </div>
+                <div>
+                    <h4>Menu</h4>
+                    <ul>
+                        <li><a href="../../index.html">Home</a></li>
+                        <li><a href="../../about.html">About Us</a></li>
+                        <li><a href="../../contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="../../legal/privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="../../legal/terms-of-service.html">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2025 FairCalculator. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- 7. SCRIPTS -->
+    <script>var ROOT_PATH = '../../';</script>
+    <script src="../../assets/js/data.js"></script>
+    <script src="../../assets/js/search.js"></script>
+    <script src="../../assets/js/mobile-menu.js"></script>
+
+    <!-- WIDGET JS LOGIC -->
+    <script src="../../assets/js/calculators/percentage-calculator.js" defer></script>
+
+    <script src="../../assets/js/related-calculators.js" defer></script>
+</body>
+
+</html>

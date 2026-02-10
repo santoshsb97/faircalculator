@@ -1,0 +1,304 @@
+﻿<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Calculators - FairCalculator</title>
+    <meta name="description"
+        content="Free online health and fitness calculators including BMI, BMR & Body Fat. Monitor your wellness and track your fitness goals with FairCalculator.">
+
+    <link rel="canonical" href="https://www.faircalculator.com/categories/health-calculators/">
+
+    <!-- Preload Critical Assets -->
+    <link rel="preload" href="../assets/css/style.css" as="style">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        as="style">
+
+    <!-- Preconnect to CDNs -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+
+    <!-- CSS (Points to parent folder) -->
+    <link rel="stylesheet" href="../assets/css/style.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome (Non-blocking) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        media="print" onload="this.media='all'">
+    <noscript>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    </noscript>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BVENYYJ869"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-BVENYYJ869');
+    </script>
+    <script type="text/javascript">
+        (function (c, l, a, r, i, t, y) {
+            c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+            t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+            y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+        })(window, document, "clarity", "script", "udqk27trde");
+    </script>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container header-inner">
+            <a href="../index.html" class="logo">FairCalculator</a>
+
+            <div class="header-search">
+                <input type="text" id="searchInput" class="search-input"
+                    placeholder="Search tools (e.g. Mortgage, BMI)..." aria-label="Search">
+            </div>
+
+            <button class="menu-btn" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Category Bar -->
+    <nav class="category-bar">
+        <div class="container">
+            <ul id="category-list">
+                <li><a href="../index.html">All</a></li>
+                <li><a href="finance-calculators.html">Finance</a></li>
+                <li><a href="math-calculators.html">Math</a></li>
+                <li class="active-category"><a href="health-calculators.html">Health</a></li>
+                <li><a href="date-time-calculators.html">Date & Time</a></li>
+                <li><a href="unit-converters.html">Unit Converters</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="mobile-close" id="closeMenu">&times;</button>
+        <div style="margin-top: 40px;">
+            <ul class="sidebar-list">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../index.html#calculators">All Calculators</a></li>
+                <li><a href="../about.html">About</a></li>
+                <li><a href="../contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+
+            <!-- Breadcrumb -->
+            <div style="margin-bottom: 20px; font-size: 0.9rem; color: var(--text-muted);">
+                <a href="../index.html" style="text-decoration: underline;">Home</a>
+                <span style="margin: 0 8px;">/</span>
+                <span style="font-weight: 600; color: var(--text-main);">Health</span>
+            </div>
+
+            <!-- Page Title -->
+            <div class="section-header" style="display:block; border:none; margin-bottom: 30px;">
+                <h1 style="font-size: 2rem; margin-bottom: 10px;">
+                    <i class="fas fa-heartbeat" style="color: #be123c; margin-right: 10px;"></i>Health & Fitness Tools
+                </h1>
+                <p style="font-weight: 400; color: var(--text-muted); font-size: 1rem;">
+                    Monitor your health with our free tools. Calculate BMI, daily calories, body fat percentage, and
+                    more.
+                </p>
+            </div>
+
+            <!-- Search Results Container -->
+            <div id="searchResults" style="display:none; margin-bottom: 40px;">
+                <h2 class="section-header">Search Results</h2>
+                <div class="grid" id="searchResultsContent"></div>
+            </div>
+
+            <!-- Health Grid -->
+            <h2 class="section-header">Health & Fitness Tools List</h2>
+            <div class="grid" id="health-grid">
+                <div style="text-align:center; grid-column:1/-1;">Loading Health Tools...</div>
+            </div>
+
+            <!-- SEO Content Section -->
+            <section class="info-section" style="margin-top: 60px; border:none; padding: 0;">
+                <h2 style="font-size: 1.8rem; margin-bottom: 20px; color: var(--text-main);">Take Charge of Your
+                    Wellness</h2>
+                <div
+                    style="background: #fff; padding: 40px; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); border: 1px solid #e2e8f0;">
+
+                    <h3 style="color: #be123c; margin-bottom: 15px;">Data-Driven Health Tracking</h3>
+                    <p style="color: var(--text-muted); line-height: 1.7; margin-bottom: 25px;">
+                        Health isn't just a feeling; it's measurable. While no calculator replaces a doctor's advice,
+                        knowing your numbers empowers you to make better lifestyle choices. Whether you are looking to
+                        lose weight, gain muscle, or simply maintain your current physique, our tools provide the
+                        baseline data you need to succeed.
+                    </p>
+
+                    <div
+                        style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-bottom: 30px;">
+                        <div>
+                            <h4 style="font-weight: 700; color: var(--text-main); margin-bottom: 10px;"><i
+                                    class="fas fa-weight-hanging" style="margin-right: 10px;"></i> Weight Management
+                            </h4>
+                            <p style="color: var(--text-muted); font-size: 0.95rem;">
+                                The key to weight control is simple energy balance: "Calories In vs. Calories Out". Use
+                                our <strong>Calorie Calculator</strong> to find your TDEE (Total Daily Energy
+                                Expenditure) and set a realistic deficit. Pair this with our <strong>BMI
+                                    Calculator</strong> to understand where you stand relative to global health
+                                standards.
+                            </p>
+                        </div>
+                        <div>
+                            <h4 style="font-weight: 700; color: var(--text-main); margin-bottom: 10px;"><i
+                                    class="fas fa-heart-pulse" style="margin-right: 10px;"></i> Vital Health Metrics
+                            </h4>
+                            <p style="color: var(--text-muted); font-size: 0.95rem;">
+                                Beyond weight, understanding metrics like <strong>Body Fat Percentage</strong> and
+                                <strong>BMR (Basal Metabolic Rate)</strong> gives a clearer picture of your metabolism.
+                                Knowing your BMR helps you understand how much fuel your body needs just to exist,
+                                preventing dangerous crash diets.
+                            </p>
+                        </div>
+                    </div>
+
+                    <h3 style="color: #be123c; margin-bottom: 15px;">Healthy Living Tips</h3>
+
+                    <h3 style="color: #be123c; margin-bottom: 20px;">Precision Tools for a Healthier You</h3>
+                    <p style="color: var(--text-muted); line-height: 1.7; margin-bottom: 25px;">
+                        At FairCalculator, our health modules are built using internationally recognized formulas, such
+                        as the **Mifflin-St Jeor equation** for calories and the standard **Quetelet index** for BMI. We
+                        strip away the fitness industry jargon to give you raw, actionable data that you can take to
+                        your nutritionist or trainer to build a personalized plan.
+                    </p>
+
+                    <div
+                        style="margin-bottom: 30px; background: #fff1f2; padding: 30px; border-radius: 12px; border-left: 5px solid #be123c;">
+                        <h4 style="color: var(--text-main); margin-bottom: 15px;">Key Wellness Principles</h4>
+                        <ul
+                            style="color: var(--text-muted); display: grid; grid-template-columns: 1fr 1fr; gap: 15px; padding-left: 20px;">
+                            <li><strong>Hydration:</strong> Aim for 3-4 liters of water daily for metabolic health.</li>
+                            <li><strong>Sleep:</strong> 7-9 hours is essential for hormone regulation and recovery.
+                            </li>
+                            <li><strong>NEAT:</strong> Non-Exercise Activity Thermogenesis (moving throughout the day).
+                            </li>
+                            <li><strong>Protein:</strong> Essential for maintaining lean body mass during weight loss.
+                            </li>
+                        </ul>
+                    </div>
+
+                    <h3 style="color: #be123c; margin-bottom: 20px;">Frequently Asked Questions (FAQ)</h3>
+                    <div style="display: flex; flex-direction: column; gap: 20px;">
+                        <div>
+                            <h4 style="color: var(--text-main); margin-bottom: 5px;">Can I trust these calculators for
+                                medical diagnosis?</h4>
+                            <p style="color: var(--text-muted); font-size: 0.95rem; margin: 0;">No. These tools are
+                                designed for educational and tracking purposes only. Always consult a healthcare
+                                professional before starting any new diet or exercise regimen.</p>
+                        </div>
+                        <div>
+                            <h4 style="color: var(--text-main); margin-bottom: 5px;">How do I know my activity level for
+                                calorie counting?</h4>
+                            <p style="color: var(--text-muted); font-size: 0.95rem; margin: 0;">Sedentary means little
+                                to
+                                no exercise. Lightly active is 1-3 days/week. Moderately active is 3-5 days/week. Be
+                                honest with yourself to get the most accurate result.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <span
+                        style="font-weight: 800; font-size: 1.2rem; display:block; margin-bottom:10px; color:var(--text-main);">FairCalculator</span>
+                    <p>Simple, fast, and accurate online calculators.</p>
+                </div>
+                <div>
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../about.html">About</a></li>
+                        <li><a href="../contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="../legal/privacy-policy.html">Privacy</a></li>
+                        <li><a href="../legal/terms-of-service.html">Terms</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2026 FairCalculator. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>var ROOT_PATH = '../';</script>
+    <script src="../assets/js/data.js"></script>
+    <script src="../assets/js/search.js"></script>
+    <script src="../assets/js/mobile-menu.js"></script>
+
+    <!-- Load ONLY Health Calculators -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const grid = document.getElementById('health-grid');
+
+            if (typeof calculatorsData !== 'undefined' && grid) {
+                // Filter for Health tools
+                const healthTools = calculatorsData.filter(item =>
+                    item.category === 'Health' || item.type === 'health'
+                );
+
+                grid.innerHTML = ''; // Clear loading text
+
+                if (healthTools.length === 0) {
+                    grid.innerHTML = '<p>No health tools found.</p>';
+                    return;
+                }
+
+                healthTools.forEach(tool => {
+                    const card = document.createElement('a');
+
+                    // Fix pathing for sub-folder
+                    let relativeUrl = tool.url;
+                    if (!relativeUrl.startsWith('http') && !relativeUrl.startsWith('../')) {
+                        relativeUrl = '../' + relativeUrl;
+                    }
+
+                    card.href = relativeUrl;
+                    card.className = 'card';
+                    card.innerHTML = `
+                        <h3>
+                            <i class="fas ${tool.icon || 'fa-heartbeat'}" style="margin-right:8px; color:var(--primary);"></i>
+                            ${tool.name}
+                        </h3>
+                        <p>${tool.desc}</p>
+                    `;
+                    grid.appendChild(card);
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>

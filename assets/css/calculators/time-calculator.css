@@ -1,0 +1,202 @@
+/* Utility */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+/* Layout Overrides */
+.calculator-wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+    font-family: 'Inter', sans-serif;
+}
+
+.section-header-custom {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #ea580c;
+}
+
+.section-header-custom h1 {
+    font-size: 2.2rem;
+    font-weight: 800;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+}
+
+.calc-card {
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e2e8f0;
+    padding: 2.5rem;
+    overflow: hidden;
+}
+
+/* Form Layout */
+.form-grid {
+    display: grid;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: #1e293b;
+    font-size: 0.95rem;
+}
+
+.select-row {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.select-row select {
+    flex: 1;
+    padding: 0.75rem;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    background-color: #f8fafc;
+    font-size: 1rem;
+    color: #334155;
+    transition: all 0.2s;
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%2364748b'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.75rem center;
+    background-size: 1rem;
+}
+
+.select-row select:focus {
+    outline: none;
+    border-color: #f97316;
+    box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.1);
+    background-color: #fff;
+}
+
+.input-field {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-size: 1rem;
+    background-color: #f8fafc;
+    color: #334155;
+    transition: all 0.2s;
+}
+
+.input-field:focus {
+    outline: none;
+    border-color: #f97316;
+    box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.1);
+    background-color: #fff;
+}
+
+/* Time Input Grid */
+.time-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 12px;
+}
+
+.time-grid input {
+    text-align: center;
+}
+
+/* Button */
+.calculate-btn {
+    width: 100%;
+    padding: 1rem;
+    border: none;
+    border-radius: 50px;
+    background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: transform 0.1s, box-shadow 0.2s;
+    box-shadow: 0 4px 12px rgba(234, 88, 12, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.calculate-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(234, 88, 12, 0.4);
+}
+
+.calculate-btn:active {
+    transform: translateY(0);
+}
+
+/* Results Display */
+.results-wrapper {
+    margin-top: 2.5rem;
+    border-top: 2px dashed #fed7aa;
+    padding-top: 2.5rem;
+    display: none;
+    animation: slideDown 0.4s ease-out;
+}
+
+.main-result {
+    text-align: center;
+    background: #fff7ed;
+    border: 1px solid #ffedd5;
+    padding: 2.5rem;
+    border-radius: 12px;
+    margin-bottom: 2rem;
+}
+
+.hero-value {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #c2410c;
+    display: block;
+    line-height: 1.2;
+    margin-bottom: 0.5rem;
+}
+
+.sub-value {
+    color: #9a3412;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 640px) {
+    .calc-card {
+        padding: 1.5rem;
+    }
+
+    .hero-value {
+        font-size: 1.8rem;
+    }
+}

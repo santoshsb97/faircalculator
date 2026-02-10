@@ -1,0 +1,360 @@
+﻿<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Free Area Calculator. Use our fast, accurate tool to simplify math and geometry calculations. Get precise results and expert guidance on Fair Calculator.">
+    <link rel="canonical" href="https://www.faircalculator.com/calculators/area-calculator/">
+    <title>Area Calculator | Circle, Square, & Rectangle Formula</title>
+
+    <!-- Preload Critical Assets -->
+    <link rel="preload" href="../../assets/css/style.css" as="style">
+    <link rel="preload" href="../../assets/css/calculators/area-calculator.css" as="style">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        as="style">
+
+    <!-- 1. GLOBAL ASSETS (Go up 2 folders) -->
+    <link rel="icon" type="image/x-icon" href="../../assets/images/favicon.png">
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/calculators/area-calculator.css">
+
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Area Calculator",
+      "description": "Calculate area for geometric shapes like circles, triangles, and polygons.",
+      "applicationCategory": "MathCalculator",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    }
+    </script>
+
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BVENYYJ869"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-BVENYYJ869');
+    </script>
+    <script type="text/javascript">
+        (function (c, l, a, r, i, t, y) {
+            c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+            t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+            y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+        })(window, document, "clarity", "script", "udqk27trde");
+    </script>
+</head>
+
+<body>
+
+    <!-- 3. HEADER -->
+    <header class="header">
+        <div class="container header-inner">
+            <a href="../../index.html" class="logo">FairCalculator</a>
+            <div class="header-search">
+                <input type="text" id="searchInput" class="search-input" placeholder="Search tools..."
+                    aria-label="Search">
+            </div>
+            <button class="menu-btn" id="menuToggle"><i class="fas fa-bars"></i></button>
+        </div>
+    </header>
+
+    <!-- 4. CATEGORY BAR -->
+    <nav class="category-bar">
+        <div class="container">
+            <ul id="category-list">
+                <li><a href="../../index.html">All</a></li>
+                <li><a href="../../categories/finance-calculators.html">Finance</a></li>
+                <li><a href="../../categories/math-calculators.html"
+                        style="background:#eff6ff; color:#2563eb; border-color:#bfdbfe;">Math</a></li>
+                <li><a href="../../categories/health-calculators.html">Health</a></li>
+                <li><a href="../../categories/date-time-calculators.html">Date</a></li>
+                <li><a href="../../categories/unit-converters.html">Converters</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="mobile-close" id="closeMenu">&times;</button>
+        <div style="margin-top: 40px;">
+            <ul class="sidebar-list">
+                <li><a href="../../index.html">Home</a></li>
+                <li><a href="../../index.html#calculators">All Calculators</a></li>
+                <li><a href="../../about.html">About</a></li>
+                <li><a href="../../contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- 5. MAIN CONTENT -->
+    <main class="main-content">
+        <div class="container">
+
+            <!-- Breadcrumbs -->
+            <div style="margin-bottom: 20px; font-size: 0.9rem; color: #64748b;">
+                <a href="../../index.html" style="text-decoration: underline;">Home</a> /
+                <a href="../../categories/math-calculators.html" style="text-decoration: underline;">Math</a> /
+                <span style="font-weight: 600; color: #0f172a;">Area Calculator</span>
+            </div>
+
+            <!-- Search Results Placeholder -->
+            <div id="searchResults" style="display:none; margin-bottom: 40px;">
+                <div class="section-header">Search Results</div>
+                <div class="grid" id="searchResultsContent"></div>
+            </div>
+
+            <!-- TOOL CONTAINER -->
+            <div class="area-widget-container" id="tool-container">
+
+                <h1 class="section-header" style="justify-content:center; font-size: 2rem; margin-bottom: 30px;">
+                    <i class="fas fa-vector-square" style="color: #4f46e5; margin-right: 15px;"></i> Area Calculator &
+                    Geometric Formula Guide
+                </h1>
+
+                <div class="calculator-form">
+
+                    <div class="form-row">
+                        <div class="input-group" style="margin-bottom: 0;">
+                            <label for="shapeType">Select Shape</label>
+                            <select id="shapeType">
+                                <optgroup label="Basic Shapes">
+                                    <option value="circle">Circle</option>
+                                    <option value="square">Square</option>
+                                    <option value="rectangle">Rectangle</option>
+                                    <option value="triangle">Triangle</option>
+                                </optgroup>
+                                <optgroup label="Quadrilaterals">
+                                    <option value="parallelogram">Parallelogram</option>
+                                    <option value="trapezoid">Trapezoid</option>
+                                    <option value="rhombus">Rhombus</option>
+                                </optgroup>
+                                <optgroup label="Advanced">
+                                    <option value="ellipse">Ellipse</option>
+                                    <option value="sector">Sector</option>
+                                    <option value="polygon">Regular Polygon</option>
+                                </optgroup>
+                            </select>
+                        </div>
+                        <div class="input-group" style="margin-bottom: 0;">
+                            <label for="unitType">Unit</label>
+                            <select id="unitType">
+                                <option value="m">Meters (m)</option>
+                                <option value="cm">Centimeters (cm)</option>
+                                <option value="mm">Millimeters (mm)</option>
+                                <option value="ft">Feet (ft)</option>
+                                <option value="in">Inches (in)</option>
+                                <option value="km">Kilometers (km)</option>
+                                <option value="yd">Yards (yd)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div style="margin-top: 1.5rem; margin-bottom: 1.5rem; border-top: 1px solid #e2e8f0;"></div>
+
+                    <!-- 1. Triangle Options -->
+                    <div id="triangleOptions" class="sub-options">
+                        <p>Find area given...</p>
+                        <div class="radio-group">
+                            <label class="radio-label"><input type="radio" name="triMethod" value="bh" checked> Base and
+                                Height</label>
+                            <label class="radio-label"><input type="radio" name="triMethod" value="sss"> Three sides
+                                (SSS)</label>
+                            <label class="radio-label"><input type="radio" name="triMethod" value="sas"> Two sides +
+                                angle (SAS)</label>
+                            <label class="radio-label"><input type="radio" name="triMethod" value="asa"> Two angles +
+                                side (ASA)</label>
+                        </div>
+                    </div>
+
+                    <!-- 2. Rhombus Options -->
+                    <div id="rhombusOptions" class="sub-options">
+                        <p>Find area given...</p>
+                        <div class="radio-group">
+                            <label class="radio-label"><input type="radio" name="rhoMethod" value="sh" checked> Side and
+                                Height</label>
+                            <label class="radio-label"><input type="radio" name="rhoMethod" value="diags">
+                                Diagonals</label>
+                            <label class="radio-label"><input type="radio" name="rhoMethod" value="sa"> Side and any
+                                Angle</label>
+                        </div>
+                    </div>
+
+                    <!-- 3. Parallelogram Options -->
+                    <div id="parallelogramOptions" class="sub-options">
+                        <p>Find area given...</p>
+                        <div class="radio-group">
+                            <label class="radio-label"><input type="radio" name="paraMethod" value="bh" checked> Base
+                                and Height</label>
+                            <label class="radio-label"><input type="radio" name="paraMethod" value="sa"> Sides + Angle
+                                between them</label>
+                            <label class="radio-label"><input type="radio" name="paraMethod" value="da"> Diagonals +
+                                Angle between them</label>
+                        </div>
+                    </div>
+
+                    <div id="inputFields"></div>
+
+                    <button id="calculateBtn" class="calc-action-btn">
+                        CALCULATE AREA
+                    </button>
+                </div>
+
+                <!-- Result Container -->
+                <div id="resultContainer" class="result-container" style="display: none;">
+                    <h3>Calculated Area</h3>
+                    <div class="calc-result-display">
+                        <span id="result">--</span> <span id="resultUnit" class="unit-label"></span>
+                    </div>
+
+                    <!-- DIAGRAM CANVAS -->
+                    <div class="diagram-box">
+                        <h4>Shape Visualization</h4>
+                        <canvas id="shapeCanvas" width="300" height="200"></canvas>
+                    </div>
+
+                    <!-- STEP BY STEP SOLUTION -->
+                    <div id="stepsContainer" class="steps-box"></div>
+                </div>
+
+
+                <!-- Engaging SEO Guide -->
+                <div class="info-section">
+                    <h2>Mastering Geometric Area Calculations</h2>
+                    <article>
+                        <h3>Circle Calculations: Area & Circumference</h3>
+                        <p>Our <strong>area calculator circle</strong> functionality is designed to help you
+                            <strong>calculate the area of a circle with diameter</strong> or radius. Using the
+                            <strong>area circle formula</strong> (A = πr²), you can find the space inside any circular
+                            object. We also provide the <strong>area of circumference formula</strong> to relate these
+                            two metrics.
+                        </p>
+                        <p>Beyond area, <strong>calculating circumference</strong> is vital for many projects. Whether
+                            you need the <strong>circle circumference formula</strong> or a <strong>calculate
+                                circumference of a circle</strong> tool, our <strong>circle perimeter
+                                calculator</strong> has you covered. For construction, use our <strong>circle square
+                                footage calculator</strong> to find the area of circular patios or pools.</p>
+
+                        <h3>Volume of a Cylinder & Sphere Formulas</h3>
+                        <p>Looking for the <strong>volume of a cylinder</strong>? Use our <strong>calculate the volume
+                                of a cylinder</strong> section to find the capacity of tanks and pipes. We also include
+                            an <strong>area of a cylinder calculator</strong> and the <strong>cylinder surface area
+                                formula</strong> to help you <strong>find surface area of cylinder</strong> for painting
+                            or coating. If you need the <strong>area of cylinder formula</strong> for a specific
+                            project, we break it down step-by-step.</p>
+                        <p>For curved shapes, we provide the <strong>formula for volume of a sphere</strong> and the
+                            <strong>sphere surface area formula</strong>. Use the <strong>area of sphere
+                                formula</strong> to solve complex geometry problems. We also cover the <strong>cone
+                                volume formula</strong> for 3D modeling and construction.
+                        </p>
+
+                        <h3>Square Footage Calculator & Acreage Converters</h3>
+                        <p>Our <strong>square footage calculator</strong> is the ultimate tool for real estate and home
+                            improvement. Performing a <strong>calculation for square feet</strong> is the first step in
+                            any renovation. Use our <strong>square feet converter</strong> to switch between units, such
+                            as <strong>sq meters to square feet</strong> or <strong>square inches to square
+                                feet</strong>.</p>
+                        <p>For land measurement, knowing the <strong>square footage of an acre</strong> (43,560 sq ft)
+                            is essential. Our <strong>square feet to acre converter</strong> makes large-scale planning
+                            easy. If you are working with larger areas, you can also convert <strong>feet into square
+                                yards</strong> using our integrated logic. For simple shapes, the <strong>area formula
+                                of square</strong> (A = s²) is always available.</p>
+
+                        <h3>Rectangle & Triangle Area Formulas</h3>
+                        <p>To <strong>find area of rectangle</strong>, use the <strong>area formula of
+                                rectangle</strong> (Length × Width). This <strong>formula to calculate area of
+                                rectangle</strong> is the foundation of most floor planning. If you need to find the
+                            "capacity" of a 2D space, you might even look for the <strong>volume of a rectangle</strong>
+                            (though technically called area in 2D).</p>
+                        <p>For more complex geometry, use our <strong>triangle area formula</strong> (A = ½bh) to
+                            <strong>find the area of a triangle</strong>. Whether you need to <strong>calculate a
+                                triangle</strong> using Heron's formula or base/height, our <strong>formula for finding
+                                area of a triangle</strong> handles it all.
+                        </p>
+
+                        <h3>Advanced Shape Guide: Trapezoids, Rhombus, & Polygons</h3>
+                        <ul style="margin-left: 20px; color: #475569; line-height: 1.8;">
+                            <li><strong>Trapezoid:</strong> Use the <strong>area of a trapezoid</strong> formula or our
+                                <strong>calculate area of a trapezoid</strong> tool. The standard <strong>trapezoid
+                                    formula</strong> is A = ½(a+b)h.
+                            </li>
+                            <li><strong>Parallelogram:</strong> The <strong>area of a parallelogram formula</strong> is
+                                Base × Height, similar to a rectangle but slanted.</li>
+                            <li><strong>Rhombus:</strong> Find the <strong>area of rhombus formula</strong> or use the
+                                <strong>rhombus formula</strong> with diagonals (½ d‚ d‚‚).
+                            </li>
+                            <li><strong>Sectors & Ellipses:</strong> Use the <strong>area of the sector formula</strong>
+                                or find a <strong>calculate area of a sector</strong> tool. Our <strong>area of a sector
+                                    of a circle calculator</strong> and <strong>area of an ellipse calculator</strong>
+                                (with the <strong>area of ellipse formula</strong>) provide precision for curved
+                                geometry.</li>
+                            <li><strong>Polygons:</strong> We provide the <strong>area of a regular polygon
+                                    formula</strong> for any number of sides. Use our <strong>area of a hexagon
+                                    calculator</strong> or the <strong>area of pentagon formula</strong> for specialized
+                                projects.</li>
+                        </ul>
+                    </article>
+                </div>
+
+            </div>
+        </div>
+        <div id="related-calculators"></div>
+    </main>
+
+    <!-- 6. FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <span
+                        style="font-weight: 800; font-size: 1.2rem; display:block; margin-bottom:10px; color:var(--text-main);">FairCalculator</span>
+                    <p>Simple, fast, and accurate online calculators.</p>
+                </div>
+                <div>
+                    <h4>Menu</h4>
+                    <ul>
+                        <li><a href="../../index.html">Home</a></li>
+                        <li><a href="../../about.html">About Us</a></li>
+                        <li><a href="../../contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="../../legal/privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="../../legal/terms-of-service.html">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2025 FairCalculator. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- 7. SCRIPTS -->
+    <script>var ROOT_PATH = '../../';</script>
+    <script src="../../assets/js/data.js"></script>
+    <script src="../../assets/js/search.js"></script>
+    <script src="../../assets/js/mobile-menu.js"></script>
+
+    <!-- WIDGET JS LOGIC -->
+    <script src="../../assets/js/calculators/area-calculator.js" defer></script>
+
+    <script src="../../assets/js/related-calculators.js" defer></script>
+</body>
+
+</html>

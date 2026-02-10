@@ -1,0 +1,645 @@
+﻿<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frequency Calculator | Calculate Wave Frequency, Wavelength & Period</title>
+    <meta name="description"
+        content="Free Frequency Calculator for wave physics. Instantly calculate frequency, wavelength, period, and speed. Accurate results on Fair Calculator.">
+    <meta name="theme-color" content="#8b5cf6">
+    <link rel="canonical" href="https://www.faircalculator.com/calculators/frequency-calculator/">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.faircalculator.com/calculators/frequency-calculator/">
+    <meta property="og:title" content="Frequency Calculator - Wavelength, Period & Speed">
+    <meta property="og:description"
+        content="Calculate frequency, wavelength, period, or wave speed instantly. Perfect for physics students and audio engineers. Supports multiple units.">
+    <meta property="og:image" content="https://faircalculator.com/assets/images/social-share.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://www.faircalculator.com/calculators/frequency-calculator/">
+    <meta property="twitter:title" content="Frequency Calculator - Wavelength, Period & Speed">
+    <meta property="twitter:description"
+        content="Calculate frequency, wavelength, period, or wave speed instantly. Perfect for physics students and audio engineers. Supports multiple units.">
+    <meta property="twitter:image" content="https://faircalculator.com/assets/images/social-share.jpg">
+
+    <link rel="preload" href="../../assets/css/style.css" as="style">
+    <link rel="preload" href="../../assets/css/calculators/frequency-calculator.css" as="style">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        as="style">
+
+    <!-- Global Assets -->
+    <link rel="icon" type="image/x-icon" href="../../assets/images/favicon.png">
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/calculators/frequency-calculator.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BVENYYJ869"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-BVENYYJ869');
+    </script>
+    <script type="text/javascript">
+        (function (c, l, a, r, i, t, y) {
+            c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+            t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+            y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+        })(window, document, "clarity", "script", "udqk27trde");
+    </script>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+        <div class="container header-inner">
+            <a href="../../index.html" class="logo">FairCalculator</a>
+            <div class="header-search">
+                <input type="text" id="searchInput" class="search-input" placeholder="Search tools..."
+                    aria-label="Search">
+            </div>
+            <button class="menu-btn" id="menuToggle"><i class="fas fa-bars"></i></button>
+        </div>
+    </header>
+
+    <!-- CATEGORY BAR -->
+    <nav class="category-bar">
+        <div class="container">
+            <ul id="category-list">
+                <li><a href="../../index.html">All</a></li>
+                <li><a href="../../categories/finance-calculators.html">Finance</a></li>
+                <li><a href="../../categories/math-calculators.html">Math</a></li>
+                <li><a href="../../categories/health-calculators.html">Health</a></li>
+                <li><a href="../../categories/date-time-calculators.html">Date</a></li>
+                <li><a href="../../categories/unit-converters.html">Converters</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="mobile-close" id="closeMenu">&times;</button>
+        <div style="margin-top: 40px;">
+            <ul class="sidebar-list">
+                <li><a href="../../index.html">Home</a></li>
+                <li><a href="../../index.html#calculators">All Calculators</a></li>
+                <li><a href="../../about.html">About</a></li>
+                <li><a href="../../contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <main class="main-content">
+        <div class="container">
+
+            <!-- Breadcrumbs -->
+            <div style="margin-bottom: 20px; font-size: 0.9rem; color: #64748b;">
+                <a href="../../index.html" style="text-decoration: underline;">Home</a> /
+                <a href="../../categories/physics-calculators.html" style="text-decoration: underline;">Physics</a> /
+                <span style="font-weight: 600; color: #0f172a;">Frequency Calculator</span>
+            </div>
+
+            <div class="frequency-widget-container" id="tool-container">
+
+                <h1 class="section-header" style="justify-content:center; font-size: 2rem; margin-bottom: 30px;">
+                    <i class="fas fa-wave-square" style="color: #8b5cf6; margin-right: 15px;"></i> Frequency Calculator
+                </h1>
+
+                <!-- Definition Paragraph -->
+                <p
+                    style="text-align: center; max-width: 700px; margin: 0 auto 30px; font-size: 1.1rem; color: #475569; line-height: 1.6;">
+                    Calculate wave frequency, wavelength, period, and speed using the fundamental wave equation
+                    <strong>v = f Ã— Î»</strong>. Perfect for physics students, engineers, and anyone working with
+                    electromagnetic or mechanical waves.
+                </p>
+
+                <!-- Calculator Form -->
+                <div class="calculator-form">
+
+                    <!-- Frequency Input -->
+                    <div class="input-group">
+                        <label for="frequency">Frequency</label>
+                        <div class="input-with-unit">
+                            <input type="number" id="frequency" class="input-field" placeholder="Enter frequency"
+                                step="any">
+                            <select id="frequencyUnit" class="unit-select">
+                                <option value="Hz">Hz</option>
+                                <option value="kHz">kHz</option>
+                                <option value="MHz">MHz</option>
+                                <option value="GHz">GHz</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Wavelength Input -->
+                    <div class="input-group">
+                        <label for="wavelength">Wavelength</label>
+                        <div class="input-with-unit">
+                            <input type="number" id="wavelength" class="input-field" placeholder="Enter wavelength"
+                                step="any">
+                            <select id="wavelengthUnit" class="unit-select">
+                                <option value="m">m</option>
+                                <option value="cm">cm</option>
+                                <option value="mm">mm</option>
+                                <option value="Î¼m">µm</option>
+                                <option value="nm">nm</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Wave Speed Input -->
+                    <div class="input-group">
+                        <label for="speed">Wave Speed</label>
+                        <div class="input-with-unit">
+                            <input type="number" id="speed" class="input-field" placeholder="Enter wave speed"
+                                step="any" value="299792458">
+                            <select id="speedUnit" class="unit-select">
+                                <option value="m/s">m/s</option>
+                                <option value="km/s">km/s</option>
+                            </select>
+                        </div>
+                        <div class="preset-buttons">
+                            <button class="preset-btn active" data-speed="299792458">Speed of Light (c)</button>
+                            <button class="preset-btn" data-speed="343">Sound in Air</button>
+                            <button class="preset-btn" data-speed="1480">Sound in Water</button>
+                        </div>
+                    </div>
+
+                    <!-- Period Input -->
+                    <div class="input-group">
+                        <label for="period">Period</label>
+                        <div class="input-with-unit">
+                            <input type="number" id="period" class="input-field" placeholder="Enter period" step="any">
+                            <select id="periodUnit" class="unit-select">
+                                <option value="s">s</option>
+                                <option value="ms">ms</option>
+                                <option value="Î¼s">µs</option>
+                                <option value="ns">ns</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <button id="calculateBtn" class="calc-action-btn">Calculate</button>
+                </div>
+
+                <!-- Results -->
+                <div id="resultContainer" class="result-container" aria-live="polite">
+                    <h3 style="margin-bottom: 20px; color: #111827; text-align: center;">Calculation Results</h3>
+
+                    <div class="result-grid">
+                        <div class="result-card frequency">
+                            <h4>Frequency</h4>
+                            <div class="result-value" id="resultFrequency">--</div>
+                        </div>
+                        <div class="result-card wavelength">
+                            <h4>Wavelength</h4>
+                            <div class="result-value" id="resultWavelength">--</div>
+                        </div>
+                        <div class="result-card period">
+                            <h4>Period</h4>
+                            <div class="result-value" id="resultPeriod">--</div>
+                        </div>
+                        <div class="result-card speed">
+                            <h4>Wave Speed</h4>
+                            <div class="result-value" id="resultSpeed">--</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Educational Content -->
+                <article>
+                    <h2>Wave Physics Formulas</h2>
+
+                    <div class="formula-box">
+                        <h4>Fundamental Wave Equation</h4>
+                        <div class="formula">v = f Ã— Î»</div>
+                        <p style="margin-top: 10px; color: #475569;">Where: v = wave speed, f = frequency, Î» =
+                            wavelength</p>
+                    </div>
+
+                    <div class="formula-box">
+                        <h4>Frequency and Period Relationship</h4>
+                        <div class="formula">f = 1 / T</div>
+                        <p style="margin-top: 10px; color: #475569;">Where: f = frequency, T = period</p>
+                    </div>
+
+                    <h3>What is Wave Frequency?</h3>
+                    <p>Frequency is the number of complete wave cycles that pass a point per unit time. It is measured
+                        in Hertz (Hz), where 1 Hz equals one cycle per second. This <strong>frequency
+                            calculator</strong>
+                        helps you understand the relationships between frequency, wavelength, period, and wave speed.
+                        For related calculations, check out our <a href="../wavelength-calculator/"
+                            style="color: var(--primary); text-decoration: underline;">wavelength calculator</a> or
+                        explore more <a href="../../categories/physics-calculators.html"
+                            style="color: var(--primary); text-decoration: underline;">physics calculators</a>.
+                    </p>
+
+                    <h3>Common Wave Types and Their Frequencies</h3>
+                    <ul>
+                        <li><strong>Radio Waves:</strong> 3 kHz to 300 GHz</li>
+                        <li><strong>Visible Light:</strong> 430-770 THz (wavelength 390-700 nm)</li>
+                        <li><strong>Sound Waves:</strong> 20 Hz to 20 kHz (human hearing range)</li>
+                        <li><strong>Ultrasound:</strong> Above 20 kHz</li>
+                        <li><strong>Infrasound:</strong> Below 20 Hz</li>
+                    </ul>
+
+                    <h3>Wave Speed in Different Media</h3>
+                    <ul>
+                        <li><strong>Light in Vacuum:</strong> 299,792,458 m/s (speed of light, c)</li>
+                        <li><strong>Sound in Air (20Â°C):</strong> ~343 m/s</li>
+                        <li><strong>Sound in Water:</strong> ~1,480 m/s</li>
+                        <li><strong>Sound in Steel:</strong> ~5,960 m/s</li>
+                    </ul>
+
+                    <h2 style="margin-top: 40px;">How to Use This Calculator</h2>
+                    <p>This <strong>wave frequency calculator</strong> can determine any wave property when you provide
+                        at least two values:</p>
+                    <ol>
+                        <li>Enter any two known values (frequency, wavelength, speed, or period)</li>
+                        <li>Select the appropriate units for each value</li>
+                        <li>Click "Calculate" to find the remaining properties</li>
+                        <li>Use the preset buttons for common wave speeds like light or sound</li>
+                    </ol>
+                </article>
+
+                <!-- FAQ Section -->
+                <section class="faq-section" style="max-width: 800px; margin: 40px auto;">
+                    <h2>Frequently Asked Questions</h2>
+
+                    <div class="faq-item">
+                        <div class="faq-question">1. What is the relationship between frequency and wavelength?</div>
+                        <div class="faq-answer">Frequency and wavelength are inversely proportional. As frequency
+                            increases, wavelength decreases, and vice versa. This relationship is described by the
+                            equation: v = f Ã— Î», where v is wave speed.</div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">2. How do I convert between frequency units?</div>
+                        <div class="faq-answer">Common conversions: 1 kHz = 1,000 Hz; 1 MHz = 1,000,000 Hz; 1 GHz =
+                            1,000,000,000 Hz. Our calculator handles these conversions automatically.</div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">3. What is the speed of light?</div>
+                        <div class="faq-answer">The speed of light in vacuum is exactly 299,792,458 meters per second
+                            (approximately 3 Ã— 10â¸ m/s). This is the maximum speed at which energy and information
+                            can
+                            travel.</div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">4. Can this calculator be used for sound waves?</div>
+                        <div class="faq-answer">Yes! Use the "Sound in Air" or "Sound in Water" presets to set the
+                            appropriate wave speed, then enter either frequency or wavelength to calculate the
+                            corresponding properties.</div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">5. What is period in wave physics?</div>
+                        <div class="faq-answer">Period (T) is the time it takes for one complete wave cycle to pass a
+                            point. It's the reciprocal of frequency: T = 1/f. If a wave has a frequency of 2 Hz, its
+                            period is 0.5 seconds.</div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">6. How does wave speed affect frequency and wavelength?</div>
+                        <div class="faq-answer">Wave speed determines the relationship between frequency and wavelength.
+                            For a constant wave speed, higher frequencies result in shorter wavelengths, and lower
+                            frequencies produce longer wavelengths. This is why radio waves (low frequency) have long
+                            wavelengths while gamma rays (high frequency) have extremely short wavelengths.</div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">7. What's the difference between electromagnetic and mechanical waves?
+                        </div>
+                        <div class="faq-answer">Electromagnetic waves (like light and radio waves) can travel through
+                            vacuum at the speed of light (299,792,458 m/s), while mechanical waves (like sound) require
+                            a medium and travel at much slower speeds. Sound travels at ~343 m/s in air and ~1,480 m/s
+                            in water.</div>
+                    </div>
+                </section>
+            </div>
+        </div>
+        <div id="related-calculators"></div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <span
+                        style="font-weight: 800; font-size: 1.2rem; display:block; margin-bottom:10px; color:var(--text-main);">FairCalculator</span>
+                    <p>Simple, fast, and accurate online calculators.</p>
+                </div>
+                <div>
+                    <h4>Menu</h4>
+                    <ul>
+                        <li><a href="../../index.html">Home</a></li>
+                        <li><a href="../../about.html">About Us</a></li>
+                        <li><a href="../../contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="../../legal/privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="../../legal/terms-of-service.html">Terms</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2025 FairCalculator. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Frequency Calculator",
+      "applicationCategory": "UtilityApplication",
+      "applicationSubCategory": "Physics Calculator",
+      "operatingSystem": "Any",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is the relationship between frequency and wavelength?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Frequency and wavelength are inversely proportional. As frequency increases, wavelength decreases, and vice versa. This relationship is described by the equation: v = f Ã— Î», where v is wave speed."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the speed of light?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The speed of light in vacuum is exactly 299,792,458 meters per second (approximately 3 Ã— 10â¸ m/s). This is the maximum speed at which energy and information can travel."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does wave speed affect frequency and wavelength?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Wave speed determines the relationship between frequency and wavelength. For a constant wave speed, higher frequencies result in shorter wavelengths, and lower frequencies produce longer wavelengths."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What's the difference between electromagnetic and mechanical waves?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Electromagnetic waves (like light and radio waves) can travel through vacuum at the speed of light (299,792,458 m/s), while mechanical waves (like sound) require a medium and travel at much slower speeds."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <script>
+        var ROOT_PATH = '../../';
+    </script>
+    <script src="../../assets/js/data.js"></script>
+    <script src="../../assets/js/search.js"></script>
+    <script src="../../assets/js/mobile-menu.js"></script>
+
+    <!-- Calculator Logic -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // DOM Elements
+            const frequencyInput = document.getElementById('frequency');
+            const wavelengthInput = document.getElementById('wavelength');
+            const speedInput = document.getElementById('speed');
+            const periodInput = document.getElementById('period');
+
+            const frequencyUnit = document.getElementById('frequencyUnit');
+            const wavelengthUnit = document.getElementById('wavelengthUnit');
+            const speedUnit = document.getElementById('speedUnit');
+            const periodUnit = document.getElementById('periodUnit');
+
+            const calculateBtn = document.getElementById('calculateBtn');
+            const resultContainer = document.getElementById('resultContainer');
+
+            const resultFrequency = document.getElementById('resultFrequency');
+            const resultWavelength = document.getElementById('resultWavelength');
+            const resultPeriod = document.getElementById('resultPeriod');
+            const resultSpeed = document.getElementById('resultSpeed');
+
+            const presetBtns = document.querySelectorAll('.preset-btn');
+
+            // Unit conversion factors to base units
+            const frequencyUnits = {
+                'Hz': 1,
+                'kHz': 1e3,
+                'MHz': 1e6,
+                'GHz': 1e9
+            };
+
+            const wavelengthUnits = {
+                'm': 1,
+                'cm': 0.01,
+                'mm': 0.001,
+                'µm': 1e-6,
+                'nm': 1e-9
+            };
+
+            const speedUnits = {
+                'm/s': 1,
+                'km/s': 1000
+            };
+
+            const periodUnits = {
+                's': 1,
+                'ms': 0.001,
+                'µs': 1e-6,
+                'ns': 1e-9
+            };
+
+            // Preset Speed Buttons
+            presetBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const speed = parseFloat(btn.dataset.speed);
+                    speedInput.value = speed;
+                    speedUnit.value = 'm/s';
+
+                    presetBtns.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                });
+            });
+
+            // Clear preset state on manual speed input (FIX #5: UI state drift)
+            speedInput.addEventListener('input', () => {
+                presetBtns.forEach(b => b.classList.remove('active'));
+            });
+
+            // Calculate Button
+            calculateBtn.addEventListener('click', () => {
+                // FIX #1: Use proper null checks instead of truthy checks to handle 0 values
+                const freq = frequencyInput.value !== '' ? parseFloat(frequencyInput.value) * frequencyUnits[frequencyUnit.value] : null;
+                const wl = wavelengthInput.value !== '' ? parseFloat(wavelengthInput.value) * wavelengthUnits[wavelengthUnit.value] : null;
+                const spd = speedInput.value !== '' ? parseFloat(speedInput.value) * speedUnits[speedUnit.value] : null;
+                const per = periodInput.value !== '' ? parseFloat(periodInput.value) * periodUnits[periodUnit.value] : null;
+
+                // Check for valid input values
+                const hasFreq = freq !== null;
+                const hasWl = wl !== null;
+                const hasSpd = spd !== null;
+                const hasPer = per !== null;
+
+                // FIX #4: Division by zero guards
+                if ((hasFreq && freq === 0) || (hasPer && per === 0)) {
+                    alert('Frequency and period must be greater than zero.');
+                    return;
+                }
+
+                let frequency, wavelength, speed, period;
+
+                // FIX #3: Consistency check for redundant inputs
+                if (hasFreq && hasWl && hasSpd) {
+                    const calculatedSpeed = freq * wl;
+                    if (Math.abs(calculatedSpeed - spd) / spd > 0.01) {
+                        alert('Warning: Provided values are inconsistent. The relationship v = f Ã— Î» does not hold.\n\nCalculated speed: ' + calculatedSpeed.toFixed(2) + ' m/s\nProvided speed: ' + spd.toFixed(2) + ' m/s');
+                        return;
+                    }
+                }
+
+                // Determine what to calculate based on inputs (FIX #1: using proper null checks)
+                if (hasFreq && hasWl) {
+                    // Calculate speed and period
+                    frequency = freq;
+                    wavelength = wl;
+                    speed = frequency * wavelength;
+                    period = 1 / frequency;
+                } else if (hasFreq && hasSpd) {
+                    // Calculate wavelength and period
+                    frequency = freq;
+                    speed = spd;
+                    wavelength = speed / frequency;
+                    period = 1 / frequency;
+                } else if (hasFreq && hasPer) {
+                    // FIX #2: Require speed input instead of silently defaulting
+                    if (!hasSpd) {
+                        alert('Speed is required to calculate wavelength. Please enter a wave speed or use one of the preset buttons.');
+                        return;
+                    }
+                    frequency = freq;
+                    period = per;
+                    speed = spd;
+                    wavelength = speed / frequency;
+                } else if (hasWl && hasSpd) {
+                    // Calculate frequency and period
+                    wavelength = wl;
+                    speed = spd;
+                    frequency = speed / wavelength;
+                    period = 1 / frequency;
+                } else if (hasWl && hasPer) {
+                    // Calculate frequency and speed
+                    wavelength = wl;
+                    period = per;
+                    frequency = 1 / period;
+                    speed = frequency * wavelength;
+                } else if (hasSpd && hasPer) {
+                    // Calculate frequency and wavelength
+                    speed = spd;
+                    period = per;
+                    frequency = 1 / period;
+                    wavelength = speed / frequency;
+                } else if (hasFreq) {
+                    // Only frequency provided - require speed
+                    if (!hasSpd) {
+                        alert('Speed is required to calculate wavelength. Please enter a wave speed or use one of the preset buttons.');
+                        return;
+                    }
+                    frequency = freq;
+                    speed = spd;
+                    wavelength = speed / frequency;
+                    period = 1 / frequency;
+                } else {
+                    alert('Please enter at least two valid values to calculate wave properties.');
+                    return;
+                }
+
+                // Display results
+                displayResult(frequency, wavelength, speed, period);
+            });
+
+            function displayResult(freq, wl, spd, per) {
+                // Format frequency
+                if (freq >= 1e9) {
+                    resultFrequency.textContent = (freq / 1e9).toFixed(4) + ' GHz';
+                } else if (freq >= 1e6) {
+                    resultFrequency.textContent = (freq / 1e6).toFixed(4) + ' MHz';
+                } else if (freq >= 1e3) {
+                    resultFrequency.textContent = (freq / 1e3).toFixed(4) + ' kHz';
+                } else {
+                    resultFrequency.textContent = freq.toFixed(4) + ' Hz';
+                }
+
+                // Format wavelength
+                if (wl >= 1) {
+                    resultWavelength.textContent = wl.toFixed(6) + ' m';
+                } else if (wl >= 0.01) {
+                    resultWavelength.textContent = (wl * 100).toFixed(4) + ' cm';
+                } else if (wl >= 0.001) {
+                    resultWavelength.textContent = (wl * 1000).toFixed(4) + ' mm';
+                } else if (wl >= 1e-6) {
+                    resultWavelength.textContent = (wl * 1e6).toFixed(4) + ' µm';
+                } else {
+                    resultWavelength.textContent = (wl * 1e9).toFixed(4) + ' nm';
+                }
+
+                // Format period
+                if (per >= 1) {
+                    resultPeriod.textContent = per.toFixed(6) + ' s';
+                } else if (per >= 1e-3) {
+                    resultPeriod.textContent = (per * 1e3).toFixed(4) + ' ms';
+                } else if (per >= 1e-6) {
+                    resultPeriod.textContent = (per * 1e6).toFixed(4) + ' µs';
+                } else {
+                    resultPeriod.textContent = (per * 1e9).toFixed(4) + ' ns';
+                }
+
+                // Format speed
+                if (spd >= 1000) {
+                    resultSpeed.textContent = (spd / 1000).toFixed(2) + ' km/s';
+                } else {
+                    resultSpeed.textContent = spd.toFixed(2) + ' m/s';
+                }
+
+                resultContainer.style.display = 'block';
+                resultContainer.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }
+        });
+    </script>
+
+    <script src="../../assets/js/related-calculators.js" defer></script>
+</body>
+
+</html>

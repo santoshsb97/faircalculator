@@ -1,0 +1,224 @@
+/* Widget Container */
+.sq-widget-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Calculator Form */
+.calculator-form {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e2e8f0;
+    margin-bottom: 2rem;
+}
+
+/* Radical Input Visualization */
+.radical-wrapper {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    font-size: 2rem;
+    color: var(--text-main);
+    margin-bottom: 1.5rem;
+    padding: 30px;
+    background: #f8fafc;
+    border-radius: 12px;
+    border: 1px solid #cbd5e1;
+}
+
+.root-index {
+    font-size: 1rem;
+    margin-bottom: 1.4rem;
+    margin-right: -8px;
+    color: #64748b;
+    font-weight: 700;
+    z-index: 2;
+}
+
+.radical-symbol {
+    font-size: 3.5rem;
+    line-height: 0.8;
+    color: var(--text-main);
+    font-weight: 300;
+}
+
+.radicand {
+    border-top: 3px solid var(--text-main);
+    padding: 5px 15px 0;
+    margin-left: -2px;
+    min-width: 60px;
+    text-align: center;
+    font-weight: 700;
+}
+
+/* Inputs */
+.input-wrapper {
+    margin-bottom: 1.5rem;
+}
+
+.input-wrapper label {
+    display: block;
+    font-weight: 600;
+    color: var(--text-main);
+    margin-bottom: 0.5rem;
+}
+
+.input-field,
+select.input-field {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.2s;
+    background: #fff;
+}
+
+.input-field:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+}
+
+/* Action Button */
+.calc-action-btn {
+    width: 100%;
+    padding: 1.2rem;
+    background: linear-gradient(135deg, #4f46e5 0%, #4338ca 100%);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 4px 15px rgba(79, 70, 229, 0.3);
+}
+
+.calc-action-btn:hover {
+    transform: translateY(-2px);
+}
+
+/* --- RESULT SECTION --- */
+.result-container {
+    margin-top: 2rem;
+    display: none;
+    animation: fadeIn 0.4s ease-out;
+}
+
+/* Hero Result */
+.hero-card {
+    background: #10b981;
+    color: white;
+    padding: 2rem;
+    border-radius: 12px;
+    text-align: center;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+}
+
+.hero-label {
+    opacity: 0.9;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+}
+
+.hero-value {
+    font-size: 2.5rem;
+    font-weight: 800;
+    word-break: break-all;
+}
+
+/* Steps Box */
+.steps-box {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 1.5rem;
+    text-align: left;
+}
+
+.steps-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text-main);
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #f1f5f9;
+    padding-bottom: 10px;
+}
+
+.step-item {
+    margin-bottom: 10px;
+    font-family: 'Courier New', monospace;
+    color: #334155;
+    font-size: 1.1rem;
+}
+
+/* SEO Content */
+.info-section {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    margin-top: 3rem;
+}
+
+.info-section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--text-main);
+    border-bottom: 2px solid #f1f5f9;
+    padding-bottom: 0.5rem;
+}
+
+.info-section p {
+    margin-bottom: 1rem;
+    line-height: 1.6;
+    color: var(--text-muted);
+}
+
+.info-section ul {
+    padding-left: 20px;
+    margin-bottom: 1.5rem;
+    color: var(--text-muted);
+}
+
+.info-section li {
+    margin-bottom: 8px;
+}
+
+/* FAQ */
+.faq-item {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.faq-question {
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: var(--text-main);
+}
+
+.faq-answer {
+    color: var(--text-muted);
+    margin: 0;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

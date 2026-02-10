@@ -1,0 +1,732 @@
+﻿<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spring Constant Calculator | Hooke's Law & Stiffness</title>
+    <meta name="description"
+        content="Free Hooke's Law calculator. Calculate spring constant (k), spring force (F), or displacement (x) instantly. Understand spring stiffness and elasticity.">
+    <meta name="theme-color" content="#8b5cf6">
+    <link rel="canonical" href="https://www.faircalculator.com/calculators/spring-constant-calculator/">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.faircalculator.com/calculators/spring-constant-calculator/">
+    <meta property="og:title" content="Spring Constant Calculator | Hooke's Law & Stiffness">
+    <meta property="og:description"
+        content="Free Hooke's Law calculator. Calculate spring constant (k), spring force (F), or displacement (x) instantly. Understand spring stiffness and elasticity.">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://www.faircalculator.com/calculators/spring-constant-calculator/">
+    <meta property="twitter:title" content="Spring Constant Calculator | Hooke's Law & Stiffness">
+    <meta property="twitter:description"
+        content="Free Hooke's Law calculator. Calculate spring constant (k), spring force (F), or displacement (x) instantly. Understand spring stiffness and elasticity.">
+
+    <!-- Preload Critical Assets -->
+    <link rel="preload" href="../../assets/css/style.css" as="style">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        as="style">
+
+    <!-- Global Assets -->
+    <link rel="icon" type="image/x-icon" href="../../assets/images/favicon.png">
+    <link rel="stylesheet" href="../../assets/css/style.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="preload" href="../../assets/css/calculators/spring-constant-calculator.css" as="style">
+    <link rel="stylesheet" href="../../assets/css/calculators/spring-constant-calculator.css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BVENYYJ869"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-BVENYYJ869');
+    </script>
+    <script type="text/javascript">
+        (function (c, l, a, r, i, t, y) {
+            c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+            t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+            y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+        })(window, document, "clarity", "script", "udqk27trde");
+    </script>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+        <div class="container header-inner">
+            <a href="../../index.html" class="logo">FairCalculator</a>
+            <div class="header-search">
+                <input type="text" id="searchInput" class="search-input" placeholder="Search tools..."
+                    aria-label="Search">
+            </div>
+            <button class="menu-btn" id="menuToggle"><i class="fas fa-bars"></i></button>
+        </div>
+    </header>
+
+    <!-- CATEGORY BAR -->
+    <nav class="category-bar">
+        <div class="container">
+            <ul id="category-list">
+                <li><a href="../../index.html">All</a></li>
+                <li><a href="../../categories/finance-calculators.html">Finance</a></li>
+                <li><a href="../../categories/math-calculators.html">Math</a></li>
+                <li><a href="../../categories/physics-calculators.html">Physics</a></li>
+                <li><a href="../../categories/health-calculators.html">Health</a></li>
+                <li><a href="../../categories/date-time-calculators.html">Date</a></li>
+                <li><a href="../../categories/unit-converters.html">Converters</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="mobile-close" id="closeMenu">&times;</button>
+        <div style="margin-top: 40px;">
+            <ul class="sidebar-list">
+                <li><a href="../../index.html">Home</a></li>
+                <li><a href="../../index.html#calculators">All Calculators</a></li>
+                <li><a href="../../about.html">About</a></li>
+                <li><a href="../../contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <main class="main-content">
+        <div class="container">
+
+            <!-- Breadcrumbs -->
+            <div style="margin-bottom: 20px; font-size: 0.9rem; color: #64748b;">
+                <a href="../../index.html" style="text-decoration: underline;">Home</a> /
+                <a href="../../categories/physics-calculators.html" style="text-decoration: underline;">Physics</a> /
+                <span style="font-weight: 600; color: #0f172a;">Spring Constant Calculator</span>
+            </div>
+
+            <div class="calculator-widget-container" id="tool-container">
+
+                <h1 class="section-header" style="justify-content:center; font-size: 2rem; margin-bottom: 30px;">
+                    <i class="fas fa-compress-alt" style="color: #8b5cf6; margin-right: 15px;"></i> Spring Constant
+                    Calculator
+                </h1>
+
+                <!-- Definition Paragraph -->
+                <p
+                    style="text-align: center; max-width: 700px; margin: 0 auto 30px; font-size: 1.1rem; color: #475569; line-height: 1.6;">
+                    Calculate spring constant (stiffness), restoring force, or displacement using <strong>Hooke's
+                        Law</strong> (F = -kx). Essential for mechanical engineering and physics students.
+                </p>
+
+                <!-- Calculator Form -->
+                <div class="calculator-form">
+
+                    <!-- Spring Type Selector -->
+                    <div class="input-group">
+                        <label for="springType">Spring Type</label>
+                        <select id="springType" class="input-field" style="max-width: 100%; cursor: pointer;">
+                            <option value="compression">Compression Spring (Linear)</option>
+                            <option value="extension">Extension Spring (Linear)</option>
+                            <option value="torsion">Torsion Spring (Angular)</option>
+                        </select>
+                        <div id="extensionNote"
+                            style="display:none; font-size: 0.85rem; color: #d97706; background: #fffbeb; padding: 8px; border-radius: 6px; margin-top: 8px; border: 1px solid #fcd34d;">
+                            <i class="fas fa-info-circle"></i> <strong>Note:</strong> Standard extension springs often
+                            have initial tension (preload). This calculator assumes the spring is already open or
+                            ignores preload.
+                        </div>
+                    </div>
+
+                    <!-- Force Input (Linear) -->
+                    <div class="input-group linear-field">
+                        <label for="force">Spring Force (F)</label>
+                        <div class="input-with-unit">
+                            <input type="number" id="force" class="input-field" placeholder="Enter force" step="any">
+                            <select id="forceUnit" class="unit-select">
+                                <option value="N">N</option>
+                                <option value="kN">kN</option>
+                                <option value="lbf">lbf</option>
+                                <option value="dyne">dyne</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Torque Input (Angular/Torsion) -->
+                    <div class="input-group torsion-field" style="display:none;">
+                        <label for="torque">Torque (τ)</label>
+                        <div class="input-with-unit">
+                            <input type="number" id="torque" class="input-field" placeholder="Enter torque" step="any">
+                            <select id="torqueUnit" class="unit-select">
+                                <option value="Nm">N·m</option>
+                                <option value="lbf-in">lbf·in</option>
+                                <option value="Nmm">N·mm</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Spring Constant Input (Shared Label changed dynamically) -->
+                    <div class="input-group">
+                        <label id="constantLabel" for="constant">Spring Constant (k)</label>
+                        <div class="input-with-unit">
+                            <input type="number" id="constant" class="input-field" placeholder="Enter stiffness (k)"
+                                step="any">
+                            <!-- Linear Units -->
+                            <select id="constantUnit" class="unit-select linear-field">
+                                <option value="N/m">N/m</option>
+                                <option value="N/mm">N/mm</option>
+                                <option value="kN/m">kN/m</option>
+                                <option value="lbf/in">lbf/in</option>
+                            </select>
+                            <!-- Torsion Units -->
+                            <select id="torsionConstantUnit" class="unit-select torsion-field" style="display:none;">
+                                <option value="Nm/rad">N·m/rad</option>
+                                <option value="Nm/deg">N·m/deg</option>
+                                <option value="lbf-in/rad">lbf·in/rad</option>
+                                <option value="lbf-in/deg">lbf·in/deg</option>
+                            </select>
+                        </div>
+                        <small id="kappaNote" class="torsion-field"
+                            style="display:none; color:#64748b; margin-top:4px;">
+                            * κ (Kappa) represents rotational stiffness, analogous to k for linear springs.
+                        </small>
+                    </div>
+
+                    <!-- Displacement Input (Linear) -->
+                    <div class="input-group linear-field">
+                        <label for="displacement">Displacement / Extension (x)</label>
+                        <div class="input-with-unit">
+                            <input type="number" id="displacement" class="input-field" placeholder="Enter displacement"
+                                step="any">
+                            <select id="displacementUnit" class="unit-select">
+                                <option value="m">m</option>
+                                <option value="cm">cm</option>
+                                <option value="mm">mm</option>
+                                <option value="in">in</option>
+                                <option value="ft">ft</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Angular Displacement (Torsion) -->
+                    <div class="input-group torsion-field" style="display:none;">
+                        <label for="angle">Angular Displacement (θ)</label>
+                        <div class="input-with-unit">
+                            <input type="number" id="angle" class="input-field" placeholder="Enter angle" step="any">
+                            <select id="angleUnit" class="unit-select">
+                                <option value="rad">rad</option>
+                                <option value="deg">deg</option>
+                                <option value="rev">rev</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <button id="calculateBtn" class="calc-action-btn">Calculate</button>
+                    <button id="clearBtn" class="calc-action-btn"
+                        style="background:#ef4444; margin-top:10px; display:none;">Clear</button>
+                </div>
+
+                <!-- Results -->
+                <div id="resultContainer" class="result-container" aria-live="polite">
+                    <h3 style="margin-bottom: 20px; color: #111827; text-align: center;">Calculation Results</h3>
+
+                    <div class="result-grid">
+                        <div class="result-card force">
+                            <h4 id="resLabelForce">Force (F)</h4>
+                            <div class="result-value" id="resultForce">--</div>
+                        </div>
+                        <div class="result-card constant">
+                            <h4 id="resLabelConstant">Spring Constant (k)</h4>
+                            <div class="result-value" id="resultConstant">--</div>
+                        </div>
+                        <div class="result-card displacement">
+                            <h4 id="resLabelDisplacement">Displacement (x)</h4>
+                            <div class="result-value" id="resultDisplacement">--</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Educational Content -->
+                <article>
+                    <h2>About Hooke's Law & Torsion</h2>
+
+                    <h3>What is Spring Constant?</h3>
+                    <p>
+                        The <strong>Spring Constant (k)</strong>, also known as stiffness, measures how difficult it is
+                        to stretch or compress a spring.
+                        It represents the force required per unit of displacement. A higher <em>k</em> value means a
+                        stiffer spring that requires more force to deform,
+                        while a lower <em>k</em> value means a looser, more flexible spring.
+                    </p>
+
+                    <h3>Types of Springs</h3>
+
+
+                    <ul style="margin-bottom: 20px;">
+                        <li><strong>Compression Springs:</strong> Resist being compressed and force is proportional to
+                            linear displacement (F = kx).</li>
+                        <li><strong>Extension Springs:</strong> Resist being stretched and force is proportional to
+                            elongation (F = kx).</li>
+                        <li><strong>Torsion Springs:</strong> Work by twisting. They resist rotation and torque is
+                            proportional to angular displacement (τ = κθ).</li>
+                    </ul>
+
+                    <div class="formula-box">
+                        <h4>Linear Spring Equation</h4>
+                        <div class="formula">F = kx</div>
+                        <p style="margin-top: 10px; color: #475569;">
+                            Ideal for Compression & Extension springs.<br>
+                            F: Force (N), k: Constant (N/m), x: Displacement (m).
+                        </p>
+                    </div>
+
+                    <div class="formula-box" style="border-color: #f59e0b; background: #fffbeb;">
+                        <h4 style="color: #d97706;">Torsion Spring Equation</h4>
+
+
+                        <div class="formula" style="color: #d97706; border-color: #fcd34d;">τ = κθ</div>
+                        <p style="margin-top: 10px; color: #475569;">
+                            Ideal for Torsion springs (like mousetraps or clothespins).<br>
+                            τ: Torque (N&middot;m), κ: Torsion Constant (N&middot;m/rad), θ: Angle (rad).
+                        </p>
+                    </div>
+
+                    <h3>Real-World Examples</h3>
+                    <p>Hooke's Law is used in many practical scenarios. Here are a few examples where this formula is
+                        essential:</p>
+                    <ul style="margin-bottom: 20px;">
+                        <li><strong>Vehicle Suspension:</strong> Calculating the stiffness required for car springs to
+                            absorb shocks without bottoming out (Compression).</li>
+                        <li><strong>Weighing Scales:</strong> Determining weight based on how much a spring inside the
+                            scale compresses under a load.</li>
+                        <li><strong>Garage Doors:</strong> Tuning the torsion springs to counterbalance the heavy weight
+                            of the door for easy lifting (Torsion).</li>
+                        <li><strong>Archery:</strong> Estimating the force required to draw a bowstring
+                            (Extension/Bending).</li>
+                    </ul>
+
+                    <h3>How This Calculator Works</h3>
+                    <p>This tool simplifies physics problems by automatically solving for the missing variable:</p>
+                    <ol style="margin-bottom: 20px; line-height: 1.6;">
+                        <li><strong>Select Spring Type:</strong> Choose between "Compression/Extension" (Linear) or
+                            "Torsion" (Angular).</li>
+                        <li><strong>Enter Two Known Values:</strong> Input any two variables (e.g., Force and
+                            Displacement). Use the unit selectors to match your data.</li>
+                        <li><strong>Get Instant Results:</strong> The calculator applies the correct formula (F=kx or
+                            τ=κθ) to find the unknown value.</li>
+                        <li><strong>Check Units:</strong> Results are shown in standard base units, but the calculator
+                            handles all conversions internally.</li>
+                    </ol>
+
+                    <h3>Unit Guidelines</h3>
+                    <p>Physics calculations require consistent units. This calculator automatically converts your inputs
+                        (like inches or degrees) into standard SI units (Meters and Radians) for calculation, then
+                        converts them back for the result.</p>
+                </article>
+
+                <!-- FAQ Section -->
+                <section class="faq-section" style="max-width: 800px; margin: 40px auto;">
+                    <h2>Frequently Asked Questions</h2>
+
+                    <div class="faq-item">
+                        <div class="faq-question">1. What is Hooke's Law?</div>
+                        <div class="faq-answer">Hooke's Law states that the force needed to extend or compress a spring
+                            by some distance scales linearly with respect to that distance. It applies as long as the
+                            spring is not stretched beyond its elastic limit.</div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">2. Does Hooke's Law apply to torsion springs?</div>
+                        <div class="faq-answer">Yes, but in angular form: τ = κθ. Instead of Force and Linear Distance,
+                            it relates Torque (τ) to Angular Displacement (θ) in radians.
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">3. What is the difference between compression and extension springs?
+                        </div>
+                        <div class="faq-answer">Compression springs are designed to operate with a compressive load
+                            (they get shorter), while extension springs operate with a tensile load (they get longer).
+                            Mathematically, both follow F=kx.</div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">4. What are the standard units for Spring Constant?</div>
+                        <div class="faq-answer">The SI unit is Newtons per meter (N/m). Common imperial units include
+                            pounds-force per inch (lbf/in). Torsion springs use N·m/rad or lbf·in/deg.</div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">5. How do I find the spring constant from a graph?</div>
+                        <div class="faq-answer">Plot Force (y-axis) vs. Displacement (x-axis). The slope of the linear
+                            portion of the line represents the spring constant (k). Steeper slope = stiffer spring.
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">6. Does temperature affect the spring constant?</div>
+                        <div class="faq-answer">Yes. Extreme temperatures can change the material's properties (Young's
+                            Modulus), usually making the spring less stiff as it gets hotter.</div>
+                    </div>
+                </section>
+            </div>
+        </div>
+        <div id="related-calculators"></div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <span
+                        style="font-weight: 800; font-size: 1.2rem; display:block; margin-bottom:10px; color:var(--text-main);">FairCalculator</span>
+                    <p>Simple, fast, and accurate online calculators.</p>
+                </div>
+                <div>
+                    <h4>Menu</h4>
+                    <ul>
+                        <li><a href="../../index.html">Home</a></li>
+                        <li><a href="../../about.html">About Us</a></li>
+                        <li><a href="../../contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="../../legal/privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="../../legal/terms-of-service.html">Terms</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2026 FairCalculator. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Spring Constant Calculator",
+      "applicationCategory": "UtilityApplication",
+      "applicationSubCategory": "Physics Calculator",
+      "operatingSystem": "Any",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is Hooke's Law?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Hooke's Law states that the force needed to extend or compress a spring scales linearly with respect to that distance (F=kx)." }
+        },
+        {
+            "@type": "Question",
+            "name": "Does Hooke's Law apply to torsion springs?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Yes, but in angular form: τ = κθ. Instead of Force and Linear Distance, it relates Torque to Angular Displacement." }
+        },
+        {
+            "@type": "Question",
+            "name": "What is the difference between compression and extension springs?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Compression springs are designed to operate with a compressive load (they get shorter), while extension springs operate with a tensile load (they get longer). Mathematically, both follow F=kx." }
+        },
+        {
+            "@type": "Question",
+            "name": "What are the standard units for Spring Constant?",
+            "acceptedAnswer": { "@type": "Answer", "text": "The SI unit is Newtons per meter (N/m). Common imperial units include pounds-force per inch (lbf/in). Torsion springs use N·m/rad or lbf·in/deg." }
+        },
+        {
+            "@type": "Question",
+            "name": "How do I find the spring constant from a graph?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Plot Force (y-axis) vs. Displacement (x-axis). The slope of the linear portion of the line represents the spring constant (k). Steeper slope = stiffer spring." }
+        },
+        {
+            "@type": "Question",
+            "name": "Does temperature affect the spring constant?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Yes. Extreme temperatures can change the material's properties (Young's Modulus), usually making the spring less stiff as it gets hotter." }
+        }
+      ]
+    }
+    </script>
+
+    <script>
+        var ROOT_PATH = '../../';
+    </script>
+    <script src="../../assets/js/data.js"></script>
+    <script src="../../assets/js/search.js"></script>
+    <script src="../../assets/js/mobile-menu.js"></script>
+
+    <!-- Calculator Logic -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // New Elements
+            const springTypeSelect = document.getElementById('springType');
+            const extensionNote = document.getElementById('extensionNote');
+            const kappaNote = document.getElementById('kappaNote');
+            const linearFields = document.querySelectorAll('.linear-field');
+            const torsionFields = document.querySelectorAll('.torsion-field');
+
+            // Labels
+            const constantLabel = document.getElementById('constantLabel');
+            const resLabelForce = document.getElementById('resLabelForce');
+            const resLabelConstant = document.getElementById('resLabelConstant');
+            const resLabelDisplacement = document.getElementById('resLabelDisplacement');
+
+            // Inputs
+            const forceInput = document.getElementById('force');
+            const torqueInput = document.getElementById('torque');
+            const constantInput = document.getElementById('constant');
+            const displacementInput = document.getElementById('displacement');
+            const angleInput = document.getElementById('angle');
+
+            // Units
+            const forceUnit = document.getElementById('forceUnit');
+            const torqueUnit = document.getElementById('torqueUnit');
+            const constantUnit = document.getElementById('constantUnit'); // Linear K
+            const torsionConstantUnit = document.getElementById('torsionConstantUnit'); // Torsion K
+            const displacementUnit = document.getElementById('displacementUnit');
+            const angleUnit = document.getElementById('angleUnit');
+
+            // Buttons & Results
+            const calculateBtn = document.getElementById('calculateBtn');
+            const clearBtn = document.getElementById('clearBtn');
+            const resultContainer = document.getElementById('resultContainer');
+
+            const resultForce = document.getElementById('resultForce');
+            const resultConstant = document.getElementById('resultConstant');
+            const resultDisplacement = document.getElementById('resultDisplacement');
+
+            // --- Toggle Logic ---
+            springTypeSelect.addEventListener('change', updateUI);
+            updateUI(); // Init
+
+            function updateUI() {
+                const type = springTypeSelect.value;
+                const isTorsion = type === 'torsion';
+                const isExtension = type === 'extension';
+
+                // Toggle visibility
+                linearFields.forEach(el => el.style.display = isTorsion ? 'none' : 'block');
+                torsionFields.forEach(el => el.style.display = isTorsion ? 'block' : 'none');
+
+                // Show extension note
+                extensionNote.style.display = isExtension ? 'block' : 'none';
+
+                // Update Labels & Helper
+                if (isTorsion) {
+                    constantLabel.innerHTML = 'Torsion Constant (κ)';
+                    resLabelForce.innerHTML = 'Torque (τ)';
+                    resLabelConstant.innerHTML = 'Torsion Constant (κ)';
+                    resLabelDisplacement.innerHTML = 'Angle (θ)';
+
+                    constantUnit.style.display = 'none';
+                    torsionConstantUnit.style.display = 'block';
+                    kappaNote.style.display = 'block';
+
+                    // Optional: Reset units logic could go here
+                } else {
+                    constantLabel.innerHTML = 'Spring Constant (k)';
+                    resLabelForce.innerHTML = 'Force (F)';
+                    resLabelConstant.innerHTML = 'Spring Constant (k)';
+                    resLabelDisplacement.innerHTML = type === 'compression' ? 'Displacement (x)' : 'Extension (x)';
+
+                    constantUnit.style.display = 'block';
+                    torsionConstantUnit.style.display = 'none';
+                    kappaNote.style.display = 'none';
+                }
+
+                resultContainer.style.display = 'none';
+            }
+
+
+            // --- Conversion Factors ---
+            // Base: N, m, Rad
+            const forceFactors = { 'N': 1, 'kN': 1000, 'lbf': 4.44822, 'dyne': 0.00001 };
+            const torqueFactors = { 'Nm': 1, 'lbf-in': 0.1129848, 'Nmm': 0.001 };
+
+            const distFactors = { 'm': 1, 'cm': 0.01, 'mm': 0.001, 'in': 0.0254, 'ft': 0.3048 };
+            const angleFactors = { 'rad': 1, 'deg': Math.PI / 180, 'rev': 2 * Math.PI };
+
+            const linearKFactors = { 'N/m': 1, 'N/mm': 1000, 'kN/m': 1000, 'lbf/in': 175.127 };
+            const torsionKFactors = {
+                'Nm/rad': 1,
+                'Nm/deg': 180 / Math.PI,
+                'lbf-in/rad': 0.1129848,
+                'lbf-in/deg': 0.1129848 * 180 / Math.PI
+            };
+
+
+            calculateBtn.addEventListener('click', () => {
+                const type = springTypeSelect.value;
+                const isTorsion = type === 'torsion';
+
+                if (isTorsion) {
+                    calculateTorsion();
+                } else {
+                    calculateLinear();
+                }
+                clearBtn.style.display = 'block';
+            });
+
+            clearBtn.addEventListener('click', () => {
+                // Clear all possible inputs
+                forceInput.value = '';
+                torqueInput.value = '';
+                constantInput.value = '';
+                displacementInput.value = '';
+                angleInput.value = '';
+                resultContainer.style.display = 'none';
+                clearBtn.style.display = 'none';
+            });
+
+            function calculateLinear() {
+                const fVal = forceInput.value !== '' ? parseFloat(forceInput.value) : null;
+                const kVal = constantInput.value !== '' ? parseFloat(constantInput.value) : null;
+                const dVal = displacementInput.value !== '' ? parseFloat(displacementInput.value) : null;
+
+                const hasF = fVal !== null;
+                const hasK = kVal !== null;
+                const hasD = dVal !== null;
+
+                // Validation
+                // Use magnitudes (Math.abs) for non-directional physics calculation
+                // For K, we still enforce positive
+                if (hasK && kVal <= 0) {
+                    alert("Spring constant (k) must be greater than zero.");
+                    return;
+                }
+
+                if ([hasF, hasK, hasD].filter(Boolean).length < 2) {
+                    alert('Please enter at least two values.');
+                    return;
+                }
+
+                // Convert to Base (N, m) using magnitudes
+                // Note: We use Math.abs() on inputs like Force/Displacement to ensure F=kx works for magnitude.
+                const F_base = hasF ? Math.abs(fVal) * forceFactors[forceUnit.value] : null;
+                const k_base = hasK ? Math.abs(kVal) * linearKFactors[constantUnit.value] : null; // K usually positive anyway
+                const d_base = hasD ? Math.abs(dVal) * distFactors[displacementUnit.value] : null;
+
+                let resF = F_base, resK = k_base, resD = d_base;
+
+                // Logic: F = kx
+                if (hasK && hasD) {
+                    // Solve F
+                    resF = resK * resD;
+                } else if (hasF && hasD) {
+                    // Solve K
+                    if (resD === 0) { alert("Displacement cannot be zero for calculating K."); return; }
+                    resK = resF / resD;
+                } else if (hasF && hasK) {
+                    // Solve X
+                    resD = resF / resK;
+                }
+
+                // Consistency Check (if all 3 provided)
+                if (hasF && hasK && hasD) {
+                    const expectedF = resK * resD;
+                    // 5% tolerance
+                    if (Math.abs(expectedF - F_base) / (F_base || 1) > 0.05) {
+                        alert("The entered values are inconsistent with Hooke's Law (F = kx).");
+                        return;
+                    }
+                }
+
+                displayResults(resF, resK, resD, false);
+            }
+
+            function calculateTorsion() {
+                const tVal = torqueInput.value !== '' ? parseFloat(torqueInput.value) : null;
+                const kVal = constantInput.value !== '' ? parseFloat(constantInput.value) : null;
+                const aVal = angleInput.value !== '' ? parseFloat(angleInput.value) : null;
+
+                const hasT = tVal !== null;
+                const hasK = kVal !== null;
+                const hasA = aVal !== null;
+
+                // Validation
+                if (hasK && kVal <= 0) { alert("Torsion constant must be greater than zero."); return; }
+
+                if ([hasT, hasK, hasA].filter(Boolean).length < 2) {
+                    alert('Please enter at least two values.');
+                    return;
+                }
+
+                // Convert to Base (Nm, Rad) using magnitudes
+                const T_base = hasT ? Math.abs(tVal) * torqueFactors[torqueUnit.value] : null;
+                const k_base = hasK ? Math.abs(kVal) * torsionKFactors[torsionConstantUnit.value] : null;
+                const a_base = hasA ? Math.abs(aVal) * angleFactors[angleUnit.value] : null;
+
+                let resT = T_base, resK = k_base, resA = a_base;
+
+                // Logic: T = k * theta
+                if (hasK && hasA) {
+                    resT = resK * resA;
+                } else if (hasT && hasA) {
+                    if (resA === 0) { alert("Angle cannot be zero for calculating K."); return; }
+                    resK = resT / resA;
+                } else if (hasT && hasK) {
+                    resA = resT / resK;
+                }
+
+                // Consistency Check
+                if (hasT && hasK && hasA) {
+                    const expectedT = resK * resA;
+                    // 5% tolerance
+                    if (Math.abs(expectedT - T_base) / (T_base || 1) > 0.05) {
+                        alert("The entered values are inconsistent with Torsion Law (τ = κθ).");
+                        return;
+                    }
+                }
+
+                displayResults(resT, resK, resA, true);
+            }
+
+            function displayResults(val1, val2, val3, isTorsion) {
+                // val1 = Force/Torque (Base)
+                // val2 = Constant (Base)
+                // val3 = Disp/Angle (Base)
+
+                if (isTorsion) {
+                    const u1 = torqueUnit.value;
+                    const u2 = torsionConstantUnit.value;
+                    const u3 = angleUnit.value;
+
+                    resultForce.innerHTML = `${(val1 / torqueFactors[u1]).toLocaleString(undefined, { maximumFractionDigits: 4 })} ${u1}`;
+                    resultConstant.innerHTML = `${(val2 / torsionKFactors[u2]).toLocaleString(undefined, { maximumFractionDigits: 4 })} ${u2}`;
+                    resultDisplacement.innerHTML = `${(val3 / angleFactors[u3]).toLocaleString(undefined, { maximumFractionDigits: 4 })} ${u3}`;
+
+                } else {
+                    const u1 = forceUnit.value;
+                    const u2 = constantUnit.value;
+                    const u3 = displacementUnit.value;
+
+                    resultForce.innerHTML = `${(val1 / forceFactors[u1]).toLocaleString(undefined, { maximumFractionDigits: 4 })} ${u1}`;
+                    resultConstant.innerHTML = `${(val2 / linearKFactors[u2]).toLocaleString(undefined, { maximumFractionDigits: 4 })} ${u2}`;
+                    resultDisplacement.innerHTML = `${(val3 / distFactors[u3]).toLocaleString(undefined, { maximumFractionDigits: 4 })} ${u3}`;
+                }
+
+                resultContainer.style.display = 'block';
+                resultContainer.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }
+        });
+    </script>
+    <script src="../../assets/js/related-calculators.js" defer></script>
+</body>
+
+</html>

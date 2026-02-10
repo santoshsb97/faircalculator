@@ -1,0 +1,281 @@
+﻿<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Free Equations Solver. Use our fast, accurate tool to simplify math and algebra calculations. Get precise results and guidance on Fair Calculator.">
+    <link rel="canonical" href="https://www.faircalculator.com/calculators/system-of-equations-solver/">
+
+    <!-- Preload Critical Assets -->
+    <link rel="preload" href="../../assets/css/style.css" as="style">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        as="style">
+
+    <!-- Preconnect to CDNs -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+
+    <title>System of Equations Solver - Step-by-Step Linear Equation Tool</title>
+
+    <!-- 1. GLOBAL ASSETS -->
+    <link rel="icon" type="image/x-icon" href="../../assets/images/favicon.png">
+    <link rel="stylesheet" href="../../assets/css/style.css">
+
+    <!-- Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome (Non-blocking) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        media="print" onload="this.media='all'">
+    <noscript>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    </noscript>
+
+    <!-- Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "System of Linear Equations Solver",
+      "description": "Solve systems of linear equations with detailed elimination method steps, formulas, examples, and a modern graph.",
+      "applicationCategory": "MathCalculator",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    }
+    </script>
+
+    <!-- 2. WIDGET SPECIFIC CSS -->
+    <link rel="preload" href="../../assets/css/calculators/system-of-equations-solver.css" as="style">
+    <link rel="stylesheet" href="../../assets/css/calculators/system-of-equations-solver.css">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BVENYYJ869"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-BVENYYJ869');
+    </script>
+    <script type="text/javascript">
+        (function (c, l, a, r, i, t, y) {
+            c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+            t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+            y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+        })(window, document, "clarity", "script", "udqk27trde");
+    </script>
+</head>
+
+<body>
+    <!-- 3. HEADER -->
+    <header class="header">
+        <div class="container header-inner">
+            <a href="../../index.html" class="logo">FairCalculator</a>
+            <div class="header-search"><input type="text" id="searchInput" class="search-input"
+                    placeholder="Search tools..."></div>
+            <button class="menu-btn" id="menuToggle"><i class="fas fa-bars"></i></button>
+        </div>
+    </header>
+
+    <!-- 4. CATEGORY BAR -->
+    <nav class="category-bar">
+        <div class="container">
+            <ul id="category-list">
+                <li><a href="../../index.html">All</a></li>
+                <li><a href="../../categories/finance-calculators.html">Finance</a></li>
+                <li><a href="../../categories/math-calculators.html"
+                        style="background:#eff6ff; color:#2563eb; border-color:#bfdbfe;">Math</a></li>
+                <li><a href="../../categories/health-calculators.html">Health</a></li>
+                <li><a href="../../categories/date-time-calculators.html">Date</a></li>
+                <li><a href="../../categories/unit-converters.html">Converters</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="mobile-close" id="closeMenu">&times;</button>
+        <div style="margin-top: 40px;">
+            <ul class="sidebar-list">
+                <li><a href="../../index.html">Home</a></li>
+                <li><a href="../../index.html#calculators">All Calculators</a></li>
+                <li><a href="../../about.html">About</a></li>
+                <li><a href="../../contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- 5. MAIN CONTENT -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Breadcrumbs -->
+            <div style="margin-bottom: 20px; font-size: 0.9rem; color: #64748b;">
+                <a href="../../index.html" style="text-decoration: underline;">Home</a> /
+                <a href="../../categories/math-calculators.html" style="text-decoration: underline;">Math</a> /
+                <span style="font-weight: 600; color: #0f172a;">System of Equations</span>
+            </div>
+
+            <div id="searchResults" style="display:none; margin-bottom: 40px;">
+                <div class="section-header">Search Results</div>
+                <div class="grid" id="searchResultsContent"></div>
+            </div>
+
+            <div class="system-widget-container" id="tool-container">
+                <h1 class="section-header" style="justify-content:center; font-size: 2rem; margin-bottom: 30px;">
+                    <i class="fas fa-project-diagram" style="color: #2563eb; margin-right: 15px;"></i> System of
+                    Equations Solver
+                </h1>
+
+                <div class="calculator-form">
+                    <div class="input-row">
+                        <label class="eq-label">Equation #1:</label>
+                        <input type="text" id="eq1" class="eq-input" value="2x + y = 10"
+                            placeholder="e.g. 2x + 3y = 12">
+                    </div>
+                    <div class="input-row">
+                        <label class="eq-label">Equation #2:</label>
+                        <input type="text" id="eq2" class="eq-input" value="x - y = 2" placeholder="e.g. x - y = 2">
+                    </div>
+                    <button class="calc-action-btn" onclick="processEquations()">Calculate Detailed Solution</button>
+
+                    <div id="resultArea" class="results-area">
+                        <div class="result-green-box">
+                            <span class="res-title">Solution Found:</span>
+                            <div class="res-values" id="finalRes"></div>
+                        </div>
+                        <div class="canvas-wrapper">
+                            <canvas id="linearGraph"></canvas>
+                        </div>
+                        <div class="steps-box">
+                            <h3>Step-by-Step Solution (Elimination):</h3>
+                            <div id="stepsOutput"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SEO Content -->
+                <div class="info-section">
+                    <h2>What is a System of Linear Equations?</h2>
+                    <p>A system of linear equations consists of two or more linear equations that share the same
+                        variables (usually x and y). Solving the system means finding the specific values for x and y
+                        that make both equations true at the same time.</p>
+                    <p>Graphically, this solution represents the exact point where the two lines cross (intersect).</p>
+
+                    <h3>® Formulas & Methods</h3>
+                    <p>Equations are typically written in <strong>Standard Form</strong>:</p>
+                    <div class="formula-box">Ax + By = C</div>
+                    <p>To solve them, we typically use one of three methods: <strong>Graphing</strong>,
+                        <strong>Substitution</strong>, or <strong>Elimination</strong>. This calculator uses the
+                        Elimination method.
+                    </p>
+
+                    <h3>Example Problem:</h3>
+                    <div style="background: #f8fafc; padding: 20px; border-radius: 12px; border: 1px solid #e2e8f0;">
+                        <p><strong>Equation 1:</strong> x + y = 5<br>
+                            <strong>Equation 2:</strong> x - y = 1
+                        </p>
+
+                        <p><strong>Step 1:</strong> Add the two equations together to eliminate 'y':<br>
+                            (x + x) + (y - y) = 5 + 1<br>
+                            2x = 6</p>
+
+                        <p><strong>Step 2:</strong> Solve for x:<br>
+                            x = 3</p>
+
+                        <p><strong>Step 3:</strong> Substitute x back into Equation 1:<br>
+                            3 + y = 5 &rarr; y = 2</p>
+
+                        <p><strong>Answer:</strong> (3, 2)</p>
+                    </div>
+                </div>
+
+                <!-- FAQ SECTION -->
+                <div class="info-section">
+                    <h2>â“ Frequently Asked Questions</h2>
+
+                    <div class="faq-item">
+                        <div class="faq-q" onclick="toggleFAQ(this)">1. How do I type equations into this tool?
+                            <span>+</span>
+                        </div>
+                        <div class="faq-a">Type them exactly as they appear in your math book. You don't need to
+                            separate numbers. Examples: <code>2x+y=10</code> or <code>x-y=5</code>. Spaces are ignored.
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-q" onclick="toggleFAQ(this)">2. What is the Elimination Method? <span>+</span>
+                        </div>
+                        <div class="faq-a">The Elimination Method involves multiplying one or both equations by a number
+                            so that when you add or subtract them, one variable (like x or y) is cancelled out, allowing
+                            you to solve for the other.</div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-q" onclick="toggleFAQ(this)">3. What does "No Solution" mean? <span>+</span>
+                        </div>
+                        <div class="faq-a">It means the two lines are parallel. They have the same slope but different
+                            intercepts, so they will never cross. There is no (x, y) pair that satisfies both.</div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-q" onclick="toggleFAQ(this)">4. What does "Infinite Solutions" mean?
+                            <span>+</span>
+                        </div>
+                        <div class="faq-a">It means the two equations actually represent the same line. Every point on
+                            the line is a solution to the system.</div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-q" onclick="toggleFAQ(this)">5. Can I use decimals or fractions? <span>+</span>
+                        </div>
+                        <div class="faq-a">Yes! You can type decimals like <code>0.5x + 2.5y = 10</code>. For fractions,
+                            convert them to decimals first (e.g., use 0.5 instead of 1/2).</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="related-calculators"></div>
+    </main>
+
+    <!-- 6. FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <span
+                        style="font-weight: 800; font-size: 1.2rem; display:block; margin-bottom:10px; color:var(--text-main);">FairCalculator</span>
+                    <p>Simple, fast, and accurate online calculators.</p>
+                </div>
+                <div>
+                    <h4>Menu</h4>
+                    <ul>
+                        <li><a href="../../index.html">Home</a></li>
+                        <li><a href="../../about.html">About Us</a></li>
+                        <li><a href="../../contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="../../legal/privacy-policy.html">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">&copy; 2025 FairCalculator. All rights reserved.</div>
+        </div>
+    </footer>
+
+    <!-- 7. SCRIPTS -->
+    <script>var ROOT_PATH = '../../';</script>
+    <script src="../../assets/js/data.js"></script>
+    <script src="../../assets/js/search.js"></script>
+    <script src="../../assets/js/mobile-menu.js"></script>
+
+
+    <script src="../../assets/js/calculators/system-of-equations-solver.js" defer></script>
+    <script src="../../assets/js/related-calculators.js" defer></script>
+</body>
+
+</html>
