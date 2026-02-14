@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subnet Calculator - IPv4 & IPv6 Subnetting Tool | FairCalculator</title>
+    <meta name="description"
+        content="Professional Subnet Calculator for both IPv4 and IPv6. Calculate network address, broadcast, CIDR, usable host ranges, and 128-bit IPv6 prefixes instantly with nibble-level detail.">
+
+    <!-- 1. GLOBAL ASSETS -->
+    <link rel="icon" type="image/x-icon" href="../../assets/images/favicon.png">
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/calculators/subnet-calculator.css">
+
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="canonical" href="https://www.faircalculator.com/calculators/subnet-calculator/">
+
+    <!-- Social Media Meta Tags -->
+    <meta property="og:title" content="Subnet Calculator - IPv4 & IPv6 Subnetting Tool">
+    <meta property="og:description"
+        content="Professional Subnet Calculator for both IPv4 and IPv6. Calculate network address, broadcast, CIDR, usable host ranges, and 128-bit IPv6 prefixes instantly.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.faircalculator.com/calculators/subnet-calculator/">
+    <meta property="og:image"
+        content="https://www.faircalculator.com/assets/images/calculators/subnet-calculator-og.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Subnet Calculator 2026 - Free IP Subnet Mask Calculator">
+    <meta name="twitter:description"
+        content="Calculate IP subnets instantly with our free subnet calculator. Get network address, broadcast address, usable hosts, and subnet mask. Fast, accurate, and mobile-friendly.">
+
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="../../assets/images/favicon.png">
+
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <!-- FAQ Schema (JSON-LD) for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is a subnet calculator?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A subnet calculator is a tool that helps network administrators calculate IP address ranges, subnet masks, and network details for efficient IP address management."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I calculate a subnet mask?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Enter an IP address and CIDR notation (e.g., 192.168.1.0/24) and the calculator will automatically determine the subnet mask, network address, broadcast address, and usable host range."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is CIDR notation?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "CIDR (Classless Inter-Domain Routing) notation is a compact representation of an IP address and its routing prefix. For example, /24 means the first 24 bits are the network portion."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- Calculator Schema for Rich Results -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Subnet Calculator",
+      "url": "https://subnetcalculator.example.com",
+      "description": "Free online subnet calculator for computing IP address ranges, subnet masks, and network information",
+      "applicationCategory": "UtilityApplication",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    }
+    </script>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container header-inner">
+            <a href="../../index.html" class="logo">FairCalculator</a>
+            <div class="header-search">
+                <input type="text" id="searchInput" class="search-input" placeholder="Search tools..."
+                    aria-label="Search">
+            </div>
+            <button class="menu-btn" id="menuToggle"><i class="fas fa-bars"></i></button>
+        </div>
+    </header>
+
+    <!-- Category Bar -->
+    <nav class="category-bar">
+        <div class="container">
+            <ul id="category-list">
+                <li><a href="../../index.html">All</a></li>
+                <li><a href="../../categories/finance-calculators.html">Finance</a></li>
+                <li><a href="../../categories/math-calculators.html">Math</a></li>
+                <li><a href="../../categories/health-calculators.html">Health</a></li>
+                <li><a href="../../categories/date-time-calculators.html">Date</a></li>
+                <li><a href="../../categories/unit-converters.html"
+                        style="background:#eff6ff; color:#2563eb; border-color:#bfdbfe;">Converters</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="mobile-close" id="closeMenu">&times;</button>
+        <div style="margin-top: 40px;">
+            <ul class="sidebar-list">
+                <li><a href="../../index.html">Home</a></li>
+                <li><a href="../../index.html#calculators">All Calculators</a></li>
+                <li><a href="../../about.html">About</a></li>
+                <li><a href="../../contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <main class="main-content">
+        <div class="container">
+            <!-- Breadcrumbs -->
+            <div style="margin-bottom: 20px; font-size: 0.9rem; color: #64748b;">
+                <a href="../../index.html" style="text-decoration: underline;">Home</a> /
+                <a href="../../categories/unit-converters.html" style="text-decoration: underline;">Converters</a> /
+                <span style="font-weight: 600; color: #0f172a;">Subnet Calculator</span>
+            </div>
+
+            <div id="tool-container">
+                <h1 class="section-header" style="justify-content:center; font-size: 2rem; margin-bottom: 30px;">
+                    <i class="fas fa-network-wired" style="color: #2563eb; margin-right: 15px;"></i> Subnet Calculator
+                    2026
+                </h1>
+
+                <div class="featured-calculator">
+                    <div class="calculator-form">
+                        <!-- Protocol Toggle -->
+                        <div class="protocol-toggle">
+                            <button type="button" class="toggle-btn active" data-protocol="ipv4">IPv4</button>
+                            <button type="button" class="toggle-btn" data-protocol="ipv6">IPv6</button>
+                            <div class="toggle-slider"></div>
+                        </div>
+
+                        <div class="input-wrapper" id="ip-input-wrapper">
+                            <label for="ip-address" id="ip-label">IP Address (IPv4)</label>
+                            <input type="text" id="ip-address" name="ip-address" placeholder="e.g. 192.168.1.0"
+                                inputmode="text" aria-describedby="ip-help" autocomplete="off"
+                                pattern="^(\d{1,3}\.){3}\d{1,3}$" style="flex: 1;">
+                            <small id="ip-help" class="sr-only">Enter IPv4 address in format: xxx.xxx.xxx.xxx</small>
+                        </div>
+
+
+                        <!-- Network Class Selection -->
+                        <div class="class-selection-container" id="ipv4-class-selection">
+                            <label class="section-label">Network Class</label>
+                            <div class="class-options">
+                                <div class="class-option" data-class="A">
+                                    <span class="class-check"><i class="fas fa-check"></i></span>
+                                    <span class="class-name">Class A</span>
+                                </div>
+                                <div class="class-option" data-class="B">
+                                    <span class="class-check"><i class="fas fa-check"></i></span>
+                                    <span class="class-name">Class B</span>
+                                </div>
+                                <div class="class-option active" data-class="C">
+                                    <span class="class-check"><i class="fas fa-check"></i></span>
+                                    <span class="class-name">Class C</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="input-wrapper" id="cidr-input-wrapper">
+                            <label for="cidr" id="cidr-label">CIDR Prefix Length</label>
+                            <input type="number" id="cidr" name="cidr" placeholder="e.g. 24" min="1" max="32" step="1"
+                                inputmode="numeric" aria-describedby="cidr-help" autocomplete="off">
+                            <small id="cidr-help" class="sr-only">Enter CIDR prefix length (1-32)</small>
+                        </div>
+
+                        <button type="button" id="calculate-btn" class="calc-action-btn">Calculate Subnet</button>
+                    </div>
+
+                    <div id="resultContainer" class="result-container" role="region" aria-live="polite"
+                        aria-label="Calculation results">
+                        <div class="result-grid">
+                            <!-- Shared Fields -->
+                            <div class="result-item" id="item-ip-address">
+                                <span class="result-label">IP Address</span>
+                                <span class="result-value" id="res-ip-address">---.---.---.---</span>
+                            </div>
+                            <div class="result-item full-width" id="item-full-ip">
+                                <span class="result-label" id="label-ipv4-mapped">Full IP Address</span>
+                                <span class="result-value" id="ipv4-mapped">-</span>
+                            </div>
+                            <div class="result-item" id="item-network">
+                                <span class="result-label" id="label-network">Network Address</span>
+                                <span class="result-value" id="network-address">---.---.---.---</span>
+                            </div>
+                            <div class="result-item full-width" id="item-ip-range">
+                                <span class="result-label" id="label-host-range">Usable Host IP Range</span>
+                                <span class="result-value" id="host-range">---.---.---.--- to ---.---.---.---</span>
+                            </div>
+                            <div class="result-item" id="item-total-hosts">
+                                <span class="result-label" id="label-total-hosts">Total Number of Hosts</span>
+                                <span class="result-value highlight" id="total-hosts">0</span>
+                            </div>
+
+                            <!-- IPv4 Specific Fields -->
+                            <div class="result-item ipv4-only" id="item-broadcast">
+                                <span class="result-label">Broadcast Address</span>
+                                <span class="result-value" id="broadcast-address">---.---.---.---</span>
+                            </div>
+                            <div class="result-item ipv4-only" id="item-usable-hosts">
+                                <span class="result-label">Number of Usable Hosts</span>
+                                <span class="result-value highlight" id="usable-hosts">0</span>
+                            </div>
+                            <div class="result-item ipv4-only" id="item-subnet-mask">
+                                <span class="result-label">Subnet Mask</span>
+                                <span class="result-value" id="subnet-mask">---.---.---.---</span>
+                            </div>
+                            <div class="result-item ipv4-only" id="item-wildcard">
+                                <span class="result-label">Wildcard Mask</span>
+                                <span class="result-value" id="wildcard-mask">---.---.---.---</span>
+                            </div>
+                            <div class="result-item full-width ipv4-only" id="item-binary-mask">
+                                <span class="result-label">Binary Subnet Mask</span>
+                                <span class="result-value"
+                                    id="binary-subnet-mask">00000000.00000000.00000000.00000000</span>
+                            </div>
+                            <div class="result-item ipv4-only" id="item-ip-class">
+                                <span class="result-label">IP Class</span>
+                                <span class="result-value" id="ip-class">-</span>
+                            </div>
+                            <div class="result-item ipv4-only" id="item-cidr">
+                                <span class="result-label">CIDR Notation</span>
+                                <span class="result-value" id="cidr-notation">/24</span>
+                            </div>
+                            <div class="result-item ipv4-only" id="item-ip-type">
+                                <span class="result-label">IP Type</span>
+                                <span class="result-value" id="ip-type">Public</span>
+                            </div>
+                            <div class="result-item ipv4-only" id="item-short">
+                                <span class="result-label">Short</span>
+                                <span class="result-value" id="short-id">-</span>
+                            </div>
+                            <div class="result-item full-width ipv4-only" id="item-binary-id">
+                                <span class="result-label">Binary ID</span>
+                                <span class="result-value" id="binary-id">-</span>
+                            </div>
+                            <div class="result-item ipv4-only" id="item-integer">
+                                <span class="result-label">Integer ID</span>
+                                <span class="result-value" id="integer-id">-</span>
+                            </div>
+                            <div class="result-item ipv4-only" id="item-hex">
+                                <span class="result-label">Hex ID</span>
+                                <span class="result-value" id="hex-id">-</span>
+                            </div>
+                            <div class="result-item full-width ipv4-only" id="item-in-addr">
+                                <span class="result-label" id="label-in-addr-arpa">in-addr.arpa</span>
+                                <span class="result-value" id="in-addr-arpa">-</span>
+                            </div>
+                            <div class="result-item full-width ipv4-only" id="item-six-to-four">
+                                <span class="result-label" id="label-six-to-four">6to4 Prefix</span>
+                                <span class="result-value" id="six-to-four">-</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <article class="content">
+                <!-- Example Block (SEO Multiplier) -->
+                <div class="example-box">
+                    <h3>Example Calculation</h3>
+                    <p>For IP address <strong>192.168.1.0/24</strong>:</p>
+                    <ul>
+                        <li>Network Address: <strong>192.168.1.0</strong></li>
+                        <li>Broadcast Address: <strong>192.168.1.255</strong></li>
+                        <li>Subnet Mask: <strong>255.255.255.0</strong></li>
+                        <li>Usable Hosts: <strong>254</strong> (192.168.1.1 - 192.168.1.254)</li>
+                    </ul>
+                </div>
+
+                <section>
+                    <h2>What is a Subnet Calculator?</h2>
+                    <p>A subnet calculator is an essential networking tool that helps you determine network parameters
+                        for both <strong>IPv4</strong> and <strong>IPv6</strong> addresses. It identifies the network
+                        and
+                        broadcast addresses, calculates subnet masks or prefixes, and determines the exact range of
+                        usable IP addresses. Whether you're a network administrator, IT student, or security
+                        professional,
+                        this tool simplifies complex IP address allocation and management.</p>
+                </section>
+
+                <section>
+                    <h2>IPv4 Subnetting & CIDR</h2>
+                    <p><strong>Subnetting</strong> is the process of dividing a larger network into smaller, more
+                        manageable
+                        sub-networks. In IPv4, <strong>CIDR (Classless Inter-Domain Routing)</strong> notation is used
+                        to
+                        specify how many bits of an address are reserved for the network portion (e.g., /24).</p>
+
+                    <h3>Common IPv4 CIDR Blocks:</h3>
+                    <ul class="cidr-list">
+                        <li><strong>/8</strong> - 16,777,214 usable hosts (Standard Class A)</li>
+                        <li><strong>/16</strong> - 65,534 usable hosts (Standard Class B)</li>
+                        <li><strong>/24</strong> - 254 usable hosts (Standard Class C)</li>
+                        <li><strong>/30</strong> - 2 usable hosts (Perfect for point-to-point links)</li>
+                    </ul>
+                </section>
+
+                <section id="ipv6-content">
+                    <h2>Understanding IPv6 Subnetting</h2>
+                    <p>IPv6 uses a 128-bit addressing scheme, significantly larger than IPv4's 32-bit system. Subnetting
+                        in
+                        IPv6 is primarily based on <strong>Prefix Lengths</strong> rather than complex masks. A standard
+                        IPv6 subnet is typically a <strong>/64</strong>, which provides 18,446,744,073,709,551,616
+                        addresses.</p>
+
+                    <h3>IPv6 Formatting Rules:</h3>
+                    <ul class="subnet-components">
+                        <li><strong>Zero Compression:</strong> Consecutive sections of zeros can be replaced with
+                            <code>::</code> (e.g., 2001:db8:0:0::1 becomes 2001:db8::1).
+                        </li>
+                        <li><strong>Leading Zeros:</strong> Zeros at the beginning of a hex block can be omitted.</li>
+                        <li><strong>Hexadecimal:</strong> Addresses are written in 8 blocks of 4 hex digits separated by
+                            colons.</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>How to Use This Calculator</h2>
+                    <ol class="steps-list">
+                        <li>Toggle between <strong>IPv4</strong> and <strong>IPv6</strong> modes at the top.</li>
+                        <li>Enter your target IP address (Decimal for v4, Hexadecimal for v6).</li>
+                        <li>Specify the <strong>Prefix Length (CIDR)</strong>. For IPv4, use the
+                            <strong>Quick-Select</strong>
+                            buttons (A, B, C) for standard sizes.
+                        </li>
+                        <li>Click <strong>"Calculate Subnet"</strong> to instantly view network ranges, masks, and
+                            comprehensive technical IDs.</li>
+                    </ol>
+                </section>
+
+                <section>
+                    <h2>Subnet Mask Reference Table</h2>
+                    <div class="table-wrapper">
+                        <table class="subnet-table">
+                            <thead>
+                                <tr>
+                                    <th>CIDR</th>
+                                    <th>Subnet Mask</th>
+                                    <th>Usable Hosts</th>
+                                    <th>Networks</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>/24</td>
+                                    <td>255.255.255.0</td>
+                                    <td>254</td>
+                                    <td>256</td>
+                                </tr>
+                                <tr>
+                                    <td>/25</td>
+                                    <td>255.255.255.128</td>
+                                    <td>126</td>
+                                    <td>512</td>
+                                </tr>
+                                <tr>
+                                    <td>/26</td>
+                                    <td>255.255.255.192</td>
+                                    <td>62</td>
+                                    <td>1,024</td>
+                                </tr>
+                                <tr>
+                                    <td>/27</td>
+                                    <td>255.255.255.224</td>
+                                    <td>30</td>
+                                    <td>2,048</td>
+                                </tr>
+                                <tr>
+                                    <td>/28</td>
+                                    <td>255.255.255.240</td>
+                                    <td>14</td>
+                                    <td>4,096</td>
+                                </tr>
+                                <tr>
+                                    <td>/30</td>
+                                    <td>255.255.255.252</td>
+                                    <td>2</td>
+                                    <td>16,384</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Frequently Asked Questions</h2>
+                    <div class="faq-item">
+                        <h3 class="faq-question">1. What is a subnet calculator used for?</h3>
+                        <p>A subnet calculator helps network administrators plan IP address allocation, determine
+                            network
+                            boundaries, and configure routers and switches. It's essential for network design,
+                            troubleshooting, and optimization.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3 class="faq-question">2. What's the difference between network address and broadcast address?
+                        </h3>
+                        <p>The network address is the first IP in a subnet and identifies the network itself. The
+                            broadcast
+                            address is the last IP and is used to send messages to all devices in the subnet. Neither
+                            can be
+                            assigned to individual hosts.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3 class="faq-question">3. Why are there fewer usable hosts than total hosts?</h3>
+                        <p>Each subnet reserves two addresses: the network address (first) and broadcast address (last).
+                            These cannot be assigned to devices, so usable hosts = total hosts - 2.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3 class="faq-question">4. What is a wildcard mask?</h3>
+                        <p>A wildcard mask is the inverse of a subnet mask. It's used in access control lists (ACLs) and
+                            routing protocols. For a subnet mask of 255.255.255.0, the wildcard mask would be 0.0.0.255.
+                        </p>
+                    </div>
+                    <div class="faq-item">
+                        <h3 class="faq-question">5. What does /24 mean in networking?</h3>
+                        <p>/24 is CIDR notation indicating that the first 24 bits of the IP address represent the
+                            network
+                            portion. This corresponds to a subnet mask of 255.255.255.0 and provides 254 usable IP
+                            addresses.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3 class="faq-question">6. Does this tool support IPv6?</h3>
+                        <p>Yes, this calculator fully supports IPv6. You can calculate 128-bit network prefixes, binary
+                            representations, and even generate <strong>ip6.arpa</strong> reverse DNS pointers.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3 class="faq-question">7. What is a "Nibble" in IPv6?</h3>
+                        <p>A nibble consists of 4 bits, or exactly one hexadecimal digit in an IPv6 address. Subnetting
+                            precisely at nibble boundaries (like /64 or /60) is considered a best practice for reverse
+                            DNS
+                            management.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3 class="faq-question">8. What are Class A, B, and C networks?</h3>
+                        <p>These are traditional legacy classifications for IPv4: Class A (/8), Class B (/16), and Class
+                            C
+                            (/24). Our IPv4 calculator includes a quick-select feature to toggle these standard classes
+                            instantly with one click.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3 class="faq-question">8. How many subnets can I create?</h3>
+                        <p>The number of subnets depends on the CIDR prefix. For example, a /24 network can be divided
+                            into
+                            2 /25 subnets, 4 /26 subnets, 8 /27 subnets, and so on. Each increase in CIDR number doubles
+                            the
+                            number of subnets.</p>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Common Use Cases</h2>
+                    <div class="use-cases">
+                        <div class="use-case">
+                            <h4>🏢 Office Networks</h4>
+                            <p>Divide a large office network into smaller subnets for different departments (Sales, IT,
+                                HR)
+                                to improve security and manage traffic.</p>
+                        </div>
+                        <div class="use-case">
+                            <h4>🌐 ISP Management</h4>
+                            <p>Internet Service Providers use subnetting to allocate IP addresses to customers
+                                efficiently
+                                and manage large address spaces.</p>
+                        </div>
+                        <div class="use-case">
+                            <h4>🔒 Security Segmentation</h4>
+                            <p>Isolate critical systems (servers, databases) into separate subnets to limit access and
+                                improve network security.</p>
+                        </div>
+                        <div class="use-case">
+                            <h4>☁️ Cloud Infrastructure</h4>
+                            <p>Configure Virtual Private Clouds (VPCs) in AWS, Azure, or Google Cloud with proper subnet
+                                planning for different application tiers.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <div id="related-calculators"></div>
+                </section>
+            </article>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <span
+                        style="font-weight: 800; font-size: 1.2rem; display:block; margin-bottom:10px; color:var(--text-main);">FairCalculator</span>
+                    <p>Simple, fast, and accurate online calculators for finance, math, health, and daily life problems.
+                    </p>
+                </div>
+                <div>
+                    <h4>Menu</h4>
+                    <ul>
+                        <li><a href="../../index.html">Home</a></li>
+                        <li><a href="../../about.html">About Us</a></li>
+                        <li><a href="../../contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="../../legal/privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="../../legal/terms-of-service.html">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2026 FairCalculator. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>var ROOT_PATH = '../../';</script>
+    <script src="../../assets/js/data.js"></script>
+    <script src="../../assets/js/search.js"></script>
+    <script src="../../assets/js/mobile-menu.js"></script>
+    <script src="../../assets/js/calculators/subnet-calculator.js" defer></script>
+    <script src="../../assets/js/related-calculators.js" defer></script>
+</body>
+
+</html>
