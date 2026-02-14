@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bandwidth Calculator - Download Time & Speed Converter | FairCalculator</title>
+    <meta name="description"
+        content="Calculate download times, file sizes, and required bandwidth speeds. Convert between different units and optimize your network performance.">
+
+    <!-- Security -->
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://fonts.googleapis.com https://fonts.gstatic.com; font-src 'self' https://cdnjs.cloudflare.com https://fonts.gstatic.com; img-src 'self' data:;">
+
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- External Resources -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Local Styles -->
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/calculators/bandwidth-calculator.css">
+
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Bandwidth Calculator",
+      "url": "https://bandwidthcalculator.example.com",
+      "description": "Free online bandwidth calculator for computing download times, file sizes, and required speeds",
+      "applicationCategory": "UtilityApplication",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    }
+    </script>
+
+    <!-- FAQ Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How accurate are the calculated times?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Calculated times are theoretical estimates based on ideal conditions. Actual download times may vary due to network congestion, server limitations, and other factors."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What's the difference between Mbps and MB/s?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "One byte equals 8 bits. So 1 MB/s (Megabytes per second) equals 8 Mbps (Megabits per second). Internet providers usually advertise in Mbps."
+          }
+        }
+      ]
+    }
+    </script>
+</head>
+
+<body>
+    <!-- Skip to content link for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Header -->
+    <header class="header" role="banner">
+        <div class="container header-inner">
+            <a href="../../index.html" class="logo">FairCalculator</a>
+            <div class="header-search">
+                <input type="text" id="searchInput" class="search-input" placeholder="Search tools..."
+                    aria-label="Search calculators">
+            </div>
+            <button class="menu-btn" id="menuToggle" aria-label="Toggle menu" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Category Bar -->
+    <nav class="category-bar" role="navigation" aria-label="Category navigation">
+        <div class="container">
+            <ul id="category-list">
+                <li><a href="../../index.html">All</a></li>
+                <li><a href="../../categories/finance-calculators.html">Finance</a></li>
+                <li><a href="../../categories/math-calculators.html">Math</a></li>
+                <li><a href="../../categories/health-calculators.html">Health</a></li>
+                <li><a href="../../categories/date-time-calculators.html">Date</a></li>
+                <li><a href="../../categories/unit-converters.html"
+                        style="background:#eff6ff; color:#2563eb; border-color:#bfdbfe;">Converters</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-label="Mobile menu">
+        <button class="mobile-close" id="closeMenu" aria-label="Close menu">&times;</button>
+        <div style="margin-top: 40px;">
+            <ul class="sidebar-list">
+                <li><a href="../../index.html">Home</a></li>
+                <li><a href="../../index.html#calculators">All Calculators</a></li>
+                <li><a href="../../about.html">About</a></li>
+                <li><a href="../../contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Notification Container -->
+    <div id="notificationContainer" aria-live="polite" aria-atomic="true"></div>
+
+    <main class="main-content" id="main-content">
+        <div class="container">
+            <!-- Breadcrumbs -->
+            <nav aria-label="Breadcrumb" style="margin-bottom: 20px; font-size: 0.9rem; color: #64748b;">
+                <a href="../../index.html" style="text-decoration: underline;">Home</a> /
+                <a href="../../categories/unit-converters.html" style="text-decoration: underline;">Converters</a> /
+                <span style="font-weight: 600; color: #0f172a;">Bandwidth Calculator</span>
+            </nav>
+
+            <div id="tool-container">
+                <h1 class="section-header" style="justify-content:center; font-size: 2rem; margin-bottom: 30px;">
+                    <i class="fas fa-tachometer-alt" style="color: #2563eb; margin-right: 15px;"></i> Bandwidth
+                    Calculator
+                </h1>
+
+                <!-- Tool Tab Navigation -->
+                <div class="tool-tabs" role="tablist">
+                    <button class="tool-tab active" role="tab" aria-selected="true" aria-controls="slide-data-converter"
+                        data-tool="data-converter">
+                        <i class="fas fa-exchange-alt"></i>
+                        <span>Data Unit Converter</span>
+                    </button>
+                    <button class="tool-tab" role="tab" aria-selected="false" aria-controls="slide-download-time"
+                        data-tool="download-time">
+                        <i class="fas fa-download"></i>
+                        <span>Download/Upload Time</span>
+                    </button>
+                    <button class="tool-tab" role="tab" aria-selected="false" aria-controls="slide-website-bandwidth"
+                        data-tool="website-bandwidth">
+                        <i class="fas fa-globe"></i>
+                        <span>Website Bandwidth</span>
+                    </button>
+                    <button class="tool-tab" role="tab" aria-selected="false" aria-controls="slide-hosting-converter"
+                        data-tool="hosting-converter">
+                        <i class="fas fa-server"></i>
+                        <span>Hosting Bandwidth</span>
+                    </button>
+                </div>
+
+                <div class="featured-calculator">
+                    <!-- ============ SLIDE 1: Data Unit Converter ============ -->
+                    <div class="slide-content active" id="slide-data-converter" role="tabpanel"
+                        aria-labelledby="tab-data-converter">
+                        <div class="calculator-form">
+                            <div class="input-group">
+                                <label for="dataValue">
+                                    Enter Value
+                                    <i class="fas fa-info-circle tooltip-icon"
+                                        data-tooltip="Enter the data value you want to convert" tabindex="0"
+                                        aria-label="Help: Enter the data value you want to convert"></i>
+                                </label>
+                                <div class="input-with-unit">
+                                    <input type="number" id="dataValue" placeholder="e.g. 1024" min="0" max="999999999"
+                                        step="any" aria-describedby="dataValueHelp">
+                                    <small id="dataValueHelp" class="sr-only">Enter a positive number up to
+                                        999,999,999</small>
+                                    <select id="dataUnit" aria-label="Select data unit">
+                                        <option value="bit">Bit</option>
+                                        <option value="B">Byte (B)</option>
+                                        <option value="KB">Kilobyte (KB)</option>
+                                        <option value="MB" selected>Megabyte (MB)</option>
+                                        <option value="GB">Gigabyte (GB)</option>
+                                        <option value="TB">Terabyte (TB)</option>
+                                        <option value="PB">Petabyte (PB)</option>
+                                        <option value="Kbit">Kilobit (Kbit)</option>
+                                        <option value="Mbit">Megabit (Mbit)</option>
+                                        <option value="Gbit">Gigabit (Gbit)</option>
+                                    </select>
+                                </div>
+                                <small class="input-note">Using binary units (1 KB = 1024 bytes)</small>
+                            </div>
+                            <div class="buttons-group">
+                                <button type="button" id="convertDataBtn" class="calc-action-btn">
+                                    <span>Convert</span>
+                                </button>
+                                <button type="button" id="resetDataBtn" class="calc-reset-btn">Reset</button>
+                            </div>
+                        </div>
+                        <div id="dataResults" class="result-container" style="display:none; margin-top:20px;"
+                            role="region" aria-live="polite" aria-label="Conversion results">
+                            <div class="result-grid conversion-grid">
+                                <div class="result-item">
+                                    <span class="result-label">Bits</span>
+                                    <span class="result-value" id="res-bit">-</span>
+                                    <button class="copy-btn" aria-label="Copy bits value" title="Copy to clipboard">
+                                        <i class="fas fa-copy"></i>
+                                    </button>
+                                </div>
+                                <div class="result-item">
+                                    <span class="result-label">Bytes (B)</span>
+                                    <span class="result-value" id="res-B">-</span>
+                                    <button class="copy-btn" aria-label="Copy bytes value" title="Copy to clipboard">
+                                        <i class="fas fa-copy"></i>
+                                    </button>
+                                </div>
+                                <div class="result-item">
+                                    <span class="result-label">Kilobytes (KB)</span>
+                                    <span class="result-value" id="res-KB">-</span>
+                                    <button class="copy-btn" aria-label="Copy kilobytes value"
+                                        title="Copy to clipboard">
+                                        <i class="fas fa-copy"></i>
+                                    </button>
+                                </div>
+                                <div class="result-item">
+                                    <span class="result-label">Megabytes (MB)</span>
+                                    <span class="result-value" id="res-MB">-</span>
+                                    <button class="copy-btn" aria-label="Copy megabytes value"
+                                        title="Copy to clipboard">
+                                        <i class="fas fa-copy"></i>
+                                    </button>
+                                </div>
+                                <div class="result-item">
+                                    <span class="result-label">Gigabytes (GB)</span>
+                                    <span class="result-value" id="res-GB">-</span>
+                                    <button class="copy-btn" aria-label="Copy gigabytes value"
+                                        title="Copy to clipboard">
+                                        <i class="fas fa-copy"></i>
+                                    </button>
+                                </div>
+                                <div class="result-item">
+                                    <span class="result-label">Terabytes (TB)</span>
+                                    <span class="result-value" id="res-TB">-</span>
+                                    <button class="copy-btn" aria-label="Copy terabytes value"
+                                        title="Copy to clipboard">
+                                        <i class="fas fa-copy"></i>
+                                    </button>
+                                </div>
+                                <div class="result-item">
+                                    <span class="result-label">Petabytes (PB)</span>
+                                    <span class="result-value" id="res-PB">-</span>
+                                    <button class="copy-btn" aria-label="Copy petabytes value"
+                                        title="Copy to clipboard">
+                                        <i class="fas fa-copy"></i>
+                                    </button>
+                                </div>
+                                <div class="result-item">
+                                    <span class="result-label">Kilobits (Kbit)</span>
+                                    <span class="result-value" id="res-Kbit">-</span>
+                                    <button class="copy-btn" aria-label="Copy kilobits value" title="Copy to clipboard">
+                                        <i class="fas fa-copy"></i>
+                                    </button>
+                                </div>
+                                <div class="result-item">
+                                    <span class="result-label">Megabits (Mbit)</span>
+                                    <span class="result-value" id="res-Mbit">-</span>
+                                    <button class="copy-btn" aria-label="Copy megabits value" title="Copy to clipboard">
+                                        <i class="fas fa-copy"></i>
+                                    </button>
+                                </div>
+                                <div class="result-item">
+                                    <span class="result-label">Gigabits (Gbit)</span>
+                                    <span class="result-value" id="res-Gbit">-</span>
+                                    <button class="copy-btn" aria-label="Copy gigabits value" title="Copy to clipboard">
+                                        <i class="fas fa-copy"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ============ SLIDE 2: Download/Upload Time Calculator ============ -->
+                    <div class="slide-content" id="slide-download-time" role="tabpanel"
+                        aria-labelledby="tab-download-time">
+                        <div class="calculator-form">
+                            <div class="input-group">
+                                <label for="fileSize">
+                                    File Size
+                                    <i class="fas fa-info-circle tooltip-icon"
+                                        data-tooltip="Enter the size of the file you want to download" tabindex="0"
+                                        aria-label="Help: Enter the size of the file you want to download"></i>
+                                </label>
+                                <div class="input-with-unit">
+                                    <input type="number" id="fileSize" placeholder="Enter file size" min="0"
+                                        max="1000000" step="any" aria-describedby="fileSizeHelp">
+                                    <small id="fileSizeHelp" class="sr-only">Enter file size up to 1,000,000
+                                        units</small>
+                                    <select id="fileUnit" aria-label="Select file size unit">
+                                        <option value="KB">KB</option>
+                                        <option value="MB" selected>MB</option>
+                                        <option value="GB">GB</option>
+                                        <option value="TB">TB</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="input-group">
+                                <label for="bandwidth">
+                                    Bandwidth Speed
+                                    <i class="fas fa-info-circle tooltip-icon"
+                                        data-tooltip="Enter your internet connection speed" tabindex="0"
+                                        aria-label="Help: Enter your internet connection speed"></i>
+                                </label>
+                                <div class="input-with-unit">
+                                    <input type="number" id="bandwidth" placeholder="Enter speed" min="0" max="100000"
+                                        step="any" aria-describedby="bandwidthHelp">
+                                    <small id="bandwidthHelp" class="sr-only">Enter bandwidth speed up to 100,000
+                                        units</small>
+                                    <select id="speedUnit" aria-label="Select speed unit">
+                                        <option value="Kbps">Kbps</option>
+                                        <option value="Mbps" selected>Mbps</option>
+                                        <option value="Gbps">Gbps</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="buttons-group">
+                                <button type="button" id="calculateBtn" class="calc-action-btn">
+                                    <span>Calculate</span>
+                                </button>
+                                <button type="button" id="resetBtn" class="calc-reset-btn">Reset</button>
+                            </div>
+                        </div>
+                        <div id="resultsSection" class="result-container" style="display:none; margin-top:20px;"
+                            role="region" aria-live="polite" aria-label="Download time results">
+                            <div class="result-grid">
+                                <div class="result-item">
+                                    <span class="result-label">Download Time</span>
+                                    <span class="result-value highlight" id="calculatedTime">--:--:--</span>
+                                    <button class="copy-btn" aria-label="Copy download time" title="Copy to clipboard">
+                                        <i class="fas fa-copy"></i>
+                                    </button>
+                                </div>
+                                <div class="result-item">
+                                    <span class="result-label">Speed in Mbps</span>
+                                    <span class="result-value" id="convertedMbps">0 Mbps</span>
+                                    <button class="copy-btn" aria-label="Copy Mbps value" title="Copy to clipboard">
+                                        <i class="fas fa-copy"></i>
+                                    </button>
+                                </div>
+                                <div class="result-item">
+                                    <span class="result-label">Speed in MB/s</span>
+                                    <span class="result-value" id="convertedMBps">0 MB/s</span>
+                                    <button class="copy-btn" aria-label="Copy MB/s value" title="Copy to clipboard">
+                                        <i class="fas fa-copy"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ============ SLIDE 3: Website Bandwidth Calculator ============ -->
+                    <div class="slide-content" id="slide-website-bandwidth" role="tabpanel"
+                        aria-labelledby="tab-website-bandwidth">
+                        <div class="calculator-form">
+                            <div class="input-group">
+                                <label for="pageSize">
+                                    Average Page Size
+                                    <i class="fas fa-info-circle tooltip-icon"
+                                        data-tooltip="Include HTML, CSS, JS, images, and all resources" tabindex="0"
+                                        aria-label="Help: Include all page resources"></i>
+                                </label>
+                                <div class="input-with-unit">
+                                    <input type="number" id="pageSize" placeholder="e.g. 2.5" min="0" max="1000"
+                                        step="any" aria-describedby="pageSizeHelp">
+                                    <small id="pageSizeHelp" class="sr-only">Enter average page size up to 1,000
+                                        units</small>
+                                    <select id="pageSizeUnit" aria-label="Select page size unit">
+                                        <option value="KB">KB</option>
+                                        <option value="MB" selected>MB</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="input-group">
+                                <label for="pageViews">
+                                    Monthly Page Views
+                                    <i class="fas fa-info-circle tooltip-icon"
+                                        data-tooltip="Expected number of page views per month" tabindex="0"
+                                        aria-label="Help: Expected page views per month"></i>
+                                </label>
+                                <div class="input-with-unit">
+                                    <input type="number" id="pageViews" placeholder="e.g. 50000" min="0"
+                                        max="1000000000" step="1" aria-describedby="pageViewsHelp">
+                                    <small id="pageViewsHelp" class="sr-only">Enter monthly page views</small>
+
+                                </div>
+                            </div>
+                            <div class="input-group">
+                                <label for="redundancy">
+                                    Redundancy Factor
+                                    <i class="fas fa-info-circle tooltip-icon"
+                                        data-tooltip="Overhead for caching, retries, and extra requests (1.0 = no overhead, 1.5 = 50% overhead)"
+                                        tabindex="0" aria-label="Help: Overhead multiplier"></i>
+                                </label>
+                                <div class="input-with-unit">
+                                    <input type="number" id="redundancy" placeholder="e.g. 1.5" min="1" max="10"
+                                        step="0.1" value="1.5" aria-describedby="redundancyHelp">
+                                    <small id="redundancyHelp" class="sr-only">Enter redundancy factor between 1 and
+                                        10</small>
+
+                                </div>
+                            </div>
+                            <div class="buttons-group">
+                                <button type="button" id="calcWebBwBtn" class="calc-action-btn">
+                                    <span>Calculate</span>
+                                </button>
+                                <button type="button" id="resetWebBwBtn" class="calc-reset-btn">Reset</button>
+                            </div>
+                        </div>
+                        <div id="webBwResults" class="result-container" style="display:none; margin-top:20px;"
+                            role="region" aria-live="polite" aria-label="Website bandwidth results">
+                            <div class="result-grid">
+                                <div class="result-item">
+                                    <span class="result-label">Monthly Bandwidth</span>
+                                    <span class="result-value highlight" id="monthlyBandwidth">0 GB</span>
+                                    <button class="copy-btn" aria-label="Copy monthly bandwidth"
+                                        title="Copy to clipboard">
+                                        <i class="fas fa-copy"></i>
+                                    </button>
+                                </div>
+                                <div class="result-item">
+                                    <span class="result-label">Daily Bandwidth</span>
+                                    <span class="result-value" id="dailyBandwidth">0 GB</span>
+                                    <button class="copy-btn" aria-label="Copy daily bandwidth"
+                                        title="Copy to clipboard">
+                                        <i class="fas fa-copy"></i>
+                                    </button>
+                                </div>
+                                <div class="result-item">
+                                    <span class="result-label">Average Speed</span>
+                                    <span class="result-value" id="avgSpeed">0 Mbps</span>
+                                    <button class="copy-btn" aria-label="Copy average speed" title="Copy to clipboard">
+                                        <i class="fas fa-copy"></i>
+                                    </button>
+                                </div>
+                                <div class="result-item">
+                                    <span class="result-label">Peak Speed Required</span>
+                                    <span class="result-value" id="peakSpeed">0 Mbps</span>
+                                    <button class="copy-btn" aria-label="Copy peak speed" title="Copy to clipboard">
+                                        <i class="fas fa-copy"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <small class="input-note" style="display: block; margin-top: 10px;">
+                                * Peak speed assumes 10x traffic during busy hours
+                            </small>
+                        </div>
+                    </div>
+
+                    <!-- ============ SLIDE 4: Hosting Bandwidth Converter ============ -->
+                    <div class="slide-content" id="slide-hosting-converter" role="tabpanel"
+                        aria-labelledby="tab-hosting-converter">
+                        <div class="calculator-form">
+                            <div class="input-group">
+                                <label for="monthlyTransfer">
+                                    Monthly Data Transfer
+                                    <i class="fas fa-info-circle tooltip-icon"
+                                        data-tooltip="Total data transfer limit provided by your hosting plan"
+                                        tabindex="0" aria-label="Help: Total monthly transfer limit"></i>
+                                </label>
+                                <div class="input-with-unit">
+                                    <input type="number" id="monthlyTransfer" placeholder="e.g. 500" min="0"
+                                        max="1000000" step="any" aria-describedby="transferHelp">
+                                    <small id="transferHelp" class="sr-only">Enter monthly transfer up to 1,000,000
+                                        units</small>
+                                    <select id="transferUnit" aria-label="Select transfer unit">
+                                        <option value="GB" selected>GB</option>
+                                        <option value="TB">TB</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="buttons-group">
+                                <button type="button" id="calcHostBtn" class="calc-action-btn">
+                                    <span>Calculate</span>
+                                </button>
+                                <button type="button" id="resetHostBtn" class="calc-reset-btn">Reset</button>
+                            </div>
+                        </div>
+                        <div id="hostResults" class="result-container" style="display:none; margin-top:20px;"
+                            role="region" aria-live="polite" aria-label="Hosting bandwidth results">
+                            <div class="result-grid">
+                                <div class="result-item">
+                                    <span class="result-label">Average Bitrate</span>
+                                    <span class="result-value highlight" id="avgBitrate">0 Mbps</span>
+                                    <button class="copy-btn" aria-label="Copy average bitrate"
+                                        title="Copy to clipboard">
+                                        <i class="fas fa-copy"></i>
+                                    </button>
+                                </div>
+                                <div class="result-item">
+                                    <span class="result-label">Daily Transfer</span>
+                                    <span class="result-value" id="dailyTransfer">0 GB/day</span>
+                                    <button class="copy-btn" aria-label="Copy daily transfer" title="Copy to clipboard">
+                                        <i class="fas fa-copy"></i>
+                                    </button>
+                                </div>
+                                <div class="result-item">
+                                    <span class="result-label">Sustained Speed</span>
+                                    <span class="result-value" id="sustainedSpeed">0 MB/s</span>
+                                    <button class="copy-btn" aria-label="Copy sustained speed"
+                                        title="Copy to clipboard">
+                                        <i class="fas fa-copy"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <article class="content">
+                <div class="example-box">
+                    <h3>Quick Example</h3>
+                    <p>For a file of <strong>1 GB</strong> at <strong>100 Mbps</strong>:</p>
+                    <ul>
+                        <li>Download time: <strong>1 minute 25 seconds</strong></li>
+                        <li>Equivalent speed: <strong>12.5 MB/s</strong></li>
+                    </ul>
+                </div>
+
+                <section>
+                    <h2>What is Bandwidth?</h2>
+                    <p>Bandwidth refers to the maximum amount of data that can be transmitted over an internet
+                        connection in a given amount of time. It's typically measured in bits per second (bps) and
+                        commonly expressed as Mbps (Megabits per second) or Gbps (Gigabits per second).</p>
+                    <p><strong>Important distinction:</strong> File sizes use <em>binary</em> units (1 KB = 1,024 bytes)
+                        while network speeds use <em>decimal</em> units (1 Mbps = 1,000,000 bits per second). This is
+                        why 100 Mbps doesn't download at 100 MB/s — it's actually 12.5 MB/s (100 ÷ 8).</p>
+                </section>
+
+                <section>
+                    <h2>How to Use This Calculator</h2>
+                    <ol class="steps-list">
+                        <li>Select the calculator type from the tabs above</li>
+                        <li>Enter the required values (file size, speed, etc.)</li>
+                        <li>Select the appropriate units from dropdowns</li>
+                        <li>Click "Calculate" to see instant results</li>
+                        <li>Use the copy button to copy any result value</li>
+                    </ol>
+                </section>
+
+                <!-- ═══ Tool 1 Explanation ═══ -->
+                <section>
+                    <h2>🔄 Tool 1: Data Unit Converter — How It Works</h2>
+                    <p>The Data Unit Converter translates a value from one data unit into every other unit
+                        simultaneously. It handles both binary storage units (Bytes, KB, MB, GB, TB, PB) and decimal
+                        network units (Kilobit, Megabit, Gigabit).</p>
+
+                    <h3>Formula</h3>
+                    <p>All input values are first converted to <strong>bits</strong> (the smallest unit), then divided
+                        to get each target unit:</p>
+                    <div class="example-box">
+                        <h3>Conversion Formulas</h3>
+                        <p><strong>Step 1:</strong> totalBits = inputValue × bitsPerUnit</p>
+                        <p><strong>Step 2:</strong> targetValue = totalBits ÷ bitsPerTargetUnit</p>
+                    </div>
+
+                    <h3>Conversion Reference Table</h3>
+                    <table style="width: 100%; border-collapse: collapse; margin: 15px 0;">
+                        <thead>
+                            <tr style="background: #f1f5f9;">
+                                <th style="padding: 10px; text-align: left; border: 1px solid #e2e8f0;">Unit</th>
+                                <th style="padding: 10px; text-align: left; border: 1px solid #e2e8f0;">Equivalent in
+                                    Bits</th>
+                                <th style="padding: 10px; text-align: left; border: 1px solid #e2e8f0;">Type</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="padding: 8px; border: 1px solid #e2e8f0;">1 Bit</td>
+                                <td style="padding: 8px; border: 1px solid #e2e8f0;">1</td>
+                                <td style="padding: 8px; border: 1px solid #e2e8f0;">Base unit</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 8px; border: 1px solid #e2e8f0;">1 Byte (B)</td>
+                                <td style="padding: 8px; border: 1px solid #e2e8f0;">8</td>
+                                <td style="padding: 8px; border: 1px solid #e2e8f0;">Binary</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 8px; border: 1px solid #e2e8f0;">1 Kilobyte (KB)</td>
+                                <td style="padding: 8px; border: 1px solid #e2e8f0;">8 × 1,024 = 8,192</td>
+                                <td style="padding: 8px; border: 1px solid #e2e8f0;">Binary</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 8px; border: 1px solid #e2e8f0;">1 Megabyte (MB)</td>
+                                <td style="padding: 8px; border: 1px solid #e2e8f0;">8 × 1,024² = 8,388,608</td>
+                                <td style="padding: 8px; border: 1px solid #e2e8f0;">Binary</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 8px; border: 1px solid #e2e8f0;">1 Gigabyte (GB)</td>
+                                <td style="padding: 8px; border: 1px solid #e2e8f0;">8 × 1,024³ = 8,589,934,592</td>
+                                <td style="padding: 8px; border: 1px solid #e2e8f0;">Binary</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 8px; border: 1px solid #e2e8f0;">1 Terabyte (TB)</td>
+                                <td style="padding: 8px; border: 1px solid #e2e8f0;">8 × 1,024⁴</td>
+                                <td style="padding: 8px; border: 1px solid #e2e8f0;">Binary</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 8px; border: 1px solid #e2e8f0;">1 Petabyte (PB)</td>
+                                <td style="padding: 8px; border: 1px solid #e2e8f0;">8 × 1,024⁵</td>
+                                <td style="padding: 8px; border: 1px solid #e2e8f0;">Binary</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 8px; border: 1px solid #e2e8f0;">1 Kilobit (Kbit)</td>
+                                <td style="padding: 8px; border: 1px solid #e2e8f0;">1,000</td>
+                                <td style="padding: 8px; border: 1px solid #e2e8f0;">Decimal</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 8px; border: 1px solid #e2e8f0;">1 Megabit (Mbit)</td>
+                                <td style="padding: 8px; border: 1px solid #e2e8f0;">1,000,000</td>
+                                <td style="padding: 8px; border: 1px solid #e2e8f0;">Decimal</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 8px; border: 1px solid #e2e8f0;">1 Gigabit (Gbit)</td>
+                                <td style="padding: 8px; border: 1px solid #e2e8f0;">1,000,000,000</td>
+                                <td style="padding: 8px; border: 1px solid #e2e8f0;">Decimal</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="example-box">
+                        <h3>Example: Convert 1 GB</h3>
+                        <p><strong>Step 1:</strong> 1 GB = 1 × 8,589,934,592 = <strong>8,589,934,592 bits</strong></p>
+                        <ul>
+                            <li>In MB: 8,589,934,592 ÷ 8,388,608 = <strong>1,024 MB</strong></li>
+                            <li>In KB: 8,589,934,592 ÷ 8,192 = <strong>1,048,576 KB</strong></li>
+                            <li>In Megabits: 8,589,934,592 ÷ 1,000,000 = <strong>8,589.93 Mbit</strong></li>
+                            <li>In Bytes: 8,589,934,592 ÷ 8 = <strong>1,073,741,824 Bytes</strong></li>
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- ═══ Tool 2 Explanation ═══ -->
+                <section>
+                    <h2>⬇️ Tool 2: Download/Upload Time Calculator — How It Works</h2>
+                    <p>This tool estimates how long it takes to transfer a file of a given size over a connection of a
+                        given speed. It converts both inputs to their base units (bits) and divides to get the time in
+                        seconds.</p>
+
+                    <h3>Formulas</h3>
+                    <div class="example-box">
+                        <h3>Download Time Formulas</h3>
+                        <p><strong>File Size in Bits</strong> = fileSize × bytesPerUnit × 8</p>
+                        <p><strong>Speed in bps</strong> = speed × bitsPerSpeedUnit</p>
+                        <p><strong>Time (seconds)</strong> = fileSizeInBits ÷ speedInBps</p>
+                    </div>
+
+                    <h3>Unit Multipliers</h3>
+                    <ul class="cidr-list">
+                        <li><strong>File size to bytes:</strong> KB = 1,024 | MB = 1,048,576 | GB = 1,073,741,824 | TB =
+                            1,099,511,627,776</li>
+                        <li><strong>Speed to bps:</strong> Kbps = 1,000 | Mbps = 1,000,000 | Gbps = 1,000,000,000</li>
+                    </ul>
+
+                    <div class="example-box">
+                        <h3>Example: Download 1 GB at 100 Mbps</h3>
+                        <p><strong>Step 1 — File to bits:</strong> 1 × 1,073,741,824 bytes × 8 = <strong>8,589,934,592
+                                bits</strong></p>
+                        <p><strong>Step 2 — Speed to bps:</strong> 100 × 1,000,000 = <strong>100,000,000 bps</strong>
+                        </p>
+                        <p><strong>Step 3 — Time:</strong> 8,589,934,592 ÷ 100,000,000 = <strong>85.9 seconds ≈ 1m
+                                25s</strong></p>
+                        <ul>
+                            <li>Speed in MB/s: 100 ÷ 8 = <strong>12.50 MB/s</strong></li>
+                        </ul>
+                    </div>
+
+                    <div class="example-box">
+                        <h3>Example: Download 4.7 GB DVD at 50 Mbps</h3>
+                        <p><strong>File:</strong> 4.7 × 1,073,741,824 × 8 = <strong>40,372,692,582 bits</strong></p>
+                        <p><strong>Speed:</strong> 50 × 1,000,000 = <strong>50,000,000 bps</strong></p>
+                        <p><strong>Time:</strong> 40,372,692,582 ÷ 50,000,000 = <strong>807.5 seconds ≈ 13m 27s</strong>
+                        </p>
+                    </div>
+                </section>
+
+                <!-- ═══ Tool 3 Explanation ═══ -->
+                <section>
+                    <h2>🌐 Tool 3: Website Bandwidth Calculator — How It Works</h2>
+                    <p>This tool calculates how much bandwidth a website needs per month based on average page size,
+                        expected traffic, and a redundancy factor for overhead like caching and retries.</p>
+
+                    <h3>Formulas</h3>
+                    <div class="example-box">
+                        <h3>Website Bandwidth Formulas</h3>
+                        <p><strong>Monthly Bandwidth (GB)</strong> = (pageSizeMB × pageViews × redundancy) ÷ 1,024</p>
+                        <p><strong>Daily Bandwidth (GB)</strong> = monthlyGB ÷ 30</p>
+                        <p><strong>Average Speed (Mbps)</strong> = (monthlyGB × 1,024 × 8) ÷ (30 × 86,400)</p>
+                        <p><strong>Peak Speed (Mbps)</strong> = averageSpeed × 10</p>
+                    </div>
+                    <p><em>The peak speed assumes up to 10× traffic concentration during busy hours compared to the
+                            average.</em></p>
+
+                    <div class="example-box">
+                        <h3>Example: Blog with 50,000 monthly views</h3>
+                        <p>Average page size = <strong>2.5 MB</strong>, redundancy = <strong>1.5×</strong></p>
+                        <ul>
+                            <li><strong>Monthly:</strong> (2.5 × 50,000 × 1.5) ÷ 1,024 = <strong>183.11 GB</strong></li>
+                            <li><strong>Daily:</strong> 183.11 ÷ 30 = <strong>6.10 GB</strong></li>
+                            <li><strong>Average Speed:</strong> (183.11 × 1,024 × 8) ÷ 2,592,000 = <strong>0.58
+                                    Mbps</strong></li>
+                            <li><strong>Peak Speed:</strong> 0.58 × 10 = <strong>5.81 Mbps</strong></li>
+                        </ul>
+                    </div>
+
+                    <div class="example-box">
+                        <h3>Example: E-commerce site with 500,000 monthly views</h3>
+                        <p>Average page size = <strong>4 MB</strong>, redundancy = <strong>2.0×</strong></p>
+                        <ul>
+                            <li><strong>Monthly:</strong> (4 × 500,000 × 2.0) ÷ 1,024 = <strong>3,906.25 GB ≈ 3.81
+                                    TB</strong></li>
+                            <li><strong>Daily:</strong> 3,906.25 ÷ 30 = <strong>130.21 GB</strong></li>
+                            <li><strong>Average Speed:</strong> (3,906.25 × 1,024 × 8) ÷ 2,592,000 = <strong>12.35
+                                    Mbps</strong></li>
+                            <li><strong>Peak Speed:</strong> 12.35 × 10 = <strong>123.46 Mbps</strong></li>
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- ═══ Tool 4 Explanation ═══ -->
+                <section>
+                    <h2>🖥️ Tool 4: Hosting Bandwidth Converter — How It Works</h2>
+                    <p>Hosting providers express bandwidth as a monthly transfer quota (e.g. 500 GB/month). This tool
+                        converts that quota into practical metrics: average sustained bitrate (Mbps), daily transfer
+                        allowance, and sustained byte transfer speed (MB/s).</p>
+
+                    <h3>Formulas</h3>
+                    <div class="example-box">
+                        <h3>Hosting Bandwidth Formulas</h3>
+                        <p><strong>Total Bits in Month</strong> = transferGB × 1,024³ × 8</p>
+                        <p><strong>Average Bitrate (Mbps)</strong> = totalBits ÷ (30 × 86,400) ÷ 1,000,000</p>
+                        <p><strong>Daily Transfer</strong> = transferGB ÷ 30</p>
+                        <p><strong>Sustained Speed (MB/s)</strong> = avgBitrateMbps ÷ 8</p>
+                    </div>
+
+                    <div class="example-box">
+                        <h3>Example: 500 GB/month hosting plan</h3>
+                        <ul>
+                            <li><strong>Total bits:</strong> 500 × 1,073,741,824 × 8 = <strong>4.295 × 10¹²
+                                    bits</strong></li>
+                            <li><strong>Average Bitrate:</strong> 4.295 × 10¹² ÷ 2,592,000 ÷ 1,000,000 = <strong>1.65
+                                    Mbps</strong></li>
+                            <li><strong>Daily Transfer:</strong> 500 ÷ 30 = <strong>16.67 GB/day</strong></li>
+                            <li><strong>Sustained Speed:</strong> 1.65 ÷ 8 = <strong>0.21 MB/s</strong></li>
+                        </ul>
+                    </div>
+
+                    <div class="example-box">
+                        <h3>Example: 5 TB/month hosting plan</h3>
+                        <ul>
+                            <li><strong>Transfer in GB:</strong> 5 × 1,024 = 5,120 GB</li>
+                            <li><strong>Average Bitrate:</strong> <strong>16.94 Mbps</strong></li>
+                            <li><strong>Daily Transfer:</strong> 5,120 ÷ 30 = <strong>170.67 GB/day</strong></li>
+                            <li><strong>Sustained Speed:</strong> 16.94 ÷ 8 = <strong>2.12 MB/s</strong></li>
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- ═══ Reference Sections ═══ -->
+                <section>
+                    <h2>Common Bandwidth Requirements</h2>
+                    <ul class="cidr-list">
+                        <li><strong>Streaming HD Video:</strong> 5 Mbps</li>
+                        <li><strong>Streaming 4K Video:</strong> 25 Mbps</li>
+                        <li><strong>Video Conferencing:</strong> 10 Mbps</li>
+                        <li><strong>Gaming Online:</strong> 3 Mbps</li>
+                        <li><strong>Large File Downloads:</strong> 50+ Mbps</li>
+                        <li><strong>Cloud Backup (continuous):</strong> 10–25 Mbps</li>
+                        <li><strong>Smart Home (10+ devices):</strong> 25+ Mbps</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Understanding Data Units</h2>
+                    <p>This calculator uses <strong>binary</strong> units (base 1024) for storage and
+                        <strong>decimal</strong> units (base 1000) for network speed — the industry standard:
+                    </p>
+                    <ul class="cidr-list">
+                        <li><strong>1 Byte</strong> = 8 bits</li>
+                        <li><strong>1 KB</strong> = 1,024 bytes (binary, storage)</li>
+                        <li><strong>1 MB</strong> = 1,024 KB = 1,048,576 bytes</li>
+                        <li><strong>1 GB</strong> = 1,024 MB = 1,073,741,824 bytes</li>
+                        <li><strong>1 Kbps</strong> = 1,000 bits per second (decimal, network)</li>
+                        <li><strong>1 Mbps</strong> = 1,000,000 bits per second</li>
+                        <li><strong>1 Gbps</strong> = 1,000,000,000 bits per second</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Frequently Asked Questions</h2>
+                    <div class="faq-item">
+                        <h3 class="faq-question">1. How accurate are the calculated times?</h3>
+                        <p>Calculated times are theoretical estimates based on ideal conditions. Actual download times
+                            may vary due to network congestion, server limitations, and other factors. Expect real-world
+                            times to be 10–30% longer.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3 class="faq-question">2. What's the difference between Mbps and MB/s?</h3>
+                        <p>One byte equals 8 bits. So 1 MB/s (Megabytes per second) equals 8 Mbps (Megabits per second).
+                            Internet providers usually advertise in Mbps, while download managers show speed in MB/s.
+                        </p>
+                    </div>
+                    <div class="faq-item">
+                        <h3 class="faq-question">3. How can I test my actual bandwidth?</h3>
+                        <p>You can use online speed tests like Speedtest.net, Fast.com, or your ISP's official speed
+                            test tool to measure your actual upload and download speeds.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3 class="faq-question">4. Why is my download slower than my bandwidth?</h3>
+                        <p>Several factors affect actual download speed: server limitations, network congestion, Wi-Fi
+                            interference, distance from router, number of connected devices, and background applications
+                            using bandwidth.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3 class="faq-question">5. What is the redundancy factor in website bandwidth?</h3>
+                        <p>The redundancy factor accounts for overhead like caching, failed requests, retries, and
+                            additional resources. A typical value is 1.5 (50% overhead), but high-traffic sites may need
+                            2.0 or more.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3 class="faq-question">6. Why do storage and network use different unit systems?</h3>
+                        <p>Computer memory is physically organized in powers of 2 (binary), so 1 KB = 1,024 bytes.
+                            Network protocols adopted the metric system, so 1 Mbps = 1,000,000 bps. This mismatch is why
+                            real-world transfer speeds always seem lower than advertised.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3 class="faq-question">7. What does the peak speed mean in the website bandwidth tool?</h3>
+                        <p>Peak speed estimates the bandwidth needed during traffic spikes, assuming up to 10× the
+                            average load during busy hours. It helps you plan for adequate server capacity without
+                            downtime.</p>
+                    </div>
+                </section>
+            </article>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <span
+                        style="font-weight: 800; font-size: 1.2rem; display:block; margin-bottom:10px; color:var(--text-main);">FairCalculator</span>
+                    <p>Simple, fast, and accurate online calculators for finance, math, health, and daily life problems.
+                    </p>
+                </div>
+                <div>
+                    <h4>Menu</h4>
+                    <ul>
+                        <li><a href="../../index.html">Home</a></li>
+                        <li><a href="../../about.html">About Us</a></li>
+                        <li><a href="../../contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="../../legal/privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="../../legal/terms-of-service.html">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2026 FairCalculator. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>var ROOT_PATH = '../../';</script>
+    <script src="../../assets/js/data.js"></script>
+    <script src="../../assets/js/search.js" defer></script>
+    <script src="../../assets/js/mobile-menu.js" defer></script>
+    <script src="../../assets/js/calculators/bandwidth-calculator.js" defer></script>
+    <script src="../../assets/js/related-calculators.js" defer></script>
+</body>
+
+</html>

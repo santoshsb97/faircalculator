@@ -1,0 +1,816 @@
+/* Bandwidth Calculator Specific Styles - FIXED & ENHANCED */
+
+/* ══════════════════════════════════════
+   ACCESSIBILITY
+   ══════════════════════════════════════ */
+
+/* Skip to content link */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: #2563eb;
+    color: white;
+    padding: 8px 16px;
+    text-decoration: none;
+    border-radius: 0 0 4px 0;
+    z-index: 9999;
+}
+
+.skip-link:focus {
+    top: 0;
+}
+
+/* Screen reader only */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+/* ══════════════════════════════════════
+   NOTIFICATION SYSTEM
+   ══════════════════════════════════════ */
+
+#notificationContainer {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 10000;
+    pointer-events: none;
+}
+
+.notification {
+    background: white;
+    padding: 16px 20px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-width: 300px;
+    max-width: 400px;
+    animation: slideInRight 0.3s ease;
+    pointer-events: all;
+    border-left: 4px solid;
+}
+
+.notification.success {
+    background: #f0fdf4;
+    border-left-color: #22c55e;
+    color: #166534;
+}
+
+.notification.error {
+    background: #fef2f2;
+    border-left-color: #ef4444;
+    color: #991b1b;
+}
+
+.notification.info {
+    background: #eff6ff;
+    border-left-color: #3b82f6;
+    color: #1e40af;
+}
+
+.notification-icon {
+    font-size: 20px;
+    flex-shrink: 0;
+}
+
+.notification-message {
+    flex: 1;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.notification-close {
+    background: none;
+    border: none;
+    color: inherit;
+    cursor: pointer;
+    padding: 4px;
+    opacity: 0.6;
+    transition: opacity 0.2s;
+}
+
+.notification-close:hover {
+    opacity: 1;
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(400px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.notification.fade-out {
+    animation: fadeOut 0.3s ease forwards;
+}
+
+@keyframes fadeOut {
+    to {
+        opacity: 0;
+        transform: translateX(400px);
+    }
+}
+
+/* ══════════════════════════════════════
+   TOOL TAB NAVIGATION
+   ══════════════════════════════════════ */
+
+.tool-tabs {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 0;
+    background: #f1f5f9;
+    padding: 6px;
+    border-radius: 12px 12px 0 0;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.tool-tab {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 18px;
+    background: transparent;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #64748b;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.25s ease;
+    flex: 1;
+    justify-content: center;
+    min-height: 44px;
+    /* Accessibility - touch target */
+}
+
+.tool-tab:hover {
+    background: #e2e8f0;
+    color: #334155;
+}
+
+.tool-tab:focus {
+    outline: 2px solid #2563eb;
+    outline-offset: 2px;
+}
+
+.tool-tab.active {
+    background: #fff;
+    color: #2563eb;
+    font-weight: 600;
+    box-shadow: 0 2px 8px rgba(37, 99, 235, 0.12);
+}
+
+.tool-tab:active {
+    transform: scale(0.98);
+}
+
+.tool-tab i {
+    font-size: 15px;
+}
+
+/* ══════════════════════════════════════
+   SLIDE CONTENT
+   ══════════════════════════════════════ */
+
+.slide-content {
+    display: none;
+    opacity: 0;
+    transform: translateY(8px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.slide-content.active {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ══════════════════════════════════════
+   CALCULATOR FORM
+   ══════════════════════════════════════ */
+
+.calculator-form {
+    background: white;
+    padding: 30px;
+    border-radius: 0 0 12px 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    margin-bottom: 0;
+}
+
+.featured-calculator {
+    background: #ffffff;
+    border-radius: 0 0 12px 12px;
+    border: 1px solid #e2e8f0;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #1e293b;
+}
+
+.input-with-unit {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.input-with-unit input,
+.input-with-unit select {
+    padding: 12px 15px;
+    border: 2px solid #cbd5e1;
+    border-radius: 8px;
+    font-size: 16px;
+    width: 100%;
+    transition: all 0.2s ease;
+    font-family: inherit;
+}
+
+.input-with-unit input:hover,
+.input-with-unit select:hover {
+    border-color: #94a3b8;
+}
+
+.input-with-unit input:focus,
+.input-with-unit select:focus {
+    outline: none;
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.input-with-unit input:invalid:not(:placeholder-shown) {
+    border-color: #ef4444;
+}
+
+.input-with-unit input {
+    flex-grow: 1;
+}
+
+.input-with-unit select {
+    width: auto;
+    min-width: 100px;
+}
+
+.unit-label {
+    font-size: 14px;
+    color: #64748b;
+    font-weight: 500;
+    white-space: nowrap;
+    padding: 12px 15px;
+    background: #f8fafc;
+    border: 2px solid #cbd5e1;
+    border-radius: 8px;
+}
+
+.input-note {
+    display: block;
+    margin-top: 6px;
+    font-size: 12px;
+    color: #64748b;
+    font-style: italic;
+}
+
+/* Tooltip Icon */
+.tooltip-icon {
+    color: #64748b;
+    cursor: help;
+    font-size: 14px;
+    transition: color 0.2s;
+}
+
+.tooltip-icon:hover,
+.tooltip-icon:focus {
+    color: #2563eb;
+}
+
+.tooltip-icon:focus {
+    outline: 2px solid #2563eb;
+    outline-offset: 2px;
+    border-radius: 50%;
+}
+
+/* ══════════════════════════════════════
+   BUTTONS
+   ══════════════════════════════════════ */
+
+.buttons-group {
+    display: flex;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.calc-action-btn {
+    background: #2563eb;
+    color: white;
+    border: none;
+    padding: 14px 28px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    min-width: 140px;
+}
+
+.calc-action-btn:hover:not(:disabled) {
+    background: #1d4ed8;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+}
+
+.calc-action-btn:active:not(:disabled) {
+    transform: scale(0.97);
+}
+
+.calc-action-btn:focus {
+    outline: 2px solid #2563eb;
+    outline-offset: 2px;
+}
+
+.calc-action-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* Loading state */
+.calc-action-btn.loading {
+    pointer-events: none;
+}
+
+.calc-action-btn.loading span {
+    opacity: 0;
+}
+
+.calc-action-btn.loading::after {
+    content: '';
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    top: 50%;
+    left: 50%;
+    margin-left: -8px;
+    margin-top: -8px;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    border-top-color: transparent;
+    animation: spin 0.6s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.calc-reset-btn {
+    background: #f1f5f9;
+    color: #475569;
+    border: 2px solid #cbd5e1;
+    padding: 14px 28px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.calc-reset-btn:hover {
+    background: #e2e8f0;
+    border-color: #94a3b8;
+}
+
+.calc-reset-btn:active {
+    transform: scale(0.97);
+}
+
+.calc-reset-btn:focus {
+    outline: 2px solid #2563eb;
+    outline-offset: 2px;
+}
+
+/* ══════════════════════════════════════
+   RESULT GRID
+   ══════════════════════════════════════ */
+
+.result-container {
+    animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.result-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.conversion-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 12px;
+}
+
+.result-item {
+    background: #f8fafc;
+    padding: 15px;
+    border-radius: 8px;
+    border-left: 4px solid #2563eb;
+    position: relative;
+    transition: all 0.2s ease;
+}
+
+.result-item:hover {
+    background: #f1f5f9;
+    transform: translateX(2px);
+}
+
+.result-label {
+    display: block;
+    font-size: 13px;
+    color: #64748b;
+    margin-bottom: 5px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.result-value {
+    font-size: 17px;
+    font-weight: 600;
+    color: #0f172a;
+    word-break: break-all;
+    display: block;
+    font-family: 'Courier New', monospace;
+}
+
+.highlight {
+    color: #2563eb;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+/* Copy Button */
+.copy-btn {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: #e2e8f0;
+    border: none;
+    width: 32px;
+    height: 32px;
+    border-radius: 6px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #64748b;
+    transition: all 0.2s ease;
+    opacity: 0;
+}
+
+.result-item:hover .copy-btn {
+    opacity: 1;
+}
+
+.copy-btn:hover {
+    background: #cbd5e1;
+    color: #2563eb;
+}
+
+.copy-btn:active {
+    transform: scale(0.9);
+}
+
+.copy-btn:focus {
+    outline: 2px solid #2563eb;
+    outline-offset: 2px;
+    opacity: 1;
+}
+
+.copy-btn.copied {
+    background: #22c55e;
+    color: white;
+}
+
+.copy-btn.copied i::before {
+    content: "\f00c";
+    /* Check icon */
+}
+
+/* ══════════════════════════════════════
+   CONTENT SECTIONS
+   ══════════════════════════════════════ */
+
+.content {
+    margin-top: 40px;
+}
+
+.example-box {
+    background: #eff6ff;
+    border: 1px solid #bfdbfe;
+    border-left: 4px solid #2563eb;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 30px 0;
+}
+
+.example-box h3 {
+    margin-top: 0;
+    color: #2563eb;
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+.example-box p {
+    margin-bottom: 10px;
+    color: #1e40af;
+}
+
+.example-box ul {
+    margin: 10px 0 0 20px;
+    color: #1e40af;
+}
+
+.example-box li {
+    margin-bottom: 5px;
+}
+
+.steps-list,
+.cidr-list {
+    margin: 15px 0;
+    padding-left: 25px;
+}
+
+.steps-list li,
+.cidr-list li {
+    margin-bottom: 10px;
+    color: #475569;
+    line-height: 1.6;
+}
+
+.faq-item {
+    margin-bottom: 25px;
+    padding-bottom: 25px;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.faq-item:last-child {
+    border-bottom: none;
+}
+
+.faq-question {
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #0f172a;
+    font-size: 1.05rem;
+}
+
+/* ══════════════════════════════════════
+   RESPONSIVE DESIGN
+   ══════════════════════════════════════ */
+
+@media (max-width: 768px) {
+
+    /* Tabs */
+    .tool-tabs {
+        gap: 4px;
+        padding: 4px;
+    }
+
+    .tool-tab {
+        padding: 10px 10px;
+        font-size: 12px;
+        gap: 5px;
+        min-width: 60px;
+    }
+
+    .tool-tab span {
+        display: none;
+    }
+
+    /* Show text on active tab only */
+    .tool-tab.active span {
+        display: inline;
+        font-size: 11px;
+    }
+
+    .tool-tab i {
+        font-size: 18px;
+    }
+
+    /* Form */
+    .input-with-unit {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .input-with-unit select,
+    .unit-label {
+        min-width: auto;
+        width: 100%;
+    }
+
+    .buttons-group {
+        flex-direction: column;
+    }
+
+    .calc-action-btn,
+    .calc-reset-btn {
+        width: 100%;
+    }
+
+    /* Results */
+    .result-grid,
+    .conversion-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .result-value {
+        font-size: 15px;
+    }
+
+    .highlight {
+        font-size: 18px;
+    }
+
+    .calculator-form {
+        padding: 20px;
+    }
+
+    /* Copy button always visible on mobile */
+    .copy-btn {
+        opacity: 1;
+        top: 8px;
+        right: 8px;
+        width: 28px;
+        height: 28px;
+    }
+
+    /* Notifications */
+    #notificationContainer {
+        top: 10px;
+        right: 10px;
+        left: 10px;
+    }
+
+    .notification {
+        min-width: auto;
+        max-width: none;
+    }
+}
+
+/* Tablet specific */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .result-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .tool-tab {
+        font-size: 13px;
+        padding: 11px 14px;
+    }
+}
+
+/* ══════════════════════════════════════
+   TOUCH DEVICE OPTIMIZATIONS
+   ══════════════════════════════════════ */
+
+@media (hover: none) and (pointer: coarse) {
+
+    /* Larger touch targets */
+    .tool-tab {
+        min-height: 48px;
+        min-width: 48px;
+    }
+
+    .calc-action-btn,
+    .calc-reset-btn {
+        min-height: 48px;
+    }
+
+    /* Active states for touch */
+    .tool-tab:active {
+        background: #cbd5e0;
+    }
+
+    .calc-action-btn:active:not(:disabled) {
+        background: #1e40af;
+    }
+
+    .calc-reset-btn:active {
+        background: #cbd5e1;
+    }
+
+    /* Copy button always visible */
+    .copy-btn {
+        opacity: 1;
+    }
+}
+
+/* ══════════════════════════════════════
+   PRINT STYLES
+   ══════════════════════════════════════ */
+
+@media print {
+
+    .tool-tabs,
+    .buttons-group,
+    .copy-btn,
+    #notificationContainer,
+    .skip-link {
+        display: none !important;
+    }
+
+    .slide-content {
+        display: block !important;
+        opacity: 1 !important;
+        page-break-inside: avoid;
+    }
+
+    .result-container {
+        page-break-inside: avoid;
+    }
+
+    .calculator-form {
+        box-shadow: none;
+        border: 1px solid #cbd5e1;
+    }
+}
+
+/* Dark mode intentionally omitted — site uses light theme only */
+
+
+/* ══════════════════════════════════════
+   REDUCED MOTION
+   ══════════════════════════════════════ */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    .slide-content,
+    .result-container {
+        animation: none;
+    }
+}
+
+/* ══════════════════════════════════════
+   HIGH CONTRAST MODE
+   ══════════════════════════════════════ */
+
+@media (prefers-contrast: high) {
+    .tool-tab.active {
+        border: 2px solid #2563eb;
+    }
+
+    .calc-action-btn {
+        border: 2px solid #1d4ed8;
+    }
+
+    .result-item {
+        border: 1px solid #2563eb;
+    }
+}

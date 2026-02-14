@@ -103,8 +103,12 @@ function calcWeekDiff() {
 
     if (isNaN(d1.getTime()) || isNaN(d2.getTime())) { alert("Invalid dates"); return; }
 
-    var diffTime = Math.abs(d2 - d1);
-    var diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+    // Convert to UTC to avoid DST issues
+    const utc1 = Date.UTC(d1.getFullYear(), d1.getMonth(), d1.getDate());
+    const utc2 = Date.UTC(d2.getFullYear(), d2.getMonth(), d2.getDate());
+
+    var diffTime = Math.abs(utc2 - utc1);
+    var diffDays = Math.round(diffTime / (1000 * 60 * 60 * 24));
     var weeks = Math.floor(diffDays / 7);
     var days = diffDays % 7;
 
