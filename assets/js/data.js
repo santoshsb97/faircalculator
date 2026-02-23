@@ -58,5 +58,7 @@ const calculatorsData = [
     // Physics
     { name: 'Frequency Calc', desc: 'Calculate frequency, wavelength, period, and speed.', category: 'Physics', icon: 'fa-wave-square', url: 'calculators/frequency-calculator/' },
     { name: 'Spring Constant', desc: 'Calculate spring force, stiffness (k), and displacement using Hooke\'s Law.', category: 'Physics', icon: 'fa-compress-alt', url: 'calculators/spring-constant-calculator/' },
-    { name: 'Wavelength Calc', desc: 'Calculate wavelength using frequency and speed.', category: 'Physics', icon: 'fa-wave-square', url: 'calculators/wavelength-calculator/' }
+    { name: 'Wavelength Calc', desc: 'Calculate wavelength using frequency and speed.', category: 'Physics', icon: 'fa-wave-square', url: 'calculators/wavelength-calculator/' },
+    { name: 'NZ Income Tax', desc: 'Calculate NZ PAYE, ACC & KiwiSaver for 2025-26.', category: 'Finance', icon: 'fa-money-bill-wave', url: 'calculators/nz-tax-calculator/' },
+    { name: 'NZ GST Calc', desc: 'Calculate 15% NZ GST. Add or remove GST instantly.', category: 'Finance', icon: 'fa-receipt', url: 'calculators/nz-gst-calculator/' }
 ];

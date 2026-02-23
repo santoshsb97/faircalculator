@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en-NZ">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Free NZ GST Calculator 2026 – Add or Remove 15% GST</title>
+  <meta name="description"
+    content="Free New Zealand GST Calculator: Add 15% GST to net prices or extract GST from inclusive totals instantly. Accurate and compliant with IRD guidelines.">
+  <link rel="canonical" href="https://www.faircalculator.com/calculators/nz-gst-calculator/">
+
+  <!-- Preload Critical Assets -->
+  <link rel="preload" href="../../assets/css/style.css" as="style">
+  <link rel="preload" href="../../assets/css/calculators/gst-calculator.css" as="style">
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    as="style">
+
+  <link rel="icon" type="image/x-icon" href="../../assets/images/favicon.png">
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="stylesheet" href="../../assets/css/calculators/nz-gst-calculator.css">
+
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@500;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- NZ GST Schema Markup -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "New Zealand GST Calculator",
+      "description": "Calculate 15% Goods and Services Tax (GST) in New Zealand. Add GST to net prices or extract it from inclusive totals. IRD compliant.",
+      "applicationCategory": "CalculatorApplication",
+      "operatingSystem": "Any",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "NZD"
+      },
+      "provider": {
+        "@type": "Organization",
+        "name": "FairCalculator",
+        "areaServed": "NZ"
+      }
+    }
+    </script>
+  <script type="text/javascript">
+    (function (c, l, a, r, i, t, y) {
+      c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+      t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+      y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+    })(window, document, "clarity", "script", "udqk27trde");
+  </script>
+</head>
+
+<body>
+
+  <header class="header">
+    <div class="container header-inner">
+      <a href="../../index.html" class="logo">FairCalculator</a>
+      <div class="header-search">
+        <input type="text" id="searchInput" class="search-input" placeholder="Search GST tools..."
+          aria-label="Search GST calculators">
+      </div>
+      <button class="menu-btn" id="menuToggle"><i class="fas fa-bars"></i></button>
+    </div>
+  </header>
+
+  <nav class="category-bar">
+    <div class="container">
+      <ul id="category-list">
+        <li><a href="../../index.html">All</a></li>
+        <li><a href="../../categories/finance-calculators.html">Finance</a></li>
+        <li><a href="../../categories/math-calculators.html">Math</a></li>
+        <li><a href="../../categories/health-calculators.html">Health</a></li>
+        <li><a href="../../categories/date-time-calculators.html">Date</a></li>
+        <li><a href="../../categories/physics-calculators.html">Physics</a></li>
+        <li><a href="../../categories/unit-converters.html">Converters</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="main-content">
+    <div class="container">
+
+      <!-- Breadcrumb -->
+      <div style="margin-bottom: 20px; font-size: 0.9rem; color: #64748b;">
+        <a href="../../index.html" style="text-decoration: underline;">Home</a> /
+        <span style="font-weight: 600; color: #0f172a;">NZ GST Calculator</span>
+      </div>
+
+      <div class="gst-widget-container" id="tool-container">
+
+        <!-- Page Title -->
+        <div style="text-align: center; margin-bottom: 40px;">
+          <h1 style="font-size: 2.5rem; font-weight: 800; color: #1e293b; margin-bottom: 15px;">New Zealand GST
+            Calculator</h1>
+          <p style="font-size: 1.1rem; color: #64748b; max-width: 600px; margin: 0 auto; line-height: 1.5;">
+            Quickly add or remove 15% GST from any amount. Accurate and compliant with the latest
+            IRD guidelines.
+          </p>
+        </div>
+
+        <!-- Calculator Widget -->
+        <div class="calculator-form">
+
+          <!-- 3-Column Inputs -->
+          <div class="calculator-grid">
+            <div class="input-wrapper">
+              <label for="amount">Amount ($)</label>
+              <input type="number" id="amount" class="input-field" placeholder="" value="1000">
+            </div>
+            <div class="input-wrapper">
+              <label for="gstRate">GST %</label>
+              <input type="number" id="gstRate" class="input-field" value="15">
+            </div>
+            <div class="input-wrapper">
+              <label for="mode">Tax Mode</label>
+              <select id="mode" class="input-field">
+                <option value="exclusive">Exclusive (Add GST)</option>
+                <option value="inclusive">Inclusive (Remove GST)</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Live Equation Display -->
+          <div class="equation-container">
+            <div class="equation-item">
+              <div id="netAmount" class="net-value">$0.00</div>
+              <div class="label">Net Amount</div>
+            </div>
+
+            <div class="equation-symbol">+</div>
+
+            <div class="equation-item">
+              <div id="gstAmount" class="gst-value">$0.00</div>
+              <div class="label">GST (15%)</div>
+            </div>
+
+            <div class="equation-symbol">=</div>
+
+            <div class="equation-item">
+              <div id="totalAmount" class="total-value">$0.00</div>
+              <div class="label">Total Amount</div>
+            </div>
+          </div>
+
+          <!-- Calculate Button -->
+          <div class="button-wrapper">
+            <button id="calculateBtn" class="calc-action-btn">
+              Calculate NZ GST
+            </button>
+          </div>
+        </div><!-- end .calculator-form -->
+
+        <!-- ===================================================
+                     INFO SECTIONS
+                =================================================== -->
+        <div class="info-section">
+
+          <!-- Introduction -->
+          <section>
+            <h2><i class="fas fa-info-circle" style="color: var(--primary);"></i> Introduction</h2>
+            <p style="font-size: 1.1rem; line-height: 1.7; color: #475569;">New Zealand applies a flat
+              <strong>15% Goods and Services Tax (GST)</strong> to most goods and services. Introduced
+              in 1986 and administered by the Inland Revenue Department (IRD), GST is one of the broadest
+              consumption taxes in the world. Whether you are a business owner creating invoices, a
+              tradesperson quoting jobs, or a consumer checking a receipt, accurate GST calculation is an
+              everyday necessity. This free tool provides instant, IRD-compliant results for any
+              transaction in New Zealand Dollars (NZD).
+            </p>
+          </section>
+
+          <!-- Key Highlights -->
+          <section>
+            <h2><i class="fas fa-bullseye" style="color: #ef4444;"></i> Key Highlights</h2>
+            <div class="highlights-grid">
+              <div class="highlight-item"><i class="fas fa-check-circle"></i> Standard 15% GST Rate</div>
+              <div class="highlight-item"><i class="fas fa-sync-alt"></i> Add &amp; Remove Modes</div>
+              <div class="highlight-item"><i class="fas fa-file-invoice"></i> Clear GST Breakdown</div>
+              <div class="highlight-item"><i class="fas fa-dollar-sign"></i> NZD Optimized</div>
+              <div class="highlight-item"><i class="fas fa-bolt"></i> Instant &amp; Free</div>
+            </div>
+          </section>
+
+          <!-- How it Works -->
+          <section>
+            <h2><i class="fas fa-cog" style="color: #6366f1;"></i> How the Calculation Works</h2>
+            <div class="step-list">
+              <div class="step-item">
+                <div class="step-number">1</div>
+                <div><strong>Enter Amount:</strong> Input the price in New Zealand Dollars.</div>
+              </div>
+              <div class="step-item">
+                <div class="step-number">2</div>
+                <div><strong>Confirm the GST Rate:</strong> The rate is pre-set to 15% — the standard
+                  NZ rate. You can adjust it if needed for special circumstances.</div>
+              </div>
+              <div class="step-item">
+                <div class="step-number">3</div>
+                <div><strong>Select Mode:</strong> Pick <em>Exclusive (Add GST)</em> if your price does
+                  not yet include GST, or <em>Inclusive (Remove GST)</em> if it already does.</div>
+              </div>
+              <div class="step-item">
+                <div class="step-number">4</div>
+                <div><strong>See Results:</strong> Get an instant three-way breakdown — net amount, GST
+                  component, and the full GST-inclusive total.</div>
+              </div>
+            </div>
+          </section>
+
+          <!-- NZ GST Formulas -->
+          <section>
+            <h2><i class="fas fa-square-root-alt" style="color: #2563eb;"></i> The NZ GST Formulas</h2>
+            <div class="formula-grid">
+              <div class="formula-card add">
+                <i class="fas fa-plus-circle"></i>
+                <h4>Adding GST (Exclusive Price)</h4>
+                <code>GST Amount = Net Price × 0.15</code>
+                <code>Total = Net Price × 1.15</code>
+                <p style="color:#475569; font-size:0.9rem; margin-top:10px;">Use this when quoting a
+                  price <strong>before</strong> GST — common for B2B invoicing.</p>
+              </div>
+              <div class="formula-card remove">
+                <i class="fas fa-minus-circle"></i>
+                <h4>Removing GST (Inclusive Price)</h4>
+                <code>Net Price = Total ÷ 1.15</code>
+                <code>GST Amount = Total ÷ 23 × 3</code>
+                <p style="color:#475569; font-size:0.9rem; margin-top:10px;">Use this when a price
+                  <strong>already includes</strong> GST — common for retail receipts and expense
+                  claims.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <!-- Example Calculation -->
+          <section>
+            <h2><i class="fas fa-calculator" style="color: #f59e0b;"></i> Example Calculation</h2>
+            <p>An Auckland plumber charges <strong>$230.00 including GST</strong> for a call-out. Here is
+              how the numbers break down:</p>
+
+            <div class="gst-rate-table-container">
+              <table class="gst-rate-table">
+                <thead>
+                  <tr>
+                    <th>Item Component</th>
+                    <th>Calculation Logic</th>
+                    <th>Amount (NZD)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Amount Excluding GST</td>
+                    <td>$230.00 ÷ 1.15</td>
+                    <td>$200.00</td>
+                  </tr>
+                  <tr>
+                    <td>GST Amount (15%)</td>
+                    <td>$230.00 × 3 ÷ 23</td>
+                    <td>$30.00</td>
+                  </tr>
+                  <tr style="background: #f0fdf4;">
+                    <td><strong>Final Price Paid</strong></td>
+                    <td><strong>Inclusive Total</strong></td>
+                    <td><strong>$230.00</strong></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          <!-- Use Cases -->
+          <section>
+            <h2><i class="fas fa-lightbulb" style="color: #10b981;"></i> Use Cases &amp; Benefits</h2>
+            <div class="content-card-grid">
+              <div class="feature-card">
+                <h4><i class="fas fa-briefcase"></i> Small Businesses &amp; Sole Traders</h4>
+                <p>Add GST to quotes and invoices accurately. If you are GST-registered in NZ, you are
+                  required to charge 15% on taxable sales and file a GST return with the IRD.</p>
+              </div>
+              <div class="feature-card">
+                <h4><i class="fas fa-shopping-cart"></i> Everyday Consumers</h4>
+                <p>Verify receipts and understand how much of your purchase is tax. Spot the difference
+                  between advertised (ex-GST) and actual (inc-GST) prices at a glance.</p>
+              </div>
+              <div class="feature-card">
+                <h4><i class="fas fa-user-tie"></i> Accountants &amp; Bookkeepers</h4>
+                <p>Quickly extract the GST component from expense claims, supplier invoices, and mixed
+                  receipts. Perfect for reconciling your GST return (101 form).</p>
+              </div>
+            </div>
+          </section>
+
+          <!-- GST Registration Thresholds -->
+          <section>
+            <h2><i class="fas fa-landmark" style="color: #8b5cf6;"></i> NZ GST Registration Facts</h2>
+            <div class="gst-rate-table-container">
+              <table class="gst-rate-table">
+                <thead>
+                  <tr>
+                    <th>Detail</th>
+                    <th>Information</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Standard GST Rate</td>
+                    <td><strong>15%</strong></td>
+                  </tr>
+                  <tr>
+                    <td>Mandatory Registration Threshold</td>
+                    <td>$60,000 taxable turnover in any 12-month period</td>
+                  </tr>
+                  <tr>
+                    <td>Voluntary Registration</td>
+                    <td>Allowed for businesses below the threshold</td>
+                  </tr>
+                  <tr>
+                    <td>GST Filing Frequency</td>
+                    <td>Monthly, 2-monthly, or 6-monthly (depending on turnover)</td>
+                  </tr>
+                  <tr>
+                    <td>Administering Authority</td>
+                    <td>Inland Revenue Department (IRD)</td>
+                  </tr>
+                  <tr>
+                    <td>GST Introduced</td>
+                    <td>1 October 1986</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          <!-- What is GST-Exempt in NZ -->
+          <section>
+            <h2><i class="fas fa-ban" style="color: #ef4444;"></i> What is GST-Free in New Zealand?</h2>
+            <p style="font-size: 1.05rem; line-height: 1.7; color: #475569; margin-bottom: 20px;">
+              While NZ GST applies to most goods and services, some supplies are either <strong>exempt</strong>
+              or <strong>zero-rated (0%)</strong>. Understanding the difference matters for your GST return.
+            </p>
+            <div class="content-card-grid">
+              <div class="feature-card">
+                <h4><i class="fas fa-plane-departure"></i> Exports &amp; International Services</h4>
+                <p>Goods exported from NZ and services provided to non-resident overseas customers are
+                  zero-rated at 0%. This allows exporters to claim GST credits on inputs.</p>
+              </div>
+              <div class="feature-card">
+                <h4><i class="fas fa-home"></i> Residential Rent</h4>
+                <p>Long-term residential rental of accommodation is exempt from GST. Short-term
+                  accommodation (Airbnb, hotels) is taxable at 15% if the operator is GST-registered.</p>
+              </div>
+              <div class="feature-card">
+                <h4><i class="fas fa-file-medical"></i> Financial &amp; Certain Other Services</h4>
+                <p>Many financial services (lending, life insurance, certain banking fees) are exempt.
+                  Donated goods sold by non-profits may also be GST-free in certain conditions.</p>
+              </div>
+            </div>
+          </section>
+
+          <!-- Comparison Table -->
+          <section>
+            <h2><i class="fas fa-balance-scale" style="color: #64748b;"></i> Comparison with Manual Methods
+            </h2>
+            <div class="gst-rate-table-container">
+              <table class="gst-rate-table">
+                <thead>
+                  <tr>
+                    <th>Method / Tool</th>
+                    <th>Speed</th>
+                    <th>Accuracy</th>
+                    <th>Ease of Use</th>
+                    <th>Handles Both Modes</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>This Calculator</strong></td>
+                    <td style="color: #16a34a;">Instant</td>
+                    <td>High</td>
+                    <td>Excellent</td>
+                    <td>Yes</td>
+                  </tr>
+                  <tr>
+                    <td>Manual (÷ 23 × 3 rule)</td>
+                    <td>Slow</td>
+                    <td>Medium</td>
+                    <td>Moderate</td>
+                    <td>Yes</td>
+                  </tr>
+                  <tr>
+                    <td>Spreadsheet (Excel/Sheets)</td>
+                    <td>Medium</td>
+                    <td>High</td>
+                    <td>Good</td>
+                    <td>Yes</td>
+                  </tr>
+                  <tr>
+                    <td>Phone Calculator App</td>
+                    <td>Medium</td>
+                    <td>High</td>
+                    <td>Moderate</td>
+                    <td>Limited</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          <!-- FAQ Section -->
+          <section class="faq-section">
+            <h2 style="justify-content: center; border: none; margin-bottom: 40px;"><i
+                class="fas fa-question-circle"></i> Frequently Asked Questions</h2>
+
+            <div class="faq-accordion">
+
+              <!-- FAQ 1 -->
+              <div class="faq-item">
+                <button class="faq-question">
+                  How do I calculate GST in New Zealand?
+                  <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="faq-answer">
+                  <p>Enter your price amount and select <strong>"Add GST"</strong> (Exclusive) if the
+                    price does not yet include GST, or <strong>"Remove GST"</strong> (Inclusive) if
+                    the price already includes it. The tool automatically applies the 15% rate and
+                    gives you a full NZD breakdown.</p>
+                </div>
+              </div>
+
+              <!-- FAQ 2 -->
+              <div class="faq-item">
+                <button class="faq-question">
+                  What is the GST rate in New Zealand?
+                  <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="faq-answer">
+                  <p>The standard Goods and Services Tax (GST) rate in New Zealand is
+                    <strong>15%</strong>. Unlike Australia, which has a reduced-rate category, NZ
+                    applies a single flat rate to all taxable goods and services. The rate has been
+                    15% since 1 October 2010 (raised from 12.5%).
+                  </p>
+                </div>
+              </div>
+
+              <!-- FAQ 3 -->
+              <div class="faq-item">
+                <button class="faq-question">
+                  When do I need to register for GST in NZ?
+                  <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="faq-answer">
+                  <p>You must register for GST if your taxable turnover is (or is expected to be)
+                    <strong>$60,000 or more</strong> in any 12-month period. You can also register
+                    voluntarily below this threshold — useful if you want to claim GST on business
+                    purchases from the start.
+                  </p>
+                </div>
+              </div>
+
+              <!-- FAQ 4 -->
+              <div class="faq-item">
+                <button class="faq-question">
+                  How do I extract GST from a GST-inclusive price?
+                  <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="faq-answer">
+                  <p>Divide the inclusive price by <strong>1.15</strong> to get the net (ex-GST)
+                    amount. The GST is the difference between the inclusive total and the net
+                    amount. Alternatively, multiply the inclusive price by <strong>3 and divide by
+                      23</strong> — this gives the exact GST component. Our calculator does this
+                    automatically.</p>
+                </div>
+              </div>
+
+              <!-- FAQ 5 -->
+              <div class="faq-item">
+                <button class="faq-question">
+                  Can I use this for my GST return?
+                  <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="faq-answer">
+                  <p>Yes. GST-registered businesses can use this calculator to quickly establish the
+                    GST component of individual transactions. For high-volume accounting, use IRD's
+                    myIR portal or accounting software such as Xero or MYOB to prepare and file
+                    your full GST return.</p>
+                </div>
+              </div>
+
+              <!-- FAQ 6 -->
+              <div class="faq-item">
+                <button class="faq-question">
+                  Are food and groceries GST-free in New Zealand?
+                  <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="faq-answer">
+                  <p>No. Unlike many other countries, <strong>all food and groceries in New Zealand
+                      are subject to 15% GST</strong>, including basic staples. There is no
+                    GST-free category for food. This is one reason NZ GST has such a broad base
+                    and a single rate.</p>
+                </div>
+              </div>
+
+            </div><!-- end .faq-accordion -->
+          </section>
+
+        </div><!-- end .info-section -->
+      </div><!-- end .gst-widget-container -->
+    </div><!-- end .container -->
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+
+        <div>
+          <span
+            style="font-weight: 800; font-size: 1.2rem; display:block; margin-bottom:10px; color:var(--text-main);">FairCalculator</span>
+          <p>
+            Simple, fast, and accurate online calculators for finance, math, health, and daily life
+            problems.
+          </p>
+        </div>
+
+        <div>
+          <h4>Menu</h4>
+          <ul>
+            <li><a href="../../index.html">Home</a></li>
+            <li><a href="../../about.html">About Us</a></li>
+            <li><a href="../../contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="../../legal/privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="../../legal/terms-of-service.html">Terms of Service</a></li>
+            <li><a href="../../legal/cookie-policy.html">Cookie Policy</a></li>
+            <li><a href="../../legal/disclaimer.html">Disclaimer</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="copyright">
+        &copy; 2026 FairCalculator. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============================================================
+         JAVASCRIPT – NZ GST Calculator Logic
+    ============================================================ -->
+  <script src="../../assets/js/data.js" defer></script>
+  <script src="../../assets/js/search.js" defer></script>
+  <script src="../../assets/js/mobile-menu.js" defer></script>
+  <script src="../../assets/js/calculators/nz-gst-calculator.js" defer></script>
+
+</body>
+
+</html>

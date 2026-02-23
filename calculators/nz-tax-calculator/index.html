@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="en-NZ">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NZ Income Tax Calculator 2025–26 – PAYE, ACC &amp; KiwiSaver | FairCalculator</title>
+    <meta name="description"
+        content="Free New Zealand income tax calculator for 2025-26. Calculate your PAYE tax, ACC earner levy, KiwiSaver contributions and take-home pay in seconds. IRD-compliant.">
+    <meta name="keywords"
+        content="NZ tax calculator, New Zealand income tax 2026, PAYE calculator NZ, take home pay NZ, ACC levy calculator, KiwiSaver calculator, IRD tax brackets">
+    <link rel="canonical" href="https://www.faircalculator.com/calculators/nz-tax-calculator/">
+
+    <!-- Preload Critical Assets -->
+    <link rel="preload" href="../../assets/css/style.css" as="style">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        as="style">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../assets/css/style.css">
+
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="../../assets/images/favicon.png">
+
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "NZ Income Tax Calculator",
+      "description": "Calculate New Zealand PAYE income tax, ACC earner levy, and KiwiSaver for the 2025-26 tax year.",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "Any",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "NZD" },
+      "provider": { "@type": "Organization", "name": "FairCalculator", "areaServed": "NZ" }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://faircalculator.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Finance Calculators", "item": "https://faircalculator.com/categories/finance-calculators.html" },
+        { "@type": "ListItem", "position": 3, "name": "NZ Income Tax Calculator" }
+      ]
+    }
+    </script>
+
+    <!-- Google tag -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BVENYYJ869"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-BVENYYJ869');
+    </script>
+    <script type="text/javascript">
+        (function (c, l, a, r, i, t, y) {
+            c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+            t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+            y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+        })(window, document, "clarity", "script", "udqk27trde");
+    </script>
+
+    <!-- NZ Tax Calculator Styles -->
+    <link rel="preload" href="../../assets/css/calculators/nz-tax-calculator.css" as="style">
+    <link rel="stylesheet" href="../../assets/css/calculators/nz-tax-calculator.css">
+</head>
+
+<body>
+
+    <!-- ===================== HEADER ===================== -->
+    <header class="header">
+        <div class="container header-inner">
+            <a href="../../index.html" class="logo">FairCalculator</a>
+            <div class="header-search">
+                <input type="text" id="searchInput" class="search-input" placeholder="Search calculators..."
+                    aria-label="Search calculators">
+            </div>
+            <button class="menu-btn" id="menuToggle"><i class="fas fa-bars"></i></button>
+        </div>
+    </header>
+
+    <!-- ===================== NAV ===================== -->
+    <nav class="category-bar">
+        <div class="container">
+            <ul id="category-list">
+                <li><a href="../../index.html">All</a></li>
+                <li><a href="../../categories/finance-calculators.html">Finance</a></li>
+                <li><a href="../../categories/math-calculators.html">Math</a></li>
+                <li><a href="../../categories/health-calculators.html">Health</a></li>
+                <li><a href="../../categories/date-time-calculators.html">Date</a></li>
+                <li><a href="../../categories/physics-calculators.html">Physics</a></li>
+                <li><a href="../../categories/unit-converters.html">Converters</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- ===================== MAIN ===================== -->
+    <main class="main-content">
+        <div class="container">
+
+            <!-- Breadcrumb -->
+            <div style="margin-bottom: 20px; font-size: 0.9rem; color: #64748b;">
+                <a href="../../index.html" style="text-decoration: underline;">Home</a> /
+                <a href="../../categories/finance-calculators.html" style="text-decoration: underline;">Finance</a> /
+                <span style="font-weight: 600; color: #0f172a;">NZ Income Tax Calculator</span>
+            </div>
+
+            <!-- Page Heading -->
+            <div style="margin-bottom: 2rem;">
+                <h1 style="font-size: 2rem; font-weight: 800; color: #1e293b; margin-bottom: 10px;">
+                    <i class="fas fa-money-bill-wave" style="color: #10b981; margin-right: 10px;"></i>
+                    NZ Income Tax Calculator 2025–26
+                </h1>
+                <p style="color: #64748b; font-size: 1.1rem; max-width: 780px; line-height: 1.6;">
+                    Calculate your New Zealand PAYE income tax, ACC earner levy, and KiwiSaver contributions
+                    for the
+                    2025–26 tax year. Instant take-home pay estimate — IRD compliant.
+                </p>
+            </div>
+
+            <!-- ============ WIDGET ============ -->
+            <div class="tax-widget-container">
+
+                <!-- ---- Calculator Form ---- -->
+                <div class="calculator-form">
+
+                    <div class="input-grid-2">
+                        <!-- Annual Income -->
+                        <div class="input-wrapper" style="margin-bottom:0;">
+                            <label class="input-header" for="income">Annual Gross Income (NZD)</label>
+                            <input type="number" id="income" class="input-field" placeholder="e.g. 75000" value="75000"
+                                min="0" step="1000" aria-label="Annual gross income in New Zealand dollars">
+                        </div>
+
+                        <!-- Tax Year -->
+                        <div class="input-wrapper" style="margin-bottom:0;">
+                            <label class="input-header" for="taxYear">Tax Year</label>
+                            <select id="taxYear" class="input-field" aria-label="Select tax year">
+                                <option value="2026" selected>2025–26 (current)</option>
+                                <option value="2025">2024–25</option>
+                                <option value="2024">2023–24</option>
+                                <option value="2023">2022–23</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div style="margin-top:20px;" class="input-grid-2">
+                        <!-- KiwiSaver rate -->
+                        <div class="input-wrapper" style="margin-bottom:0;">
+                            <label class="input-header" for="kiwisaver">KiwiSaver Contribution</label>
+                            <select id="kiwisaver" class="input-field" aria-label="KiwiSaver contribution rate">
+                                <option value="0">Not enrolled / 0%</option>
+                                <option value="3" selected>3% (minimum)</option>
+                                <option value="4">4%</option>
+                                <option value="6">6%</option>
+                                <option value="8">8%</option>
+                                <option value="10">10%</option>
+                            </select>
+                        </div>
+
+                        <!-- Pay frequency display -->
+                        <div class="input-wrapper" style="margin-bottom:0;">
+                            <label class="input-header" for="frequency">Display Results Per</label>
+                            <select id="frequency" class="input-field" aria-label="Pay period display">
+                                <option value="1" selected>Year</option>
+                                <option value="12">Month</option>
+                                <option value="26">Fortnight</option>
+                                <option value="52">Week</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Residency -->
+                    <div class="input-wrapper" style="margin-top:20px;">
+                        <label class="input-header">Residency Status</label>
+                        <div class="radio-group">
+                            <label class="radio-option">
+                                <input type="radio" name="residency" value="resident" checked>
+                                <span>NZ Resident</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="residency" value="non_resident">
+                                <span>Non-Resident</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- ACC toggle -->
+                    <div class="input-wrapper" style="margin-bottom:0;">
+                        <label class="input-header">Include ACC Earner Levy?</label>
+                        <div class="radio-group">
+                            <label class="radio-option">
+                                <input type="radio" name="accToggle" value="yes" checked>
+                                <span>Yes (recommended)</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="accToggle" value="no">
+                                <span>No</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div style="margin-top:24px;">
+                        <button id="calculateBtn" class="calc-action-btn">
+                            <i class="fas fa-calculator" style="margin-right:8px;"></i>
+                            Calculate My Take-Home Pay
+                        </button>
+                    </div>
+                </div><!-- end .calculator-form -->
+
+                <!-- ---- Results ---- -->
+                <div id="result-container" class="result-container">
+
+                    <!-- Hero card -->
+                    <div class="hero-card">
+                        <div class="hero-label">Estimated Net Take-Home Pay</div>
+                        <div class="hero-value" id="val-net-income">$0</div>
+                        <div class="hero-sub" id="val-net-period">Per Year · After tax, ACC &amp; KiwiSaver
+                        </div>
+                    </div>
+
+                    <!-- Chart + Breakdown -->
+                    <div class="result-grid-layout">
+
+                        <!-- Left: Donut chart -->
+                        <div>
+                            <div class="chart-wrapper">
+                                <div class="chart-container" id="tax-chart" style="--tax:0%;--acc:0%;--ks:0%;">
+                                    <div class="chart-hole">
+                                        <div style="font-size:0.75rem;color:#64748b;text-align:center;">
+                                            Effective<br>Tax
+                                            Rate</div>
+                                        <div id="val-effective-rate"
+                                            style="font-size:1.5rem;font-weight:800;color:#1e293b;">0%</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Legend -->
+                            <div style="text-align:center;font-size:0.85rem;color:#64748b;">
+                                <span class="dot tax"></span>Income Tax&nbsp;&nbsp;
+                                <span class="dot acc"></span>ACC&nbsp;&nbsp;
+                                <span class="dot ks"></span>KiwiSaver&nbsp;&nbsp;
+                                <span class="dot net"></span>Net Pay
+                            </div>
+                        </div>
+
+                        <!-- Right: Breakdown -->
+                        <div>
+                            <h3 style="margin-top:0;margin-bottom:14px;font-size:1.15rem;">
+                                Tax Breakdown <span id="period-label"
+                                    style="font-weight:400;color:#64748b;font-size:0.9rem;">(Annual)</span>
+                            </h3>
+                            <div class="tax-breakdown">
+                                <div class="breakdown-row">
+                                    <span>Gross Income</span>
+                                    <span class="row-value" id="val-gross">$0</span>
+                                </div>
+                                <div class="breakdown-row">
+                                    <span><span class="dot tax"></span>PAYE Income Tax</span>
+                                    <span class="row-value" id="val-income-tax" style="color:#ef4444;">-$0</span>
+                                </div>
+                                <div class="breakdown-row" id="row-acc">
+                                    <span><span class="dot acc"></span>ACC Earner Levy</span>
+                                    <span class="row-value" id="val-acc" style="color:#3b82f6;">-$0</span>
+                                </div>
+                                <div class="breakdown-row" id="row-ks">
+                                    <span><span class="dot ks"></span>KiwiSaver (<span
+                                            id="ks-pct-label">3</span>%)</span>
+                                    <span class="row-value" id="val-ks" style="color:#f59e0b;">-$0</span>
+                                </div>
+                                <div class="breakdown-row" id="row-ietc" style="display:none;">
+                                    <span><i class="fas fa-tag" style="color:#10b981;margin-right:6px;"></i>IETC
+                                        Credit</span>
+                                    <span class="row-value" id="val-ietc" style="color:#10b981;">+$0</span>
+                                </div>
+                                <div class="breakdown-row total-row">
+                                    <span><span class="dot net"></span>Estimated Net Pay</span>
+                                    <span class="row-value" id="val-net-breakdown">$0</span>
+                                </div>
+                            </div>
+
+                            <!-- Marginal rate note -->
+                            <div
+                                style="margin-top:14px;padding:12px 16px;background:#f0fdf4;border-radius:8px;border-left:3px solid #10b981;font-size:0.9rem;color:#334155;">
+                                <strong>Marginal Tax Rate:</strong> <span id="val-marginal">0%</span>
+                                &nbsp;·&nbsp;
+                                <strong>Effective Tax Rate:</strong> <span id="val-eff-inline">0%</span>
+                            </div>
+
+                            <p class="disclaimer-text">
+                                <strong>Disclaimer:</strong> This is an estimate based on IRD PAYE brackets
+                                for the
+                                selected year.
+                                It does not include student loan repayments, Working for Families tax
+                                credits, secondary
+                                tax codes, or specific employer deductions. Always confirm with a tax
+                                professional or
+                                <a href="https://www.ird.govt.nz" target="_blank" rel="noopener">IRD's myIR
+                                    service</a>.
+                            </p>
+                        </div>
+                    </div>
+                </div><!-- end #result-container -->
+
+            </div><!-- end .tax-widget-container -->
+
+            <!-- ============================================================
+                 INFO / CONTENT SECTIONS
+            ============================================================ -->
+            <div class="info-section" style="max-width:860px;margin:60px auto 0;">
+
+                <!-- Introduction -->
+                <section>
+                    <h2><i class="fas fa-info-circle" style="color:var(--primary);"></i> How NZ Income Tax
+                        Works</h2>
+                    <p style="font-size:1.05rem;line-height:1.8;color:#475569;">
+                        New Zealand uses a <strong>progressive PAYE (Pay As You Earn)</strong> tax system,
+                        administered
+                        by
+                        the Inland Revenue Department (IRD). Tax is deducted from your wages automatically
+                        by your
+                        employer
+                        each pay period. The more you earn, the higher the rate applied to the top portion
+                        of your
+                        income —
+                        but lower brackets are always taxed at their lower rates.
+                    </p>
+                    <div class="info-highlight">
+                        <strong>Key difference from Australia:</strong> NZ has <em>no tax-free
+                            threshold</em> — every
+                        dollar of income is taxable. However, low-to-middle earners may be entitled to the
+                        <strong>Independent Earner Tax Credit (IETC)</strong> — up to $520 per year.
+                    </div>
+                </section>
+
+                <!-- 2025-26 Tax Brackets -->
+                <section>
+                    <h2><i class="fas fa-table" style="color:#6366f1;"></i> 2025–26 NZ Income Tax Brackets
+                    </h2>
+                    <p style="color:#475569;margin-bottom:20px;">
+                        These are the IRD PAYE brackets effective for the 2025–26 tax year (1 April 2025 –
+                        31 March
+                        2026).
+                        Each bracket applies only to the portion of income within that range.
+                    </p>
+                    <div class="gst-rate-table-container">
+                        <table class="gst-rate-table">
+                            <thead>
+                                <tr>
+                                    <th>Income Band (NZD)</th>
+                                    <th>Tax Rate</th>
+                                    <th>Max Tax in Band</th>
+                                    <th>Notes</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>$0 – $15,600</td>
+                                    <td><span class="rate-badge">10.5%</span></td>
+                                    <td>$1,638</td>
+                                    <td>Lowest band — all earners</td>
+                                </tr>
+                                <tr>
+                                    <td>$15,601 – $53,500</td>
+                                    <td><span class="rate-badge">17.5%</span></td>
+                                    <td>$6,632.50</td>
+                                    <td>Middle band</td>
+                                </tr>
+                                <tr>
+                                    <td>$53,501 – $78,100</td>
+                                    <td><span class="rate-badge">30%</span></td>
+                                    <td>$7,380</td>
+                                    <td>Upper-middle band</td>
+                                </tr>
+                                <tr>
+                                    <td>$78,101 – $180,000</td>
+                                    <td><span class="rate-badge">33%</span></td>
+                                    <td>$33,627</td>
+                                    <td>Higher earners</td>
+                                </tr>
+                                <tr style="background:#fff7ed;">
+                                    <td><strong>Over $180,000</strong></td>
+                                    <td><span class="rate-badge">39%</span></td>
+                                    <td>No cap</td>
+                                    <td>Top rate — introduced 2021</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- ACC & KiwiSaver -->
+                <section>
+                    <h2><i class="fas fa-shield-alt" style="color:#ef4444;"></i> ACC Earner Levy &amp;
+                        KiwiSaver</h2>
+                    <div class="content-card-grid">
+                        <div class="feature-card">
+                            <h4><i class="fas fa-ambulance" style="color:#3b82f6;"></i> ACC Earner Levy</h4>
+                            <p>
+                                The Accident Compensation Corporation (ACC) earner levy is deducted from
+                                wages to fund
+                                NZ's no-fault accident insurance scheme. For 2025–26, the rate is
+                                <strong>1.67 cents per dollar (1.67%)</strong> on income up to the earner
+                                levy maximum
+                                of <strong>$152,790</strong> for 2025–26. Income above this cap is not
+                                levied.
+                            </p>
+                        </div>
+                        <div class="feature-card">
+                            <h4><i class="fas fa-piggy-bank" style="color:#f59e0b;"></i> KiwiSaver</h4>
+                            <p>
+                                KiwiSaver is NZ's voluntary retirement savings scheme. Employees can
+                                contribute
+                                <strong>3%, 4%, 6%, 8%, or 10%</strong> of their gross pay. Your employer
+                                must also
+                                contribute a minimum of 3%. Contributions are deducted before you receive
+                                your pay —
+                                reducing your take-home but building your retirement fund.
+                            </p>
+                        </div>
+                        <div class="feature-card">
+                            <h4><i class="fas fa-tag" style="color:#10b981;"></i> Independent Earner Tax
+                                Credit (IETC)
+                            </h4>
+                            <p>
+                                If you earn between <strong>$24,000 and $70,000</strong> per year and do not
+                                receive
+                                Working for Families tax credits, you may be entitled to the IETC — worth up
+                                to
+                                <strong>$520 per year</strong>. The full credit applies up to $66,000, then
+                                phases
+                                out at 13 cents per dollar between <strong>$66,000–$70,000</strong>.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- How to use -->
+                <section>
+                    <h2><i class="fas fa-cog" style="color:#6366f1;"></i> How to Use This Calculator</h2>
+                    <div class="step-list">
+                        <div class="step-item">
+                            <div class="step-number">1</div>
+                            <div><strong>Enter Your Annual Gross Salary:</strong> Use your pre-tax income.
+                                For hourly
+                                workers, multiply hourly rate × hours/week × 52.</div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-number">2</div>
+                            <div><strong>Select Tax Year:</strong> Defaults to the current 2025–26 year. You
+                                can also
+                                check prior years.</div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-number">3</div>
+                            <div><strong>Choose KiwiSaver Rate:</strong> Select your contribution rate (3%
+                                is the
+                                minimum for enrolled employees). Choose 0% if not enrolled.</div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-number">4</div>
+                            <div><strong>Select Display Frequency:</strong> View results per year, month,
+                                fortnight, or
+                                week.</div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-number">5</div>
+                            <div><strong>Click Calculate:</strong> See your net take-home pay, effective tax
+                                rate, and a
+                                full breakdown in seconds.</div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Non-Resident Tax -->
+                <section>
+                    <h2><i class="fas fa-globe" style="color:#f59e0b;"></i> Non-Resident Tax in New Zealand
+                    </h2>
+                    <p style="font-size:1.05rem;line-height:1.8;color:#475569;">
+                        Non-residents earning income from NZ sources are subject to a flat
+                        <strong>Non-Resident
+                            Withholding Tax (NRWT)</strong>.
+                        Unlike residents, non-residents pay tax only on NZ-sourced income (not worldwide
+                        income),
+                        but they are <em>not</em> entitled to the IETC. Employees on working holiday visas
+                        who have been
+                        in NZ for fewer than 183 days are typically considered non-residents for tax
+                        purposes.
+                    </p>
+                    <div class="gst-rate-table-container">
+                        <table class="gst-rate-table">
+                            <thead>
+                                <tr>
+                                    <th>Income Band</th>
+                                    <th>Non-Resident Rate</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>$0 – $15,600</td>
+                                    <td><span class="rate-badge">10.5%</span></td>
+                                </tr>
+                                <tr>
+                                    <td>$15,601 – $53,500</td>
+                                    <td><span class="rate-badge">17.5%</span></td>
+                                </tr>
+                                <tr>
+                                    <td>$53,501 – $78,100</td>
+                                    <td><span class="rate-badge">30%</span></td>
+                                </tr>
+                                <tr>
+                                    <td>$78,101 – $180,000</td>
+                                    <td><span class="rate-badge">33%</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Over $180,000</td>
+                                    <td><span class="rate-badge">39%</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p style="color:#64748b;font-size:0.9rem;margin-top:10px;">
+                        Note: Non-residents use the same bracket rates as residents but are not eligible for
+                        the IETC.
+                        ACC earner levy still applies to non-residents working in NZ.
+                    </p>
+                </section>
+
+                <!-- Key Highlights -->
+                <section>
+                    <h2><i class="fas fa-bullseye" style="color:#ef4444;"></i> Key Highlights</h2>
+                    <div class="highlights-grid">
+                        <div class="highlight-item"><i class="fas fa-percent"></i> 5 progressive tax
+                            brackets</div>
+                        <div class="highlight-item"><i class="fas fa-ambulance"></i> ACC levy: 1.67% (capped
+                            at
+                            $152,790)</div>
+                        <div class="highlight-item"><i class="fas fa-piggy-bank"></i> KiwiSaver: 3–10%
+                            employee</div>
+                        <div class="highlight-item"><i class="fas fa-tag"></i> IETC up to $520/year</div>
+                        <div class="highlight-item"><i class="fas fa-bolt"></i> Instant NZD results</div>
+                        <div class="highlight-item"><i class="fas fa-calendar-alt"></i> Updated for 2025–26
+                        </div>
+                    </div>
+                </section>
+
+                <!-- FAQ -->
+                <section class="faq-section">
+                    <h2 style="justify-content:center;border:none;margin-bottom:36px;">
+                        <i class="fas fa-question-circle"></i>&nbsp;Frequently Asked Questions
+                    </h2>
+                    <div class="faq-accordion">
+
+                        <div class="faq-item">
+                            <button class="faq-question">
+                                How is NZ income tax calculated?
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="faq-answer">
+                                <p>NZ income tax uses a progressive system. Each bracket rate applies only
+                                    to the income
+                                    within that band. For example, on a $60,000 salary: the first $15,600 is
+                                    taxed at
+                                    10.5% ($1,638), the next $37,900 at 17.5% ($6,632.50), and the remaining
+                                    $6,500 at 30% ($1,950) — giving a total PAYE tax of
+                                    <strong>$10,220.50</strong>.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button class="faq-question">
+                                What is the ACC earner levy rate for 2025–26?
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="faq-answer">
+                                <p>The ACC earner levy rate for 2025–26 is <strong>$1.67 per $100 of liable
+                                        earnings
+                                        (1.67%)</strong>,
+                                    applied on income up to the maximum liable earnings threshold of
+                                    <strong>$152,790</strong>.
+                                    If you earn more than this, ACC is not charged on the excess.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button class="faq-question">
+                                Is KiwiSaver compulsory in New Zealand?
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="faq-answer">
+                                <p>KiwiSaver is <strong>opt-out</strong> — new employees are automatically
+                                    enrolled and
+                                    must actively opt out within the first 56 days if they don't wish to
+                                    join. If
+                                    enrolled,
+                                    the minimum employee contribution is 3% of gross pay. Your employer must
+                                    also
+                                    contribute
+                                    at least 3% (the employer contribution is on top of your take-home, not
+                                    deducted
+                                    from it).</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button class="faq-question">
+                                What is the Independent Earner Tax Credit (IETC)?
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="faq-answer">
+                                <p>The IETC is a tax credit for individuals earning between <strong>$24,000
+                                        and
+                                        $70,000</strong>
+                                    who do not receive Working for Families tax credits. The maximum credit
+                                    is
+                                    <strong>$520 per year</strong>. The full credit applies up to $66,000,
+                                    then
+                                    reduces by 13 cents for every dollar between <strong>$66,000 and
+                                        $70,000</strong>.
+                                    You claim it through your tax code (use the "M" tax code if eligible).
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button class="faq-question">
+                                What is the difference between marginal and effective tax rate?
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="faq-answer">
+                                <p>Your <strong>marginal rate</strong> is the rate applied to your last
+                                    dollar of income
+                                    (i.e., which bracket your top dollar falls in). Your <strong>effective
+                                        rate</strong>
+                                    is your
+                                    total tax paid divided by total gross income — it is always lower than
+                                    the marginal
+                                    rate
+                                    because lower brackets are taxed at lower rates.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button class="faq-question">
+                                Do I need to file a tax return in NZ?
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="faq-answer">
+                                <p>Most salaried employees in NZ do <strong>not</strong> need to file an
+                                    annual return
+                                    because PAYE is deducted at source. IRD automatically issues an "income
+                                    tax
+                                    assessment"
+                                    each year. However, you should file if you have: income from multiple
+                                    sources,
+                                    rental income,
+                                    overseas income, or are self-employed.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button class="faq-question">
+                                When does the NZ tax year run?
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="faq-answer">
+                                <p>The New Zealand tax year runs from <strong>1 April to 31 March</strong>
+                                    each year
+                                    (unlike Australia's July–June year). So the 2025–26 tax year covers 1
+                                    April 2025 to
+                                    31 March 2026. IRD assessments for each year are generally issued
+                                    between May and
+                                    July
+                                    of the following year.</p>
+                            </div>
+                        </div>
+
+                    </div>
+            </div><!-- end .faq-section -->
+            </section>
+
+        </div><!-- end .info-section -->
+
+        </div><!-- end .container -->
+    </main>
+
+    <!-- ===================== FOOTER ===================== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <span
+                        style="font-weight:800;font-size:1.2rem;display:block;margin-bottom:10px;color:var(--text-main);">FairCalculator</span>
+                    <p>Simple, fast, and accurate online calculators for finance, math, health, and daily
+                        life problems.
+                    </p>
+                </div>
+                <div>
+                    <h4>Menu</h4>
+                    <ul>
+                        <li><a href="../../index.html">Home</a></li>
+                        <li><a href="../../about.html">About Us</a></li>
+                        <li><a href="../../contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="../../legal/privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="../../legal/terms-of-service.html">Terms of Service</a></li>
+                        <li><a href="../../legal/cookie-policy.html">Cookie Policy</a></li>
+                        <li><a href="../../legal/disclaimer.html">Disclaimer</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">&copy; 2026 FairCalculator. All rights reserved.</div>
+        </div>
+    </footer>
+
+    <!-- ===================== SCRIPTS ===================== -->
+    <script>var ROOT_PATH = '../../';</script>
+    <script src="../../assets/js/data.js" defer></script>
+    <script src="../../assets/js/search.js" defer></script>
+    <script src="../../assets/js/mobile-menu.js" defer></script>
+
+    <script src="../../assets/js/calculators/nz-tax-calculator.js" defer></script>
+
+</body>
+
+</html>
