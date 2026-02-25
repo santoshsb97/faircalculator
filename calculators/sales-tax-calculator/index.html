@@ -4,11 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>!!! REFRESH PAGE !!! Sales Tax Calculator 2026 (US)</title>
     <meta name="description"
         content="2026 Sales Tax Calculator: Instantly calculate combined State & Local tax for any US location. Updated for new April 2025 rates.">
     <link rel="canonical" href="https://www.faircalculator.com/calculators/sales-tax-calculator/">
 
-    <!-- OPTIMIZED META TAGS FOR SOCIAL SHARING -->
+    <!-- Social Meta Tags -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://faircalculator.com/calculators/sales-tax-calculator/">
     <meta property="og:title" content="Sales Tax Calculator 2026 (US) – Calculate State & Local Tax Instantly">
@@ -17,7 +18,6 @@
     <meta property="og:image"
         content="https://faircalculator.com/assets/images/calculators/sales-tax-calculator-preview.png">
 
-    <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://faircalculator.com/calculators/sales-tax-calculator/">
     <meta property="twitter:title" content="Sales Tax Calculator 2026 (US) – Calculate State & Local Tax Instantly">
@@ -26,18 +26,13 @@
     <meta property="twitter:image"
         content="https://faircalculator.com/assets/images/calculators/sales-tax-calculator-preview.png">
 
-    <!-- Preload Critical Assets -->
-    <link rel="preload" href="../../assets/css/style.css" as="style">
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
-        as="style">
-
-    <title>Sales Tax Calculator 2026 (US) – Calculate State & Local Tax Instantly</title>
-
-    <!-- GLOBAL ASSETS -->
-    <link rel="icon" type="image/x-icon" href="../../assets/images/favicon.png">
+    <!-- Global CSS -->
     <link rel="stylesheet" href="../../assets/css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Specific Calculator CSS -->
+    <link rel="stylesheet" href="../../assets/css/calculators/sales-tax-calculator.css">
 
     <script type="application/ld+json">
     [
@@ -65,32 +60,6 @@
           "@type": "ListItem",
           "position": 3, "name": "Sales Tax Calculator"
         }]
-      },
-      {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": [{
-          "@type": "Question",
-          "name": "Can I calculate sales tax backward (reverse tax)?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes! Using the 'Remove Tax' mode, you can enter the final total price you paid to determine the original base price and the specific amount of tax included."
-          }
-        },{
-          "@type": "Question",
-          "name": "How accurate are the tax rates in this calculator?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Our calculator uses the latest 2026 state sales tax rates. Local tax rates vary by county and city, so we provide an input field for specific local rates."
-          }
-        },{
-          "@type": "Question",
-          "name": "Are there items that are exempt from sales tax?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes, many states exempt certain items like groceries and prescription medications. This calculator assumes a standard taxable purchase."
-          }
-        }]
       }
     ]
     </script>
@@ -101,22 +70,6 @@
             y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
         })(window, document, "clarity", "script", "udqk27trde");
     </script>
-
-
-    .footer {
-    background: #ffffff !important;
-    border-top: 1px solid #e2e8f0 !important;
-    padding: 40px 0 !important;
-    margin-top: 60px !important;
-    display: block !important;
-    text-align: center;
-    }
-
-    .copyright {
-    color: #64748b;
-    font-size: 0.85rem;
-    }
-    </style>
 </head>
 
 <body>
@@ -313,11 +266,11 @@
                     <div class="formula-title">Sales Tax Calculation Formulas</div>
                     <div style="margin-bottom: 15px;">
                         <strong>1. Adding Tax (Forward Calculation):</strong>
-                        <p>Total Price = Amount Before Tax Ã— (1 + Tax Rate)</p>
+                        <p>Total Price = Amount Before Tax × (1 + Tax Rate)</p>
                     </div>
                     <div>
                         <strong>2. Removing Tax (Backward Calculation):</strong>
-                        <p>Amount Before Tax = Amount After Tax Ã· (1 + Tax Rate)</p>
+                        <p>Amount Before Tax = Amount After Tax ÷ (1 + Tax Rate)</p>
                         <p>Tax Amount = Amount After Tax - Amount Before Tax</p>
                     </div>
                     <p style="margin-top:15px; font-size: 0.9rem; color: #64748b;">*Tax Rate = (State Rate + Local Rate)
@@ -856,6 +809,16 @@
             taxForm.addEventListener('submit', function (e) {
                 e.preventDefault();
                 calculateSalesTax();
+            });
+
+            // Add auto-calculation on input
+            [purchaseAmountInput, stateRateSelect, localRateInput].forEach(input => {
+                input.addEventListener('input', calculateSalesTax);
+            });
+
+            const modeRadios = document.querySelectorAll('input[name="taxMode"]');
+            modeRadios.forEach(radio => {
+                radio.addEventListener('change', calculateSalesTax);
             });
 
             // Also allow Enter key in purchase amount field
