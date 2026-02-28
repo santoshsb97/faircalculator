@@ -22,6 +22,8 @@ const calculatorsData = [
     { name: 'Aus Income Tax', desc: 'Calculate Australian income tax and Medicare levy (1983-2026).', category: 'Finance', icon: 'fa-money-bill-wave', url: 'calculators/australian-income-tax-calculator/' },
     { name: 'Australian GST', desc: 'Calculate 10% Australian GST. Add or remove GST from prices.', category: 'Finance', icon: 'fa-receipt', url: 'calculators/australian-gst-calculator/' },
     { name: 'Sales Tax Calc', desc: 'Calculate state and local sales tax in the US.', category: 'Finance', icon: 'fa-receipt', url: 'calculators/sales-tax-calculator/' },
+    { name: 'US Stamp Duty', desc: 'Calculate real estate transfer tax for all 50 US states + DC using 2026 rates.', category: 'Finance', icon: 'fa-file-contract', url: 'calculators/us-stamp-duty-calculator/' },
+    { name: 'Margin Calculator', desc: 'Calculate gross profit margin, net profit margin, markup %, and break-even price instantly.', category: 'Finance', icon: 'fa-chart-pie', url: 'calculators/margin-calculator/' },
 
 
     // Math
