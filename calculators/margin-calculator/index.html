@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Margin Calculator – Gross Profit, Net Margin &amp; Markup | FairCalculator</title>
+    <meta name="description"
+        content="Free Margin Calculator 2026. Calculate gross profit margin, net profit margin, markup percentage and profit from cost and revenue instantly.">
+    <link rel="canonical" href="https://www.faircalculator.com/calculators/margin-calculator/">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://faircalculator.com/calculators/margin-calculator/">
+    <meta property="og:title" content="Margin Calculator – Gross Profit, Net Margin &amp; Markup | FairCalculator">
+    <meta property="og:description"
+        content="Calculate gross profit margin, net profit margin, markup %, and selling price in seconds. Free online margin calculator.">
+
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="Margin Calculator – Profit Margin &amp; Markup">
+    <meta property="twitter:description"
+        content="Free margin calculator: gross margin, net margin, markup, and profit. Instant results.">
+
+    <!-- Preloads -->
+    <link rel="preload" href="../../assets/css/style.css" as="style">
+    <link rel="preload" href="../../assets/css/calculators/margin-calculator.css" as="style">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        as="style">
+
+    <!-- Assets -->
+    <link rel="icon" type="image/x-icon" href="../../assets/images/favicon.png">
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/calculators/margin-calculator.css">
+
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Schema -->
+    <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Margin Calculator",
+    "url": "https://www.faircalculator.com/calculators/margin-calculator/",
+    "description": "Calculate gross profit margin, net profit margin, markup percentage, and profit from cost and revenue.",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "All",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+  }
+  </script>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BVENYYJ869"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-BVENYYJ869');
+    </script>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+        <div class="container header-inner">
+            <a href="../../index.html" class="logo">FairCalculator</a>
+            <div class="header-search">
+                <input type="text" id="searchInput" class="search-input" placeholder="Search tools..."
+                    aria-label="Search">
+            </div>
+            <button class="menu-btn" id="menuToggle"><i class="fas fa-bars"></i></button>
+        </div>
+    </header>
+
+    <!-- CATEGORY BAR -->
+    <nav class="category-bar">
+        <div class="container">
+            <ul id="category-list">
+                <li><a href="../../index.html">All</a></li>
+                <li><a href="../../categories/finance-calculators.html"
+                        style="background:#eff6ff; color:#2563eb; border-color:#bfdbfe;">Finance</a></li>
+                <li><a href="../../categories/math-calculators.html">Math</a></li>
+                <li><a href="../../categories/health-calculators.html">Health</a></li>
+                <li><a href="../../categories/date-time-calculators.html">Date</a></li>
+                <li><a href="../../categories/unit-converters.html">Converters</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="mobile-close" id="closeMenu">&times;</button>
+        <div style="margin-top: 40px;">
+            <ul class="sidebar-list">
+                <li><a href="../../index.html">Home</a></li>
+                <li><a href="../../index.html#calculators">All Calculators</a></li>
+                <li><a href="../../about.html">About</a></li>
+                <li><a href="../../contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+        <div class="container">
+
+            <!-- Breadcrumbs -->
+            <div style="margin-bottom: 20px; font-size: 0.9rem; color: #64748b;">
+                <a href="../../index.html" style="text-decoration: underline;">Home</a> /
+                <a href="../../categories/finance-calculators.html" style="text-decoration: underline;">Finance</a> /
+                <span style="font-weight: 600; color: #0f172a;">Margin Calculator</span>
+            </div>
+
+            <!-- Search Results -->
+            <div id="searchResults" style="display:none; margin-bottom: 40px;">
+                <div class="section-header">Search Results</div>
+                <div class="grid" id="searchResultsContent"></div>
+            </div>
+
+            <!-- TOOL CONTAINER -->
+            <div class="margin-widget-container" id="tool-container">
+
+                <!-- Centered Header -->
+                <div style="text-align: center; margin-bottom: 40px;">
+                    <h1 class="mc-hero-title"
+                        style="font-size: 2.5rem; font-weight: 800; color: #1e293b; margin-bottom: 15px;">
+                        Margin Calculator
+                    </h1>
+                    <p style="font-size: 1.1rem; color: #64748b; max-width: 600px; margin: 0 auto; line-height: 1.5;">
+                        Calculate gross profit margin, net profit margin, markup %, and selling price — instantly and
+                        accurately.
+                    </p>
+                </div>
+
+                <!-- Mode Toggle Tabs -->
+                <div class="mc-tabs">
+                    <button class="mc-tab active" id="tabMargin" onclick="setMode('margin')">
+                        <i class="fas fa-chart-pie"></i> Margin Mode
+                    </button>
+                    <button class="mc-tab" id="tabMarkup" onclick="setMode('markup')">
+                        <i class="fas fa-tags"></i> Markup Mode
+                    </button>
+                    <button class="mc-tab" id="tabRevenue" onclick="setMode('revenue')">
+                        <i class="fas fa-dollar-sign"></i> Revenue Mode
+                    </button>
+                </div>
+
+                <!-- Calculator Form -->
+                <div class="calculator-form"
+                    style="padding: 2.5rem; border-radius: 12px; background: #fff; border: 1px solid #e2e8f0; box-shadow: 0 4px 12px rgba(0,0,0,0.03);">
+
+                    <!-- ── MARGIN MODE ── -->
+                    <div id="panelMargin">
+                        <div class="calculator-grid"
+                            style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-bottom: 50px;">
+
+                            <div class="input-wrapper" style="margin-bottom: 0;">
+                                <label for="cost"
+                                    style="display: block; font-weight: 700; margin-bottom: 12px; font-size: 1.1rem; color: #000;">
+                                    Cost ($)
+                                </label>
+                                <input type="number" id="cost" class="input-field" placeholder="60.00" value=""
+                                    style="border-color: #c7d2fe; border-radius: 6px; padding: 12px 15px; font-size: 1.1rem; background: #fff; border: 1px solid #c7d2fe;">
+                            </div>
+
+                            <div class="input-wrapper" style="margin-bottom: 0;">
+                                <label for="revenue"
+                                    style="display: block; font-weight: 700; margin-bottom: 12px; font-size: 1.1rem; color: #000;">
+                                    Revenue ($)
+                                </label>
+                                <input type="number" id="revenue" class="input-field" placeholder="100.00" value=""
+                                    style="border-color: #c7d2fe; border-radius: 6px; padding: 12px 15px; font-size: 1.1rem; background: #fff; border: 1px solid #c7d2fe;">
+                            </div>
+
+                            <div class="input-wrapper" style="margin-bottom: 0;">
+                                <label for="taxRate"
+                                    style="display: block; font-weight: 700; margin-bottom: 12px; font-size: 1.1rem; color: #000;">
+                                    Tax Rate (%)
+                                </label>
+                                <input type="number" id="taxRate" class="input-field" placeholder="0" value="0" min="0"
+                                    max="100"
+                                    style="border-color: #c7d2fe; border-radius: 6px; padding: 12px 15px; font-size: 1.1rem; background: #fff; border: 1px solid #c7d2fe;">
+                            </div>
+                        </div>
+
+                        <!-- Quick Margin Presets -->
+                        <div class="mc-presets">
+                            <span class="mc-preset-label">Set Margin %:</span>
+                            <button class="mc-preset-btn" onclick="applyMarginPreset(10)">10%</button>
+                            <button class="mc-preset-btn" onclick="applyMarginPreset(20)">20%</button>
+                            <button class="mc-preset-btn" onclick="applyMarginPreset(25)">25%</button>
+                            <button class="mc-preset-btn" onclick="applyMarginPreset(30)">30%</button>
+                            <button class="mc-preset-btn" onclick="applyMarginPreset(40)">40%</button>
+                            <button class="mc-preset-btn" onclick="applyMarginPreset(50)">50%</button>
+                        </div>
+                    </div>
+
+                    <!-- ── MARKUP MODE ── -->
+                    <div id="panelMarkup" style="display:none;">
+                        <div class="calculator-grid"
+                            style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; margin-bottom: 50px; max-width: 660px; margin-left: auto; margin-right: auto;">
+
+                            <div class="input-wrapper" style="margin-bottom: 0;">
+                                <label for="mkCost"
+                                    style="display: block; font-weight: 700; margin-bottom: 12px; font-size: 1.1rem; color: #000;">
+                                    Cost ($)
+                                </label>
+                                <input type="number" id="mkCost" class="input-field" placeholder="60.00"
+                                    style="border: 1px solid #c7d2fe; border-radius: 6px; padding: 12px 15px; font-size: 1.1rem; background: #fff;">
+                            </div>
+
+                            <div class="input-wrapper" style="margin-bottom: 0;">
+                                <label for="mkMarkup"
+                                    style="display: block; font-weight: 700; margin-bottom: 12px; font-size: 1.1rem; color: #000;">
+                                    Markup (%)
+                                </label>
+                                <input type="number" id="mkMarkup" class="input-field" placeholder="50"
+                                    style="border: 1px solid #c7d2fe; border-radius: 6px; padding: 12px 15px; font-size: 1.1rem; background: #fff;">
+                            </div>
+                        </div>
+                        <div style="height: 20px;"></div>
+                    </div>
+
+                    <!-- ── REVENUE MODE ── -->
+                    <div id="panelRevenue" style="display:none;">
+                        <div class="calculator-grid"
+                            style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; margin-bottom: 50px; max-width: 660px; margin-left: auto; margin-right: auto;">
+
+                            <div class="input-wrapper" style="margin-bottom: 0;">
+                                <label for="rvMargin"
+                                    style="display: block; font-weight: 700; margin-bottom: 12px; font-size: 1.1rem; color: #000;">
+                                    Target Margin (%)
+                                </label>
+                                <input type="number" id="rvMargin" class="input-field" placeholder="40" min="0.01"
+                                    max="99.99"
+                                    style="border: 1px solid #c7d2fe; border-radius: 6px; padding: 12px 15px; font-size: 1.1rem; background: #fff;">
+                            </div>
+
+                            <div class="input-wrapper" style="margin-bottom: 0;">
+                                <label for="rvRevenue"
+                                    style="display: block; font-weight: 700; margin-bottom: 12px; font-size: 1.1rem; color: #000;">
+                                    Revenue ($)
+                                </label>
+                                <input type="number" id="rvRevenue" class="input-field" placeholder="100.00"
+                                    style="border: 1px solid #c7d2fe; border-radius: 6px; padding: 12px 15px; font-size: 1.1rem; background: #fff;">
+                            </div>
+                        </div>
+                        <div style="height: 20px;"></div>
+                    </div>
+
+                    <!-- Equation Row -->
+                    <div class="equation-container"
+                        style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 40px; text-align: center; max-width: 1000px; margin-left: auto; margin-right: auto; gap: 10px; overflow-x: auto; padding: 10px 0; flex-wrap: nowrap;">
+
+                        <div class="equation-item" style="flex: 1; min-width: fit-content;">
+                            <div id="eqCost"
+                                style="font-size: clamp(1.2rem, 4vw, 2.2rem); font-weight: 800; color: #1e293b; white-space: nowrap;">
+                                $0.00</div>
+                            <div
+                                style="font-size: 0.85rem; color: #2563eb; font-weight: 600; text-transform: uppercase;">
+                                Cost</div>
+                        </div>
+
+                        <div class="equation-symbol" style="font-size: 1.5rem; color: #94a3b8; font-weight: 300;">+
+                        </div>
+
+                        <div class="equation-item" style="flex: 1; min-width: fit-content;">
+                            <div id="eqProfit"
+                                style="font-size: clamp(1.2rem, 4vw, 2.2rem); font-weight: 800; color: #16a34a; white-space: nowrap;">
+                                $0.00</div>
+                            <div
+                                style="font-size: 0.85rem; color: #16a34a; font-weight: 600; text-transform: uppercase;">
+                                Gross Profit</div>
+                        </div>
+
+                        <div class="equation-symbol" style="font-size: 1.5rem; color: #94a3b8; font-weight: 300;">=
+                        </div>
+
+                        <div class="equation-item" style="flex: 1; min-width: fit-content;">
+                            <div id="eqRevenue"
+                                style="font-size: clamp(1.2rem, 4vw, 2.2rem); font-weight: 800; color: #2563eb; white-space: nowrap;">
+                                $0.00</div>
+                            <div
+                                style="font-size: 0.85rem; color: #2563eb; font-weight: 600; text-transform: uppercase;">
+                                Revenue</div>
+                        </div>
+
+                        <div class="equation-symbol" style="font-size: 1.5rem; color: #94a3b8; font-weight: 300;">→
+                        </div>
+
+                        <div class="equation-item" style="flex: 1; min-width: fit-content;">
+                            <div id="eqMargin"
+                                style="font-size: clamp(1.2rem, 4vw, 2.2rem); font-weight: 800; color: #7c3aed; white-space: nowrap;">
+                                0.00%</div>
+                            <div
+                                style="font-size: 0.85rem; color: #7c3aed; font-weight: 600; text-transform: uppercase;">
+                                Gross Margin</div>
+                        </div>
+                    </div>
+
+                    <!-- Detailed Breakdown (shown after calc) -->
+                    <div id="breakdownSection"
+                        style="display:none; margin-top: 30px; border-top: 1px solid #f1f5f9; padding-top: 20px;">
+                        <div id="breakdownGrid"
+                            style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px;"></div>
+                    </div>
+
+                    <!-- Calculate Button -->
+                    <div style="text-align: center; margin-top: 20px;">
+                        <div class="mc-error" id="mcError" role="alert" aria-live="polite"></div>
+                        <button id="calculateBtn" class="calc-action-btn"
+                            style="width: 100%; max-width: 400px; border-radius: 8px; font-weight: 600; height: 55px; font-size: 1.1rem; background: #2563eb; color: #fff; border: none; cursor: pointer;"
+                            onclick="calculate()">
+                            Calculate Margin
+                        </button>
+                        <!-- Screen reader live region for results -->
+                        <div id="mcLiveRegion" aria-live="polite" aria-atomic="true"
+                            style="position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0,0,0,0);">
+                        </div>
+                    </div>
+                </div>
+                <!-- end calculator-form -->
+
+                <!-- Comparison Table -->
+                <div class="mc-comparison" id="mcComparison" style="display:none; margin-top: 30px;">
+                    <h3 style="font-size: 1.05rem; font-weight: 700; color: #1e293b; margin-bottom: 14px;">
+                        <i class="fas fa-table" style="color:#2563eb; margin-right: 8px;"></i>
+                        Margin at Different Price Points
+                    </h3>
+                    <div style="overflow-x: auto;">
+                        <table class="mc-comp-table">
+                            <thead>
+                                <tr>
+                                    <th>Selling Price</th>
+                                    <th>Gross Profit</th>
+                                    <th>Gross Margin</th>
+                                    <th>Markup %</th>
+                                </tr>
+                            </thead>
+                            <tbody id="mcCompBody"></tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- ── Formula Reference Cards ── -->
+                <div class="mc-formula-section"
+                    style="margin-top: 40px; background: linear-gradient(135deg, rgba(37,99,235,0.05) 0%, rgba(124,58,237,0.05) 100%); border: 1px solid rgba(37,99,235,0.15); border-radius: 12px; padding: 28px 28px 20px;">
+                    <h2
+                        style="font-size: 1.15rem; font-weight: 700; color: #1e293b; margin: 0 0 20px; display: flex; align-items: center; gap: 10px;">
+                        <i class="fas fa-square-root-alt" style="color:#2563eb;"></i> Key Formulas
+                    </h2>
+                    <div class="mc-formula-grid"
+                        style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px;">
+
+                        <!-- Gross Margin -->
+                        <div style="background:#fff; border:1px solid #e2e8f0; border-radius:10px; padding:18px 20px;">
+                            <div
+                                style="font-size:0.78rem; font-weight:700; text-transform:uppercase; letter-spacing:0.5px; color:#2563eb; margin-bottom:8px;">
+                                <i class="fas fa-chart-pie" style="margin-right:5px;"></i> Gross Margin
+                            </div>
+                            <div
+                                style="font-family:'Courier New',monospace; font-size:0.9rem; background:#eff6ff; border:1px solid #bfdbfe; border-left:3px solid #2563eb; padding:10px 12px; border-radius:0 6px 6px 0; color:#1e293b; margin-bottom:10px;">
+                                (Revenue − Cost) ÷ Revenue × 100
+                            </div>
+                            <p style="font-size:0.85rem; color:#374151; margin:0; line-height:1.5;">
+                                Measures what % of revenue remains after paying for the goods/services sold.
+                                <strong>E.g.</strong> Cost $60, Revenue $100 → <strong>40% margin</strong>.
+                            </p>
+                        </div>
+
+                        <!-- Markup -->
+                        <div style="background:#fff; border:1px solid #e2e8f0; border-radius:10px; padding:18px 20px;">
+                            <div
+                                style="font-size:0.78rem; font-weight:700; text-transform:uppercase; letter-spacing:0.5px; color:#7c3aed; margin-bottom:8px;">
+                                <i class="fas fa-tags" style="margin-right:5px;"></i> Markup %
+                            </div>
+                            <div
+                                style="font-family:'Courier New',monospace; font-size:0.9rem; background:#f5f3ff; border:1px solid #ddd6fe; border-left:3px solid #7c3aed; padding:10px 12px; border-radius:0 6px 6px 0; color:#1e293b; margin-bottom:10px;">
+                                (Revenue − Cost) ÷ Cost × 100
+                            </div>
+                            <p style="font-size:0.85rem; color:#374151; margin:0; line-height:1.5;">
+                                Measures profit as a % of <em>cost</em> — always higher than margin.
+                                <strong>E.g.</strong> Cost $60, Revenue $100 → <strong>66.67% markup</strong>.
+                            </p>
+                        </div>
+
+                        <!-- Net Margin -->
+                        <div style="background:#fff; border:1px solid #e2e8f0; border-radius:10px; padding:18px 20px;">
+                            <div
+                                style="font-size:0.78rem; font-weight:700; text-transform:uppercase; letter-spacing:0.5px; color:#16a34a; margin-bottom:8px;">
+                                <i class="fas fa-chart-line" style="margin-right:5px;"></i> Net Profit Margin
+                            </div>
+                            <div
+                                style="font-family:'Courier New',monospace; font-size:0.9rem; background:#f0fdf4; border:1px solid #bbf7d0; border-left:3px solid #16a34a; padding:10px 12px; border-radius:0 6px 6px 0; color:#1e293b; margin-bottom:10px;">
+                                Net Profit ÷ Revenue × 100
+                            </div>
+                            <p style="font-size:0.85rem; color:#374151; margin:0; line-height:1.5;">
+                                The true bottom-line after <em>all</em> costs (COGS + operating expenses + tax).
+                                Enter a tax rate in Margin Mode to calculate this.
+                            </p>
+                        </div>
+
+                        <!-- Selling Price from Margin -->
+                        <div style="background:#fff; border:1px solid #e2e8f0; border-radius:10px; padding:18px 20px;">
+                            <div
+                                style="font-size:0.78rem; font-weight:700; text-transform:uppercase; letter-spacing:0.5px; color:#ea580c; margin-bottom:8px;">
+                                <i class="fas fa-dollar-sign" style="margin-right:5px;"></i> Selling Price from Margin
+                            </div>
+                            <div
+                                style="font-family:'Courier New',monospace; font-size:0.9rem; background:#fff7ed; border:1px solid #fed7aa; border-left:3px solid #ea580c; padding:10px 12px; border-radius:0 6px 6px 0; color:#1e293b; margin-bottom:10px;">
+                                Cost ÷ (1 − Margin% ÷ 100)
+                            </div>
+                            <p style="font-size:0.85rem; color:#374151; margin:0; line-height:1.5;">
+                                Find the price to charge given a target margin.
+                                <strong>E.g.</strong> Cost $60, target 40% → Price = 60 ÷ 0.60 = <strong>$100</strong>.
+                            </p>
+                        </div>
+
+                    </div>
+
+                    <!-- Convert Markup ↔ Margin — styled as a Pro Tip card -->
+                    <div
+                        style="margin-top:16px; background:#fefce8; border:1px solid #fde68a; border-radius:10px; padding:18px 20px;">
+                        <div
+                            style="font-size:0.78rem; font-weight:700; text-transform:uppercase; letter-spacing:0.5px; color:#b45309; margin-bottom:8px;">
+                            <i class="fas fa-lightbulb" style="margin-right:5px;"></i> Pro Tip — Convert Markup ↔ Margin
+                        </div>
+                        <div class="mc-protip-grid"
+                            style="display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-bottom:10px;">
+                            <div
+                                style="font-family:'Courier New',monospace; font-size:0.88rem; background:#fff; border:1px solid #fcd34d; border-left:3px solid #b45309; padding:9px 12px; border-radius:0 6px 6px 0; color:#1e293b;">
+                                Margin = Markup ÷ (1 + Markup)
+                            </div>
+                            <div
+                                style="font-family:'Courier New',monospace; font-size:0.88rem; background:#fff; border:1px solid #fcd34d; border-left:3px solid #b45309; padding:9px 12px; border-radius:0 6px 6px 0; color:#1e293b;">
+                                Markup = Margin ÷ (1 − Margin)
+                            </div>
+                        </div>
+                        <p style="font-size:0.85rem; color:#374151; margin:0; line-height:1.5;">
+                            <em>Example: 25% markup → 25 ÷ 125 = <strong>20% margin</strong>. &nbsp;
+                                40% margin → 40 ÷ 60 = <strong>66.7% markup</strong>.</em>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Detailed SEO Content -->
+                <div class="info-section" style="margin-top: 40px;">
+                    <h2>Complete Guide to Profit Margin Calculation</h2>
+                    <article>
+
+                        <h3>How This Calculator Works</h3>
+                        <p>This margin calculator supports three modes — choose the one that matches what you already
+                            know:</p>
+
+                        <ol>
+                            <li>
+                                <strong>Margin Mode (default):</strong> Enter your <strong>Cost</strong> and
+                                <strong>Revenue</strong> (selling price). The calculator instantly shows your Gross
+                                Profit, Gross Margin %, and Markup %. Optionally enter a <strong>Tax Rate %</strong> to
+                                also see Net Profit and Net Margin. Use the quick-preset buttons (10%–50%) to auto-fill
+                                a revenue target for a given margin.
+                            </li>
+                            <li>
+                                <strong>Markup Mode:</strong> Enter your <strong>Cost</strong> and the <strong>Markup
+                                    %</strong> you want to apply. The calculator derives the Selling Price and the
+                                resulting Gross Margin %. Useful when pricing from cost-up (e.g. wholesale → retail).
+                            </li>
+                            <li>
+                                <strong>Revenue Mode:</strong> Enter a <strong>Target Gross Margin %</strong> and your
+                                expected <strong>Revenue</strong>. The calculator works backwards to tell you the
+                                maximum Cost you can incur while hitting that margin, plus the Markup % implied.
+                            </li>
+                        </ol>
+
+                        <p>After calculating, a <strong>Margin at Different Price Points</strong> table shows how your
+                            margin and profit change if you price ±10%–30% above or below your entered price — great for
+                            sensitivity analysis and pricing decisions.</p>
+
+                        <h3>What is Profit Margin?</h3>
+                        <p>Profit margin is the percentage of revenue that remains as profit after subtracting costs. It
+                            is one of
+                            the most important metrics in business — higher margins mean more profit per dollar of
+                            sales.</p>
+
+
+
+
+
+                        <h3>Margin vs. Markup — Key Differences</h3>
+                        <p>These two terms are often confused but are fundamentally different:</p>
+                        <ul>
+                            <li><strong>Margin</strong> is profit as a % of <em>revenue</em> (selling price).</li>
+                            <li><strong>Markup</strong> is profit as a % of <em>cost</em>.</li>
+                            <li>A 50% markup does NOT equal a 50% margin. At 50% markup (cost $10, price $15), the
+                                margin is only
+                                33.3%.</li>
+                        </ul>
+
+                        <h3>What is a Good Profit Margin?</h3>
+                        <p>Industry benchmarks vary widely:</p>
+                        <div class="gst-rate-table-container" style="margin: 15px 0;">
+                            <table class="gst-rate-table">
+                                <thead>
+                                    <tr>
+                                        <th>Industry</th>
+                                        <th>Typical Gross Margin</th>
+                                        <th>Typical Net Margin</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>Software / SaaS</strong></td>
+                                        <td>70–90%</td>
+                                        <td>10–30%</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Retail / E-commerce</strong></td>
+                                        <td>25–50%</td>
+                                        <td>2–5%</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Restaurants</strong></td>
+                                        <td>25–35%</td>
+                                        <td>3–9%</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Manufacturing</strong></td>
+                                        <td>20–40%</td>
+                                        <td>5–10%</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Consulting / Services</strong></td>
+                                        <td>50–75%</td>
+                                        <td>15–25%</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Supermarkets</strong></td>
+                                        <td>20–30%</td>
+                                        <td>1–3%</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Pharmaceuticals</strong></td>
+                                        <td>60–80%</td>
+                                        <td>15–25%</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <h3>How to Convert Markup to Margin</h3>
+                        <div class="fc-formula-box">
+                            <code>Margin = Markup ÷ (1 + Markup)</code><br>
+                            <code>Example: 25% markup → Margin = 0.25 ÷ 1.25 = 20%</code>
+                        </div>
+
+                        <h3>Frequently Asked Questions</h3>
+
+                        <div class="faq-item">
+                            <div class="faq-question" onclick="toggleFAQ(this)">
+                                What is gross margin vs. net margin? <span class="faq-toggle">+</span>
+                            </div>
+                            <div class="faq-answer">
+                                <p><strong>Gross margin</strong> deducts only the cost of goods sold (COGS) from
+                                    revenue.
+                                    <strong>Net margin</strong> deducts all costs — COGS, operating expenses, interest,
+                                    and taxes.
+                                    Net margin is the true "bottom line" profitability.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question" onclick="toggleFAQ(this)">
+                                How do I find selling price from cost and target margin? <span
+                                    class="faq-toggle">+</span>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Use the Revenue Mode above, or the formula:
+                                    <strong>Price = Cost ÷ (1 − Target Margin%/100)</strong>.<br>
+                                    Example: Cost $60, target 40% margin → Price = 60 ÷ 0.60 = <strong>$100</strong>.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question" onclick="toggleFAQ(this)">
+                                Is 30% profit margin good? <span class="faq-toggle">+</span>
+                            </div>
+                            <div class="faq-answer">
+                                <p>For most product businesses, 30% gross margin is moderate. For services and software
+                                    it's low, but
+                                    for grocery retail it's exceptional. Context matters — compare to your industry
+                                    average.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question" onclick="toggleFAQ(this)">
+                                How do I calculate net profit margin? <span class="faq-toggle">+</span>
+                            </div>
+                            <div class="faq-answer">
+                                <p><strong>Net Margin % = Net Profit ÷ Revenue × 100</strong>.<br>
+                                    Net Profit = Revenue − COGS − Operating Expenses − Taxes.<br>
+                                    Enter your tax rate in the Margin Mode to see net margin calculated automatically.
+                                </p>
+                            </div>
+                        </div>
+
+                    </article>
+                </div>
+
+            </div>
+            <!-- end tool container -->
+        </div>
+
+        <div id="related-calculators"></div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <span
+                        style="font-weight:800;font-size:1.2rem;display:block;margin-bottom:10px;color:var(--text-main);">FairCalculator</span>
+                    <p>Simple, fast, and accurate online calculators.</p>
+                </div>
+                <div>
+                    <h4>Menu</h4>
+                    <ul>
+                        <li><a href="../../index.html">Home</a></li>
+                        <li><a href="../../about.html">About Us</a></li>
+                        <li><a href="../../contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="../../legal/privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="../../legal/terms-of-service.html">Terms</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">&copy; 2026 FairCalculator. All rights reserved.</div>
+        </div>
+    </footer>
+
+    <!-- SCRIPTS -->
+    <script>var ROOT_PATH = '../../';</script>
+    <script src="../../assets/js/data.js"></script>
+    <script src="../../assets/js/search.js"></script>
+    <script src="../../assets/js/mobile-menu.js"></script>
+    <script src="../../assets/js/calculators/margin-calculator.js" defer></script>
+    <script src="../../assets/js/related-calculators.js" defer></script>
+
+</body>
+
+</html>
