@@ -1,0 +1,353 @@
+/* ═══════════════════════════════════════════════
+   Margin Calculator – CSS (GST style)
+   FairCalculator.com
+═══════════════════════════════════════════════ */
+
+/* Widget container — matches gst-widget-container width */
+.margin-widget-container {
+    max-width: 900px;
+    margin: 0 auto 40px;
+}
+
+/* ── Mode Tabs ───────────────────────────────── */
+.mc-tabs {
+    display: flex;
+    gap: 0;
+    background: #f1f5f9;
+    border-radius: 10px 10px 0 0;
+    border: 1px solid #e2e8f0;
+    border-bottom: none;
+    overflow: hidden;
+    margin-bottom: 0;
+}
+
+.mc-tab {
+    flex: 1;
+    padding: 13px 16px;
+    border: none;
+    background: transparent;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #64748b;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    transition: all 0.2s;
+    border-right: 1px solid #e2e8f0;
+}
+
+.mc-tab:last-child {
+    border-right: none;
+}
+
+.mc-tab.active {
+    background: #fff;
+    color: #2563eb;
+    border-bottom: 3px solid #2563eb;
+}
+
+.mc-tab:hover:not(.active) {
+    background: rgba(255, 255, 255, 0.7);
+    color: #1e40af;
+}
+
+/* ── Quick Presets ───────────────────────────── */
+.mc-presets {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 40px;
+}
+
+.mc-preset-label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #64748b;
+}
+
+.mc-preset-btn {
+    padding: 6px 14px;
+    border: 1.5px solid #c7d2fe;
+    border-radius: 20px;
+    background: #f8fafc;
+    font-size: 0.83rem;
+    font-weight: 600;
+    color: #374151;
+    cursor: pointer;
+    transition: all 0.18s;
+}
+
+.mc-preset-btn:hover {
+    border-color: #2563eb;
+    background: #eff6ff;
+    color: #2563eb;
+}
+
+/* ── Error ───────────────────────────────────── */
+.mc-error {
+    color: #dc2626;
+    font-size: 0.88rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+    min-height: 20px;
+}
+
+/* ── Breakdown Cards (after calculate) ───────── */
+.mc-breakdown-card {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 14px 16px;
+    text-align: center;
+}
+
+.mc-breakdown-label {
+    font-size: 0.78rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #64748b;
+    margin-bottom: 5px;
+}
+
+.mc-breakdown-value {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: #1e293b;
+}
+
+.mc-breakdown-card.mc-highlight .mc-breakdown-value {
+    color: #2563eb;
+}
+
+.mc-breakdown-card.mc-green .mc-breakdown-value {
+    color: #16a34a;
+}
+
+.mc-breakdown-card.mc-purple .mc-breakdown-value {
+    color: #7c3aed;
+}
+
+/* ── Comparison Table ────────────────────────── */
+.mc-comparison {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 20px 24px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.mc-comp-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.88rem;
+}
+
+.mc-comp-table thead tr {
+    background: #f8fafc;
+    border-bottom: 2px solid #e2e8f0;
+}
+
+.mc-comp-table th {
+    padding: 11px 14px;
+    text-align: left;
+    font-weight: 700;
+    color: #1e293b;
+}
+
+.mc-comp-table td {
+    padding: 10px 14px;
+    border-bottom: 1px solid #f1f5f9;
+    color: #475569;
+}
+
+.mc-comp-table tr:hover td {
+    background: #f8fafc;
+}
+
+.mc-comp-table .mc-highlight-row td {
+    background: #eff6ff !important;
+    color: #1e293b;
+    font-weight: 700;
+}
+
+.mc-comp-table .mc-pos {
+    color: #16a34a;
+    font-weight: 700;
+}
+
+.mc-comp-table .mc-neg {
+    color: #dc2626;
+    font-weight: 700;
+}
+
+/* ── GST-style rate table (for SEO section) ─── */
+.gst-rate-table-container {
+    overflow-x: auto;
+    margin: 20px 0;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+    background: #fff;
+}
+
+.gst-rate-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+}
+
+.gst-rate-table th {
+    background-color: #f8fafc;
+    color: #1e293b;
+    font-weight: 700;
+    text-align: left;
+    padding: 12px 15px;
+    border-bottom: 2px solid #e2e8f0;
+}
+
+.gst-rate-table td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #f1f5f9;
+    color: #475569;
+    vertical-align: top;
+}
+
+.gst-rate-table tr:hover {
+    background-color: #f8fafc;
+}
+
+/* ── Responsive – Tablet (≤768px) ───────────── */
+@media (max-width: 768px) {
+
+    /* Formula cards: 2-col → 1-col on tablet */
+    .mc-formula-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    /* Pro Tip two-formula row: stack on tablet */
+    .mc-protip-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    /* Comparison table: allow horizontal scroll */
+    .mc-comparison {
+        padding: 14px 12px;
+    }
+}
+
+/* ── Responsive – Mobile (≤640px) ───────────── */
+@media (max-width: 640px) {
+
+    /* Mode tabs: stack vertically */
+    .mc-tabs {
+        flex-direction: column;
+        border-radius: 10px;
+    }
+
+    .mc-tab {
+        border-right: none;
+        border-bottom: 1px solid #e2e8f0;
+    }
+
+    .mc-tab:last-child {
+        border-bottom: none;
+    }
+
+    .mc-tab.active {
+        border-bottom: none;
+        border-left: 3px solid #2563eb;
+    }
+
+    /* H1: scale down on small screens */
+    .mc-hero-title {
+        font-size: 1.75rem !important;
+    }
+
+    /* Calculator form: reduce padding on mobile */
+    .calculator-form {
+        padding: 1.25rem !important;
+    }
+
+    /* Stack 3-column grid to single column */
+    .calculator-grid {
+        grid-template-columns: 1fr !important;
+        gap: 16px !important;
+        margin-bottom: 20px !important;
+    }
+
+    /* Equation row: wrap + center + shrink symbols */
+    .equation-container {
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        gap: 6px !important;
+    }
+
+    .equation-item {
+        min-width: 70px;
+    }
+
+    .equation-symbol {
+        font-size: 1rem !important;
+        padding: 0 4px;
+    }
+
+    /* Breakdown cards: 2-col (or full-width when JS sets maxWidth) */
+    #breakdownGrid {
+        grid-template-columns: 1fr 1fr !important;
+        max-width: 100% !important;
+        /* override JS 33% on mobile */
+        margin: 0 !important;
+    }
+
+    /* Presets: smaller chips */
+    .mc-preset-btn {
+        padding: 5px 10px;
+        font-size: 0.8rem;
+    }
+
+    /* Key Formulas section: reduce padding */
+    .mc-formula-section {
+        padding: 18px 16px !important;
+    }
+
+    /* Formula cards & Pro Tip: 1 column */
+    .mc-formula-grid,
+    .mc-protip-grid {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+/* ── Focus States (Accessibility) ───────────── */
+.input-field:focus,
+.mc-tab:focus,
+.mc-preset-btn:focus,
+.calc-action-btn:focus {
+    outline: 3px solid #2563eb;
+    outline-offset: 2px;
+}
+
+/* ── Print Styles ────────────────────────────── */
+@media print {
+
+    .mc-tabs,
+    .mc-presets,
+    .calc-action-btn,
+    .header,
+    .category-bar,
+    .mobile-menu,
+    .footer {
+        display: none !important;
+    }
+
+    .mc-breakdown-card,
+    .mc-comp-table tr {
+        break-inside: avoid;
+    }
+
+    .margin-widget-container {
+        max-width: 100%;
+    }
+}

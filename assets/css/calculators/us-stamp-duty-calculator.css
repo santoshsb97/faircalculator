@@ -1,0 +1,513 @@
+/* US Stamp Duty / Real Estate Transfer Tax Calculator CSS */
+
+/* ─── Wrapper ──────────────────────────────────────────── */
+.us-transfer-tax-wrapper {
+  max-width: 900px;
+  margin: 0 auto;
+  font-family: 'Inter', sans-serif;
+}
+
+/* ─── Intro Banner ────────────────────────────────────── */
+.us-intro {
+  background: linear-gradient(135deg, #1e3a5f 0%, #2563eb 60%, #3b82f6 100%);
+  border-radius: 18px;
+  padding: 36px 40px;
+  color: #fff;
+  margin-bottom: 28px;
+  position: relative;
+  overflow: hidden;
+}
+.us-intro::before {
+  content: '';
+  position: absolute;
+  top: -40px; right: -40px;
+  width: 200px; height: 200px;
+  background: rgba(255,255,255,0.06);
+  border-radius: 50%;
+}
+.us-intro h1 {
+  font-size: 1.9rem;
+  font-weight: 800;
+  margin: 0 0 10px;
+  line-height: 1.2;
+}
+.us-intro p {
+  margin: 6px 0;
+  opacity: 0.9;
+  font-size: 0.97rem;
+  line-height: 1.5;
+}
+.us-intro .badge {
+  display: inline-block;
+  background: rgba(255,255,255,0.2);
+  border: 1px solid rgba(255,255,255,0.4);
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  padding: 3px 10px;
+  border-radius: 20px;
+  text-transform: uppercase;
+  margin-left: 8px;
+  vertical-align: middle;
+}
+.us-intro .trust-badges {
+  margin-top: 14px;
+  font-size: 0.88rem;
+  opacity: 0.85;
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+.us-intro .trust-badges span { display: flex; align-items: center; gap: 5px; }
+
+/* ─── Calculator Card ────────────────────────────────── */
+.us-calculator-card {
+  background: #fff;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 32px;
+  box-shadow: 0 4px 24px rgba(37,99,235,0.07);
+  margin-bottom: 28px;
+}
+
+/* ─── Form Rows ──────────────────────────────────────── */
+.us-form-row {
+  margin-bottom: 22px;
+}
+.us-form-row label {
+  display: block;
+  font-size: 0.93rem;
+  font-weight: 600;
+  color: #1e293b;
+  margin-bottom: 8px;
+}
+.us-form-row label .optional {
+  font-weight: 400;
+  color: #94a3b8;
+  font-size: 0.85rem;
+  margin-left: 5px;
+}
+
+.us-select,
+.us-input {
+  width: 100%;
+  padding: 13px 16px;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-family: 'Inter', sans-serif;
+  color: #0f172a;
+  background: #f8fafc;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  box-sizing: border-box;
+  appearance: none;
+  -webkit-appearance: none;
+}
+.us-select:focus,
+.us-input:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37,99,235,0.12);
+  background: #fff;
+}
+
+.us-select-wrapper {
+  position: relative;
+}
+.us-select-wrapper::after {
+  content: '▾';
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #64748b;
+  pointer-events: none;
+  font-size: 1rem;
+}
+
+.price-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.price-symbol {
+  position: absolute;
+  left: 15px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #2563eb;
+  pointer-events: none;
+}
+.price-input-field {
+  padding-left: 34px !important;
+}
+
+/* ─── Buyer Type Toggles ─────────────────────────────── */
+.buyer-type-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 12px;
+  margin-top: 6px;
+}
+.buyer-option {
+  cursor: pointer;
+}
+.buyer-option input[type="radio"] {
+  display: none;
+}
+.buyer-option-inner {
+  border: 2px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 14px 12px;
+  text-align: center;
+  transition: all 0.2s;
+  background: #f8fafc;
+}
+.buyer-option input[type="radio"]:checked + .buyer-option-inner {
+  border-color: #2563eb;
+  background: #eff6ff;
+  color: #1d4ed8;
+}
+.buyer-option-inner .buyer-icon {
+  font-size: 1.4rem;
+  margin-bottom: 6px;
+  display: block;
+}
+.buyer-option-inner .buyer-label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  display: block;
+  color: #334155;
+}
+.buyer-option input[type="radio"]:checked + .buyer-option-inner .buyer-label {
+  color: #1d4ed8;
+}
+
+/* ─── Calculate Button ────────────────────────────────── */
+.us-calc-btn {
+  width: 100%;
+  padding: 16px;
+  background: linear-gradient(135deg, #1d4ed8, #2563eb);
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  font-size: 1.05rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 8px;
+  transition: all 0.2s;
+  box-shadow: 0 4px 14px rgba(37,99,235,0.3);
+  letter-spacing: 0.02em;
+}
+.us-calc-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(37,99,235,0.4);
+}
+.us-calc-btn:active { transform: translateY(0); }
+
+/* ─── Error & Note ────────────────────────────────────── */
+.us-error {
+  display: none;
+  background: #fef2f2;
+  border: 1px solid #fca5a5;
+  color: #dc2626;
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: 0.9rem;
+  margin-top: 12px;
+  font-weight: 500;
+}
+.us-error.show { display: block; }
+
+/* ─── Results Section ────────────────────────────────── */
+.us-results {
+  display: none;
+  background: #fff;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 24px rgba(37,99,235,0.07);
+  margin-bottom: 28px;
+  animation: slideInUp 0.4s ease;
+}
+.us-results.show { display: block; }
+
+@keyframes slideInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.results-header-band {
+  background: linear-gradient(135deg, #1e3a5f, #2563eb);
+  color: #fff;
+  padding: 28px 32px;
+  text-align: center;
+}
+.results-header-band h2 {
+  font-size: 1rem;
+  font-weight: 600;
+  opacity: 0.85;
+  margin: 0 0 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+.total-tax-amount {
+  font-size: 3rem;
+  font-weight: 900;
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+.effective-rate-text {
+  font-size: 0.95rem;
+  opacity: 0.82;
+  margin-top: 6px;
+}
+
+.results-body { padding: 28px 32px; }
+
+/* Summary Stat Cards */
+.stat-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(145px, 1fr));
+  gap: 14px;
+  margin-bottom: 28px;
+}
+.stat-card {
+  background: #f8fafc;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 16px;
+  text-align: center;
+}
+.stat-card .stat-label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 6px;
+}
+.stat-card .stat-value {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #0f172a;
+}
+.stat-card.highlight {
+  background: #eff6ff;
+  border-color: #93c5fd;
+}
+.stat-card.highlight .stat-value { color: #1d4ed8; }
+
+/* Breakdown Table */
+.breakdown-section { margin-bottom: 24px; }
+.breakdown-section h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin: 0 0 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.breakdown-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.92rem;
+}
+.breakdown-table th {
+  background: #f1f5f9;
+  padding: 10px 14px;
+  text-align: left;
+  font-weight: 700;
+  color: #475569;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-bottom: 2px solid #e2e8f0;
+}
+.breakdown-table th:last-child,
+.breakdown-table td:last-child { text-align: right; }
+.breakdown-table td {
+  padding: 11px 14px;
+  border-bottom: 1px solid #f1f5f9;
+  color: #334155;
+}
+.breakdown-table tr:last-child td {
+  font-weight: 700;
+  color: #0f172a;
+  background: #f8fafc;
+}
+.breakdown-table .zero-row td { color: #94a3b8; }
+.breakdown-table .tax-badge {
+  display: inline-block;
+  background: #dbeafe;
+  color: #1d4ed8;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 20px;
+}
+
+/* ─── State Rates Reference ───────────────────────────── */
+.rates-reference {
+  background: #fff;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 28px 32px;
+  margin-bottom: 28px;
+}
+.rates-reference h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin: 0 0 18px;
+  display: flex; align-items: center; gap: 8px;
+}
+.rates-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 10px;
+  max-height: 340px;
+  overflow-y: auto;
+  padding-right: 4px;
+}
+.rates-grid::-webkit-scrollbar { width: 5px; }
+.rates-grid::-webkit-scrollbar-track { background: #f1f5f9; border-radius: 3px; }
+.rates-grid::-webkit-scrollbar-thumb { background: #94a3b8; border-radius: 3px; }
+
+.rate-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 9px 14px;
+  background: #f8fafc;
+  border-radius: 8px;
+  font-size: 0.88rem;
+  border: 1px solid #e2e8f0;
+}
+.rate-row .state-name { font-weight: 600; color: #334155; }
+.rate-row .state-rate {
+  font-weight: 700;
+  color: #2563eb;
+  background: #eff6ff;
+  padding: 2px 8px;
+  border-radius: 6px;
+  font-size: 0.8rem;
+}
+.rate-row .state-rate.none {
+  color: #64748b;
+  background: #f1f5f9;
+}
+
+/* ─── Disclaimer ─────────────────────────────────────── */
+.us-disclaimer {
+  background: #fefce8;
+  border: 1px solid #fde68a;
+  border-radius: 12px;
+  padding: 16px 20px;
+  font-size: 0.87rem;
+  color: #78350f;
+  margin-bottom: 28px;
+  line-height: 1.6;
+}
+.us-disclaimer strong { color: #92400e; }
+
+/* ─── SEO Content ────────────────────────────────────── */
+.us-seo-content {
+  max-width: 900px;
+  margin: 0 auto;
+  color: #334155;
+  line-height: 1.75;
+}
+.us-seo-content h2 {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 36px 0 12px;
+  border-bottom: 2px solid #e2e8f0;
+  padding-bottom: 8px;
+}
+.us-seo-content h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin: 22px 0 8px;
+}
+.us-seo-content p { margin: 0 0 14px; }
+.us-seo-content ul { padding-left: 22px; margin: 0 0 14px; }
+.us-seo-content li { margin-bottom: 5px; }
+
+/* ─── FAQ Accordion ───────────────────────────────────── */
+.faq-item {
+  border: 1.5px solid #e2e8f0;
+  border-radius: 12px;
+  margin-bottom: 10px;
+  overflow: hidden;
+  background: #fff;
+}
+.faq-question {
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 16px 20px;
+  text-align: left;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #1e293b;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'Inter', sans-serif;
+  transition: background 0.2s;
+}
+.faq-question:hover { background: #f8fafc; }
+.faq-question .faq-icon {
+  font-size: 1.2rem;
+  color: #2563eb;
+  transition: transform 0.3s;
+  flex-shrink: 0;
+}
+.faq-question.open .faq-icon { transform: rotate(45deg); }
+.faq-answer {
+  display: none;
+  padding: 0 20px 18px;
+  font-size: 0.9rem;
+  color: #475569;
+  line-height: 1.7;
+}
+.faq-answer.open { display: block; }
+
+/* ─── No-Transfer States Banner ──────────────────────── */
+.no-tax-banner {
+  background: #f0fdf4;
+  border: 1.5px solid #86efac;
+  border-radius: 12px;
+  padding: 14px 20px;
+  font-size: 0.9rem;
+  color: #166534;
+  margin-bottom: 24px;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  line-height: 1.6;
+}
+.no-tax-banner.show { display: flex; }
+.no-tax-banner i { margin-top: 2px; flex-shrink: 0; }
+
+/* ─── Responsive ─────────────────────────────────────── */
+@media (max-width: 640px) {
+  .us-intro { padding: 24px 20px; }
+  .us-intro h1 { font-size: 1.4rem; }
+  .us-calculator-card { padding: 20px 16px; }
+  .results-header-band { padding: 20px 16px; }
+  .total-tax-amount { font-size: 2.2rem; }
+  .results-body { padding: 20px 16px; }
+  .rates-reference { padding: 20px 16px; }
+  .buyer-type-grid { grid-template-columns: 1fr 1fr; }
+}
