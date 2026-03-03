@@ -1,0 +1,308 @@
+/* =============================================================
+   rd-calculator.css  —  FairCalculator.com
+   Standardized layout for RD Calculator.
+   ============================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+.rd-app-wrapper {
+    --primary: #2563eb;
+    --primary-dark: #1d4ed8;
+    --primary-light: #eff6ff;
+    --accent: #f59e0b;
+    --bg-light: #f8fafc;
+    --bg-white: #ffffff;
+    --text-dark: #0f172a;
+    --text-gray: #475569;
+    --border: #e2e8f0;
+    --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.12);
+    --radius: 12px;
+    --radius-sm: 8px;
+
+    font-family: 'Inter', system-ui, sans-serif;
+    color: var(--text-dark);
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.calculator-section {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    gap: 28px;
+    margin-bottom: 32px;
+    align-items: start;
+}
+
+@media (max-width: 900px) {
+    .calculator-section {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+}
+
+.input-panel {
+    background: var(--bg-light);
+    padding: 28px;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+}
+
+.input-panel h2 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin: 0 0 20px 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.input-group {
+    margin-bottom: 22px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 7px;
+    font-weight: 600;
+    font-size: 0.88rem;
+}
+
+.input-with-symbol {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.symbol-prefix {
+    position: absolute;
+    left: 13px;
+    color: var(--text-gray);
+    font-weight: 600;
+    font-size: 0.95rem;
+    z-index: 1;
+}
+
+.symbol-suffix {
+    position: absolute;
+    right: 13px;
+    color: var(--text-gray);
+    font-weight: 600;
+}
+
+.input-with-symbol input {
+    padding-left: 32px !important;
+}
+
+.input-group input:has(+ .symbol-suffix) {
+    padding-right: 32px !important;
+}
+
+.input-group input,
+.input-group select {
+    width: 100%;
+    padding: 11px 14px;
+    border: 1.5px solid var(--border);
+    border-radius: var(--radius-sm);
+    font-size: 0.95rem;
+    font-family: inherit;
+    background: var(--bg-white);
+    transition: all 0.2s;
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+/* Ensure tables are scrollable on small screens */
+.table-responsive {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin: 24px 0;
+}
+
+.article-content table {
+    min-width: 600px;
+    /* Force scroll on small screens */
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+}
+
+.slider-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    flex-grow: 1;
+    height: 6px;
+    background: linear-gradient(90deg, var(--primary) var(--pct, 50%), #e5e7eb var(--pct, 50%));
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #fff;
+    border: 2px solid var(--primary);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.calc-btn {
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    color: white;
+    border: none;
+    border-radius: var(--radius-sm);
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    box-shadow: 0 4px 14px rgba(37, 99, 235, 0.3);
+}
+
+.calc-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
+}
+
+/* ── RESULTS ── */
+.results-panel {
+    background: linear-gradient(145deg, #1e3a8a 0%, #2563eb 60%, #3b82f6 100%);
+    color: white;
+    padding: 26px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-lg);
+    position: sticky;
+    top: 90px;
+}
+
+@media (max-width: 900px) {
+    .results-panel {
+        position: static;
+    }
+}
+
+.res-main-card {
+    background: rgba(255, 255, 255, 0.15);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    margin-bottom: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.res-value {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: #fbbf24;
+}
+
+.res-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    opacity: 0.8;
+    margin-bottom: 5px;
+}
+
+.res-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.res-card {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* ── DONUT ── */
+.donut-wrapper {
+    background: rgba(0, 0, 0, 0.15);
+    padding: 16px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+@media (max-width: 480px) {
+    .donut-wrapper {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .legend-item {
+        justify-content: center;
+        gap: 15px;
+    }
+}
+
+#donut-chart {
+    flex-shrink: 0;
+}
+
+.donut-bg {
+    fill: none;
+    stroke: rgba(255, 255, 255, 0.1);
+    stroke-width: 14;
+}
+
+.donut-invested {
+    fill: none;
+    stroke: #ffffff;
+    stroke-width: 14;
+    transform: rotate(-90deg);
+    transform-origin: 64px 64px;
+}
+
+.donut-interest {
+    fill: none;
+    stroke: #fbbf24;
+    stroke-width: 14;
+    transform: rotate(-90deg);
+    transform-origin: 64px 64px;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 0.8rem;
+    margin-bottom: 5px;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 5px;
+}
+
+.dot-inv {
+    background: #fff;
+}
+
+.dot-int {
+    background: #fbbf24;
+}
