@@ -1,0 +1,26 @@
+{
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "redirects": [
+    { "source": "/p/area-calculator.html", "destination": "/calculators/area-calculator", "permanent": true },
+    { "source": "/p/financial.html", "destination": "/categories/finance-calculators", "permanent": true },
+    { "source": "/p/date-calculators.html", "destination": "/categories/date-time-calculators", "permanent": true },
+    { "source": "/p/lcm-calculator.html", "destination": "/calculators/lcm-calculator", "permanent": true },
+    { "source": "/p/health.html", "destination": "/categories/health-calculators", "permanent": true },
+    { "source": "/p/discount-calculator.html", "destination": "/calculators/discount-calculator", "permanent": true },
+    { "source": "/p/disclaimer.html", "destination": "/legal/disclaimer", "permanent": true },
+    { "source": "/p/date-calculator.html", "destination": "/calculators/date-difference-calculator", "permanent": true },
+    { "source": "/favicon.ico", "destination": "/assets/images/favicon.png", "permanent": true },
+    { "source": "/p/mortgage-calculator.html", "destination": "/calculators/mortgage-calculator", "permanent": true },
+    { "source": "/p/fraction-calculator.html", "destination": "/calculators/fraction-calculator", "permanent": true },
+    { "source": "/p/loan-calculator.html", "destination": "/calculators/loan-calculator", "permanent": true },
+    { "source": "/calculators/currency-converter", "destination": "/categories/finance-calculators", "permanent": true },
+    { "source": "/calculators/currency-converter/", "destination": "/categories/finance-calculators", "permanent": true },
+    { "source": "/tip-calculator", "destination": "/calculators/tip-calculator", "permanent": true },
+    { "source": "/tip-calculator/", "destination": "/calculators/tip-calculator", "permanent": true },
+    { "source": "/calculators/loan-emi-calculator", "destination": "/calculators/loan-calculator", "permanent": true },
+    { "source": "/calculators/loan-emi-calculator/", "destination": "/calculators/loan-calculator", "permanent": true },
+    { "source": "/feeds/pages/default", "destination": "/", "permanent": true },
+    { "source": "/p/personal-loan-calculator.html", "destination": "/calculators/loan-calculator", "permanent": true }
+  ]
+}
