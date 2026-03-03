@@ -6,6 +6,9 @@ const calculatorsData = [
     { name: 'Compound Interest', desc: 'Calculate compound interest with monthly/yearly additions.', category: 'Finance', icon: 'fa-coins', url: 'calculators/compound-interest-calculator/' },
     { name: 'Amortization Calc', desc: 'Calculate loan amortization schedules.', category: 'Finance', icon: 'fa-table', url: 'calculators/amortization-calculator/' },
     { name: 'GST Calculator', desc: 'Calculate Goods and Services Tax (GST).', category: 'India', type: 'india', icon: 'fa-receipt', url: 'calculators/gst-calculator/' },
+    { name: 'EMI Calculator', desc: 'Calculate monthly loan EMIs with amortization schedule.', category: 'India', type: 'india', icon: 'fa-hand-holding-usd', url: 'calculators/emi-calculator/' },
+    { name: 'SSY Calculator', desc: 'Calculate Sukanya Samriddhi Yojana maturity value.', category: 'India', type: 'india', icon: 'fa-piggy-bank', url: 'calculators/ssy-calculator/' },
+    { name: 'RD Calculator', desc: 'Calculate Recurring Deposit interest and maturity amount.', category: 'India', type: 'india', icon: 'fa-coins', url: 'calculators/rd-calculator/' },
     { name: 'Tax Calculator 2026', desc: 'Estimate your income tax liability.', category: 'Finance', type: 'finance', icon: 'fa-file-invoice-dollar', url: 'calculators/income-tax-calculator/' },
     { name: 'Investment Calc', desc: 'Calculate the future value of your investments.', category: 'Finance', icon: 'fa-chart-line', url: 'calculators/investment-calculator/' },
     { name: 'Savings Calculator', desc: 'Calculate how much you can save over time.', category: 'Finance', icon: 'fa-piggy-bank', url: 'calculators/savings-calculator/' },
@@ -62,5 +65,6 @@ const calculatorsData = [
     { name: 'Spring Constant', desc: 'Calculate spring force, stiffness (k), and displacement using Hooke\'s Law.', category: 'Physics', icon: 'fa-compress-alt', url: 'calculators/spring-constant-calculator/' },
     { name: 'Wavelength Calc', desc: 'Calculate wavelength using frequency and speed.', category: 'Physics', icon: 'fa-wave-square', url: 'calculators/wavelength-calculator/' },
     { name: 'NZ Income Tax', desc: 'Calculate NZ PAYE, ACC & KiwiSaver for 2025-26.', category: 'Finance', icon: 'fa-money-bill-wave', url: 'calculators/nz-tax-calculator/' },
-    { name: 'NZ GST Calc', desc: 'Calculate 15% NZ GST. Add or remove GST instantly.', category: 'Finance', icon: 'fa-receipt', url: 'calculators/nz-gst-calculator/' }
+    { name: 'NZ GST Calc', desc: 'Calculate 15% NZ GST. Add or remove GST instantly.', category: 'Finance', icon: 'fa-receipt', url: 'calculators/nz-gst-calculator/' },
+    { name: 'SIP Calculator', desc: 'Calculate mutual fund returns and wealth creation.', category: 'India', type: 'india', icon: 'fa-chart-line', url: 'calculators/sip-calculator/' }
 ];
