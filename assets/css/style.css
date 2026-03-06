@@ -62,6 +62,23 @@ button {
     align-items: center;
 }
 
+/* Table Responsive Wrapper */
+.table-responsive {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin: 24px 0;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    background: #fff;
+}
+
+.table-responsive table {
+    margin: 0 !important;
+    border: none !important;
+    width: 100%;
+}
+
 /* =========================================
    HEADER
    ========================================= */
@@ -328,6 +345,17 @@ button {
    RESPONSIVE
    ========================================= */
 @media (max-width: 768px) {
+    .header {
+        position: relative;
+        z-index: 100;
+    }
+
+    .category-bar {
+        position: relative;
+        top: 0;
+        z-index: 90;
+    }
+
     .header-inner {
         gap: 10px;
     }
