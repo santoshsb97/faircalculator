@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const infoUrl = calc.url.startsWith('/') ? calc.url.substring(1) : calc.url;
 
         html += `
-            <a href="../../${infoUrl}index.html" class="card">
+            <a href="../../${infoUrl.endsWith('/') ? infoUrl.slice(0, -1) : infoUrl}" class="card">
                 <h3><i class="fas ${calc.icon}" style="color: #2563eb; margin-right: 8px;"></i> ${calc.name}</h3>
                 <p>${calc.desc}</p>
             </a>
