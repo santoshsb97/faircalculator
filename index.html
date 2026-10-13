@@ -22,7 +22,7 @@
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://www.faircalculator.com/">
-    <meta property="twitter:title" conten="FairCalculator - Simple Online Tools">
+    <meta property="twitter:title" content="FairCalculator - Simple Online Tools">
     <meta property="twitter:description"
         content="Free Online Calculator Tools. Access fast, accurate, and simple calculators for finance, math, health, and daily life on the premium Fair Calculator platform.">
     <meta property="twitter:image" content="https://www.faircalculator.com/assets/images/social-share.jpg">
@@ -57,7 +57,30 @@
 
     <!-- Schema -->
     <script type="application/ld+json">
-    { "@context": "https://schema.org", "@type": "WebSite", "name": "FairCalculator", "url": "https://faircalculator.com/" }
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "FairCalculator",
+      "url": "https://www.faircalculator.com/",
+      "description": "Free online calculators for finance, math, health, and daily life.",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://www.faircalculator.com/?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.faircalculator.com/"
+      }]
+    }
     </script>
 
 
@@ -69,7 +92,7 @@
     <header class="header">
         <div class="container header-inner">
             <h1 class="logo">
-                <a href="index.html">
+                <a href="/">
                     <i class="fas fa-calculator"></i>
                     <span>Fair<span class="logo-highlight">Calculator</span></span>
                 </a>
@@ -107,7 +130,7 @@
         <button class="mobile-close" id="closeMenu">&times;</button>
         <div style="margin-top: 40px;">
             <ul class="sidebar-list">
-                <li><a href="index.html">Home</a></li>
+                <li><a href="/">Home</a></li>
                 <li><a href="#calculators">All Calculators</a></li>
                 <li><a href="about.html">About Us</a></li>
                 <li><a href="contact.html">Contact</a></li>
@@ -219,6 +242,69 @@
                 </div>
             </section>
 
+            <!-- Static crawlable links for search engines (noscript fallback) -->
+            <noscript>
+                <nav aria-label="All Calculators">
+                    <h2>All Calculators</h2>
+                    <ul>
+                        <li><a href="calculators/simple-interest-calculator">Simple Interest Calculator</a></li>
+                        <li><a href="calculators/compound-interest-calculator">Compound Interest Calculator</a></li>
+                        <li><a href="calculators/amortization-calculator">Amortization Calculator</a></li>
+                        <li><a href="calculators/gst-calculator">GST Calculator</a></li>
+                        <li><a href="calculators/emi-calculator">EMI Calculator</a></li>
+                        <li><a href="calculators/ssy-calculator">SSY Calculator</a></li>
+                        <li><a href="calculators/rd-calculator">RD Calculator</a></li>
+                        <li><a href="calculators/income-tax-calculator">Income Tax Calculator</a></li>
+                        <li><a href="calculators/investment-calculator">Investment Calculator</a></li>
+                        <li><a href="calculators/savings-calculator">Savings Calculator</a></li>
+                        <li><a href="calculators/loan-calculator">Loan Calculator</a></li>
+                        <li><a href="calculators/mortgage-calculator">Mortgage Calculator</a></li>
+                        <li><a href="calculators/discount-calculator">Discount Calculator</a></li>
+                        <li><a href="calculators/salary-calculator">Salary Calculator</a></li>
+                        <li><a href="calculators/retirement-calculator">Retirement Calculator</a></li>
+                        <li><a href="calculators/uk-stamp-duty-calculator">UK Stamp Duty Calculator</a></li>
+                        <li><a href="calculators/gold-loan-calculator">Gold Loan Calculator</a></li>
+                        <li><a href="calculators/rmd-calculator">RMD Calculator</a></li>
+                        <li><a href="calculators/uk-salary-sacrifice-calculator">UK Salary Sacrifice Calculator</a></li>
+                        <li><a href="calculators/tip-calculator">Tip Calculator</a></li>
+                        <li><a href="calculators/australian-income-tax-calculator">Australian Income Tax Calculator</a></li>
+                        <li><a href="calculators/australian-gst-calculator">Australian GST Calculator</a></li>
+                        <li><a href="calculators/sales-tax-calculator">Sales Tax Calculator</a></li>
+                        <li><a href="calculators/us-stamp-duty-calculator">US Stamp Duty Calculator</a></li>
+                        <li><a href="calculators/margin-calculator">Margin Calculator</a></li>
+                        <li><a href="calculators/nz-tax-calculator">NZ Income Tax Calculator</a></li>
+                        <li><a href="calculators/nz-gst-calculator">NZ GST Calculator</a></li>
+                        <li><a href="calculators/sip-calculator">SIP Calculator</a></li>
+                        <li><a href="calculators/percentage-calculator">Percentage Calculator</a></li>
+                        <li><a href="calculators/fraction-calculator">Fraction Calculator</a></li>
+                        <li><a href="calculators/square-root-calculator">Square Root Calculator</a></li>
+                        <li><a href="calculators/exponent-calculator">Exponent Calculator</a></li>
+                        <li><a href="calculators/logarithm-calculator">Logarithm Calculator</a></li>
+                        <li><a href="calculators/absolute-value-equation-solver">Absolute Value Equation Solver</a></li>
+                        <li><a href="calculators/system-of-equations-solver">System of Equations Solver</a></li>
+                        <li><a href="calculators/area-calculator">Area Calculator</a></li>
+                        <li><a href="calculators/volume-calculator">Volume Calculator</a></li>
+                        <li><a href="calculators/standard-deviation-calculator">Standard Deviation Calculator</a></li>
+                        <li><a href="calculators/lcm-calculator">LCM Calculator</a></li>
+                        <li><a href="calculators/hcf-calculator">HCF Calculator</a></li>
+                        <li><a href="calculators/bmi-calculator">BMI Calculator</a></li>
+                        <li><a href="calculators/calorie-calculator">Calorie Calculator</a></li>
+                        <li><a href="calculators/age-calculator">Age Calculator</a></li>
+                        <li><a href="calculators/date-difference-calculator">Date Difference Calculator</a></li>
+                        <li><a href="calculators/time-calculator">Time Calculator</a></li>
+                        <li><a href="calculators/business-days-calculator">Business Days Calculator</a></li>
+                        <li><a href="calculators/leap-year-calculator">Leap Year Calculator</a></li>
+                        <li><a href="calculators/week-calculator">Week Calculator</a></li>
+                        <li><a href="calculators/temperature-converter">Temperature Converter</a></li>
+                        <li><a href="calculators/number-to-words-converter">Number to Words Converter</a></li>
+                        <li><a href="calculators/subnet-calculator">Subnet Calculator</a></li>
+                        <li><a href="calculators/bandwidth-calculator">Bandwidth Calculator</a></li>
+                        <li><a href="calculators/frequency-calculator">Frequency Calculator</a></li>
+                        <li><a href="calculators/spring-constant-calculator">Spring Constant Calculator</a></li>
+                        <li><a href="calculators/wavelength-calculator">Wavelength Calculator</a></li>
+                    </ul>
+                </nav>
+            </noscript>
         </div>
     </main>
 
@@ -239,7 +325,7 @@
                 <div>
                     <h4>Menu</h4>
                     <ul>
-                        <li><a href="index.html">Home</a></li>
+                        <li><a href="/">Home</a></li>
                         <li><a href="about.html">About Us</a></li>
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
@@ -277,13 +363,13 @@
 
             // 1. Render Categories (To match style of sub-pages)
             const categoriesData = [
-                { name: 'Financial Tools', url: 'categories/finance-calculators.html' },
-                { name: 'Indian Calculators', url: 'categories/indian-calculators.html' },
-                { name: 'Math Calculators', url: 'categories/math-calculators.html' },
-                { name: 'Physics Calculators', url: 'categories/physics-calculators.html' },
-                { name: 'Health & Fitness', url: 'categories/health-calculators.html' },
-                { name: 'Date & Time', url: 'categories/date-time-calculators.html' },
-                { name: 'Unit Converters', url: 'categories/unit-converters.html' }
+                { name: 'Financial Tools', url: 'categories/finance-calculators' },
+                { name: 'Indian Calculators', url: 'categories/indian-calculators' },
+                { name: 'Math Calculators', url: 'categories/math-calculators' },
+                { name: 'Physics Calculators', url: 'categories/physics-calculators' },
+                { name: 'Health & Fitness', url: 'categories/health-calculators' },
+                { name: 'Date & Time', url: 'categories/date-time-calculators' },
+                { name: 'Unit Converters', url: 'categories/unit-converters' }
             ];
 
             const categoryList = document.getElementById('category-list');

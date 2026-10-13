@@ -1,0 +1,94 @@
+# FairCalculator URL Baseline
+# Generated: 2026-10-13
+# These URLs must ALWAYS return 200. DO NOT rename, move, or redirect.
+# Canonical host: https://www.faircalculator.com
+
+# ── Core pages ────────────────────────────────────────────────────────────────
+/
+/index.html
+/about.html
+/contact.html
+
+# ── Legal pages ───────────────────────────────────────────────────────────────
+/legal/privacy-policy.html
+/legal/terms-of-service.html
+/legal/cookie-policy.html
+/legal/disclaimer.html
+
+# ── Category pages ────────────────────────────────────────────────────────────
+# Note: served as extensionless URLs (canonical) AND as .html files
+/categories/finance-calculators
+/categories/finance-calculators.html
+/categories/math-calculators
+/categories/math-calculators.html
+/categories/health-calculators
+/categories/health-calculators.html
+/categories/date-time-calculators
+/categories/date-time-calculators.html
+/categories/unit-converters
+/categories/unit-converters.html
+/categories/indian-calculators
+/categories/indian-calculators.html
+/categories/physics-calculators
+/categories/physics-calculators.html
+
+# ── Calculator pages (extensionless / served via directory index) ──────────────
+/calculators/absolute-value-equation-solver
+/calculators/age-calculator
+/calculators/amortization-calculator
+/calculators/area-calculator
+/calculators/australian-gst-calculator
+/calculators/australian-income-tax-calculator
+/calculators/bandwidth-calculator
+/calculators/bmi-calculator
+/calculators/business-days-calculator
+/calculators/calorie-calculator
+/calculators/compound-interest-calculator
+/calculators/date-difference-calculator
+/calculators/discount-calculator
+/calculators/emi-calculator
+/calculators/exponent-calculator
+/calculators/fraction-calculator
+/calculators/frequency-calculator
+/calculators/gold-loan-calculator
+/calculators/gst-calculator
+/calculators/hcf-calculator
+/calculators/income-tax-calculator
+/calculators/investment-calculator
+/calculators/lcm-calculator
+/calculators/leap-year-calculator
+/calculators/loan-calculator
+/calculators/logarithm-calculator
+/calculators/margin-calculator
+/calculators/mortgage-calculator
+/calculators/number-to-words-converter
+/calculators/nz-gst-calculator
+/calculators/nz-tax-calculator
+/calculators/percentage-calculator
+/calculators/rd-calculator
+/calculators/retirement-calculator
+/calculators/rmd-calculator
+/calculators/salary-calculator
+/calculators/sales-tax-calculator
+/calculators/savings-calculator
+/calculators/simple-interest-calculator
+/calculators/sip-calculator
+/calculators/spring-constant-calculator
+/calculators/square-root-calculator
+/calculators/ssy-calculator
+/calculators/standard-deviation-calculator
+/calculators/subnet-calculator
+/calculators/system-of-equations-solver
+/calculators/temperature-converter
+/calculators/time-calculator
+/calculators/tip-calculator
+/calculators/uk-salary-sacrifice-calculator
+/calculators/uk-stamp-duty-calculator
+/calculators/us-stamp-duty-calculator
+/calculators/volume-calculator
+/calculators/wavelength-calculator
+/calculators/week-calculator
+
+# ── Static files ───────────────────────────────────────────────────────────────
+/robots.txt
+/sitemap.xml

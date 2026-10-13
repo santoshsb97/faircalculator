@@ -59,6 +59,7 @@ const calculatorsData = [
     { name: 'Temperature', desc: 'Convert Celsius, Fahrenheit, and Kelvin.', category: 'Converter', icon: 'fa-temperature-high', url: 'calculators/temperature-converter' },
     { name: 'Number to Words', desc: 'Convert numbers into written words for checks, currency, and legal documents.', category: 'Converter', icon: 'fa-spell-check', url: 'calculators/number-to-words-converter' },
     { name: 'Subnet Calculator', desc: 'Calculate IP subnets, network addresses, and usable host ranges.', category: 'Converter', icon: 'fa-network-wired', url: 'calculators/subnet-calculator' },
+    { name: 'Bandwidth Calculator', desc: 'Calculate download times, file sizes, and required bandwidth speeds.', category: 'Converter', icon: 'fa-wifi', url: 'calculators/bandwidth-calculator' },
 
     // Physics
     { name: 'Frequency Calc', desc: 'Calculate frequency, wavelength, period, and speed.', category: 'Physics', icon: 'fa-wave-square', url: 'calculators/frequency-calculator' },

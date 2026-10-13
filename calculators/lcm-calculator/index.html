@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -30,6 +30,17 @@
             y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
         })(window, document, "clarity", "script", "udqk27trde");
     </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.faircalculator.com/"},
+        {"@type": "ListItem", "position": 2, "name": "Math Calculators", "item": "https://www.faircalculator.com/categories/math-calculators"},
+        {"@type": "ListItem", "position": 3, "name": "LCM Calculator", "item": "https://www.faircalculator.com/calculators/lcm-calculator"}
+      ]
+    }
+    </script>
 
     <link rel="stylesheet" href="../../assets/css/calculators/lcm-calculator.css">
 </head>
@@ -38,7 +49,7 @@
     <!-- HEADER -->
     <header class="header">
         <div class="container header-inner">
-            <a href="../../index.html" class="logo">FairCalculator</a>
+            <a href="/" class="logo">FairCalculator</a>
             <div class="header-search">
                 <input type="text" id="searchInput" class="search-input" placeholder="Search tools...">
             </div>
@@ -52,13 +63,13 @@
     <nav class="category-bar" aria-label="Main Categories">
         <div class="container">
             <ul id="category-list">
-                <li><a href="../../index.html">All</a></li>
-                <li><a href="../../categories/finance-calculators.html">Finance</a></li>
-                <li><a href="../../categories/math-calculators.html"
+                <li><a href="/">All</a></li>
+                <li><a href="../../categories/finance-calculators">Finance</a></li>
+                <li><a href="../../categories/math-calculators"
                         style="background:#eff6ff; color:#2563eb; border-color:#bfdbfe;">Math</a></li>
-                <li><a href="../../categories/health-calculators.html">Health</a></li>
-                <li><a href="../../categories/date-time-calculators.html">Date</a></li>
-                <li><a href="../../categories/unit-converters.html">Converters</a></li>
+                <li><a href="../../categories/health-calculators">Health</a></li>
+                <li><a href="../../categories/date-time-calculators">Date</a></li>
+                <li><a href="../../categories/unit-converters">Converters</a></li>
             </ul>
         </div>
     </nav>
@@ -68,7 +79,7 @@
         <button class="mobile-close" id="closeMenu">&times;</button>
         <div style="margin-top: 40px;">
             <ul class="sidebar-list">
-                <li><a href="../../index.html">Home</a></li>
+                <li><a href="/">Home</a></li>
                 <li><a href="../../index.html#calculators">All Calculators</a></li>
                 <li><a href="../../about.html">About Us</a></li>
                 <li><a href="../../contact.html">Contact</a></li>
@@ -81,8 +92,8 @@
         <div class="container">
             <!-- Breadcrumbs -->
             <div style="margin-bottom: 20px; font-size: 0.9rem; color: #64748b;">
-                <a href="../../index.html" style="text-decoration: underline;">Home</a> /
-                <a href="../../categories/math-calculators.html" style="text-decoration: underline;">Math</a> /
+                <a href="/" style="text-decoration: underline;">Home</a> /
+                <a href="../../categories/math-calculators" style="text-decoration: underline;">Math</a> /
                 <span style="font-weight: 600; color: #0f172a;">LCM Calculator</span>
             </div>
 
@@ -128,7 +139,7 @@
 
                     <div class="lcm-result-section" id="lcmResult">
                         <div class="lcm-result-label">The LCM is:</div>
-                        <div class="lcm-result-value" id="lcmValue">â€”</div>
+                        <div class="lcm-result-value" id="lcmValue">—</div>
                     </div>
 
                     <div class="lcm-steps-section" id="lcmSteps">
@@ -184,7 +195,7 @@
                         </div>
                         <div class="info-card">
                             <h3>GCF/GCD Method</h3>
-                            <p>Uses the formula: <code>LCM(a,b) = (a Ã— b) Ã· GCD(a,b)</code>. Very efficient when you
+                            <p>Uses the formula: <code>LCM(a,b) = (a × b) ÷ GCD(a,b)</code>. Very efficient when you
                                 know the greatest common divisor.</p>
                             <p style="font-size: 0.85rem; color: #64748b;"><strong>Best for:</strong> Two numbers, quick
                                 calculations</p>
@@ -198,7 +209,7 @@
                         </div>
                         <div class="info-card">
                             <h3>Prime Power Method</h3>
-                            <p>Express numbers as products of prime powers (2Â³, 5Â², etc.). Take the maximum power of
+                            <p>Express numbers as products of prime powers (2³, 5², etc.). Take the maximum power of
                                 each prime and multiply.</p>
                             <p style="font-size: 0.85rem; color: #64748b;"><strong>Best for:</strong> Large numbers with
                                 repeated factors</p>
@@ -219,7 +230,7 @@
                         </div>
                         <div class="info-card">
                             <h3>Direct Formula</h3>
-                            <p>Apply the formula <code>LCM(a,b) = (a Ã— b) Ã· GCD(a,b)</code> repeatedly for multiple
+                            <p>Apply the formula <code>LCM(a,b) = (a × b) ÷ GCD(a,b)</code> repeatedly for multiple
                                 numbers. Mathematical and precise.</p>
                             <p style="font-size: 0.85rem; color: #64748b;"><strong>Best for:</strong> Multiple numbers,
                                 computational approach</p>
@@ -243,18 +254,18 @@
                             <div class="faq-answer">To <strong>find the lcm of 154 198 and 286</strong> using prime
                                 factorization:
                                 <ul>
-                                    <li>154 = 2 Ã— 7 Ã— 11</li>
-                                    <li>198 = 2 Ã— 3Â² Ã— 11</li>
-                                    <li>286 = 2 Ã— 11 Ã— 13</li>
-                                    <li>LCM = 2 Ã— 3Â² Ã— 7 Ã— 11 Ã— 13 = <strong>18,018</strong></li>
+                                    <li>154 = 2 × 7 × 11</li>
+                                    <li>198 = 2 × 3² × 11</li>
+                                    <li>286 = 2 × 11 × 13</li>
+                                    <li>LCM = 2 × 3² × 7 × 11 × 13 = <strong>18,018</strong></li>
                                 </ul>
                             </div>
                         </div>
 
                         <div class="faq-item">
                             <div class="faq-question">Find the LCM of 510 and 92?</div>
-                            <div class="faq-answer">To <strong>find the lcm of 510 and 92</strong>: 510 = 2 Ã— 3 Ã— 5 Ã—
-                                17, 92 = 2Â² Ã— 23. Using the largest power of each prime, the LCM is
+                            <div class="faq-answer">To <strong>find the lcm of 510 and 92</strong>: 510 = 2 × 3 × 5 ×
+                                17, 92 = 2² × 23. Using the largest power of each prime, the LCM is
                                 <strong>23,460</strong>.
                             </div>
                         </div>
@@ -268,29 +279,29 @@
 
                         <div class="faq-item">
                             <div class="faq-question">LCM of 12, 15, and 21?</div>
-                            <div class="faq-answer">To <strong>calculate the lcm of 12 15 21</strong>: 12=2Â²Ã—3,
-                                15=3Ã—5,
-                                21=3Ã—7. The LCM is 2Â²Ã—3Ã—5Ã—7 = <strong>420</strong>.</div>
+                            <div class="faq-answer">To <strong>calculate the lcm of 12 15 21</strong>: 12=2²×3,
+                                15=3×5,
+                                21=3×7. The LCM is 2²×3×5×7 = <strong>420</strong>.</div>
                         </div>
 
                         <div class="faq-item">
                             <div class="faq-question">LCM of 16, 24, 36, and 54?</div>
                             <div class="faq-answer">To <strong>find the lcm of 16 24 36 and 54</strong>:
                                 <ul>
-                                    <li>16 = 2â´</li>
-                                    <li>24 = 2Â³ Ã— 3</li>
-                                    <li>36 = 2Â² Ã— 3Â²</li>
-                                    <li>54 = 2 Ã— 3Â³</li>
-                                    <li>LCM = 2â´ Ã— 3Â³ = 16 Ã— 27 = <strong>432</strong></li>
+                                    <li>16 = 2⁴</li>
+                                    <li>24 = 2³ × 3</li>
+                                    <li>36 = 2² × 3²</li>
+                                    <li>54 = 2 × 3³</li>
+                                    <li>LCM = 2⁴ × 3³ = 16 × 27 = <strong>432</strong></li>
                                 </ul>
                             </div>
                         </div>
 
                         <div class="faq-item">
                             <div class="faq-question">Find the LCM of numbers with exponents?</div>
-                            <div class="faq-answer">To <strong>find the lcm of 2Â³ 3Â² 7</strong> and <strong>2 3Â³
-                                    5</strong>: Take the highest power of each prime. LCM = 2Â³ Ã— 3Â³ Ã— 5 Ã— 7 = 8 Ã—
-                                27 Ã—
+                            <div class="faq-answer">To <strong>find the lcm of 2³ 3² 7</strong> and <strong>2 3³
+                                    5</strong>: Take the highest power of each prime. LCM = 2³ × 3³ × 5 × 7 = 8 ×
+                                27 ×
                                 35 = <strong>7,560</strong>. This is common when you <strong>find the lcm of 2cube
                                     3square 72 3cube 5</strong> style problems.</div>
                         </div>
@@ -299,8 +310,8 @@
                             <div class="faq-question">LCM of polynomials and expressions?</div>
                             <div class="faq-answer">To <strong>find the lcm of the polynomials</strong> or <strong>find
                                     the least common multiple of these two expressions</strong>, factor each expression
-                                completely and take the highest power of every factor. For example, LCM(xÂ², xÂ³) =
-                                <strong>xÂ³</strong>.
+                                completely and take the highest power of every factor. For example, LCM(x², x³) =
+                                <strong>x³</strong>.
                             </div>
                         </div>
 
@@ -374,7 +385,7 @@
                     </div>
                     <div class="faq-item">
                         <div class="faq-question">Is there a relationship between LCM and GCD?</div>
-                        <div class="faq-answer">Yes! For two numbers a and b: LCM(a,b) Ã— GCD(a,b) = a Ã— b. This
+                        <div class="faq-answer">Yes! For two numbers a and b: LCM(a,b) × GCD(a,b) = a × b. This
                             relationship is the basis of the Formula Method and is very useful for calculations.</div>
                     </div>
                     <div class="faq-item">
@@ -407,7 +418,7 @@
                 <div>
                     <h4>Quick Links</h4>
                     <ul>
-                        <li><a href="../../index.html">Home</a></li>
+                        <li><a href="/">Home</a></li>
                         <li><a href="../../about.html">About Us</a></li>
                         <li><a href="../../contact.html">Contact</a></li>
                     </ul>

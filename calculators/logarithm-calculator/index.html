@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en-US">
 
 <head>
@@ -55,13 +55,24 @@
             y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
         })(window, document, "clarity", "script", "udqk27trde");
     </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.faircalculator.com/"},
+        {"@type": "ListItem", "position": 2, "name": "Math Calculators", "item": "https://www.faircalculator.com/categories/math-calculators"},
+        {"@type": "ListItem", "position": 3, "name": "Logarithm Calculator", "item": "https://www.faircalculator.com/calculators/logarithm-calculator"}
+      ]
+    }
+    </script>
 </head>
 
 <body>
     <!-- 3. HEADER -->
     <header class="header">
         <div class="container header-inner">
-            <a href="../../index.html" class="logo">FairCalculator</a>
+            <a href="/" class="logo">FairCalculator</a>
             <div class="header-search"><input type="text" id="searchInput" class="search-input"
                     placeholder="Search tools..."></div>
             <button class="menu-btn" id="menuToggle"><i class="fas fa-bars"></i></button>
@@ -72,13 +83,13 @@
     <nav class="category-bar">
         <div class="container">
             <ul id="category-list">
-                <li><a href="../../index.html">All</a></li>
-                <li><a href="../../categories/finance-calculators.html">Finance</a></li>
-                <li><a href="../../categories/math-calculators.html"
+                <li><a href="/">All</a></li>
+                <li><a href="../../categories/finance-calculators">Finance</a></li>
+                <li><a href="../../categories/math-calculators"
                         style="background:#eff6ff; color:#2563eb; border-color:#bfdbfe;">Math</a></li>
-                <li><a href="../../categories/health-calculators.html">Health</a></li>
-                <li><a href="../../categories/date-time-calculators.html">Date</a></li>
-                <li><a href="../../categories/unit-converters.html">Converters</a></li>
+                <li><a href="../../categories/health-calculators">Health</a></li>
+                <li><a href="../../categories/date-time-calculators">Date</a></li>
+                <li><a href="../../categories/unit-converters">Converters</a></li>
             </ul>
         </div>
     </nav>
@@ -88,7 +99,7 @@
         <button class="mobile-close" id="closeMenu">&times;</button>
         <div style="margin-top: 40px;">
             <ul class="sidebar-list">
-                <li><a href="../../index.html">Home</a></li>
+                <li><a href="/">Home</a></li>
                 <li><a href="../../index.html#calculators">All Calculators</a></li>
                 <li><a href="../../about.html">About</a></li>
                 <li><a href="../../contact.html">Contact</a></li>
@@ -101,8 +112,8 @@
         <div class="container">
             <!-- Breadcrumbs -->
             <div style="margin-bottom: 20px; font-size: 0.9rem; color: #64748b;">
-                <a href="../../index.html" style="text-decoration: underline;">Home</a> /
-                <a href="../../categories/math-calculators.html" style="text-decoration: underline;">Math</a> /
+                <a href="/" style="text-decoration: underline;">Home</a> /
+                <a href="../../categories/math-calculators" style="text-decoration: underline;">Math</a> /
                 <span style="font-weight: 600; color: #0f172a;">Logarithm</span>
             </div>
 
@@ -175,7 +186,7 @@
                     <div class="formula-card">If b<sup>y</sup> = x, then log<sub>b</sub>(x) = y</div>
                     <p><strong>Key Conditions:</strong></p>
                     <ul>
-                        <li>The Base <strong>b</strong> must be positive and not equal to 1 (b > 0, b ≠ 1).</li>
+                        <li>The Base <strong>b</strong> must be positive and not equal to 1 (b > 0, b ? 1).</li>
                         <li>The Argument <strong>x</strong> must be a positive number (x > 0).</li>
                     </ul>
 
@@ -208,7 +219,7 @@
                                 </tr>
                                 <tr>
                                     <td>Binary Logarithm</td>
-                                    <td>log₂(x)</td>
+                                    <td>log2(x)</td>
                                     <td>2</td>
                                     <td>Computer Science, Information Theory</td>
                                 </tr>
@@ -219,11 +230,11 @@
                     <h3>Logarithm Rules & Properties</h3>
                     <p>Knowing these rules makes solving logarithmic equations much easier:</p>
                     <ul>
-                        <li><strong>Product Rule:</strong> log<sub>b</sub>(M · N) = log<sub>b</sub> M + log<sub>b</sub>
+                        <li><strong>Product Rule:</strong> log<sub>b</sub>(M � N) = log<sub>b</sub> M + log<sub>b</sub>
                             N</li>
                         <li><strong>Quotient Rule:</strong> log<sub>b</sub>(M / N) = log<sub>b</sub> M - log<sub>b</sub>
                             N</li>
-                        <li><strong>Power Rule:</strong> log<sub>b</sub>(M<sup>p</sup>) = p · log<sub>b</sub> M</li>
+                        <li><strong>Power Rule:</strong> log<sub>b</sub>(M<sup>p</sup>) = p � log<sub>b</sub> M</li>
                         <li><strong>Identity Rule:</strong> log<sub>b</sub> b = 1</li>
                         <li><strong>Zero Rule:</strong> log<sub>b</sub> 1 = 0</li>
                     </ul>
@@ -244,14 +255,14 @@
 
                     <div class="faq-item">
                         <div class="faq-q" onclick="toggleFAQ(this)">1. Why can't I take the log of a negative number?
-                            <span>▼</span>
+                            <span>?</span>
                         </div>
                         <div class="faq-a">Because there is no power to which you can raise a positive base to get a
                             negative number. The result of b<sup>y</sup> is always positive for any real number y.</div>
                     </div>
 
                     <div class="faq-item">
-                        <div class="faq-q" onclick="toggleFAQ(this)">2. What is the value of ln(e)? <span>▼</span></div>
+                        <div class="faq-q" onclick="toggleFAQ(this)">2. What is the value of ln(e)? <span>?</span></div>
                         <div class="faq-a">The value is <strong>1</strong>. Since the base of the natural log (ln) is
                             <em>e</em>, you are asking "to what power must I raise <em>e</em> to get <em>e</em>?". The
                             answer is 1.
@@ -260,7 +271,7 @@
 
                     <div class="faq-item">
                         <div class="faq-q" onclick="toggleFAQ(this)">3. What is the difference between log and ln?
-                            <span>▼</span>
+                            <span>?</span>
                         </div>
                         <div class="faq-a"><strong>log</strong> usually refers to base 10, while <strong>ln</strong>
                             refers to base <em>e</em> (approx 2.718). They function the same way, just with different
@@ -284,7 +295,7 @@
                 <div>
                     <h4>Menu</h4>
                     <ul>
-                        <li><a href="../../index.html">Home</a></li>
+                        <li><a href="/">Home</a></li>
                         <li><a href="../../about.html">About Us</a></li>
                         <li><a href="../../contact.html">Contact</a></li>
                     </ul>

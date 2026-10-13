@@ -1,4 +1,4 @@
-ï»¿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en-GB">
 
 <head>
@@ -72,7 +72,7 @@
           "name": "Does this calculator include April 2029 salary sacrifice changes?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "No. This calculator reflects UK salary sacrifice rules for the 2026â‚¬â€œ27 tax year and does not apply the planned National Insurance cap from April 2029."
+            "text": "No. This calculator reflects UK salary sacrifice rules for the 2026€“27 tax year and does not apply the planned National Insurance cap from April 2029."
           }
         }
       ]
@@ -85,7 +85,7 @@
       "name": "UK Salary Sacrifice Pension Calculator",
       "applicationCategory": "FinanceApplication",
       "operatingSystem": "All",
-      "description": "Calculate UK salary sacrifice pension tax and National Insurance savings for the 2026â‚¬â€œ27 tax year.",
+      "description": "Calculate UK salary sacrifice pension tax and National Insurance savings for the 2026€“27 tax year.",
       "offers": {
         "@type": "Offer",
         "price": "0",
@@ -111,13 +111,24 @@
             y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
         })(window, document, "clarity", "script", "udqk27trde");
     </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.faircalculator.com/"},
+        {"@type": "ListItem", "position": 2, "name": "Financial Calculators", "item": "https://www.faircalculator.com/categories/finance-calculators"},
+        {"@type": "ListItem", "position": 3, "name": "UK Salary Sacrifice Calculator", "item": "https://www.faircalculator.com/calculators/uk-salary-sacrifice-calculator"}
+      ]
+    }
+    </script>
 </head>
 
 <body>
 
     <header class="header">
         <div class="container header-inner">
-            <a href="../../index.html" class="logo">FairCalculator</a>
+            <a href="/" class="logo">FairCalculator</a>
             <div class="header-search">
                 <input type="text" id="searchInput" class="search-input"
                     placeholder="Search tools (e.g. Mortgage, BMI)..." aria-label="Search tools">
@@ -146,18 +157,18 @@
                 <div class="calculator-body">
                     <div class="input-grid">
                         <div class="input-group" id="groupSalary">
-                            <label for="annualSalary">Annual Gross Salary (Â£)</label>
+                            <label for="annualSalary">Annual Gross Salary (£)</label>
                             <div class="field-input-wrapper with-prefix">
-                                <span class="input-prefix">Â£</span>
+                                <span class="input-prefix">£</span>
                                 <input type="number" id="annualSalary" class="input-control" placeholder="e.g. 50000"
                                     min="0">
                             </div>
                             <div id="salaryError" class="error-message">Salary must be positive</div>
                         </div>
                         <div class="input-group" id="groupSacrifice">
-                            <label for="sacrificeAmount">Annual Salary Sacrifice (Â£)</label>
+                            <label for="sacrificeAmount">Annual Salary Sacrifice (£)</label>
                             <div class="field-input-wrapper with-prefix">
-                                <span class="input-prefix">Â£</span>
+                                <span class="input-prefix">£</span>
                                 <input type="number" id="sacrificeAmount" class="input-control" placeholder="e.g. 5000"
                                     min="0">
                             </div>
@@ -211,7 +222,7 @@
 
                     <div class="disclosure-note">
                         <i class="fas fa-info-circle"></i> <strong>Note:</strong> This calculator uses UK salary
-                        sacrifice rules applicable in the 2026â‚¬â€œ27 tax year. Planned National Insurance changes from
+                        sacrifice rules applicable in the 2026€“27 tax year. Planned National Insurance changes from
                         April 2029 are not included.
                     </div>
 
@@ -223,20 +234,20 @@
                         <div class="summary-grid">
                             <div class="summary-card success-card">
                                 <h4>Employee Annual Saving</h4>
-                                <div class="value" id="employeeAnnualSaving">Â£0</div>
+                                <div class="value" id="employeeAnnualSaving">£0</div>
                                 <p style="font-size: 0.85rem; margin-top: 8px; color: #4b5563;">Income Tax & Employee NI
                                     relief</p>
                             </div>
                             <div class="summary-card success-card" style="background: #effaf3; border-color: #bbf7d0;">
                                 <h4>Employer Annual Saving</h4>
-                                <div class="value" id="employerAnnualSaving" style="color: #16a34a;">Â£0</div>
+                                <div class="value" id="employerAnnualSaving" style="color: #16a34a;">£0</div>
                                 <p style="font-size: 0.85rem; margin-top: 8px; color: #4b5563;">Employer NI (15%)
                                     reduction</p>
                             </div>
                             <div class="summary-card primary-card">
                                 <h4>Effective Cost</h4>
                                 <div class="value" id="effectiveCost">0p <span
-                                        style="font-size: 0.9rem; font-weight: 400;">per Â£1 boost</span></div>
+                                        style="font-size: 0.9rem; font-weight: 400;">per £1 boost</span></div>
                                 <p style="font-size: 0.85rem; margin-top: 8px; color: #4b5563;">Based on your net pay
                                     reduction.</p>
                             </div>
@@ -255,39 +266,39 @@
                                 <tbody>
                                     <tr>
                                         <td>Gross Contractual Pay</td>
-                                        <td id="res_gross_base">Â£0</td>
-                                        <td id="res_gross_sac">Â£0</td>
-                                        <td id="res_gross_diff" class="val-saving">Â£0</td>
+                                        <td id="res_gross_base">£0</td>
+                                        <td id="res_gross_sac">£0</td>
+                                        <td id="res_gross_diff" class="val-saving">£0</td>
                                     </tr>
                                     <tr>
                                         <td>Income Tax</td>
-                                        <td id="res_tax_base">Â£0</td>
-                                        <td id="res_tax_sac">Â£0</td>
-                                        <td id="res_tax_diff" class="val-saving">Â£0</td>
+                                        <td id="res_tax_base">£0</td>
+                                        <td id="res_tax_sac">£0</td>
+                                        <td id="res_tax_diff" class="val-saving">£0</td>
                                     </tr>
                                     <tr>
                                         <td>Employee NI</td>
-                                        <td id="res_eni_base">Â£0</td>
-                                        <td id="res_eni_sac">Â£0</td>
-                                        <td id="res_eni_diff" class="val-saving">Â£0</td>
+                                        <td id="res_eni_base">£0</td>
+                                        <td id="res_eni_sac">£0</td>
+                                        <td id="res_eni_diff" class="val-saving">£0</td>
                                     </tr>
                                     <tr class="row-highlight">
                                         <td><strong>Net Take-Home Pay</strong></td>
-                                        <td id="res_net_base">Â£0</td>
-                                        <td id="res_net_sac">Â£0</td>
-                                        <td id="res_net_diff" style="color: var(--danger);">Â£0</td>
+                                        <td id="res_net_base">£0</td>
+                                        <td id="res_net_sac">£0</td>
+                                        <td id="res_net_diff" style="color: var(--danger);">£0</td>
                                     </tr>
                                     <tr style="border-top: 2px solid #e9ecef;">
                                         <td>Employer NI (Cost to Co.)</td>
-                                        <td id="res_erni_base">Â£0</td>
-                                        <td id="res_erni_sac">Â£0</td>
-                                        <td id="res_erni_diff" class="val-saving">Â£0</td>
+                                        <td id="res_erni_base">£0</td>
+                                        <td id="res_erni_sac">£0</td>
+                                        <td id="res_erni_diff" class="val-saving">£0</td>
                                     </tr>
                                     <tr class="row-highlight">
                                         <td><strong>Total Pension Contrib.</strong></td>
-                                        <td>Â£0</td>
-                                        <td id="res_pension_total">Â£0</td>
-                                        <td class="val-saving" id="res_pension_uplift">+Â£0</td>
+                                        <td>£0</td>
+                                        <td id="res_pension_total">£0</td>
+                                        <td class="val-saving" id="res_pension_uplift">+£0</td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -297,7 +308,7 @@
                             style="display:none; border: 1px solid #fee2e2; background: #fef2f2; color: #991b1b; border-left: 5px solid #ef4444;">
                             <i class="fas fa-exclamation-triangle"></i> <strong>Minimum Wage Alert:</strong> Your
                             adjusted
-                            salary falls below the estimated National Minimum Wage (Â£12.21/hr). Most employers will
+                            salary falls below the estimated National Minimum Wage (£12.21/hr). Most employers will
                             block
                             this sacrifice.
                         </div>
@@ -325,7 +336,7 @@
                         Employee NI Adjusted)
                     </div>
                     <ol style="color: var(--text-muted); line-height: 1.8; padding-left: 20px; margin-bottom: 40px;">
-                        <li><strong>Find your Taxable Income:</strong> Subtract your Personal Allowance (Â£12,570) from
+                        <li><strong>Find your Taxable Income:</strong> Subtract your Personal Allowance (£12,570) from
                             your Gross Pay.</li>
                         <li><strong>Apply Tax Bands:</strong> Calculate tax on your base salary, then repeat for your
                             salary <em>after</em> the sacrifice is removed.</li>
@@ -349,10 +360,10 @@
                             <h4 style="color: var(--primary); margin-bottom: 10px;"><i class="fas fa-user"></i> Standard
                                 Earner (A)</h4>
                             <p style="font-size: 0.95rem; color: var(--text-muted);">
-                                <strong>Salary:</strong> Â£50k | <strong>Sacrifice:</strong> Â£5k
-                                <br><strong>Outcome:</strong> You save Â£1,000 in Tax and Â£400 in NI. Your pension
+                                <strong>Salary:</strong> £50k | <strong>Sacrifice:</strong> £5k
+                                <br><strong>Outcome:</strong> You save £1,000 in Tax and £400 in NI. Your pension
                                 grows
-                                by Â£5,000, but your take-home pay only falls by Â£3,600.
+                                by £5,000, but your take-home pay only falls by £3,600.
                             </p>
                             <span
                                 style="background: #e0e7ff; color: #4338ca; padding: 4px 10px; border-radius: 20px; font-size: 0.75rem; font-weight: 700;">28%
@@ -365,8 +376,8 @@
                             <h4 style="color: #7c3aed; margin-bottom: 10px;"><i class="fas fa-chart-line"></i> High
                                 Earner (Taper)</h4>
                             <p style="font-size: 0.95rem; color: var(--text-muted);">
-                                <strong>Salary:</strong> Â£110k | <strong>Sacrifice:</strong> Â£10k
-                                <br><strong>Outcome:</strong> By dropping to Â£100k, you recover Â£5,000 of your
+                                <strong>Salary:</strong> £110k | <strong>Sacrifice:</strong> £10k
+                                <br><strong>Outcome:</strong> By dropping to £100k, you recover £5,000 of your
                                 Personal
                                 Allowance. This results in a massive <strong>60% effective relief</strong>.
                             </p>
@@ -381,7 +392,7 @@
                             <h4 style="color: #059669; margin-bottom: 10px;"><i class="fas fa-clock"></i> State
                                 Pensioner (C)</h4>
                             <p style="font-size: 0.95rem; color: var(--text-muted);">
-                                <strong>Salary:</strong> Â£40k | <strong>Sacrifice:</strong> Â£5k
+                                <strong>Salary:</strong> £40k | <strong>Sacrifice:</strong> £5k
                                 <br><strong>Outcome:</strong> As you don't pay Employee NI, your saving is limited to
                                 Income Tax (20%). Benefit is purely tax-based.
                             </p>
@@ -396,7 +407,7 @@
                             <h4 style="color: #db2777; margin-bottom: 10px;"><i class="fas fa-graduation-cap"></i> Under
                                 21 / Apprentice (M/H)</h4>
                             <p style="font-size: 0.95rem; color: var(--text-muted);">
-                                <strong>Salary:</strong> Â£25k | <strong>Sacrifice:</strong> Â£2k
+                                <strong>Salary:</strong> £25k | <strong>Sacrifice:</strong> £2k
                                 <br><strong>Outcome:</strong> Your employer pays 0% NI anyway, so the employer saving
                                 benefit is absent, though your tax/NI savings remain.
                             </p>
@@ -412,9 +423,9 @@
                         <div>
                             <h4 style="font-weight: 700; color: var(--text-main); margin-bottom: 8px;">Personal
                                 Allowance Taper</h4>
-                            <p style="color: var(--text-muted); font-size: 0.95rem;">For every Â£2 your "Adjusted Net
-                                Income" exceeds Â£100,000, you lose Â£1 of your Personal Allowance. This creates an
-                                effective tax rate of 60% in the Â£100k-Â£125k bracket.</p>
+                            <p style="color: var(--text-muted); font-size: 0.95rem;">For every £2 your "Adjusted Net
+                                Income" exceeds £100,000, you lose £1 of your Personal Allowance. This creates an
+                                effective tax rate of 60% in the £100k-£125k bracket.</p>
                         </div>
                         <div>
                             <h4 style="font-weight: 700; color: var(--text-main); margin-bottom: 8px;">NI Category
@@ -428,14 +439,14 @@
                                 Threshold</h4>
                             <p style="color: var(--text-muted); font-size: 0.95rem;">The point at which employers begin
                                 paying National Insurance on your earnings. For 2026-27, this is significantly lower
-                                (~Â£5,000) than the employee threshold.</p>
+                                (~£5,000) than the employee threshold.</p>
                         </div>
                         <div>
                             <h4 style="font-weight: 700; color: var(--text-main); margin-bottom: 8px;">Effective Cost
-                                per Â£1</h4>
-                            <p style="color: var(--text-muted); font-size: 0.95rem;">If a Â£100 pension contribution
+                                per £1</h4>
+                            <p style="color: var(--text-muted); font-size: 0.95rem;">If a £100 pension contribution
                                 only
-                                reduces your take-home pay by Â£70, your "effective cost" is 70p per Â£1. Salary
+                                reduces your take-home pay by £70, your "effective cost" is 70p per £1. Salary
                                 sacrifice
                                 is the only way to achieve these efficiencies instantly.</p>
                         </div>
@@ -517,7 +528,7 @@
                 <div>
                     <h4>Quick Links</h4>
                     <ul>
-                        <li><a href="../../index.html">Home</a></li>
+                        <li><a href="/">Home</a></li>
                         <li><a href="../../about.html">About</a></li>
                         <li><a href="../../contact.html">Contact</a></li>
                     </ul>
